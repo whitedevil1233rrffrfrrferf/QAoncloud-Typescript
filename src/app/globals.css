@@ -1,42 +1,41 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+@import "../styles/typography.css";
+@import "../styles/tokens.css";
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-secondary); /* Poppins */
+  font-size: var(--text-body);
+  line-height: var(--line-relaxed);
+  color: var(--color-text-primary);
+  background-color: #E2E8F0;
+  
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* HEADINGS = Raleway */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  line-height: var(--line-tight);
+  font-size: 100rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* BRAND RULES */
+h1 {
+  font-size: var(--text-h1);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy);
+  margin-bottom: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-bold);
+}
+h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+}
+
+p {
+  font-family: var(--font-secondary); /* Poppins */
+  font-weight: var(--weight-regular);
+  text-align: left;
 }

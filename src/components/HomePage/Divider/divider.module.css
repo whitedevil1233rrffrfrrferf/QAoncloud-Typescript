@@ -1,0 +1,27 @@
+.dividerContainer {
+  max-width: 900px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dividerLine {
+  position: relative;
+  width: 80%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #172C54 0%, #79D3FF 100%);
+  overflow: visible; /* 🔑 important */
+}
+
+.dividerDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
