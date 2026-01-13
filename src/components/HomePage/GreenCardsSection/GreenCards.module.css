@@ -1,0 +1,29 @@
+.releaseSection {
+  padding: 120px 24px;
+ 
+  background-size: 24px 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  margin-top: 80px;
+}
+
+.ctaWrapper {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  background: #3ba6ff;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+}

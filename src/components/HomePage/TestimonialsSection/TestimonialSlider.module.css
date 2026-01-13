@@ -1,0 +1,140 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #020617;
+}
+
+/* Blue radial glow */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    65% 45% at 50% 40%,
+    rgba(56, 130, 246, 0.22),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Star grid */
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Slider ---------- */
+
+.sliderWrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px; /* wider */
+  margin: 0 auto;
+  padding-top: 32px;   /* ⬅️ pull up */
+  padding-bottom: 64px;
+}
+.swiper {
+  overflow: visible;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Slide states */
+.slide {
+  opacity: 0.35;
+  transform: scale(0.94);
+  transition: all 0.45s ease;
+}
+
+.slideActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slidePrev,
+.slideNext {
+  opacity: 0.6;
+  transform: scale(0.97);
+}
+
+/* ---------- Card ---------- */
+
+.card {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+              0 20px 60px rgba(0, 0, 0, 0.6);
+  min-height: 260px; /* instead of feeling squished */
+  padding: 32px;     /* more air inside */
+}
+
+.quote {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.role {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* ---------- Pagination ---------- */
+
+:global(.swiper-pagination) {
+  bottom: 18px !important;
+}
+
+:global(.swiper-pagination-bullet) {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  width: 22px;
+  border-radius: 999px;
+  background: #3b82f6;
+}

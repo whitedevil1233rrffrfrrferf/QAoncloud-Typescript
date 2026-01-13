@@ -6,7 +6,7 @@ body {
   font-size: var(--text-body);
   line-height: var(--line-relaxed);
   color: var(--color-text-primary);
-  background-color: #E2E8F0;
+  background-color: #050505;
   
 }
 
@@ -14,15 +14,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   line-height: var(--line-tight);
-  font-size: 100rem;
+  
 }
 
 /* BRAND RULES */
 h1 {
   font-size: var(--text-h1);
-  font-weight: var(--weight-medium);
-  color: var(--color-navy);
-  margin-bottom: 2rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--line-tight);
+  margin: 0 0 1.5rem 0;
+  max-width: 550px;
+  color: #fff;
+  /* keep same lines */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  
+  overflow: hidden;
 }
 
 h2 {
@@ -35,7 +42,40 @@ h3 {
 }
 
 p {
-  font-family: var(--font-secondary); /* Poppins */
-  font-weight: var(--weight-regular);
-  text-align: left;
+  font-family: var(--font-secondary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-light);
+  line-height: var(--line-para);
+  color: var(--color-muted);
+  max-width: 600px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  
+  overflow: hidden;
+}
+.primaryBtn {
+  background: linear-gradient(135deg, #00acff, #155dfc);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  p{
+    line-height: 25px;
+  }
 }

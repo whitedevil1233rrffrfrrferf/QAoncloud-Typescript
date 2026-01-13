@@ -1,0 +1,43 @@
+.stats {
+  margin-top: 4rem;
+}
+
+.list {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* SINGLE STAT */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* NUMBER */
+.value {
+  font-size: clamp(15px, 4vw, 30px);
+  font-weight: 500;
+  line-height: 1;
+
+  background: linear-gradient(135deg, #00acff, #155dfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LABEL */
+.label {
+  font-size: clamp(8px, 2vw, 14px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.2px;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .list {
+    gap: 2rem;
+  }
+}

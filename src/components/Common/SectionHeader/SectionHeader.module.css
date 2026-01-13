@@ -1,0 +1,21 @@
+.sectionTitle {
+  
+  color: #ffffff;
+  margin-bottom: 1rem;
+  
+}
+
+.highlight {
+  color: #3ba6ff;
+}
+.container{
+    text-align: center;
+}
+
+.container p{
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    
+}

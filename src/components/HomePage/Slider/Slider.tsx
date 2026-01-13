@@ -18,25 +18,45 @@ const clientLogos = [
   { id: 4, src: venzi, alt: 'Venzi' },
 ];
 
-const loopLogos = [...clientLogos];
+const loopLogos = [...clientLogos,...clientLogos];
 
 export default function ClientSlider() {
   return (
-    <div className={classes.clientSlider}>
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={48}
-        loop
-        speed={4000}
-        autoplay={{ delay: 0, disableOnInteraction: false }}
-      >
-        {loopLogos.map((logo) => (
-          <SwiperSlide key={logo.id} className={classes.clientSlide}>
-            <Image src={logo.src} alt={logo.alt} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <section className={classes.wrapper}>
+  <div className={classes.container}>
+    <p className={classes.heading}>
+      We’ve helped <span>60+</span> global teams ship with confidence
+    </p>
+  </div>
+
+  {/* FULL WIDTH SLIDER */}
+  <div className={classes.clientSlider}>
+    <Swiper
+      modules={[Autoplay]}
+      slidesPerView="auto"
+      spaceBetween={40}
+      loop
+      speed={5000}
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: false,
+      }}
+      allowTouchMove={false}
+    >
+      {loopLogos.map((logo, index) => (
+        <SwiperSlide key={index} className={classes.clientSlide}>
+          <div className={classes.logoCard}>
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              height={40}
+              className={classes.logo}
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</section>
   );
 }
