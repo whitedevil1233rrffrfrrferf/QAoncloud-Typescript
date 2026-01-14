@@ -1,7 +1,8 @@
 .section {
   position: relative;
+  padding: 120px 24px 140px; /* SAME AS TestingServices */
+  background-color: #05070c; /* SAME COLOR */
   overflow: hidden;
-  background: #020617;
 }
 
 /* Blue radial glow */
@@ -9,11 +10,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    65% 45% at 50% 40%,
-    rgba(56, 130, 246, 0.22),
-    transparent 70%
-  );
+  
   pointer-events: none;
   z-index: 0;
 }
@@ -23,10 +20,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.18) 1px,
-    transparent 1px
-  );
+  
   background-size: 24px 24px;
   opacity: 0.22;
   pointer-events: none;
@@ -38,15 +32,13 @@
 .sliderWrap {
   position: relative;
   z-index: 1;
-  max-width: 1320px; /* wider */
-  margin: 0 auto;
-  padding-top: 32px;   /* ⬅️ pull up */
-  padding-bottom: 64px;
+  width: 100%;
+  padding: 32px 0 64px;
 }
 .swiper {
   overflow: visible;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 0 24px;
+  width: 100%;
 }
 
 /* Slide states */
@@ -54,6 +46,8 @@
   opacity: 0.35;
   transform: scale(0.94);
   transition: all 0.45s ease;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .slideActive {
@@ -71,21 +65,18 @@
 
 .card {
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04),
-    rgba(255, 255, 255, 0.01)
-  );
-  border-radius: 20px;
-  padding: 28px;
+  background: #0C0C0C69;
+  border: 2px solid #141414;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
-              0 20px 60px rgba(0, 0, 0, 0.6);
-  min-height: 260px; /* instead of feeling squished */
-  padding: 32px;     /* more air inside */
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 450px;
+  min-height: 270px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .quote {

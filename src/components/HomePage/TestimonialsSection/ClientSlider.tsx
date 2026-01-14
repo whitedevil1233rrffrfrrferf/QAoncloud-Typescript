@@ -26,6 +26,24 @@ const testimonials = [
     role: "Product Manager",
     img: "/john.jpg",
   },
+  {
+    text: "Their attention to detail and thorough testing process gave us confidence in delivering a flawless user experience.",
+    name: "Mark Johnson",
+    role: "CTO",
+    img: "/mark.jpg", // replace with your image path
+  },
+  {
+    text: "Thanks to their comprehensive QA strategy, our application's performance and stability significantly improved post launch.",
+    name: "Sarah Lee",
+    role: "Lead Developer",
+    img: "/sarah.jpg",
+  },
+  {
+    text: "The services provided were invaluable in identifying critical issues before product launch, saving us time and resources.",
+    name: "John Doe",
+    role: "Product Manager",
+    img: "/john.jpg",
+  },
 ];
 
 export default function TestimonialSlider() {
@@ -35,11 +53,28 @@ export default function TestimonialSlider() {
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
-          spaceBetween={40}
-          slidesPerView={3}
-          centeredSlides
+          spaceBetween={10}
+          slidesPerView={'auto'}
+          centeredSlides={false}
           loop={false}
           className={styles.swiper}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.1,
+              spaceBetween: 16,
+              centeredSlides: true
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+              centeredSlides: true
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+              centeredSlides: false
+            }
+          }}
         >
           {testimonials.map((item, i) => (
             <SwiperSlide key={i}>

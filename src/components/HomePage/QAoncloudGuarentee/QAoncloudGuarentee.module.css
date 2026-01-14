@@ -1,0 +1,54 @@
+.section {
+  position: relative;
+  padding: 120px 24px 140px;
+  background-color: #05070c;
+  overflow: hidden;
+  color: white;
+}
+
+/* Blue radial glow */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    65% 45% at 50% 40%,
+    rgba(56, 130, 246, 0.2),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Star grid */
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* force 2 per row */
+  gap: 24px;
+  margin-top: 64px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;  
+  /* padding inside the grid */
+  padding: 0 16px;
+}

@@ -5,6 +5,8 @@ import ClientSlider from "@/components/HomePage/Slider/Slider";
 import classes from './page.module.css'
 import TestingServices from "@/components/HomePage/TestingServices/TestingServices";
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
+import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
+import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
 export default function Home() {
   return (
     <div className={classes.container}>
@@ -14,7 +16,8 @@ export default function Home() {
       <PartnerTesting />
       <TestingServices />
       <Testimonials />
-      
+      <QAoncloudGuarentee />
+      <CaseStudiesSection />  
     </div>
   )
   
