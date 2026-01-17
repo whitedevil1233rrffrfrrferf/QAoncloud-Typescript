@@ -4,15 +4,7 @@ import Stats from "./Stats/Stats";
 export default function HeroContent() {
   return (
     <div className={styles.content}>
-      <span style={{
-        display: "inline-block",
-        padding: "6px 12px",
-        borderRadius: "999px",
-        background: "rgba(0,172,255,0.1)",
-        color: "#00acff",
-        fontSize: "12px",
-        marginBottom: "1rem"
-      }}>
+      <span className={styles.trustedBadge}>
         Trusted by 60+ global engineering teams
       </span>
 

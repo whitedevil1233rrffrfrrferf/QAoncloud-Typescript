@@ -1,12 +1,12 @@
 .section {
   position: relative;
   padding: 120px 24px 140px;
-  background-color: #05070c;
+  
   overflow: hidden;
 }
 
 /* Blue radial glow */
-.section::before {
+/* .section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -19,7 +19,7 @@
 }
 
 /* Star grid */
-.section::after {
+/* .section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -29,8 +29,8 @@
   );
   background-size: 24px 24px;
   opacity: 0.22;
-  pointer-events: none;
-}
+  pointer-events: none; 
+} */
 
 .content {
   position: relative;

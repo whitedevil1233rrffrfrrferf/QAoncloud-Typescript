@@ -8,7 +8,7 @@ interface StatItemProps {
 export default function StatItem({ value, label }: StatItemProps) {
   return (
     <div className={styles.item}>
-      <span className={styles.value}>{value}</span>
+      <h2 className={styles.value}>{value}</h2>
       <span className={styles.label}>{label}</span>
     </div>
   );

@@ -1,12 +1,12 @@
 .section {
   position: relative;
   padding: 120px 24px;
-  background-color: #05070c;
+  /* background-color: #05070c; */
   overflow: hidden;
 }
 
 /* Blue glow */
-.section::before {
+/* .section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -19,7 +19,7 @@
 }
 
 /* Star / dot grid */
-.section::after {
+/* .section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -31,7 +31,7 @@
   background-size: 22px 22px;
   opacity: 0.25;
   pointer-events: none;
-}
+} */ 
 
 /* Content above effects */
 .content {

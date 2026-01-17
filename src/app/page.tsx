@@ -10,14 +10,17 @@ import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStu
 export default function Home() {
   return (
     <div className={classes.container}>
-      <Hero />
-      <ClientSlider />
-      <GreenCards />
-      <PartnerTesting />
-      <TestingServices />
-      <Testimonials />
-      <QAoncloudGuarentee />
-      <CaseStudiesSection />  
+      <div className={classes.pageContent}>
+        <Hero />
+        <ClientSlider />
+        <GreenCards />
+        <PartnerTesting />
+        <TestingServices />
+        <Testimonials />
+        <QAoncloudGuarentee />
+        <CaseStudiesSection />  
+      </div>
+      
     </div>
   )
   

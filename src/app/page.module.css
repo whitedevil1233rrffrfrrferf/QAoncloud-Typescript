@@ -1,7 +1,24 @@
-.container{
-     background-color: #050505;
-    background-image: radial-gradient(
-        rgba(255, 255, 255, 0.06) 1px,
-        transparent 1px
-    );
+.container {
+  position: relative;
+  min-height: 100vh;   /* 🔑 REQUIRED */
+  background-color: #050505;
+  overflow: hidden;
+}
+
+/* ⭐ Stars layer */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.12) 1.2px,
+    transparent 2.2px
+  );
+
+  background-size: 22px 22px;
+  opacity: 0.5;
+
+  pointer-events: none;
+  z-index: 0;
 }

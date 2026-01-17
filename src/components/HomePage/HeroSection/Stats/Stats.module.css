@@ -1,5 +1,5 @@
 .stats {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .list {
@@ -18,13 +18,14 @@
 
 /* NUMBER */
 .value {
-  font-size: clamp(15px, 4vw, 30px);
+  /* font-size: clamp(15px, 4vw, 30px);
   font-weight: 500;
-  line-height: 1;
-
-  background: linear-gradient(135deg, #00acff, #155dfc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1; */
+  color: #ffff;
+  font-weight: var(--weight-semibold);
+  /* background: linear-gradient(135deg, #00acff, #155dfc); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
 
 /* LABEL */

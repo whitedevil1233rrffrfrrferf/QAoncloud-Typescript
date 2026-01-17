@@ -1,31 +1,4 @@
-.section {
-  position: relative;
-  padding: 120px 24px 140px; /* SAME AS TestingServices */
-  background-color: #05070c; /* SAME COLOR */
-  overflow: hidden;
-}
 
-/* Blue radial glow */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Star grid */
-.section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  
-  background-size: 24px 24px;
-  opacity: 0.22;
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* ---------- Slider ---------- */
 
