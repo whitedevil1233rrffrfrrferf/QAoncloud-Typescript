@@ -6,15 +6,8 @@ export default function StatsSection() {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-        <div
-          style={{
-            display: "flex",
-            gap: "24px",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            
-            margin: "0 auto",
-          }}
+        <div className={styles.statsGrid}
+          
         >
           <StatCard value="155+" label="Happy Clients" />
           <StatCard value="12+" label="Years Of Success" />

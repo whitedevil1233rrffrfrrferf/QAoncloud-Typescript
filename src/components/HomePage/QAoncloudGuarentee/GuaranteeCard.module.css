@@ -3,9 +3,12 @@
   background: rgba(12, 12, 12, 0.4); /* #0C0C0C66 */
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 28px;
+  padding: 2rem;
   backdrop-filter: blur(10px);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .card::after {
@@ -47,27 +50,62 @@
   transform: translateY(-2px);
 }
 
+.iconContainer {
+  flex-shrink: 0;
+  margin-top: 4px; /* Align icon with first line of text */
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #fff;
+}
+
+.description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Optional: Add responsive behavior */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .iconContainer {
+    margin-top: 0;
+  }
+}
+
 .icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   background: rgba(59, 130, 246, 0.15);
   color: #3b82f6;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon:hover {
+  transform: scale(1.05);
 }
 
 .card h3 {
   color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 8px;
 }
 
-.card p {
-  color: #9aa2b2;
-  font-size: 14px;
-  line-height: 1.6;
-}

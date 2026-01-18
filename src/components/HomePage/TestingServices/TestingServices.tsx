@@ -14,12 +14,7 @@ function TestingServices() {
         />
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "24px",
-            marginTop: "64px",
-          }}
+          className={styles.cardsGrid}
         >
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>&lt;/&gt;</span>}

@@ -16,8 +16,8 @@
   --text-h1: clamp(25px, 4vw, 46px);
   
   --text-h2: clamp(22px, 3vw, 34px);
-  --text-h3: clamp(1rem, 2.5vw, 1.5rem); /* 16px → 20px */
-
+  --text-h3: clamp(16px, 2.5vw, 20px); /* 16px → 20px */
+  --text-h4: clamp(15px, 2vw, 18px);
   --text-body-lg: 1.125rem; /* 18px */
   --text-body: clamp(11px, 2vw, 15px);;
   --text-caption: 0.875rem; /* 14px */

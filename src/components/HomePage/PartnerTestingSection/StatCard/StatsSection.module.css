@@ -1,10 +1,17 @@
 .section {
   position: relative;
-  padding: 120px 24px;
+  margin-top: 5rem;
   /* background-color: #05070c; */
   overflow: hidden;
 }
-
+.statsGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 /* Blue glow */
 /* .section::before {
   content: "";

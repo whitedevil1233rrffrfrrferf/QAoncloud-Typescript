@@ -35,14 +35,14 @@
 .content {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
 /* Cards grid */
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap:2rem;
   margin-top: 64px;
 }

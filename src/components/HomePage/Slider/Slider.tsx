@@ -24,9 +24,9 @@ export default function ClientSlider() {
   return (
     <section className={classes.wrapper}>
   <div className={classes.container}>
-    <p className={classes.heading}>
-      We’ve helped <span>60+</span> global teams ship with confidence
-    </p>
+    <h4 className={classes.heading}>
+      We’ve helped 60+ global teams ship with confidence
+    </h4>
   </div>
 
   {/* FULL WIDTH SLIDER */}

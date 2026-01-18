@@ -23,25 +23,25 @@ function QAoncloudGuarentee() {
           <GuaranteeCard
             icon={<FiStar />}
             title="We're built for your stage"
-            description="From early startups to enterprise-scale teams, our QA adapts to your reality."
+            description="Whether you're a 10-person startup or a 500-person enterprise, we scale our approach to match your reality. No one-size-fits-all frameworks here."
           />
 
           <GuaranteeCard
             icon={<FiUsers />}
-            title="QA is our forte"
-            description="Testing is all we do — refined over 12+ years across modern tech stacks."
+            title="We're built for your stage"
+            description="Whether you're a 10-person startup or a 500-person enterprise, we scale our approach to match your reality. No one-size-fits-all frameworks here."
           />
 
           <GuaranteeCard
             icon={<FiCheckCircle />}
-            title="No body shop"
-            description="We partner long-term, integrating directly into your delivery process."
+            title="QA is our forte"
+            description="We're not a generalist agency that dabbles in QA. Software testing is all we do — and we've spent 12+ years perfecting it across every tech stack."
           />
 
           <GuaranteeCard
             icon={<FiRepeat />}
-            title="Built to scale"
-            description="Sprint testing, CI pipelines, and continuous quality — all covered."
+            title="We're not a body shop"
+            description="We're in it for the long haul. From sprint-by-sprint testing to continuous integration, we grow with your product and your team."
           />
         </div>
       

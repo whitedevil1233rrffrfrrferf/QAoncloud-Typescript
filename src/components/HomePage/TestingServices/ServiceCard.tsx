@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ServiceCard.module.css";
+import IconWrapper from "@/components/Common/IconWrapper/IconWrapper";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -14,7 +15,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className={styles.card}>
-      <div className={styles.iconWrapper}>{icon}</div>
+      <IconWrapper>{icon}</IconWrapper>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
     </div>

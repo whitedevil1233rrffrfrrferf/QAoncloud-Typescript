@@ -19,7 +19,7 @@ export default function FeatureLineCard({
         <span className={styles.line} />
       </div>
 
-      <h4 className={styles.featureTitle}>{title}</h4>
+      <h3 className={styles.featureTitle}>{title}</h3>
       <p className={styles.featureDescription}>{description}</p>
     </div>
   );

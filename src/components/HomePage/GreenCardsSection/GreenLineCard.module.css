@@ -1,5 +1,7 @@
 .featureCard {
   max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .featureLine {
@@ -31,14 +33,12 @@
 }
 
 .featureTitle {
-  font-size: 18px;
-  font-weight: 600;
+  
   color: #ffffff;
   margin-bottom: 8px;
 }
 
 .featureDescription {
-  font-size: 14px;
-  color: #9ca3af;
+  
   line-height: 1.6;
 }
