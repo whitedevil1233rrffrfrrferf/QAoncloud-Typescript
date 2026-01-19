@@ -15,7 +15,7 @@
 }
 
 /* Slide states */
-.slide {
+.swiper-slide {
   opacity: 0.35;
   transform: scale(0.94);
   transition: all 0.45s ease;
@@ -23,15 +23,14 @@
   box-sizing: border-box;
 }
 
-.slideActive {
+.swiper-slide-visible {
   opacity: 1;
   transform: scale(1);
 }
 
-.slidePrev,
-.slideNext {
-  opacity: 0.6;
-  transform: scale(0.97);
+/* Ensure proper spacing between slides */
+.swiper-wrapper {
+  padding: 10px 0;
 }
 
 /* ---------- Card ---------- */

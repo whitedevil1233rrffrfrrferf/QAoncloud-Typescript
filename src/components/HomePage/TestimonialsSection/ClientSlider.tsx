@@ -52,8 +52,12 @@ export default function TestimonialSlider() {
       <div className={styles.sliderWrap}>
         <Swiper
           modules={[Pagination]}
-          pagination={{ clickable: true }}
-          spaceBetween={10}
+          pagination={{ 
+            clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 5
+          }}
+          spaceBetween={24}
           slidesPerView={'auto'}
           centeredSlides={false}
           loop={false}
@@ -62,50 +66,39 @@ export default function TestimonialSlider() {
             320: {
               slidesPerView: 1.1,
               spaceBetween: 16,
-              centeredSlides: true
+              centeredSlides: true,
+              slidesPerGroup: 1
             },
             640: {
               slidesPerView: 1.5,
               spaceBetween: 20,
-              centeredSlides: true
+              centeredSlides: true,
+              slidesPerGroup: 1
             },
             1024: {
               slidesPerView: 4,
               spaceBetween: 24,
-              centeredSlides: false
+              centeredSlides: false,
+              slidesPerGroup: 4
             }
           }}
         >
           {testimonials.map((item, i) => (
-            <SwiperSlide key={i}>
-              {({ isActive, isPrev, isNext }) => (
-                <div
-                  className={[
-                    styles.slide,
-                    isActive && styles.slideActive,
-                    isPrev && styles.slidePrev,
-                    isNext && styles.slideNext,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  <div className={styles.card}>
-                    <p className={styles.quote}>“ {item.text} ”</p>
-
-                    <div className={styles.footer}>
-                      <img
-                        src={item.img}
-                        alt={item.name}
-                        className={styles.avatar}
-                      />
-                      <div>
-                        <div className={styles.name}>{item.name}</div>
-                        <div className={styles.role}>{item.role}</div>
-                      </div>
-                    </div>
+            <SwiperSlide key={i} className={styles.slide}>
+              <div className={styles.card}>
+                <p className={styles.quote}>" {item.text} "</p>
+                <div className={styles.footer}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className={styles.avatar}
+                  />
+                  <div>
+                    <div className={styles.name}>{item.name}</div>
+                    <div className={styles.role}>{item.role}</div>
                   </div>
                 </div>
-              )}
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
