@@ -11,7 +11,10 @@ export default function Home() {
   return (
     <div className={classes.container}>
       <div className={classes.pageContent}>
-        <Hero />
+        <div className={classes.homeHeroBg}> 
+          <Hero />
+        </div>
+        
         <ClientSlider />
         <GreenCards />
         <PartnerTesting />
