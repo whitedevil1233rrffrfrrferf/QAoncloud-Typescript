@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import FeatureLineCard from "./GreenLineCard";
 import classes from "./GreenCards.module.css";
+import Button from "@/components/Common/Button/Button";
 export default function GreenCards() {
     return(
         <section className={classes.releaseSection}>
@@ -23,6 +24,9 @@ export default function GreenCards() {
                 description="Just a thoroughly tested product that works the way it should."
                 />
             </div>
+            <Button href="/how-we-work" variant="primary">
+             See How We Work
+            </Button>
         </section>
         
     )

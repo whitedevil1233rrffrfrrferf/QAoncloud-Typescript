@@ -26,7 +26,7 @@
   position: relative;
   background-color: #050505;
   overflow: hidden;
-  height: 100vh;
+  
 }
 
 /* Blue radial glow */
@@ -49,4 +49,23 @@
 
   pointer-events: none;
   z-index: 0;
+}
+
+.blueDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    500px 800px at 50% 45%,
+    rgba(0, 172, 255, 0.12),
+    rgba(5, 5, 5, 1) 70%
+  );
+
+  pointer-events: none;
+  z-index: 0;
+}
+.blueDiv > * {
+  position: relative;
+  z-index: 1;
 }

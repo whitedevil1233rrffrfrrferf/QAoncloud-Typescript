@@ -1,3 +1,27 @@
-.testimonialsContainer{
+/* .testimonialsContainer{
     height: 60vh;
+} */
+.testimonialsContainer {
+  position: relative;
+  background: #050505;
+  overflow: hidden;
+}
+
+.testimonialsContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    600px 700px at 50% 40%,
+    rgba(0, 172, 255, 0.14),
+    rgba(5, 5, 5, 1) 70%
+  );
+
+  z-index: 0;
+}
+
+.testimonialsContainer > * {
+  position: relative;
+  z-index: 1;
 }

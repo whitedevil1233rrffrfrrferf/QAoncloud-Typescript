@@ -15,8 +15,10 @@ export default function Home() {
           <Hero />
         </div>
         
-        <ClientSlider />
-        <GreenCards />
+          <ClientSlider />
+           <GreenCards />
+        
+        
         <PartnerTesting />
         <TestingServices />
         <Testimonials />

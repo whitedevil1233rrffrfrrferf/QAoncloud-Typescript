@@ -5,10 +5,10 @@ export default function HeroVisual() {
   return (
     <div className={styles.visual}>
       <Image
-        src="/Cube.gif"
+        src="/cube.png"
         alt="Rotating cube"
-        width={600}
-        height={600}
+        width={500}
+        height={500}
         priority
         unoptimized
       />

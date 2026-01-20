@@ -1,17 +1,28 @@
-import React from 'react';
-import classes from './button.module.css'; // Import the external CSS file
+import Link from "next/link";
+import React from "react";
+import styles from "./Button.module.css";
+
+type ButtonVariant = "primary" | "secondary";
 
 interface ButtonProps {
-  backgroundColor: string;
+  href: string;
   children: React.ReactNode;
+  variant?: ButtonVariant;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ backgroundColor, children }) => {
+export default function Button({
+  href,
+  children,
+  variant = "primary",
+  className = "",
+}: ButtonProps) {
   return (
-    <button className={classes.customButton} style={{ backgroundColor }}>
+    <Link
+      href={href}
+      className={`${styles.button} ${styles[variant]} ${className}`}
+    >
       {children}
-    </button>
+    </Link>
   );
-};
-
-export default Button;
+}
