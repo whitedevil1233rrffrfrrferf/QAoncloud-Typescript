@@ -7,6 +7,7 @@ import TestingServices from "@/components/HomePage/TestingServices/TestingServic
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
 import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
+import PromoBanner from "@/components/PromoBanner/PromoBanner";
 export default function Home() {
   return (
     <div className={classes.container}>
@@ -24,6 +25,7 @@ export default function Home() {
         <Testimonials />
         <QAoncloudGuarentee />
         <CaseStudiesSection />  
+        
       </div>
       
     </div>

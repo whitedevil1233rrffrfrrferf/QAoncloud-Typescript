@@ -1,6 +1,7 @@
 .section {
   position: relative;
-  padding: 60px 16px 80px;
+  margin-bottom: 5rem;
+  padding: 2rem;
   overflow: hidden;
   
   @media (min-width: 1024px) {
@@ -44,10 +45,10 @@
 
 
 /* Subtle center glow */
-.content::before {
+.section::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -20% 0 -90% 0; /* extend DOWN */
 
   background: radial-gradient(
     500px 800px at 50% 45%,
@@ -58,9 +59,13 @@
   pointer-events: none;
   z-index: 0;
 }
-.content > * {
+.section > * {
   position: relative;
   z-index: 1;
+}
+.section {
+  
+  padding-top: calc(60px + 2rem);
 }
 /* Cards grid */
 .cardsGrid {

@@ -6,7 +6,8 @@
   margin: 0 auto;
 }
 .section {
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
 }
 .section {
   position: relative;
@@ -44,7 +45,11 @@
   width: 100%;
   box-sizing: border-box;
 }
-
+.buttonContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
 /* Ensure cards don't get too wide on large screens */
 @media (min-width: 1200px) {
   .cardsGrid {

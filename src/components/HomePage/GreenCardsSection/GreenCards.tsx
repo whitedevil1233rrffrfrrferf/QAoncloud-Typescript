@@ -24,9 +24,12 @@ export default function GreenCards() {
                 description="Just a thoroughly tested product that works the way it should."
                 />
             </div>
-            <Button href="/how-we-work" variant="primary">
-             See How We Work
-            </Button>
+            <div className={classes.buttonContainer}>
+                <Button href="/how-we-work" variant="primary">
+                    Talk to an expert
+                </Button>
+            </div>
+            
         </section>
         
     )

@@ -9,6 +9,7 @@ export default function Stats() {
         <StatItem value="155+" label="Happy Client" />
         <StatItem value="8+" label="Global Offices" />
       </div>
+      <div className={styles.statsLine}></div>
     </section>
   );
 }

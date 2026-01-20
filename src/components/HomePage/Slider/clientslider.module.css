@@ -10,6 +10,10 @@
  
  
 } */
+ .wrapper {
+  margin-bottom: 5rem;
+  padding: 2rem;
+ }
 .container {
   max-width: 100%;
   margin: 0 auto;

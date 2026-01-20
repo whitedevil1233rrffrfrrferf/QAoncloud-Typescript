@@ -1,6 +1,6 @@
 .releaseSection {
-  padding: 120px 24px;
-  
+  margin-bottom: 5rem;
+  padding: 2rem;
   background-size: 24px 24px;
   max-width: 1200px;
   margin-left: auto;
@@ -27,4 +27,9 @@
   padding: 14px 28px;
   border-radius: 12px;
   font-weight: 600;
+}
+.buttonContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }

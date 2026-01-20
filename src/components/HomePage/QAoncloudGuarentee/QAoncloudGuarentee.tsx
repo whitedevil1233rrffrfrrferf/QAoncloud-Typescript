@@ -8,6 +8,7 @@ import {
   FiCheckCircle,
   FiRepeat,
 } from "react-icons/fi";
+import Button from '@/components/Common/Button/Button';
 
 function QAoncloudGuarentee() {
   return (
@@ -43,6 +44,11 @@ function QAoncloudGuarentee() {
             title="We're not a body shop"
             description="We're in it for the long haul. From sprint-by-sprint testing to continuous integration, we grow with your product and your team."
           />
+        </div>
+        <div className={styles.buttonContainer}>
+          <Button href="/how-we-work" variant="primary">
+            Talk to an expert
+          </Button>
         </div>
       
     </section>

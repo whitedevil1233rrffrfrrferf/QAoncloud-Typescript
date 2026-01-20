@@ -3,6 +3,8 @@
   z-index: 1;
   max-width: 1600px;
   margin: 0 auto;
+  margin-top: 5rem;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -28,4 +30,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
+}
+.buttonContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }

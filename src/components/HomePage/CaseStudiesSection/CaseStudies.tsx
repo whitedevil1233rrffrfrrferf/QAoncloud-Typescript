@@ -1,6 +1,7 @@
 import styles from "./CaseStudiesSection.module.css";
 import CaseCard from "./CaseCard";
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
+import Button from "@/components/Common/Button/Button";
 
 export default function CaseStudiesSection() {
   return (
@@ -36,6 +37,11 @@ export default function CaseStudiesSection() {
           />
         </div>
       </div>
+      <div className={styles.buttonContainer}>
+          <Button href="/how-we-work" variant="primary">
+            Talk to an expert
+          </Button>
+        </div>
     </section>
   );
 }

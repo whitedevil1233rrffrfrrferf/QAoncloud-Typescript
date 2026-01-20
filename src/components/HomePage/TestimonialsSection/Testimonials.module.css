@@ -5,6 +5,7 @@
   position: relative;
   background: #050505;
   overflow: hidden;
+  
 }
 
 .testimonialsContainer::before {
