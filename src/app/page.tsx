@@ -8,18 +8,21 @@ import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials
 import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
 import PromoBanner from "@/components/PromoBanner/PromoBanner";
+import { Banner } from "@/components/Common/Banner/Banner";
+import Footer from "@/components/Common/Footer/Footer";
 export default function Home() {
   return (
-    <div className={classes.container}>
+    <div>
+       <div className={classes.container}>
       <div className={classes.pageContent}>
         <div className={classes.homeHeroBg}> 
           <Hero />
         </div>
-        
-          <ClientSlider />
-           <GreenCards />
-        
-        
+        <div>
+
+        </div>
+        <ClientSlider />
+        <GreenCards />
         <PartnerTesting />
         <TestingServices />
         <Testimonials />
@@ -29,6 +32,15 @@ export default function Home() {
       </div>
       
     </div>
+      <Banner
+          title="Stop firefighting. Start shipping"
+          highlight="with confidence."
+          description="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most."
+          ctaLabel="Talk to an expert"
+        />
+        
+    </div>
+   
   )
   
 }

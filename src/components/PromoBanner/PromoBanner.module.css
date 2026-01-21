@@ -1,9 +1,31 @@
 .promoBanner {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  position: relative;
+  z-index: 1;
   padding: 4rem 1rem;
   width: 100%;
+  overflow: hidden;
 }
+.promoBanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  /* THIS blocks stars */
+  background:
+    #0c0c0c,
+    radial-gradient(
+      ellipse at center,
+      #0f1b24 0%,
+      #0b1620 40%,
+      #000000 100%
+    );
+
+  z-index: 0;
+}
+.promoBanner > * {
+  position: relative;
+  z-index: 1;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;

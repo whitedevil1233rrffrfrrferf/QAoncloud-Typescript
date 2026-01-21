@@ -86,7 +86,7 @@ export default function TestimonialSlider() {
           {testimonials.map((item, i) => (
             <SwiperSlide key={i} className={styles.slide}>
               <div className={styles.card}>
-                <p className={styles.quote}>" {item.text} "</p>
+                <h3 className={styles.quote}>" {item.text} "</h3>
                 <div className={styles.footer}>
                   <img
                     src={item.img}

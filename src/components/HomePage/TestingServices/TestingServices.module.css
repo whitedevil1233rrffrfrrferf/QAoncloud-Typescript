@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
   padding: 2rem;
   overflow: hidden;
   
@@ -10,7 +10,7 @@
 }
 
 /* Blue radial glow */
-/* .section::before {
+.section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -20,7 +20,7 @@
     transparent 70%
   );
   pointer-events: none;
-}
+} 
 
 /* Star grid */
 .section::after {

@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  margin-top: 5rem;
+  margin-top: 3rem;
   /* background-color: #05070c; */
   overflow: hidden;
 }
@@ -10,6 +10,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-top: 2rem;
   max-width: 1200px;
 }
 /* Blue glow */

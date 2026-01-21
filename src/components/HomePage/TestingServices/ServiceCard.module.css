@@ -1,6 +1,6 @@
 .card {
   position: relative; /* ← add this */
-  background: rgba(12, 12, 12, 0.4); /* #0C0C0C66 */
+  background: #0c0c0c; /* Solid color instead of transparent */
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 28px;

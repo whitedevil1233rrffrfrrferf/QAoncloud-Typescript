@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway, Poppins } from 'next/font/google';
 import "./globals.css";
 import ClientLayout from './ClientLayout';
+import Footer from "@/components/Common/Footer/Footer";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
+        <Footer />
       </body>
     </html>
   );

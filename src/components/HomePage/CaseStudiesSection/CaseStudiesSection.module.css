@@ -3,11 +3,13 @@
   z-index: 1;
   max-width: 1600px;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
   padding: 2rem;
   text-align: center;
 }
-
+.section{
+  margin-bottom: 3rem;
+}
 .heading {
   font-size: 44px;
   font-weight: 700;
@@ -32,7 +34,7 @@
   gap: 28px;
 }
 .buttonContainer {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
