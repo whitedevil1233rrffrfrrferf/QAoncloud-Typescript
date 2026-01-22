@@ -12,13 +12,13 @@ const testimonials = [
     text: "Their attention to detail and thorough testing process gave us confidence in delivering a flawless user experience.",
     name: "Mark Johnson",
     role: "CTO",
-    img: "/mark.jpg", // replace with your image path
+    img: "/angela.jpg", // replace with your image path
   },
   {
     text: "Thanks to their comprehensive QA strategy, our application's performance and stability significantly improved post launch.",
     name: "Sarah Lee",
     role: "Lead Developer",
-    img: "/sarah.jpg",
+    img: "/angela.jpg",
   },
   {
     text: "The services provided were invaluable in identifying critical issues before product launch, saving us time and resources.",
@@ -30,7 +30,7 @@ const testimonials = [
     text: "Their attention to detail and thorough testing process gave us confidence in delivering a flawless user experience.",
     name: "Mark Johnson",
     role: "CTO",
-    img: "/mark.jpg", // replace with your image path
+    img: "/john.jpg", // replace with your image path
   },
   {
     text: "Thanks to their comprehensive QA strategy, our application's performance and stability significantly improved post launch.",
@@ -42,7 +42,7 @@ const testimonials = [
     text: "The services provided were invaluable in identifying critical issues before product launch, saving us time and resources.",
     name: "John Doe",
     role: "Product Manager",
-    img: "/john.jpg",
+    img: "/john-doe.jpg",
   },
 ];
 

@@ -9,6 +9,7 @@ import {
   FiRepeat,
 } from "react-icons/fi";
 import Button from '@/components/Common/Button/Button';
+import { FeatureGrid } from '@/components/Common/FeatureGrid/FeatureGrid';
 
 function QAoncloudGuarentee() {
   return (
@@ -19,8 +20,10 @@ function QAoncloudGuarentee() {
           highlight="Guarantee"
           description="Choosing the right QA partner isn't just about finding testers — it's about finding a team that truly understands your product."
         />
-
-        <div className={styles.cardsGrid}>
+        
+        {/* <FeatureGrid /> */}
+        <FeatureGrid />
+        {/* <div className={styles.cardsGrid}>
           <GuaranteeCard
             icon={<FiStar />}
             title="We're built for your stage"
@@ -44,7 +47,7 @@ function QAoncloudGuarentee() {
             title="We're not a body shop"
             description="We're in it for the long haul. From sprint-by-sprint testing to continuous integration, we grow with your product and your team."
           />
-        </div>
+        </div> */}
         <div className={styles.buttonContainer}>
           <Button href="/how-we-work" variant="primary">
             Talk to an expert

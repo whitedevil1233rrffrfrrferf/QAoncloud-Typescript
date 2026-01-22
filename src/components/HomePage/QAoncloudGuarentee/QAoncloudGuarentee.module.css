@@ -8,25 +8,37 @@
 .section {
   margin-top: 2rem;
   padding: 2rem;
-}
-.section {
+  
   position: relative;
-  background: #050505;
-  overflow: hidden;
+  isolation: isolate;
+
 }
+
 
 .section::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: radial-gradient(
-    600px 700px at 50% 40%,
-    rgba(0, 172, 255, 0.14),
-    rgba(5, 5, 5, 1) 70%
+    65% 45% at 50% 40%,
+    rgba(56, 130, 246, 0.2),
+    transparent 70%
   );
+  pointer-events: none;
+} 
 
-  z-index: 0;
+/* Star grid */
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  opacity: 0.22;
+  pointer-events: none; 
 }
 
 .section > * {

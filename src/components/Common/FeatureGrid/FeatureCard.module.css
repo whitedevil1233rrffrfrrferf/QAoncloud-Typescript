@@ -1,0 +1,73 @@
+.card {
+  position: relative;
+  border-radius: 16px;
+  background: black;
+  border: 1px solid #141414;
+  padding: 28px;
+  min-height:200px;
+  
+  overflow: hidden;
+
+  /* DARK BASE (not flat black) */
+  
+}
+
+/* 🔥 SINGLE, SOFT CORNER GLOW */
+.card::before {
+  content: "";
+  position: absolute;
+  right: -180px;
+  bottom: -180px;
+  width: 520px;
+  height: 520px;
+
+  background: radial-gradient(
+    ellipse at bottom right,
+    rgba(140, 140, 140, 0.28) 0%,
+    rgba(80, 120, 255, 0.28) 22%,
+    rgba(10, 9, 9, 0.0) 60%
+  );
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ICON CONTAINER */
+.iconWrapper {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+
+  width:100px;
+  height:100px;
+
+  background: #0a0909;
+  border: 1px solid #141414;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+}
+
+/* TEXT ABOVE GLOW */
+.title,
+.description {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+}

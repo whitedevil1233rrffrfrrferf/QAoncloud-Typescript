@@ -6,10 +6,14 @@ import classes from './page.module.css'
 import TestingServices from "@/components/HomePage/TestingServices/TestingServices";
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
 import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
-import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
+
 import PromoBanner from "@/components/PromoBanner/PromoBanner";
 import { Banner } from "@/components/Common/Banner/Banner";
 import Footer from "@/components/Common/Footer/Footer";
+import { FeatureGrid } from "@/components/Common/FeatureGrid/FeatureGrid";
+import PartnershipSection from "@/components/HomePage/PartnerTestingSection/NewPartnerTesting/PartnershipSection";
+import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
+
 export default function Home() {
   return (
     <div>
@@ -27,11 +31,13 @@ export default function Home() {
         <TestingServices />
         <Testimonials />
         <QAoncloudGuarentee />
-        <CaseStudiesSection />  
+        <PartnershipSection /> 
+        <CaseStudiesSection />
         
       </div>
       
     </div>
+    {/* <FeatureGrid /> */}
       <Banner
           title="Stop firefighting. Start shipping"
           highlight="with confidence."

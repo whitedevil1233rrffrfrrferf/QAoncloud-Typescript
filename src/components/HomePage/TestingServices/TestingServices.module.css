@@ -63,10 +63,7 @@
   position: relative;
   z-index: 1;
 }
-.section {
-  
-  padding-top: calc(60px + 2rem);
-}
+
 /* Cards grid */
 .cardsGrid {
   display: grid;

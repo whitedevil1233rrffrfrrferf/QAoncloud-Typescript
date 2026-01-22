@@ -1,0 +1,55 @@
+import React from "react";
+
+import styles from "./PartnershipSection.module.css";
+
+import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
+import PartnershipCard from "./PartnershipCard";
+
+const caseStudies = [
+  {
+    company: "Aol.",
+    logo: "/logos/AOI.png", // replace with actual path
+    topColor: "#2A5068",
+    tags: ["Automation", "User Testing", "Functional QA"],
+    title: "Fintech App: Reducing Production Defects",
+    description: "We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases."
+  },
+  {
+    company: "Avanti",
+    logo: "/logos/avanti.png",
+    topColor: "#623B2B",
+    tags: ["Integration Testing", "User Testing", "Performance QA"],
+    title: "Ecommerce Platform: Fixing Checkout Issues",
+    description: "We identified critical flow failures, validated integrations, and ensured a stable checkout experience."
+  },
+  {
+    company: "RedBlackTree",
+    logo: "/logos/redblacktree.png",
+    topColor: "#3B2C66",
+    tags: ["Compliance QA", "User Testing", "Security Testing"],
+    title: "Healthcare SaaS: Strengthening Compliance",
+    description: "We validated high-risk workflows, improved reliability, and supported faster compliance approvals."
+  }
+];
+
+export default function PartnershipSection() {
+  return (
+    <section className={styles.section}>
+      <SectionHeader
+        title="The QAonCloud"
+        highlight="Guarantee"
+        description="Choosing the right QA partner isn't just about finding testers — it's about finding a team that truly understands your product."
+      />
+
+      <div className={styles.cardsGrid}>
+        {caseStudies.map((study, idx) => (
+          <PartnershipCard key={idx} {...study} />
+        ))}
+      </div>
+
+      <div className={styles.buttonContainer}>
+        <button className={styles.ctaButton}>See All Case Studies</button>
+      </div>
+    </section>
+  );
+}

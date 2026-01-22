@@ -1,0 +1,49 @@
+.section {
+  position: relative;
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* .heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+} */
+
+/* .highlight {
+  color: #3b82f6;
+}
+
+.subheading {
+  margin-top: 0.75rem;
+  color: #aaa;
+  font-size: 1rem;
+} */
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.buttonContainer {
+  margin-top: 48px;
+}
+
+.ctaButton {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #2563eb;
+}

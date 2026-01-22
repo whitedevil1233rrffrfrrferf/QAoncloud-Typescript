@@ -4,6 +4,7 @@
   padding: 4rem 1rem;
   width: 100%;
   overflow: hidden;
+  
 }
 .promoBanner::before {
   content: "";
