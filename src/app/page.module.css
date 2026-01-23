@@ -22,11 +22,11 @@
   opacity: 0.5;
 
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 .homeHeroBg {
   position: relative;
-  background-color: #050505;
+  background-color: transparent !important;
   overflow: hidden;
   
 }
@@ -50,7 +50,11 @@
     );
 
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
+}
+.pageContent{
+  position: relative;
+  z-index: 2;
 }
 
 .blueDiv::before {

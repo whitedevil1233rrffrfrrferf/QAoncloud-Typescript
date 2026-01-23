@@ -19,7 +19,7 @@
     rgba(5, 5, 5, 1) 70%
   );
 
-  z-index: 0;
+  z-index: -1;
 }
 
 .testimonialsContainer > * {

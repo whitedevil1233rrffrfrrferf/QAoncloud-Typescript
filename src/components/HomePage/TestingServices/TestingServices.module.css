@@ -9,46 +9,22 @@
   }
 }
 
-/* Blue radial glow */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    65% 45% at 50% 40%,
-    rgba(56, 130, 246, 0.2),
-    transparent 70%
-  );
-  pointer-events: none;
-} 
 
-/* Star grid */
-.section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.18) 1px,
-    transparent 1px
-  );
-  background-size: 24px 24px;
-  opacity: 0.22;
-  pointer-events: none; 
-}
+
+
 
 .content {
-  position: relative;
-  z-index: 1;
-  max-width: 1350px;
+  
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 
 /* Subtle center glow */
-.section::before {
+/* .section::before {
   content: "";
   position: absolute;
-  inset: -20% 0 -90% 0; /* extend DOWN */
+  inset: -20% 0 -90% 0; 
 
   background: radial-gradient(
     500px 800px at 50% 45%,
@@ -62,7 +38,7 @@
 .section > * {
   position: relative;
   z-index: 1;
-}
+} */
 
 /* Cards grid */
 .cardsGrid {

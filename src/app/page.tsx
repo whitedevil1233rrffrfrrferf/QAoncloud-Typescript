@@ -15,28 +15,30 @@ import PartnershipSection from "@/components/HomePage/PartnerTestingSection/NewP
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
 import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
 
+
 export default function Home() {
   return (
     <div>
        <div className={classes.container}>
-      <div className={classes.pageContent}>
-        <div className={classes.homeHeroBg}> 
-          <Hero />
-        </div>
-        <div>
+          <div className={classes.pageContent}>
+            <div className={classes.homeHeroBg}> 
+              <Hero />
+            </div>
+            <div>
 
-        </div>
-        <ClientSlider />
-        <GreenCards />
-        <PartnerTesting />
-        <TestingServices />
-        <Testimonials />
-        <QAoncloudGuarentee />
-        <PartnershipSection /> 
-        <CaseStudiesSection />
-        <PartnerSection />
-        
-      </div>
+            </div>
+              <ClientSlider />
+              <GreenCards />
+              <PartnerSection />
+              <TestingServices />
+              
+              <Testimonials />
+              <QAoncloudGuarentee />
+              <PartnershipSection /> 
+              <CaseStudiesSection />
+              
+            
+          </div>
       
     </div>
     {/* <FeatureGrid /> */}

@@ -34,26 +34,26 @@ export const FeatureGrid = () => {
 
 /* Simple SVG icons */
 const StarIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
+  <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
     <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9" />
   </svg>
 );
 
 const UserIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
+  <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
     <circle cx="12" cy="7" r="4" />
     <path d="M5 21c0-4 14-4 14 0" />
   </svg>
 );
 
 const CircleIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
+  <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
     <circle cx="12" cy="12" r="10" />
   </svg>
 );
 
 const ArrowIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
+  <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#3B82F6">
     <path d="M5 12h14M13 5l6 7-6 7" />
   </svg>
 );
