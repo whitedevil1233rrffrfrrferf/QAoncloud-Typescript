@@ -13,6 +13,7 @@ import Footer from "@/components/Common/Footer/Footer";
 import { FeatureGrid } from "@/components/Common/FeatureGrid/FeatureGrid";
 import PartnershipSection from "@/components/HomePage/PartnerTestingSection/NewPartnerTesting/PartnershipSection";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
+import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <QAoncloudGuarentee />
         <PartnershipSection /> 
         <CaseStudiesSection />
+        <PartnerSection />
         
       </div>
       

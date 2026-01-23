@@ -33,16 +33,15 @@
 }
 
 /* ICON CONTAINER */
+/* ICON CONTAINER */
 .iconWrapper {
   position: absolute;
-  right: -20px;
+  right: -40px;
   bottom: -20px;
 
-  width:100px;
-  height:100px;
+  width:150px;
+  height:150px;
 
-  background: #0a0909;
-  border: 1px solid #141414;
   border-radius: 16px;
 
   display: flex;
@@ -50,6 +49,26 @@
   justify-content: center;
 
   z-index: 2;
+
+  /* Layered effect: gray core → transparent gap → blue glow */
+  background: 
+    /* Outer blue glow (starts at 45%, fades to 100%) */
+    radial-gradient(
+      circle at center,
+      transparent 0%,
+      transparent 45%,
+      rgba(59, 130, 246, 0.15) 55%,
+      rgba(59, 130, 246, 0.08) 70%,
+      rgba(59, 130, 246, 0) 100%
+    ),
+    /* Inner gray base (0-35%, fades out 35-45%) */
+    radial-gradient(
+      circle at center,
+      rgba(80, 80, 80, 0.3) 0%,
+      rgba(80, 80, 80, 0.25) 25%,
+      rgba(80, 80, 80, 0.1) 35%,
+      transparent 45%
+    );
 }
 
 /* TEXT ABOVE GLOW */
