@@ -1,14 +1,15 @@
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 1400px;
-  margin: 0 auto;
-  margin-top: 2rem;
-  padding: 2rem;
+
   text-align: center;
 }
 .section{
-  margin-bottom: 3rem;
+  
+  /* margin-top: 5rem !important; */
+  margin-top: var(--section-header-margin);
+  margin-left: auto;
+  margin-right: auto;
 }
 .heading {
   font-size: 44px;
@@ -28,14 +29,13 @@
 }
 
 .grid {
-  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   margin-top: 48px;
 }
 .buttonContainer {
-  margin-top: 2rem;
+  margin-top: var(--button-top-margin);
   display: flex;
   justify-content: center;
 }

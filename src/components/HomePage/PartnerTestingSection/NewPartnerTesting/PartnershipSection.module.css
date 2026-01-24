@@ -1,8 +1,9 @@
 .section {
   position: relative;
-  padding: 80px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  /* margin-top: 5rem !important; */
+  margin-top: var(--section-header-margin);
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 

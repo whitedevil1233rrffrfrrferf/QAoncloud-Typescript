@@ -1,9 +1,9 @@
 .container {
-  max-width: 1340px;
+  
   margin: 0 auto;
   border-radius: 16px;
-  padding: 80px 24px;
-  isolation: isolate;
+  padding: 4rem;
+  margin-top: var(--section-header-margin);
   background:
     /* SOLID BASE (this blocks stars) */
     #0c0c0c,
@@ -23,13 +23,15 @@
 .inner{
   text-align: center;
   
+  
 }
 .title {
   font-size: clamp(32px, 5vw, 48px);
-  font-weight: 700;
+  max-width: 20%;
   line-height: 1.2;
   letter-spacing: -0.03em;
   margin-bottom: 16px;
+  
 }
 
 .highlight {
@@ -66,4 +68,7 @@
   background: #3b7cff;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(79, 140, 255, 0.3);
+}
+.buttonContainer{
+  /* margin-top: 2rem; */
 }

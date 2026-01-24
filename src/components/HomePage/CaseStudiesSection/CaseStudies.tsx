@@ -38,10 +38,10 @@ export default function CaseStudiesSection() {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-          <Button href="/how-we-work" variant="primary">
-            Talk to an expert
-          </Button>
-        </div>
+        <Button href="/how-we-work" variant="primary">
+          Talk to an expert
+        </Button>
+      </div>
     </section>
   );
 }

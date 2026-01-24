@@ -4,6 +4,7 @@ import styles from "./PartnershipSection.module.css";
 
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import PartnershipCard from "./PartnershipCard";
+import Button from "@/components/Common/Button/Button";
 
 const caseStudies = [
   {
@@ -48,8 +49,11 @@ export default function PartnershipSection() {
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className={styles.ctaButton}>See All Case Studies</button>
+        <Button href="/how-we-work" variant="primary">
+        Talk to an expert
+      </Button>
       </div>
+      
     </section>
   );
 }

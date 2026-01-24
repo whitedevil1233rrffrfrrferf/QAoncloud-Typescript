@@ -6,7 +6,6 @@
 }
 
 
-
 /* ⭐ Stars layer */
 .container::after {
   content: "";
@@ -51,27 +50,4 @@
 
   pointer-events: none;
   z-index: -1;
-}
-.pageContent{
-  position: relative;
-  z-index: 2;
-}
-
-.blueDiv::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: radial-gradient(
-    500px 800px at 50% 45%,
-    rgba(0, 172, 255, 0.12),
-    rgba(5, 5, 5, 1) 70%
-  );
-
-  pointer-events: none;
-  z-index: 0;
-}
-.blueDiv > * {
-  position: relative;
-  z-index: 1;
 }

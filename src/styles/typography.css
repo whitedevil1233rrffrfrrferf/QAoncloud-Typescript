@@ -9,8 +9,13 @@
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
-  --container-max: 1200px;
   
+  
+  /* ===== Margin  ===== */
+
+  --header-bottom-margin:5rem;
+  --section-header-margin:5rem;
+  --button-top-margin:3rem;
 
   /* ===== FONT SIZES ===== */
   --text-h1: clamp(25px, 4vw, 46px);
@@ -27,4 +32,7 @@
   --line-normal: 1.5;
   --line-relaxed: 1.7;
   --line-para:30px;
+
+  /* ===== Max-width ===== */
+  --width-lg:1440px;
 }

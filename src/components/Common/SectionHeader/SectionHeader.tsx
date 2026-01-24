@@ -4,13 +4,14 @@ interface SectionHeaderProps {
   title: string;
   highlight?: string;
   description: string;
-  
+  subDescription?: string; // 👈 new optional para
 }
 
 export default function SectionHeader({
   title,
   highlight,
   description,
+  subDescription,
   
 }: SectionHeaderProps) {
   return (
@@ -26,6 +27,11 @@ export default function SectionHeader({
         {highlight && <span className={classes.highlight}>{highlight}</span>}
       </h2>
       <p className={classes.sectionDescription}>{description}</p>
+       {subDescription && (
+        <p className={classes.sectionDescription}>
+          {subDescription}
+        </p>
+      )}
     </div>
   );
 }

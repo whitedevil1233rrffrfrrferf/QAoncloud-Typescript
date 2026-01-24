@@ -18,9 +18,11 @@
   background-color: #2A5068; /* fully opaque color */
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  border-bottom-left-radius: 25px; /* Add curved bottom-left corner */
   z-index: 1;
   position: relative;
   padding: 14px 16px;
+  padding-left: 80px; /* Add space for the logo on the left */
 }
 
 .content {
@@ -46,10 +48,14 @@
   position: absolute;
   top: 12px;
   right: 12px;
+  
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  justify-content: flex-end; /* Align tags to the right */
+  align-items: flex-start;
   margin-bottom: 12px;
+  max-width: 280px;
 }
 
 .tag {

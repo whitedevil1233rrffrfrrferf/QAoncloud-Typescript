@@ -5,6 +5,7 @@ import Button from "@/components/Common/Button/Button";
 export default function GreenCards() {
     return(
         <section className={classes.releaseSection}>
+            <div className={classes.inner}></div>
              <SectionHeader
                 title="Still putting out fires before"
                 highlight="every release?"

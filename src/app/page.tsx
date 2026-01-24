@@ -14,6 +14,7 @@ import { FeatureGrid } from "@/components/Common/FeatureGrid/FeatureGrid";
 import PartnershipSection from "@/components/HomePage/PartnerTestingSection/NewPartnerTesting/PartnershipSection";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
 import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
+import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
 
 
 export default function Home() {
@@ -28,27 +29,34 @@ export default function Home() {
 
             </div>
               <ClientSlider />
-              <GreenCards />
+              <ContentWrapper> 
+                <GreenCards />
+              </ContentWrapper> 
+              
               <PartnerSection />
               <TestingServices />
               
               <Testimonials />
-              <QAoncloudGuarentee />
-              <PartnershipSection /> 
-              <CaseStudiesSection />
               
-            
+              
+              <ContentWrapper> 
+                <QAoncloudGuarentee />
+                <PartnershipSection /> 
+                <CaseStudiesSection />
+                <Banner
+                title="Stop firefighting. Start shipping"
+                highlight="with confidence."
+                description="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most."
+                ctaLabel="Talk to an expert"
+              />   
+               </ContentWrapper>
+              
+                     
           </div>
       
     </div>
     {/* <FeatureGrid /> */}
-      <Banner
-          title="Stop firefighting. Start shipping"
-          highlight="with confidence."
-          description="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most."
-          ctaLabel="Talk to an expert"
-        />
-        
+      
     </div>
    
   )

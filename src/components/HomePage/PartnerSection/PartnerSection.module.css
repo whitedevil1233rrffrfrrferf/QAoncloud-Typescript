@@ -2,7 +2,8 @@
   
   position: relative;
   overflow: hidden;
-  max-width: 1400px;
+  margin-top: var(--section-header-margin);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -22,8 +23,9 @@
 
 .container {
   position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1.2fr 1fr;

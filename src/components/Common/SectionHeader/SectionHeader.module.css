@@ -7,9 +7,12 @@
 
 .highlight {
   color: #3ba6ff;
+  font-weight: 600;
+  font-style: italic;
 }
 .container{
     text-align: center;
+    margin-bottom: var(--header-bottom-margin);
 }
 
 .container p{
