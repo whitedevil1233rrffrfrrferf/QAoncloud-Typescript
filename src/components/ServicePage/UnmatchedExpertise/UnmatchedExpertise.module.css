@@ -1,0 +1,131 @@
+.section {
+  margin-top: var(--section-header-margin);
+  /* padding: 0 24px;
+  max-width: 1400px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1rem;
+  margin-top: 60px;
+  align-items: stretch;
+}
+
+.imageContainer {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.featureItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  border-radius: 16px;
+  background: #0c0c0c; /* Solid color instead of transparent */
+  border: 1px solid #FFFFFF0D;
+  overflow: hidden;
+}
+
+/* Blue gradient glow at bottom */
+.featureItem::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.08) 40%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #1F1F1F66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.featureTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.featureDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+ .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .imageContainer {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+  }
+  
+  .twoColumn {
+    display: contents; /* This makes the children act as direct children of .features */
+  }
+}
+
+@media (max-width: 800px) {
+  .features {
+    grid-template-columns: 1fr; /* Stack all cards on mobile */
+  }
+}

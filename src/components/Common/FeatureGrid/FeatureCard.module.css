@@ -20,18 +20,21 @@
 .card::before {
   content: "";
   position: absolute;
-  right: -180px;
-  bottom: -180px;
+  right: -50px;
+  bottom: -50px;
   width: 400px;
   height: 400px;
-
+  
   background: radial-gradient(
-    ellipse at bottom right,
-    rgba(140, 140, 140, 0.28) 0%,
-    rgba(80, 120, 255, 0.28) 22%,
-    rgba(10, 9, 9, 0.0) 60%
+    circle at bottom right,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(59, 130, 246, 0.12) 40%,
+    rgba(59, 130, 246, 0.06) 40%,
+    rgba(59, 130, 246, 0.02) 90%,
+    transparent 75%
   );
-
+  
+  filter: blur(50px);
   z-index: 0;
   pointer-events: none;
 }
@@ -58,21 +61,14 @@
   /* Layered effect: gray core → transparent gap → blue glow */
   background: 
     /* Outer blue glow (starts at 45%, fades to 100%) - CIRCULAR */
-    radial-gradient(
-      circle,
-      transparent 0%,
-      transparent 45%,
-      rgba(59, 130, 246, 0.15) 55%,
-      rgba(59, 130, 246, 0.08) 70%,
-      rgba(59, 130, 246, 0) 100%
-    ),
+    
     /* Inner gray base (0-35%, fades out 35-45%) - CIRCULAR */
     radial-gradient(
       circle at center,
-      rgba(70, 70, 70, 0.85) 0%,
-      rgba(60, 60, 60, 0.75) 22%,
-      rgba(50, 50, 50, 0.55) 36%,
-      rgba(40, 40, 40, 0.25) 44%,
+      rgba(16, 16, 16, 0.9) 0%,
+      rgba(16, 16, 16, 0.9) 22%,
+      rgba(16, 16, 16, 0.5) 36%,
+      rgba(16, 16, 16, 0.8) 44%,
       transparent 52%
 );
 }
@@ -84,12 +80,16 @@
   z-index: 1;
 }
 
-.title {
-  margin-top: 1rem;
-}
 
-/* .description {
-  color: #9ca3af;
-  font-size: 14px;
-  line-height: 1.6;
-} */
+
+
+@media (max-width: 1300px) {
+  .description {
+  max-width: 380px;
+}
+}
+@media (max-width: 1034px) {
+  .description {
+  max-width: 100%;
+}
+}

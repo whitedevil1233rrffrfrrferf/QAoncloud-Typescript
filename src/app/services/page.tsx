@@ -8,6 +8,7 @@ import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper
 import CaseStudiesSection from '@/components/ServicePage/CaseStudiesSection/CaseStudiesSection';
 import FeatureLineCard from '@/components/ServicePage/GreenCardsSection/GreenLineCard';
 import GreenCards from '@/components/ServicePage/GreenCardsSection/GreenLineCard';
+import ServiceEfficiency from '@/components/ServicePage/UnmatchedExpertise/UnmatchedExpertise';
 
 function ServicesPage() {
   return (
@@ -22,6 +23,7 @@ function ServicesPage() {
             <QualityTestingServices />
             <CaseStudiesSection />
             <GreenCards />
+            <ServiceEfficiency />
           </ContentWrapper>
           
         </div>
