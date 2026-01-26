@@ -1,5 +1,5 @@
 import styles from "./CaseStudiesSection.module.css";
-import CaseCard from "./CaseCard";
+import CaseCard from "../../Common/CaseStudyCard/CaseCard";
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import Button from "@/components/Common/Button/Button";
 

@@ -9,7 +9,7 @@
 }
 
 /* dotted background */
-.section::before {
+/* .section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -19,8 +19,26 @@
   );
   background-size: 20px 20px;
   opacity: 0.4;
+} */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.10) 35%,
+    rgba(59, 130, 246, 0.05) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
 }
-
 .container {
   position: relative;
   max-width: 1440px;
@@ -61,7 +79,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 2.5rem;
+  gap: 1rem;
   margin-top: 3rem;
   padding-top: 2rem;
 }
@@ -97,7 +115,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 420px;
+  min-height: 380px;
   border-radius: 20px;
   overflow: hidden;
   background: black !important;
@@ -112,17 +130,44 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1370px) {
+  .left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .container {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     padding: 1.5rem;
   }
-
-  .imageWrapper {
-    min-height: 320px;
+  .heading{
+    text-align: center;
+  }
+  .statsGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 👈 one line */
+    gap: 0rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    width: 80%;
+  }
+  .description{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 920px;
+  }
+ .imageWrapper {
+    width: 100%;
+    max-width: 520px;      /* 🔑 HARD LIMIT */
+    min-height: unset;
     height: auto;
-    aspect-ratio: 16/9;
+    aspect-ratio: 12 / 10;  /* Better visual ratio */
+    margin: 0 auto;       /* Center it */
+    border-radius: 16px;
   }
 
   .statsGrid {
@@ -133,5 +178,16 @@
 
   .statItem h3 {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 970px) {
+  .statsGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 👈 one line */
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    width: 90%;
   }
 }

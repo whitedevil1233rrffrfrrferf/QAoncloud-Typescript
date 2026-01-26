@@ -1,37 +1,35 @@
 .releaseSection {
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  overflow: hidden;
   
 }
-
 
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 24px;
-
+  
+ 
+  
 }
-.releaseSection::before {
+/* .releaseSection::before {
   content: "";
   position: absolute;
-  top: -20%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
+  width: 100%;
   height: 600px;
   background: radial-gradient(
-    ellipse at center,
-    rgba(59, 130, 246, 0.15) 0%,
-    rgba(59, 130, 246, 0.10) 35%,
-    rgba(59, 130, 246, 0.05) 60%,
+    ellipse 1200px 400px at 50% 0%,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.1) 30%,
+    rgba(59, 130, 246, 0.08) 50%,
     transparent 80%
   );
   pointer-events: none;
   z-index: 0;
-  filter: blur(60px);
-}
+} */
 .ctaWrapper {
   margin-top: 80px;
   display: flex;

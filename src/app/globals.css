@@ -24,7 +24,7 @@ h1 {
   font-weight: var(--weight-bold);
   line-height: var(--line-tight);
   margin: 0 0 1.5rem 0;
-  max-width: 550px;
+  /* max-width: 550px; */
   color: #fff;
   /* keep same lines */
   display: -webkit-box;
@@ -63,6 +63,7 @@ p {
   
   overflow: hidden;
 }
+
 .primaryBtn {
   background: linear-gradient(135deg, #00acff, #155dfc);
   color: #fff;

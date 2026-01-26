@@ -1,8 +1,8 @@
 .card {
   position: relative;
   border-radius: 16px;
-  background: black;
-  border: 1px solid #141414;
+  background: #0c0c0c; /* Solid color instead of transparent */
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 28px;
   min-height:200px;
   
@@ -11,6 +11,10 @@
   /* DARK BASE (not flat black) */
   
 }
+.card:hover {
+  transform: translateY(-2px);
+}
+
 
 /* 🔥 SINGLE, SOFT CORNER GLOW */
 .card::before {
@@ -81,14 +85,11 @@
 }
 
 .title {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  margin-top: 1rem;
 }
 
-.description {
+/* .description {
   color: #9ca3af;
   font-size: 14px;
   line-height: 1.6;
-}
+} */

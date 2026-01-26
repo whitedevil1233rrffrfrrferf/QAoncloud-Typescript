@@ -1,11 +1,11 @@
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import FeatureLineCard from "../../Common/GreenCards/GreenLineCard";
-import classes from "./GreenCards.module.css"
+import classes from "./GreenLineCard.module.css";
 import Button from "@/components/Common/Button/Button";
 export default function GreenCards() {
     return(
         <section className={classes.releaseSection}>
-            
+            <div className={classes.inner}></div>
              <SectionHeader
                 title="Still putting out fires before"
                 highlight="every release?"

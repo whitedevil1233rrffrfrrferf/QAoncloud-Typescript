@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from "./PartnershipSection.module.css";
+import styles from "./CaseStudiesSection.module.css";
 
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
-import PartnershipCard from "./PartnershipCard";
+import PartnershipCard from "../../PartnerTestingCard/PartnershipCard";
 import Button from "@/components/Common/Button/Button";
 
 const caseStudies = [

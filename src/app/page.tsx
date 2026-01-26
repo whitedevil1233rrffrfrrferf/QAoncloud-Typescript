@@ -1,17 +1,15 @@
 import GreenCards from "@/components/HomePage/GreenCardsSection/GreenCards";
 import Hero from "@/components/HomePage/HeroSection/Hero";
-import PartnerTesting from "@/components/HomePage/PartnerTestingSection/PartnerTesting";
+
 import ClientSlider from "@/components/HomePage/Slider/Slider";
 import classes from './page.module.css'
 import TestingServices from "@/components/HomePage/TestingServices/TestingServices";
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
 import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
-
-import PromoBanner from "@/components/PromoBanner/PromoBanner";
 import { Banner } from "@/components/Common/Banner/Banner";
 import Footer from "@/components/Common/Footer/Footer";
 import { FeatureGrid } from "@/components/Common/FeatureGrid/FeatureGrid";
-import PartnershipSection from "@/components/HomePage/PartnerTestingSection/NewPartnerTesting/PartnershipSection";
+import PartnershipSection from "@/components/HomePage/PartnerTestingSection/PartnershipSection";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
 import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
 import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
@@ -23,7 +21,10 @@ export default function Home() {
        <div className={classes.container}>
           <div className={classes.pageContent}>
             <div className={classes.homeHeroBg}> 
-              <Hero />
+              <ContentWrapper> 
+                <Hero />
+              </ContentWrapper>  
+              
             </div>
             <div>
 
@@ -34,7 +35,9 @@ export default function Home() {
               </ContentWrapper> 
               
               <PartnerSection />
-              <TestingServices />
+              <ContentWrapper> 
+                <TestingServices />
+              </ContentWrapper>
               
               <Testimonials />
               

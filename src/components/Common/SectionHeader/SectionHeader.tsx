@@ -5,6 +5,7 @@ interface SectionHeaderProps {
   highlight?: string;
   description: string;
   subDescription?: string; // 👈 new optional para
+  marginBottom?: number;
 }
 
 export default function SectionHeader({
@@ -12,8 +13,10 @@ export default function SectionHeader({
   highlight,
   description,
   subDescription,
-  
+  marginBottom,
 }: SectionHeaderProps) {
+  const marginStyle = marginBottom ? { marginBottom: `${marginBottom}rem` } : undefined;
+
   return (
     <div className={classes.container}
     //   style={{
@@ -22,13 +25,13 @@ export default function SectionHeader({
     //     margin: center ? "0 auto" : "0",
     //   }}
     >
-      <h2 className={classes.sectionTitle}>
+      <h2 className={classes.sectionTitle} style={marginStyle}>
         {title}{" "}
         {highlight && <span className={classes.highlight}>{highlight}</span>}
       </h2>
-      <p className={classes.sectionDescription}>{description}</p>
+      <p className={classes.sectionDescription} style={marginStyle}>{description}</p>
        {subDescription && (
-        <p className={classes.sectionDescription}>
+        <p className={classes.sectionDescription} style={marginStyle}>
           {subDescription}
         </p>
       )}

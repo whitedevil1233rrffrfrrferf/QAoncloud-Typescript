@@ -71,3 +71,19 @@
   
   
 }
+.learnMore {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2aa8ff;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.learnMore:hover {
+  color: #6cc4ff;
+  transform: translateX(2px);
+}

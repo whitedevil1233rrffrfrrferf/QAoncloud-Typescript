@@ -10,13 +10,32 @@
   margin-top: var(--section-header-margin);
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 .heading {
   font-size: 44px;
   font-weight: 700;
   margin-bottom: 12px;
 }
-
+.section::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.10) 35%,
+    rgba(59, 130, 246, 0.05) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
 .highlight {
   color: #3b82f6;
 }
@@ -30,7 +49,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 24px;
   margin-top: 48px;
 }
