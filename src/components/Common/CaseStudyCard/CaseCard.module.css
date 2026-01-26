@@ -8,39 +8,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  padding: 1px;
-  
-  /* Top-left corner gradient */
-  background: 
-    /* Top-left corner */
-    linear-gradient(
-      135deg,
-      rgba(220, 220, 220, 0.75) 0%,
-      transparent 50%
-    ) 0 0 / 50% 50% no-repeat,
-    /* Bottom-right corner */
-    linear-gradient(
-      -45deg,
-      rgba(220, 220, 220, 0.75) 0%,
-      transparent 50%
-    ) 100% 100% / 50% 50% no-repeat;
-  
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-}
+/*  */
 .card:hover {
   transform: translateY(-2px);
 }

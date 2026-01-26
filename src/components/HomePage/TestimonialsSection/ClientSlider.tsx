@@ -52,41 +52,62 @@ export default function TestimonialSlider() {
       <div className={styles.sliderWrap}>
         <Swiper
           modules={[Pagination]}
-          pagination={{ 
+          pagination={{
             clickable: true,
             dynamicBullets: true,
-            dynamicMainBullets: 5
           }}
-          spaceBetween={24}
-          slidesPerView={'auto'}
-          centeredSlides={false}
           loop={false}
           className={styles.swiper}
+          spaceBetween={16}
+          slidesPerView="auto"
+          centeredSlides={false}
           breakpoints={{
             320: {
               slidesPerView: 1.1,
               spaceBetween: 16,
               centeredSlides: true,
-              slidesPerGroup: 1
+            },
+            480: {
+              slidesPerView: 1.3,
+              spaceBetween: 16,
+              centeredSlides: true,
             },
             640: {
-              slidesPerView: 1.5,
+              slidesPerView: 1.8,
               spaceBetween: 20,
-              centeredSlides: true,
-              slidesPerGroup: 1
+              centeredSlides: false,
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 20,
+              centeredSlides: false,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 24,
               centeredSlides: false,
-              slidesPerGroup: 4
-            }
+            },
+            1280: {
+              slidesPerView: 3.5,
+              spaceBetween: 24,
+              centeredSlides: false,
+            },
+          }}
+          onSwiper={(swiper) => {
+            // Update slides on window resize
+            const handleResize = () => {
+              swiper.update();
+            };
+            window.addEventListener('resize', handleResize);
+            return () => {
+              window.removeEventListener('resize', handleResize);
+            };
           }}
         >
           {testimonials.map((item, i) => (
             <SwiperSlide key={i} className={styles.slide}>
               <div className={styles.card}>
-                <h3 className={styles.quote}>" {item.text} "</h3>
+                <h3 className={styles.quote}>{item.text}</h3>
                 <div className={styles.footer}>
                   <img
                     src={item.img}

@@ -8,7 +8,7 @@
     padding: 120px 24px 140px;
   } */
    margin-top: var(--section-header-margin);
-   margin-bottom: 5rem;
+   /* margin-bottom: 5rem; */
 }
 .section::before {
   content: "";

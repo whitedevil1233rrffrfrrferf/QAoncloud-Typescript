@@ -20,10 +20,11 @@ function ServicesPage() {
           </div>
           <QualityAssurance />
           <ContentWrapper>
+            <ServiceEfficiency />
             <QualityTestingServices />
             <CaseStudiesSection />
             <GreenCards />
-            <ServiceEfficiency />
+            
           </ContentWrapper>
           
         </div>
