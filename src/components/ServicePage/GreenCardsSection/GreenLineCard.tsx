@@ -7,22 +7,22 @@ export default function GreenCards() {
         <section className={classes.releaseSection}>
             <div className={classes.inner}></div>
              <SectionHeader
-                title="Still putting out fires before"
-                highlight="every release?"
+                title="Three ways of working together. "
+                highlight="One quality."
                 description="Product releases shouldn’t be a shot in the dark. You want quick, bug-free releases without the endless worry of what might go wrong in production."
             />
             <div className={classes.featuresGrid}>
                 <FeatureLineCard
-                title="No Late-night alerts"
-                description="With the right software testing partner like QAonCloud, releases become predictable and controlled."
+                title="Dedicated Team"
+                description="A long-term QA team that becomes a part of your crew, learns your product inside out, and takes complete ownership of quality."
                 />
                 <FeatureLineCard
-                title="No more break in production."
-                description="You deliver the quality you promised, without surprises or last-minute panic."
+                title="Project Based"
+                description="Just the experts you need to carry you through a release, a milestone, or a goal. The short-term QA support will help you get it just right!"
                 />
                 <FeatureLineCard
-                title="No uncertain and risky release"
-                description="Just a thoroughly tested product that works the way it should."
+                title="Staff Augmentation"
+                description="No hiring headaches. Get the best QA litter and leverage their experience and expertise to ensure unmatched quality."
                 />
             </div>
             <div className={classes.buttonContainer}>

@@ -65,7 +65,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className={styles.bottom}>
-        <span>© 2025 QAonCloud. All rights reserved.</span>
+        <span>© 2026 QAonCloud. All rights reserved.</span>
         <div className={styles.legal}>
           <Link href="#">Privacy Policy</Link>
           <Link href="#">Terms of Service</Link>
