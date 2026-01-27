@@ -8,7 +8,9 @@ export interface BannerProps {
   title: string
   highlight?: string
   description: string
+  subDescription?: string
   ctaLabel: string
+  ctaHref?: string
   onCtaClick?: () => void
 }
 
@@ -16,24 +18,24 @@ export const Banner: React.FC<BannerProps> = ({
   title,
   highlight,
   description,
+  subDescription,
   ctaLabel,
-  onCtaClick,
+  ctaHref = "/how-we-work",
+  
 }) => {
   return (
     <section className={styles.container}>
       <div className={styles.inner}>
         <SectionHeader
-          title="Stop firefighting. Start shipping "
-          highlight="with confidence."
-          description="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most  shipping great software that works."
-          subDescription="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most  shipping great software that works."
+          title={title}
+          highlight={highlight}
+          description={description}
+          subDescription={subDescription}
         />
 
-        
-          <Button href="/how-we-work" variant="primary">
-            Talk to an expert
-          </Button>
-      
+        <Button href={ctaHref} variant="primary" >
+          {ctaLabel}
+        </Button>
       </div>
     </section>
   )

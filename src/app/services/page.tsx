@@ -9,6 +9,8 @@ import CaseStudiesSection from '@/components/ServicePage/CaseStudiesSection/Case
 import FeatureLineCard from '@/components/ServicePage/GreenCardsSection/GreenLineCard';
 import GreenCards from '@/components/ServicePage/GreenCardsSection/GreenLineCard';
 import ServiceEfficiency from '@/components/ServicePage/UnmatchedExpertise/UnmatchedExpertise';
+import { SmoothReleases } from '@/components/ServicePage/SmoothReleases/SmoothReleases';
+import { Banner } from '@/components/Common/Banner/Banner';
 
 function ServicesPage() {
   return (
@@ -24,7 +26,16 @@ function ServicesPage() {
             <QualityTestingServices />
             <CaseStudiesSection />
             <GreenCards />
-            
+            <SmoothReleases />
+            <Banner
+              title="Ready to put your "
+              highlight="app to the test?"
+              description="We’re fast, thorough, and great at what we do. Let our experts spot bugs and vulnerabilities while you focus on what you do best. "
+              
+              
+              ctaLabel="Talk to an expert"
+              ctaHref="/how-we-work"
+            />
           </ContentWrapper>
           
         </div>

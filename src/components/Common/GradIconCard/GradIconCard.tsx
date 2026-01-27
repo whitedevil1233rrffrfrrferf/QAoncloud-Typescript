@@ -1,4 +1,4 @@
-import styles from "./GuaranteeCard.module.css";
+import styles from "./GradIconCard.module.css";
 import { ReactNode } from "react";
 import IconWrapper from "@/components/Common/IconWrapper/IconWrapper";
 

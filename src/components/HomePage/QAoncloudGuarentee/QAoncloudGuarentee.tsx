@@ -1,7 +1,7 @@
 import SectionHeader from '@/components/Common/SectionHeader/SectionHeader'
 import styles from './QAoncloudGuarentee.module.css'
 import React from 'react'
-import GuaranteeCard from './GuarenteeCard'
+import GuaranteeCard from '../../Common/GradIconCard/GradIconCard'
 import {
   FiStar,
   FiUsers,
