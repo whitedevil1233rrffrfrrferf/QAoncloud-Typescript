@@ -20,6 +20,7 @@ export default function CaseStudiesSection() {
             tag="SaaS"
             title="How CloudStack reduced bugs by 73% in 3 months"
             description="A fast-growing SaaS platform struggling with release quality partnered with us to transform their QA process."
+            
           />
 
           <CaseCard

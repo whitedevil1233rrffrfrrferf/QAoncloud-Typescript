@@ -4,8 +4,27 @@
   max-width: 1400px; */
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
-
+.section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.10) 35%,
+    rgba(59, 130, 246, 0.05) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
 .content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;

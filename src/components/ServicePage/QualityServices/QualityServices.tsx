@@ -20,42 +20,42 @@ function QualityTestingServices() {
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>&lt;/&gt;</span>}
             title="Functional Testing"
-            description="End-to-end validation of every feature and workflow, to ensure your app behaves just the way it should."
+            description="Ensuring your product behaves as it should, with end-to-end validation of features and workflows."
             learnMoreHref="/services/functional-testing"
           />
 
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>⚡</span>}
-            title="Test Automation"
-            description="Save time and effort with scalable automation frameworks designed for regression and continuous testing."
+            title="Automation Testing"
+            description="Using scripts and tools to automate checking if your product works as expected."
             learnMoreHref="/services/functional-testing"
           />
 
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>↗</span>}
             title="Performance Testing"
-            description="Comprehensive load, stress, and scalability testing that ensures your systems stay fast and reliable."
+            description="Checking if your mission-critical systems stay fast, stable and reliable under pressure."
             learnMoreHref="/services/functional-testing"
           />
 
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>🤖</span>}
-            title="AI / ML QA"
-            description="Specialized testing for AI-driven systems to validate performance, accuracy, and edge cases."
+            title="Security Testing"
+            description="Checking for vulnerabilities to uncover risks, strengthen security, and protect sensitive data."
             learnMoreHref="/services/functional-testing"
           />
 
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>🛡</span>}
-            title="Security Testing"
-            description="In-depth vulnerability assessments and penetration testing to protect sensitive data."
+            title="Mobile and Web App Testing"
+            description="Validating the consistency of user experience across devices, browsers, and platforms."
             learnMoreHref="/services/functional-testing"
           />
 
           <ServiceCard
             icon={<span style={{ color: "#3b82f6" }}>📱</span>}
-            title="Mobile Testing"
-            description="Cross-platform testing for iOS and Android to ensure a seamless mobile experience."
+            title="Compliance or Accessibility Testing"
+            description="Ensuring the product meets regulatory requirements, and is easy to use, even for specially-abled users."
             learnMoreHref="/services/functional-testing"
           />
         </div>

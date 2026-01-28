@@ -8,6 +8,7 @@ interface PartnershipCardProps {
   tags: string[];
   title: string;
   description: string;
+  url: string;
 }
 
 export default function PartnershipCard({
@@ -16,10 +17,12 @@ export default function PartnershipCard({
   topColor,
   tags,
   title,
-  description
+  description,
+  url
 }: PartnershipCardProps) {
   return (
-    <div className={styles.card}>
+    <a href={url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+      <div className={styles.card}>
       <div className={styles.top} style={{ backgroundColor: topColor }}>
         <div className={styles.tags}>
           {tags.map((tag, idx) => (
@@ -33,5 +36,7 @@ export default function PartnershipCard({
         <p className={styles.description}>{description}</p>
       </div>
     </div>
+    </a>
+    
   );
 }

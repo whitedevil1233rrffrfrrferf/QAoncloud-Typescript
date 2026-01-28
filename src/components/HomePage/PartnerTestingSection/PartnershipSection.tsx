@@ -12,24 +12,28 @@ const caseStudies = [
     logo: "/logos/AOI.png", // replace with actual path
     topColor: "#2A5068",
     tags: ["Automation", "User Testing", "Functional QA"],
-    title: "Fintech App: Reducing Production Defects",
-    description: "We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases."
+    title: "AOL - Media",
+    description: "Learn how AOL delivers better content to their readers with the help of QAonCloud.",
+    url:"https://docsend.com/view/zw3jj5g3ra69apry"
+    
   },
   {
     company: "Avanti",
     logo: "/logos/avanti.png",
     topColor: "#623B2B",
     tags: ["Integration Testing", "User Testing", "Performance QA"],
-    title: "Ecommerce Platform: Fixing Checkout Issues",
-    description: "We identified critical flow failures, validated integrations, and ensured a stable checkout experience."
+    title: "Avanti Finance - Financial Services",
+    description: "Learn how Avanti achieved bug reduction and faster feature implementation through partnership.",
+    url:"https://docsend.com/view/gxyqru5wr72twj8p"
   },
   {
     company: "RedBlackTree",
     logo: "/logos/redblacktree.png",
     topColor: "#3B2C66",
     tags: ["Compliance QA", "User Testing", "Security Testing"],
-    title: "Healthcare SaaS: Strengthening Compliance",
-    description: "We validated high-risk workflows, improved reliability, and supported faster compliance approvals."
+    title: "RedBlackTree - HRMS",
+    description: "Discover how RBT ensures their customer’s products are tested and delivered bug free with QAonCloud.",
+    url:"https://docsend.com/view/9kqq39c6tmhkubby"
   }
 ];
 

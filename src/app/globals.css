@@ -84,8 +84,8 @@ p {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
   p{
-    line-height: 25px;
+    max-width: 950px;
   }
 }

@@ -55,7 +55,7 @@ const FAQs: React.FC = () => {
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={activeIndex === index}
               >
-                <span>{faq.question}</span>
+                <h3>{faq.question}</h3>
                 <span className={`${styles.icon} ${activeIndex === index ? styles.active : ''}`}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -64,7 +64,7 @@ const FAQs: React.FC = () => {
               </button>
               
               <div className={`${styles.answer} ${activeIndex === index ? styles.active : ''}`}>
-                <p>{faq.answer}</p>
+                <p className={styles.answerpara}>{faq.answer}</p>
               </div>
             </div>
           ))}

@@ -25,9 +25,10 @@ function ServicesPage() {
           <ContentWrapper>
             <ServiceEfficiency />
             <QualityTestingServices />
+              <SmoothReleases />
             <CaseStudiesSection />
             <GreenCards />
-            <SmoothReleases />
+          
             
           </ContentWrapper>
             <FAQs/>
