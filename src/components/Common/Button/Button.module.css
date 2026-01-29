@@ -8,7 +8,7 @@
   border-radius: 15px;
   margin-right: 3rem;
   
-  font-size: 15px;
+  font-size: var(--text-body);
   
 
   text-decoration: none;
@@ -26,8 +26,6 @@
   
 }
 
-
-
 /* SECONDARY */
 .secondary {
   background: transparent;
@@ -37,4 +35,19 @@
 
 .secondary:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 600px) {
+ .button {
+  width: 9rem;
+  margin-right: 2rem;
+ }
+
+}
+@media (max-width: 500px) {
+ .button {
+  width: 8rem;
+  
+ }
+
 }

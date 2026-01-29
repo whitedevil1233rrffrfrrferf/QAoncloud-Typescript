@@ -14,7 +14,9 @@
 .card:hover {
   transform: translateY(-2px);
 }
-
+.description{
+  max-width: 75%;
+}
 
 /* 🔥 SINGLE, SOFT CORNER GLOW */
 .card::before {
