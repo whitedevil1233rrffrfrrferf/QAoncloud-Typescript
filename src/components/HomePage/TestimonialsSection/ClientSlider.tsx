@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
+import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import styles from "./TestimonialSlider.module.css";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonials = [
 // {
@@ -78,73 +81,59 @@ const testimonials = [
 ];
 
 export default function TestimonialSlider() {
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
   return (
     <section className={styles.section}>
-      <div className={styles.sliderWrap}>
-        <Swiper
-          modules={[Pagination]}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          loop={false}
-          className={styles.swiper}
-          spaceBetween={16}
-          slidesPerView="auto"
-          centeredSlides={false}
-          breakpoints={{
-            320: {
-              slidesPerView: 1.1,
-              spaceBetween: 16,
-              centeredSlides: true,
-            },
-            480: {
-              slidesPerView: 1.3,
-              spaceBetween: 16,
-              centeredSlides: true,
-            },
-            640: {
-              slidesPerView: 1.8,
-              spaceBetween: 20,
-              centeredSlides: false,
-            },
-            768: {
-              slidesPerView: 2.2,
-              spaceBetween: 20,
-              centeredSlides: false,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-              centeredSlides: false,
-            },
-            1280: {
-              slidesPerView: 3.5,
-              spaceBetween: 24,
-              centeredSlides: false,
-            },
-          }}
-          onSwiper={(swiper) => {
-            // Update slides on window resize
-            const handleResize = () => {
-              swiper.update();
-            };
-            window.addEventListener('resize', handleResize);
-            return () => {
-              window.removeEventListener('resize', handleResize);
-            };
-          }}
+      <div className={styles.sliderContainer}>
+        <button 
+          className={`${styles.navButton} ${styles.prevButton} ${isBeginning ? styles.disabled : ''}`}
+          onClick={() => swiperRef.current?.slidePrev()}
+          disabled={isBeginning}
+          aria-label="Previous testimonial"
         >
+          <FaChevronLeft />
+        </button>
+        
+        <div className={styles.sliderWrap}>
+          <Swiper
+            modules={[Pagination]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+              el: '.swiper-pagination',
+              type: 'bullets'
+            }}
+            loop={false}
+            className={styles.swiper}
+            spaceBetween={40}
+            slidesPerView={2}
+            centeredSlides={false}
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 16, centeredSlides: false },
+              768: { slidesPerView: 1, spaceBetween: 20, centeredSlides: false },
+              900: { slidesPerView: 1.5, spaceBetween: 20, centeredSlides: false },
+              1024: { slidesPerView: 2, spaceBetween: 30, centeredSlides: false },
+              1280: { slidesPerView: 3, spaceBetween: 40, centeredSlides: false }
+            }}
+          >
           {testimonials.map((item, i) => (
             <SwiperSlide key={i} className={styles.slide}>
               <div className={styles.card}>
                 <h3 className={styles.quote}>{item.text}</h3>
                 <div className={styles.footer}>
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    className={styles.avatar}
-                  />
+                  <img src={item.img} alt={item.name} className={styles.avatar} />
                   <div>
                     <div className={styles.name}>{item.name}</div>
                     <div className={styles.role}>{item.role}</div>
@@ -153,7 +142,18 @@ export default function TestimonialSlider() {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+          </Swiper>
+          <div className="swiper-pagination"></div>
+        </div>
+
+        <button 
+          className={`${styles.navButton} ${styles.nextButton} ${isEnd ? styles.disabled : ''}`}
+          onClick={() => swiperRef.current?.slideNext()}
+          disabled={isEnd}
+          aria-label="Next testimonial"
+        >
+          <FaChevronRight />
+        </button>
       </div>
     </section>
   );
