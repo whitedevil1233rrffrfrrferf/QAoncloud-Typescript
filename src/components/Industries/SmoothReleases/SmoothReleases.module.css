@@ -1,0 +1,40 @@
+.section{
+    margin-top: 5rem !important;
+}
+
+.grid {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr); /* Default 2 columns */
+  max-width: 1100px;
+  gap: 2rem;
+}
+
+/* Desktop layout (above 1400px) */
+@media (min-width: 1401px) {
+  .grid {
+    max-width: 1400px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* First 3 cards span 2 columns each (gives 3 cards in row) */
+  .grid > :nth-child(1),
+  .grid > :nth-child(2),
+  .grid > :nth-child(3) {
+    grid-column: span 2;
+  }
+
+  /* Last 2 cards span 3 columns each (gives 2 cards in row, full width) */
+  .grid > :nth-child(4),
+  .grid > :nth-child(5) {
+    grid-column: span 3;
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 768px) {
+  .grid {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
