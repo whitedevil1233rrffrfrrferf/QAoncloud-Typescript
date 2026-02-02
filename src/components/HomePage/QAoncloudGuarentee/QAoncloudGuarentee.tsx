@@ -16,9 +16,9 @@ function QAoncloudGuarentee() {
     
        <section className={styles.section}>
         <SectionHeader
-          title="The QAonCloud"
-          highlight="Guarantee"
-          description="Choosing the right QA partner isn't just about finding testers — it's about finding a team that truly understands your product."
+          title="How do we deliver"
+          highlight="2X faster?"
+          description="Accelerated by AI, validated by human expertise, our QA testing services are reliable, thorough, and a lot faster than traditional QA. "
         />
         
         {/* <FeatureGrid /> */}

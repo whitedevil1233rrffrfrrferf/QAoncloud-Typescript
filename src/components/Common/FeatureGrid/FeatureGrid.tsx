@@ -6,28 +6,28 @@ export const FeatureGrid = () => {
   return (
     <div className={styles.grid}>
       <FeatureCard
-        title="We're built for your stage"
-        description="We're not your typical enterprise vendors. You are our priority, whether you're a 20-person startup or a global enterprise."
+        title="Step 1: AI handles the grunt work"
+        description="Be it test case generation, scriptless automation, or synthetic test data, our AI handles the high-volume, repetitive work that slows teams down."
         icon={<StarIcon />}
       />
 
       <FeatureCard
-        title="We're not a body shop"
-        description="We don’t offer up inexperienced resources and consider the job done. Our experts work with you from start to finish."
+        title="Step 2: Our engineers make the calls"
+        description="Nothing about your product or your users is generic. Our engineers learn your product, understand user behaviour, and make the strategic calls that algorithms can't."
         icon={<UserIcon />}
       />
 
       <FeatureCard
-        title="QA is our forte"
-        description="So, it doesn’t have to be your DIY project. Trust us to handle the testing while you focus on what you do best."
+        title="Step 3: You ship faster, with confidence"
+        description="Detailed, weekly reports. Bugs caught before production. Engineers doing what they do best instead of testing. We’re fast, thorough, and accurate. You can't call an algorithm at 2AM, but you can call us!"
         icon={<CircleIcon />}
       />
 
-      <FeatureCard
+      {/* <FeatureCard
         title="We do more than one-time audits"
         description="We don’t just hand in our report and disappear. We stick with you until it ships."
         icon={<ArrowIcon />}
-      />
+      /> */}
     </div>
   );
 };

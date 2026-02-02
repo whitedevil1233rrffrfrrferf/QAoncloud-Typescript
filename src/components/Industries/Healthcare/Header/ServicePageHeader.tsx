@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ServicePageHeader.module.css';
 import Image from 'next/image';
-import Button from '../../Common/Button/Button';
+import Button from '../../../Common/Button/Button';
 
 const ServicePageHeader = () => {
   return (
@@ -10,11 +10,11 @@ const ServicePageHeader = () => {
         <div className={styles.content}>
             {/* <p className={styles.header_para}>Putting the 'assurance' in quality assurance.</p> */}
             <h1>
-              Even the smallest slip-ups prove
-              <span style={{ color: '#3b82f6' }}> to be costly</span>
+              HIPAA-compliant
+              <span style={{ color: '#3b82f6' }}> by design. </span>
             </h1>
             <p>
-              Guarantee security and reliability with our thorough QA testing services.  No one trusts a glitchy, unsecured app with their money! Give your users a user-friendly, compliant, and bug-free app with our renowned QA testing services.
+              Faster shipping shouldn’t mean risking patient data. With QAonCloud, you can ship 40% faster, without compromising regulatory compliance or cutting corners. We use synthetic data, document coverage, and embed engineers with extensive healthcare experience. 
             </p>
             <div className={styles.buttonContainer}>
                 <Button href="/how-we-work" variant="primary">

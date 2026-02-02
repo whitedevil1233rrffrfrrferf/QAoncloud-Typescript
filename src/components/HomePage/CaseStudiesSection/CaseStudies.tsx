@@ -9,8 +9,8 @@ export default function CaseStudiesSection() {
       <div className={styles.inner}>
         
         <SectionHeader
-          title="Case Studies"
-          highlight="See how we help businesses like yours"
+          title="Built for teams "
+          highlight="like yours"
           description="Discover how our tailored QA solutions have transformed software quality for diverse industries."
         />
 
@@ -18,23 +18,25 @@ export default function CaseStudiesSection() {
           <CaseCard
             image="/saas.jpg"
             tag="SaaS"
-            title="How CloudStack reduced bugs by 73% in 3 months"
-            description="A fast-growing SaaS platform struggling with release quality partnered with us to transform their QA process."
+            title="Ship continuously, without breaking things."
+            description="Our AI-accelerated testing scales with your release cadence, testing across browsers, devices, and integrations without slowing down delivery. Our QA keeps up with you as your product evolves, so shipping daily feels like routine, not risky.
+"
             
           />
 
           <CaseCard
             image="/fintech.png"
             tag="FinTech"
-            title="PayFlow's journey to zero critical production bugs"
-            description="A fintech startup needed bulletproof QA for their payment processing platform before their Series B."
+            title="Compliance-ready from day one."
+            description="In FinTech, QA isn’t just about catching bugs, but about security and compliance too. Our AI-accelerated QA is built for regulated environments, with automated audit trails, security testing, and coverage that stands up to scrutiny. Our engineers know the technicalities of the industry and the cost of getting it wrong, because they’ve done this before."
+          
           />
 
           <CaseCard
             image="/healthcare.png"
             tag="Healthcare"
-            title="MedTech Inc. achieves HIPAA-compliant releases"
-            description="A healthcare platform needed rigorous security testing and compliance validation for every release."
+            title="HIPAA-compliant by design. "
+            description="Healthcare QA requires a fine balance of precision and restraint. Our synthetic test data ensures compliance, while still testing real-world scenarios. Our engineers have worked across EMR integrations, patient portals, and clinical workflows, where reliability is critical. "
           />
         </div>
       </div>

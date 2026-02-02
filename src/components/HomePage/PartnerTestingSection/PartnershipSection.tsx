@@ -8,12 +8,13 @@ import Button from "@/components/Common/Button/Button";
 
 const caseStudies = [
   {
-    company: "Aol.",
-    logo: "/logos/AOI.png", // replace with actual path
+    company: "FinTech",
+    logo: "", // replace with actual path
     topColor: "#2A5068",
-    tags: ["Automation", "User Testing", "Functional QA"],
-    title: "AOL - Media",
-    description: "Learn how AOL delivers better content to their readers with the help of QAonCloud.",
+    tags: ["FinTech"],
+    title: "FinTech saw a 45% reduction in their QA cycle time.",
+    description: "Series B payments startup",
+    subdescription:"Zero critical bugs in production over 6 months",
     url:"https://docsend.com/view/zw3jj5g3ra69apry"
     
   },
@@ -41,9 +42,8 @@ export default function PartnershipSection() {
   return (
     <section className={styles.section}>
       <SectionHeader
-        title="The QAonCloud"
-        highlight="Guarantee"
-        description="Choosing the right QA partner isn't just about finding testers — it's about finding a team that truly understands your product."
+        title="Built for teams like yours"
+        
       />
 
       <div className={styles.cardsGrid}>

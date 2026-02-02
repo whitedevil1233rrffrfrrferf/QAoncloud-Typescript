@@ -1,41 +1,142 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FiMenu, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showIndustries, setShowIndustries] = useState(false);
+  const industriesRef = useRef<HTMLDivElement>(null);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  // Close dropdown when clicking outside and handle window resize
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (industriesRef.current && !industriesRef.current.contains(event.target as Node)) {
+        setShowIndustries(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 950) {
+        setIsOpen(false);
+        setShowIndustries(false);
+        document.body.classList.remove('menu-open');
+      }
+    };
+
+    // Add/remove body class for mobile menu
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('resize', handleResize);
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMobile, isOpen]);
+
+  const toggleMenu = () => {
+    const newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+    
+    if (!newIsOpen) {
+      setShowIndustries(false);
+    }
+  };
+
+  const toggleIndustries = (e: React.MouseEvent) => {
+    if (isMobile) {
+      e.preventDefault();
+      setShowIndustries(!showIndustries);
+    }
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <Image 
-            src="/QAoncloud_logo.png" 
-            alt="QAonCloud" 
-            width={150} 
-            height={40}
-            priority
-          />
-        </Link>
-        
-        <div className={styles.navLinks}>
-          <Link href="/services" className={styles.navLink}>
-            Services
-          </Link>
-          <Link href="/Industries" className={styles.navLink}>
-            Industries
-          </Link>
-          <Link href="/about" className={styles.navLink}>
-            About
-          </Link>
-          <Link href="/resources" className={styles.navLink}>
-            Resources
+        <div className={styles.logoWrapper}>
+          <Link href="/" className={styles.logo}>
+            <Image 
+              src="/QAoncloud_logo.png" 
+              alt="QAonCloud" 
+              width={150} 
+              height={40}
+              priority
+            />
           </Link>
         </div>
         
-        <button className={styles.ctaButton}>
-          Talk to an expert
-        </button>
+        <div className={`${styles.navLinks} ${isOpen ? styles.mobileMenuOpen : ''}`}>
+          <div className={styles.navLeft}>
+            <Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              SERVICES
+            </Link>
+            
+            <div 
+              className={styles.industriesDropdown} 
+              ref={industriesRef}
+              onMouseEnter={() => !isMobile && setShowIndustries(true)}
+              onMouseLeave={() => !isMobile && setShowIndustries(false)}
+            >
+              <button 
+                className={styles.industriesButton}
+                onClick={toggleIndustries}
+                aria-expanded={showIndustries}
+              >
+                INDUSTRIES
+                <span className={styles.chevron}>
+                  {showIndustries ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
+                </span>
+              </button>
+              
+              <div className={`${styles.industriesMenu} ${showIndustries ? styles.show : ''}`}>
+                <Link href="/Fintech" className={styles.industryLink} onClick={() => setIsOpen(false)}>
+                  Fintech
+                </Link>
+                <Link href="/Saas" className={styles.industryLink} onClick={() => setIsOpen(false)}>
+                  Saas
+                </Link>
+                <Link href="/HealthCare" className={styles.industryLink} onClick={() => setIsOpen(false)}>
+                  HealthCare
+                </Link>
+              </div>
+            </div>
+            
+            <Link href="/about" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              ABOUT
+            </Link>
+            <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              RESOURCES
+            </Link>
+          </div>
+          
+          <div className={styles.navRight}>
+            <button className={styles.ctaButton}>
+              TALK TO AN EXPERT
+            </button>
+          </div>
+        </div>
+        
+        <div className={styles.menuButtonWrapper}>
+          <button 
+            className={styles.menuButton}
+            onClick={toggleMenu}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );
