@@ -1,0 +1,6 @@
+.container{
+    margin-top: var(--section-header-margin);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

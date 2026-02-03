@@ -29,7 +29,16 @@
     
     
   }
-
+.miniHeader{
+  font-size: 28px;
+  display: block;
+  text-align: left;
+}
+.highlight {
+    color: #3ba6ff !important;
+    font-weight: 600;
+    font-style: italic;
+  }
   /* LEFT CONTENT */
   .content {
     flex: 1;
@@ -38,9 +47,10 @@
   }
 
   .content h1 {
-    
+    text-align: left;
     line-height: 1.2;
     margin: 1.5rem 0;
+    margin-bottom: 1rem !important;
     color: white;
     font-weight: 700;
     max-width: 90%;

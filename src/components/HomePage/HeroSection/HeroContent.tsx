@@ -10,9 +10,9 @@ export default function HeroContent() {
       </span>
 
       <h1>
-        40% faster QA. Accelerated by AI, driven by experts.
+        40% <span className={styles.highlight}>faster QA.</span> <span className={styles.miniHeader}>Accelerated by AI, driven by experts.</span>
       </h1>
-
+      
       <p>
         QA software testing services that deliver impeccable quality, 2X faster. No chaos, no compromises. 
       </p>
