@@ -117,9 +117,10 @@ const Navbar = () => {
             <Link href="/about" className={styles.navLink} onClick={() => setIsOpen(false)}>
               ABOUT
             </Link>
-            <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
+            {/* <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
               RESOURCES
-            </Link>
+            </Link> */}
+            
           </div>
 
 
