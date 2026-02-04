@@ -1,0 +1,7 @@
+/* components/Common/ContentWrapper/ContentWrapper.module.css */
+.wrapper {
+  max-width: var(--width-lg);
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+}

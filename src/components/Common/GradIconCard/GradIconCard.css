@@ -1,0 +1,111 @@
+.card {
+  position: relative;
+  background: black;
+  
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  
+  /* Top-left corner gradient */
+  background: 
+    /* Top-left corner */
+    linear-gradient(
+      135deg,
+      rgba(220, 220, 220, 0.75) 0%,
+      transparent 50%
+    ) 0 0 / 50% 50% no-repeat,
+    /* Bottom-right corner */
+    linear-gradient(
+      -45deg,
+      rgba(220, 220, 220, 0.75) 0%,
+      transparent 50%
+    ) 100% 100% / 50% 50% no-repeat;
+  
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Optional subtle lift */
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  margin-top: 4px; /* Align icon with first line of text */
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #fff;
+}
+
+.description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Optional: Add responsive behavior */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .iconContainer {
+    margin-top: 0;
+  }
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #ffffff;
+}
+

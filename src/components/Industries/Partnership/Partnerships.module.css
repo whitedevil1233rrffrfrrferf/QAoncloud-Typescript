@@ -1,0 +1,147 @@
+.container {
+  
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #2f9aff;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  flex: 1 1 400px;
+  min-height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.details {
+  flex: 1 1 400px;
+  padding: 2rem;
+  background:
+    /* SOLID BASE (this blocks stars) */
+    #0c0c0c,
+
+    /* GRADIENT LAYER */
+    radial-gradient(
+      80% 120% at 50% 0%,
+      #1a2733 0%,
+      #0e141a 45%,
+      #0c0c0c 100%
+    );
+  color: #ffffff;
+}
+
+
+
+.highlightText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.highlightText span {
+  color: #2f9aff;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.ctaButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #2f9aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.logoWrapper {
+  max-width: 150px;
+  height: 42px;
+  padding: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0c0c0c;
+  border-radius: 20px;
+  padding:1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+
+  transition: border 0.3s ease, background 0.3s ease;
+}
+.logoWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  
+  /* Top-left corner gradient */
+  background: 
+    /* Top-left corner */
+    linear-gradient(
+      135deg,
+      rgba(220, 220, 220, 0.75) 0%,
+      transparent 50%
+    ) 0 0 / 50% 50% no-repeat,
+    /* Bottom-right corner */
+    linear-gradient(
+      -45deg,
+      rgba(220, 220, 220, 0.75) 0%,
+      transparent 50%
+    ) 100% 100% / 50% 50% no-repeat;
+  
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.ctaButton:hover {
+  background-color: #1d6fcc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .imageWrapper,
+  .details {
+    flex: 1 1 100%;
+  }
+}

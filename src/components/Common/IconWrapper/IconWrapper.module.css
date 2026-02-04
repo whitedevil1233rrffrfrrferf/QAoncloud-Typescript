@@ -1,0 +1,25 @@
+.wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    111.69deg,
+    rgba(48, 147, 232, 0.4) -32.35%,
+    rgba(8, 8, 8, 0.4) 117.63%
+  );
+
+  border: 0.5px solid #3093e8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 12px rgba(48, 147, 232, 0.25);
+}
+
+/* Icon styling */
+.wrapper > * {
+  color: #3b82f6 !important;
+  font-size: 18px;
+}

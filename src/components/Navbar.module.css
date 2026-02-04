@@ -1,0 +1,393 @@
+.navbar {
+  width: 100%;
+  align-items: center;
+  padding: 0 0.25rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.5);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;  
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center all children horizontally */
+  gap: 2rem; /* space between logo and menu */
+  height: 60px; /* smaller height */
+  position: relative; /* for absolute positioning of logo if needed */
+}
+
+
+
+.logoWrapper {
+  position: absolute;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  z-index: 1002;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center; /* Center menu links horizontally */
+  align-items: center;
+  gap: 2.5rem; /* spacing between links */
+  margin: 0;   /* remove any previous margin */
+}
+
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navRight {
+  position: absolute;
+  right: 1rem;
+}
+
+
+.navLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0 0.25rem;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00acff;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.ctaButton {
+  background: transparent;
+  color: #00acff;
+  border: 1px solid #00acff;
+  border-radius: 4px;
+  padding: 0.6rem 0.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background: rgba(0, 172, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 172, 255, 0.2);
+}
+
+.ctaButton:hover {
+  background: rgba(0, 172, 255, 0.1);
+}
+
+/* Dropdown styles */
+.industriesDropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.industriesButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 0;
+  margin: 0;
+  transition: color 0.2s ease;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 1;
+}
+.menuButtonWrapper {
+  display: none;  /* Hidden by default */
+  align-items: center;
+  z-index: 1002;
+}
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.industriesButton:hover .chevron {
+  transform: translateY(1px);
+}
+
+.industriesButton:hover {
+  color: white;
+}
+
+@media (max-width: 950px) {
+  .industriesMenu {
+    position: static;
+    width: 100%;
+    padding-left: 1rem;
+    display: none;
+  }
+  
+  .industriesMenu.show {
+    display: block;
+  }
+  
+  .industriesDropdown {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .industriesButton {
+    padding-right: 0;
+  }
+}
+
+/* Desktop styles */
+.industriesMenu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  background: rgba(5, 5, 5, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.75rem 0;
+  min-width: 200px;
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+
+.industriesMenu.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.industryLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  position: relative;
+}
+
+.industryLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile menu button */
+.menuButtonWrapper {
+  display: none; /* Hidden by default */
+  align-items: center;
+  z-index: 1002;
+}
+
+/* Show menu button only on mobile */
+
+
+@media (max-width: 950px) {
+  .menuButtonWrapper {
+    display: flex;
+  }
+  .container {
+    padding: 0.75rem 1.25rem;
+    justify-content: space-between;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Hide horizontal scrollbar */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .logo img {
+    height: 24px;
+    width: auto;
+  }
+  
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 1.5rem 2rem;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+    gap: 0.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    will-change: transform;
+  }
+  
+  .navLinks.mobileMenuOpen {
+    right: 0;
+    transform: translateX(0);
+  }
+  
+  .navLeft {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .navRight {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .navLink, .industriesButton {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .navLink::after {
+    display: none;
+  }
+  
+  .navLinks.mobileMenuOpen {
+    right: 0;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .navLink {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .ctaButton:not(.mobileCta) {
+    display: none;
+  }
+  
+  .ctaButton.mobileCta {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .menuButton {
+    display: block;
+  }
+  
+  .industriesButton {
+    padding: 0.75rem 0;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .industriesMenu {
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+  
+  .industryLink {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

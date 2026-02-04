@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  margin-bottom: 0rem;
+  
+  overflow: hidden;
+  
+  /* @media (min-width: 1024px) {
+    padding: 120px 24px 140px;
+  } */
+   margin-top: var(--section-header-margin);
+   /* margin-bottom: 5rem; */
+}
+.section::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.10) 35%,
+    rgba(59, 130, 246, 0.05) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+.content {  
+  
+  /* margin: 0 auto; */
+}
+
+
+/* Subtle center glow */
+/* .section::before {
+  content: "";
+  position: absolute;
+  inset: -20% 0 -90% 0; 
+
+  background: radial-gradient(
+    500px 800px at 50% 45%,
+    rgba(0, 172, 255, 0.12),
+    rgba(5, 5, 5, 1) 70%
+  );
+
+  pointer-events: none;
+  z-index: 0;
+}
+.section > * {
+  position: relative;
+  z-index: 1;
+} */
+
+/* Cards grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 48px;
+  padding: 0 8px;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 64px;
+  }
+}
