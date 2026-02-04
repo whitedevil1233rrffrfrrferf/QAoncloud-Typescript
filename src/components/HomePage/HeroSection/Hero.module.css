@@ -103,8 +103,8 @@
 
   .metricTagTop {
     z-index: 1;
-    top: -10px;
-    left: 20%;
+    top: 5px;
+    left: 19%;
     transform: translateX(-50%);
   }
 
@@ -117,8 +117,8 @@
 
   .metricTagBottom {
     z-index: 1;
-    bottom: 0px;
-    left: -132px;
+    bottom: 30px;
+    left: -22px;
   }
 
   .visual img {

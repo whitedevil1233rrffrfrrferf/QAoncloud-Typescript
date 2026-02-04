@@ -1,10 +1,12 @@
 'use client';
+import Button from "@/components/Common/Button/Button";
 
+import styles from './Navbar.module.css';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import styles from './Navbar.module.css';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +37,7 @@ const Navbar = () => {
     } else {
       document.body.classList.remove('menu-open');
     }
-    
+
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -48,7 +50,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
-    
+
     if (!newIsOpen) {
       setShowIndustries(false);
     }
@@ -66,29 +68,29 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.logoWrapper}>
           <Link href="/" className={styles.logo}>
-            <Image 
-              src="/QAoncloud_logo.png" 
-              alt="QAonCloud" 
-              width={150} 
+            <Image
+              src="/QAoncloud_logo.png"
+              alt="QAonCloud"
+              width={150}
               height={40}
               priority
             />
           </Link>
         </div>
-        
+
         <div className={`${styles.navLinks} ${isOpen ? styles.mobileMenuOpen : ''}`}>
           <div className={styles.navLeft}>
             <Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
               SERVICES
             </Link>
-            
-            <div 
-              className={styles.industriesDropdown} 
+
+            <div
+              className={styles.industriesDropdown}
               ref={industriesRef}
               onMouseEnter={() => !isMobile && setShowIndustries(true)}
               onMouseLeave={() => !isMobile && setShowIndustries(false)}
             >
-              <button 
+              <button
                 className={styles.industriesButton}
                 onClick={toggleIndustries}
                 aria-expanded={showIndustries}
@@ -98,7 +100,7 @@ const Navbar = () => {
                   {showIndustries ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
                 </span>
               </button>
-              
+
               <div className={`${styles.industriesMenu} ${showIndustries ? styles.show : ''}`}>
                 <Link href="/Fintech" className={styles.industryLink} onClick={() => setIsOpen(false)}>
                   Fintech
@@ -111,24 +113,31 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            
-            <Link href="/about" className={styles.navLink} onClick={() => setIsOpen(false)}>
+
+            <Link href="/About-us" className={styles.navLink} onClick={() => setIsOpen(false)}>
               ABOUT
             </Link>
-            <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
+            {/* <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
               RESOURCES
-            </Link>
+            </Link> */}
+            
           </div>
-          
+
+
+
+
           <div className={styles.navRight}>
-            <button className={styles.ctaButton}>
-              TALK TO AN EXPERT
-            </button>
+
+            <div className={styles.buttonContainer}>
+              <Button href="/how-we-work" variant="primary">
+                CONTACT US
+              </Button>
+            </div>
           </div>
         </div>
-        
+
         <div className={styles.menuButtonWrapper}>
-          <button 
+          <button
             className={styles.menuButton}
             onClick={toggleMenu}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}

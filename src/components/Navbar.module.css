@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
-  padding: 1.5rem 0;
+  align-items: center;
+  padding: 0 0.25rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -9,22 +10,32 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(20, 20, 20, 0.5);
 }
-
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2.5rem;
+  padding: 0.25rem 1rem;  
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 80px;
+  justify-content: center; /* Center all children horizontally */
+  gap: 2rem; /* space between logo and menu */
+  height: 60px; /* smaller height */
+  position: relative; /* for absolute positioning of logo if needed */
 }
 
+
+
 .logoWrapper {
+  position: absolute;
+  left: 1rem;
   display: flex;
   align-items: center;
   z-index: 1002;
 }
+
 
 .logo {
   display: flex;
@@ -38,11 +49,12 @@
 
 .navLinks {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center menu links horizontally */
   align-items: center;
-  width: 100%;
-  margin-left: 4rem;
+  gap: 2.5rem; /* spacing between links */
+  margin: 0;   /* remove any previous margin */
 }
+
 
 .navLeft {
   display: flex;
@@ -51,8 +63,10 @@
 }
 
 .navRight {
-  margin-left: auto;
+  position: absolute;
+  right: 1rem;
 }
+
 
 .navLink {
   color: rgba(255, 255, 255, 0.7);
@@ -64,7 +78,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0 0.25rem;
 }
 
 .navLink:hover {
@@ -95,12 +109,12 @@
   color: #00acff;
   border: 1px solid #00acff;
   border-radius: 4px;
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 0.6rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   white-space: nowrap;

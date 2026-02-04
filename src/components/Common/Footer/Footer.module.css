@@ -2,27 +2,32 @@
   background: #000;
   margin-top: 3rem;
   color: #fff;
-  padding-top: 80px;
+  padding: 8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px 64px;
-  display: grid;
-  grid-template-columns: 1.3fr 2fr;
-  gap: 80px;
+  
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  gap: 50px;
 }
+
 
 /* Brand */
 .brand {
-  max-width: 380px;
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin-top: -5%;
 }
 
+
 .logo {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -32,6 +37,7 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 24px;
+    text-align: center;
 }
 
 .socials {
@@ -56,18 +62,52 @@
   transform: translateY(-2px);
 }
 
+.socialContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* spacing between buttons, similar to mx-1 */
+  padding-top: 0;
+}
+
+.btnSocial {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #0d6efd; /* same as old */
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btnSocial:hover {
+  background-color: #0b5ed7; /* slightly darker on hover */
+  transform: scale(1.1);
+}
+
+.btnSocial svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+
 /* Columns */
 .columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;            
+  flex-wrap: wrap;          
+  justify-content: center;  
   gap: 64px;
-  
 }
+
 
 .column h4 {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 16px;
+    text-align: center;
 }
 
 .column a {
@@ -77,6 +117,7 @@
   text-decoration: none;
   margin-bottom: 10px;
   transition: color 0.2s ease;
+    text-align: center;
 }
 
 .column a:hover {
@@ -88,11 +129,14 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 24px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;  
+  align-items: center;    
+  gap: 10px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
 }
+
+
 
 .legal {
   display: flex;

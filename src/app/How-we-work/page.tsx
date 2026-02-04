@@ -16,6 +16,7 @@ import HowWeWork from '@/components/How-we-work/Header/HowWeWork'
 import WorkingTogether from '@/components/How-we-work/WorkingTogether/WorkingTogether'
 import HighlightCards from '@/components/How-we-work/HighlightCards/HighlightCards'
 import { MilestoneSection } from '@/components/How-we-work/MilestoneSection/MilestoneSection'
+import FeatureShowcase from '@/components/How-we-work/FeatureShowcase/FeatureShowcase'
 
 
 export default function page() {
@@ -29,6 +30,7 @@ export default function page() {
             <ContentWrapper>
                 <WorkingTogether />
                 <HighlightCards />
+                <FeatureShowcase />
                 <MilestoneSection />
             </ContentWrapper>
             
@@ -64,6 +66,7 @@ export default function page() {
                 ]}
               />
               <ContentWrapper>
+                
                 <Banner
                   title="See how this fits"
                   highlight="your needs"

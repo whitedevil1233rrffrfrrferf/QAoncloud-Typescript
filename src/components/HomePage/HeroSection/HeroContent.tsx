@@ -24,7 +24,7 @@ export default function HeroContent() {
         <Button href="/how-we-work" variant="primary">
           Talk to an expert
         </Button>
-        <Button href="/how-we-work" variant="primary">
+        <Button href="/How-we-work" variant="primary">
           See How We Work
         </Button>
         {/* <button className="primaryBtn">Talk to a QA expert</button>
