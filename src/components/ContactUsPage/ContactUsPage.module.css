@@ -7,21 +7,31 @@
 /* ================= HEADER ================= */
 
 .headerSection {
+  position: relative;
   display: flex;
   justify-content: center;
-  padding: 4rem 2rem 2rem;
+  align-items: center;
+  padding: 4.5rem 2rem 3rem;
+  
+  overflow: hidden;
 }
 
+
 .headerContent {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 21px;
+  width: 504px;
+  max-width: 100%;
 }
 
+
 .blueLogo {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   background: #0d6efd;
   border-radius: 50%;
   display: flex;
@@ -30,16 +40,41 @@
   font-size: 2.4rem;
   font-weight: 700;
 }
+ 
 
 .headerTitle {
-  font-size: 3rem;
+  font-family: Inter, sans-serif;
+  font-size: 32px;
   font-weight: 700;
+  letter-spacing: -1px;
+  text-align: center;
 }
+
+
+.blueLogo {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blueLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 
 /* ================= MAIN ================= */
 
 .mainContent {
-  padding: 2rem 2rem 4rem;
+  padding: 3rem 2rem 4rem;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
 }
 
 .contentContainer {
@@ -58,11 +93,10 @@
 }
 
 .contactCard {
-  background: linear-gradient(180deg, #111, #0a0a0a);
-  border-radius: 18px;
+  background: linear-gradient(180deg, #0d0d0d, #060606);
+  border-radius: 16px;
   padding: 2.5rem 2rem;
-  border: 1px solid #1f1f1f;
-  width: 100%;
+  border: 1px solid #1c1c1c;
 }
 
 .cardTitle {
@@ -112,8 +146,10 @@
 }
 
 .formGroup {
-  position: relative;
+  display: flex;
+   flex-direction: column-reverse;
 }
+
 
 .formInput,
 .formTextarea {
@@ -134,16 +170,16 @@
 }
 
 .formLabel {
-  position: absolute;
-  top: -0.55rem;
-  left: 1rem;
-  background: #0a0a0a;
-  padding: 0 0.4rem;
-  font-size: 0.75rem;
-  color: #8abfff;
+  position: static;         
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: none;
+  padding: 0;
 }
 
-/* textarea */
+
 .formTextarea {
   min-height: 120px;
   resize: none;
@@ -191,4 +227,44 @@
     width: 60px;
     height: 60px;
   }
+}
+
+ .titleWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;  
+}
+.figmaEllipse {
+  position: absolute;
+  width: 500px;
+  height: 160px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  background: transparent;
+
+  /* soft gradient fade */
+  background: radial-gradient(
+   ellipse at center,
+    rgba(69, 159, 237, 0.45) 0%,
+    rgba(69, 159, 237, 0.30) 12%,
+    rgba(69, 159, 237, 0.18) 32%, 
+    transparent 65%
+  );
+
+  backdrop-filter: blur(164px); 
+}
+
+
+/* Title */
+.headerTitle {
+    font-family: 'Inter', sans-serif;
+  font-weight: 700;         
+  font-size: 46px;
+  line-height: 1;           
+  letter-spacing: -1px;
+  text-align: center;
+  
 }

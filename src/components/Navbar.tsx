@@ -131,7 +131,7 @@ const Navbar = () => {
           <div className={styles.navRight}>
             <div className={styles.continue_btn}>
               <Button
-                href="/contact"
+                href="/contact-us"
                 variant="primary"
                 className={styles.contactBtn}
               >

@@ -34,10 +34,31 @@ const ContactUsPage = () => {
     <div className={styles.contactPage}>
       {/* Centered Header Section */}
       <div className={styles.headerSection}>
+
         <div className={styles.headerContent}>
-          <div className={styles.blueLogo}>Q</div>
-          <h1 className={styles.headerTitle}>Contact Us</h1>
+          <div className={styles.logoWrapper}>
+            <Link href="/" className={styles.logo}>
+              <Image
+                src="/Q_logo.png"
+                alt="QAonCloud"
+                width={200}
+                height={200}
+                priority
+              />
+            </Link>
+          </div>
+
+        <div className={styles.titleWrapper}>
+  <span className={styles.figmaEllipse} aria-hidden />
+  <h1 className={styles.headerTitle}>Contact Us</h1>
+</div>
+
+
+
+
         </div>
+
+
       </div>
 
       {/* Main Content */}
@@ -47,11 +68,11 @@ const ContactUsPage = () => {
           <div className={styles.leftSection}>
             <div className={styles.contactCard}>
               <h2 className={styles.cardTitle}>Find Us</h2>
-              
+
               <div className={styles.contactItem}>
-                <FiMapPin className={styles.icon} />
-                <div className={styles.contactText}>
-                  <p className={styles.contactLabel}>Address</p>
+
+                <div className={styles.contactText}><FiMapPin className={styles.icon} />
+
                   <p className={styles.contactValue}>
                     39159 Paseo Padre Pkwy ste 207, Fremont, California 94538, USA
                   </p>
@@ -59,17 +80,17 @@ const ContactUsPage = () => {
               </div>
 
               <div className={styles.contactItem}>
-                <FiPhone className={styles.icon} />
+
                 <div className={styles.contactText}>
-                  <p className={styles.contactLabel}>Phone Number</p>
+                  <FiPhone className={styles.icon} />
                   <p className={styles.contactValue}>+1 (415) 573-3307</p>
                 </div>
               </div>
 
               <div className={styles.contactItem}>
-                <FiMail className={styles.icon} />
+
                 <div className={styles.contactText}>
-                  <p className={styles.contactLabel}>Email</p>
+                  <FiMail className={styles.icon} />
                   <p className={styles.contactValue}>contactus@qaoncloud.com</p>
                 </div>
               </div>
