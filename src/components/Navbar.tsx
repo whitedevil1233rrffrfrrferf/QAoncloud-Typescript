@@ -114,27 +114,33 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link href="/About-us" className={styles.navLink} onClick={() => setIsOpen(false)}>
+            <Link href="/about" className={styles.navLink} onClick={() => setIsOpen(false)}>
               ABOUT
             </Link>
             {/* <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
               RESOURCES
             </Link> */}
-            
+
           </div>
+
+
 
 
 
 
           <div className={styles.navRight}>
-
-            <div className={styles.buttonContainer}>
-              <Button href="/how-we-work" variant="primary">
+            <div className={styles.continue_btn}>
+              <Button
+                href="/contact-us"
+                variant="primary"
+                className={styles.contactBtn}
+              >
                 CONTACT US
               </Button>
             </div>
           </div>
         </div>
+
 
         <div className={styles.menuButtonWrapper}>
           <button
