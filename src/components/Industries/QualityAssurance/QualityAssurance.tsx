@@ -31,4 +31,33 @@ const QualityAssurance = ({
   );
 };
 
+//regulations
+interface RegulationsProps {
+  title: string;
+  highlight: string;
+  description: string;
+  subDescription: string;
+  marginBottom?: number;
+}
+
+const Regulations = ({
+  title,
+  highlight,
+  description,
+  subDescription,
+  marginBottom = 2,
+}: RegulationsProps) => { 
+  return (
+    <div className={styles.container}>
+      <SectionHeader
+        title={title}
+        highlight={highlight}
+        description={description}
+        subDescription={subDescription}
+        marginBottom={marginBottom}
+      />
+    </div>
+  );
+};
+
 export default QualityAssurance;

@@ -1,0 +1,44 @@
+.featureCard {
+  
+  
+}
+
+.featureLine {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%; 
+  color: #FFB042;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+  #FFB042,
+  #FFFFFF1A 
+  );
+}
+
+.featureTitle {
+  
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.featureDescription {
+  
+  line-height: 1.6;
+  
+}
+

@@ -13,7 +13,10 @@ import Partnerships from '@/components/Industries/Partnership/Partnership'
 import QABenefits from '@/components/Industries/Benefits/Benefits'
 import ClientSlider from '@/components/Industries/Slider/Slider'
 import ServicePageHeader from '@/components/Industries/Saas/Header/ServicePageHeader'
-
+import FeatureLineYellowCard from "@/components/Common/YellowCards/YellowLineCard";
+import FeatureLineCard from "@/components/Common/GreenCards/GreenLineCard";
+import FeatureLineGreenCard from "@/components/Common/GreenCards/GreenLineCard";
+import Regulations from '@/components/Industries/QualityAssurance/QualityAssurance'
 
 export default function page() {
   return (
@@ -24,141 +27,161 @@ export default function page() {
               <ServicePageHeader />
             </div> 
             <ClientSlider heading='Trusted by SaaS teams at '/>
-            <QualityAssurance
-                    title="Your QA is slowing you down "
-                    highlight="more than you think"
-                    description="You built a CI/CD pipeline to help you ship faster. But releases kept piling up for testing. Your engineers had to write test cases when they should’ve been building code. Bugs slipped through. "
-                    subDescription="Somehow, somewhere along the way, QA became a bottleneck. Now you’re struggling to choose between shipping fast and shipping safe, while all your competitors are stepping it up. "
-                    marginBottom={2}
-                  />
+          
             <ContentWrapper>
-                <SmoothReleases
-                  title="BFSI testing services that are a "
-                  highlight="cut above the rest"
-                  features={[
-                    {
-                      title: "QA is the bottleneck",
-                      description:
-                        "Your engineers are doing their best, turning in code on time. But releases wait days for testing. QA always seems to fall behind and eventually something slips through.",
-                      icon: "star",
-                    },
-                    {
-                      title: "Your engineers are on QA-duty",
-                      description:
-                        "Let’s face it, you developers didn't sign up to write test scripts. But they spend 20-30% of their time testing, when they should be building features.",
-                      icon: "user",
-                    },
-                    {
-                      title: "Your customers find bugs before you do",
-                      description:
-                        "Flaky tests, missed edge cases, or bugs in production, lead to an overall loss of trust. Sounds like a nightmare, doesn’t it? ",
-                      icon: "circle",
-                    },
-                    // {
-                    //   title: "Value for Money",
-                    //   description:
-                    //     "Unmatched, high-level QA expertise at a fraction of the cost, ensuring accuracy, speed, and reliability",
-                    //   icon: "arrow",
-                    // },
-                    // {
-                    //   title: "Tailored to your needs.",
-                    //   description:
-                    //     "Ensuring products are intuitive, user-friendly, with user-oriented functionalities, reducing churn.",
-                    //   icon: "arrow",
-                    // },
-                  ]}
+                <QualityAssurance
+                  title="Your QA is slowing you down"
+                   highlight=' more than you think'
+                  description="You built a CI/CD pipeline to help you ship faster. But releases kept piling up for testing. Your engineers had to write test cases when they should’ve been building code. Bugs slipped through. Somehow, somewhere along the way, QA became a bottleneck. Now you’re struggling to choose between shipping fast and shipping safe, while all your competitors are stepping it up."
+                  subDescription=""
+                  marginBottom={2}
                 />
-                <SmoothReleases
-                  title="Here’s how we work with "
-                  highlight="Saas teams"
-                  features={[
-                    {
-                      title: "The discovery call",
-                      description:
-                        "We’ll start with a 30-minute conversation, no sales pitch, no fancy decks. We’ll understand your product, discuss your release cadence, and see how we can put an end to QA slowing you down. ",
-                      icon: "star",
-                    },
-                    {
-                      title: "A focused Pilot engagement",
-                      description:
-                        "Most teams start with a focused 1-month pilot, depending on the highest-priority surface. You'll soon see your releases are 40% faster, with no added anxiety.",
-                      icon: "user",
-                    },
-                    {
-                      title: "We’ll scale with you",
-                      description:
-                        "We’ll grow with you as your product grows - more surfaces, more test types, more coverage. One thing remains constant, the diligent team that knows your product.",
-                      icon: "circle",
-                    },
-                    // {
-                    //   title: "Value for Money",
-                    //   description:
-                    //     "Unmatched, high-level QA expertise at a fraction of the cost, ensuring accuracy, speed, and reliability",
-                    //   icon: "arrow",
-                    // },
-                    // {
-                    //   title: "Tailored to your needs.",
-                    //   description:
-                    //     "Ensuring products are intuitive, user-friendly, with user-oriented functionalities, reducing churn.",
-                    //   icon: "arrow",
-                    // },
-                  ]}
-                />
+       
+              <div className={classes.featuresGrid}>
+
+              <FeatureLineYellowCard
+                title="QA is the bottleneck"
+                description="Your engineers are doing their best, turning in code on time. But releases wait days for testing. QA always seems to fall behind and eventually something slips through."
+              />
+              <FeatureLineYellowCard
+                title="Your engineers are on QA-duty"
+                description="Let’s face it, you developers didn't sign up to write test scripts. But they spend 20-30% of their time testing, when they should be building features."
+              />
+              <FeatureLineYellowCard
+                title="Your customers find bugs before you do"
+                description="Flaky tests, missed edge cases, or bugs in production, lead to an overall loss of trust. Sounds like a nightmare, doesn’t it? "
+              />
+            </div>
+               <SmoothReleases
+  title="Here’s how we work with "
+  highlight="SaaS teams"
+  description=""
+  features={[
+    {
+      title: "The discovery call",
+      description:
+        "We’ll start with a 30-minute conversation — no sales pitch, no fancy decks. We’ll understand your product, discuss your release cadence, and see how we can put an end to QA slowing you down.",
+      icon: "star",
+    },
+    {
+      title: "A focused Pilot engagement",
+      description:
+        "Most teams start with a focused 1-month pilot, depending on the highest-priority surface. You'll soon see your releases are 40% faster, with no added anxiety.",
+      icon: "user",
+    },
+    {
+      title: "We’ll scale with you",
+      description:
+        "We’ll grow with you as your product grows — more surfaces, more test types, more coverage. One thing remains constant: the diligent team that knows your product.",
+      icon: "circle",
+    },
+  ]}
+/>
+                 <Regulations
+              title="AI-accelerated QA that"
+              highlight=" keeps up with your cadence."
+              description="We combine AI-accelerated QA testing with product-savvy engineers who embed into your workflow in no time.The AI handles the volume: test generation, testing across browsers and devices, regression suites that run in parallel. Meanwhile, the engineers handle the strategic decisions, such as what needs testing, what matters, and what's broken.The result? 40% faster releases. Tests that catch real bugs. Engineers who are free to do what they were hired to do"
+              subDescription=""
+            />
+            <div className={classes.featuresGrid}>
+
+              <FeatureLineCard
+                title="QA that keeps up with you"
+                description="Want to ship daily? We’ll make it happen! We plug into your CI/CD pipeline to facilitate daily deployments. No more releases waiting on testing."
+              />
+              <FeatureLineCard
+                title="Free your engineers to build"
+                description="Free up 20-30% of your developers’ time so they can focus on what they do best - writing code. We’ll handle all the testing."
+              />
+              <FeatureLineCard
+                title="Catch bugs before customers do"
+                description="You won’t be finding new bugs in support tickets. Because our tests actually work. Our coverage catches real issues, it doesn’t just pass. We’ll catch all the bugs before production. "
+              />
+            </div>
                 
-                <QualityTestingServices title="AI-accelerated QA that "
-                  highlight="keeps up with your cadence."
-                  services={[
-                    {
-                      title: "QA that keeps up with you",
-                      description:
-                        "Want to ship daily? We’ll make it happen! We plug into your CI/CD pipeline to facilitate daily deployments. No more releases waiting on testing.",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "code",
-                    },
-                    {
-                      title: "Free your engineers to build",
-                      description:
-                        "Free up 20-30% of your developers’ time so they can focus on what they do best - writing code. We’ll handle all the testing.",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "bolt",
-                    },
-                    {
-                      title: "Catch bugs before customers do",
-                      description:
-                        "You won’t be finding new bugs in support tickets. Because our tests actually work. Our coverage catches real issues, it doesn’t just pass. We’ll catch all the bugs before production. ",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "arrow",
-                    },
-                    // {
-                    //   title: "Performance Testing",
-                    //   description:
-                    //     "Ensures your platform is fast, stable, and responsive, even during peak transaction volumes.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "robot",
-                    // },
-                    // {
-                    //   title: "Regulatory Compliance Testing",
-                    //   description:
-                    //     "Keeps an eye on compliance! Helps you meet regulatory demands with confidence, with no delays. ",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "shield",
-                    // },
-                    // {
-                    //   title: "Security Testing",
-                    //   description:
-                    //     "Safeguards transactions and sensitive data, keeping things secure and trustworthy.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "mobile",
-                    // },
-                    // {
-                    //   title: "Regression Testing",
-                    //   description:
-                    //     "Safeguards what already works, ensuring new updates don’t break critical financial flows.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "mobile",
-                    // },
-                  ]} 
-                />
+                 {/*
+<SmoothReleases
+  title="BFSI testing services that are a "
+  highlight="cut above the rest"
+  description=""
+  features={[
+    {
+      title: "QA is the bottleneck",
+      description:
+        "Your engineers are doing their best, turning in code on time. But releases wait days for testing. QA always seems to fall behind and eventually something slips through.",
+      icon: "star",
+    },
+    {
+      title: "Your engineers are on QA-duty",
+      description:
+        "Let’s face it, your developers didn't sign up to write test scripts. But they spend 20-30% of their time testing, when they should be building features.",
+      icon: "user",
+    },
+    {
+      title: "Your customers find bugs before you do",
+      description:
+        "Flaky tests, missed edge cases, or bugs in production lead to an overall loss of trust. Sounds like a nightmare, doesn’t it?",
+      icon: "circle",
+    },
+  ]}
+/>
+
+<SmoothReleases
+  title="Here’s how we work with "
+  highlight="SaaS teams"
+  description=""
+  features={[
+    {
+      title: "The discovery call",
+      description:
+        "We’ll start with a 30-minute conversation — no sales pitch, no fancy decks. We’ll understand your product, discuss your release cadence, and see how we can put an end to QA slowing you down.",
+      icon: "star",
+    },
+    {
+      title: "A focused Pilot engagement",
+      description:
+        "Most teams start with a focused 1-month pilot, depending on the highest-priority surface. You'll soon see your releases are 40% faster, with no added anxiety.",
+      icon: "user",
+    },
+    {
+      title: "We’ll scale with you",
+      description:
+        "We’ll grow with you as your product grows — more surfaces, more test types, more coverage. One thing remains constant: the diligent team that knows your product.",
+      icon: "circle",
+    },
+  ]}
+/>
+
+<QualityTestingServices
+  title="AI-accelerated QA that "
+  highlight="keeps up with your cadence."
+  services={[
+    {
+      title: "QA that keeps up with you",
+      description:
+        "Want to ship daily? We’ll make it happen. We plug into your CI/CD pipeline to facilitate daily deployments. No more releases waiting on testing.",
+      learnMoreHref: "/services/functional-testing",
+      icon: "code",
+    },
+    {
+      title: "Free your engineers to build",
+      description:
+        "Free up 20-30% of your developers’ time so they can focus on what they do best — writing code. We’ll handle all the testing.",
+      learnMoreHref: "/services/functional-testing",
+      icon: "bolt",
+    },
+    {
+      title: "Catch bugs before customers do",
+      description:
+        "You won’t be finding new bugs in support tickets. Because our tests actually work. Our coverage catches real issues — it doesn’t just pass.",
+      learnMoreHref: "/services/functional-testing",
+      icon: "arrow",
+    },
+  ]}
+/>
+*/}
+
+
                 <Partnerships
                 
                 imageSrc="/Partnership.png" // your screenshot

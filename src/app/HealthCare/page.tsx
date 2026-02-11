@@ -11,12 +11,16 @@ import { Banner } from '@/components/Common/Banner/Banner'
 import ServicePageHeader from '@/components/Industries/Healthcare/Header/ServicePageHeader'
 import Partnerships from '@/components/Industries/Partnership/Partnership'
 import QABenefits from '@/components/Industries/Benefits/Benefits'
-import ClientSlider from '@/components/Industries/Slider/Slider'
+import ClientSlider from '@/components/Industries/Slider/Slider'  
+import FeatureLineYellowCard from "@/components/Common/YellowCards/YellowLineCard";
+import FeatureLineCard from "@/components/Common/GreenCards/GreenLineCard";
+import FeatureLineGreenCard from "@/components/Common/GreenCards/GreenLineCard";
+import Regulations from '@/components/Industries/QualityAssurance/QualityAssurance'
 
 
 export default function page() {
   return (
-    <div>
+     <div>
       <div className={classes.container}>
           <div className={classes.pageContent}>
             <div className={classes.homeHeroBg}> 
@@ -25,102 +29,49 @@ export default function page() {
             <ClientSlider heading='Trusted by healthtech teams at'/>
             <QualityAssurance
                   title="In healthtech, "
-                  highlight="it isn’t “just a bug"
+                   highlight='it isn’t “just a bug”'
                   description="The stakes are higher, and the regulations are stricter. Bugs aren’t just bad news, they could prove problematic to patient health."
                   subDescription="But that doesn’t mean you can slow down. Competitors don’t rest, so you can’t either. Your engineers can’t do it all, but your investors expect results. So, do you focus on moving fast or on staying compliant? Most healthtech teams struggle to choose and risk falling behind."
                   marginBottom={2}
                 />
             <ContentWrapper>
-                <SmoothReleases
-                  title=""
-                  highlight=""
-                  features={[
-                    {
-                      title: "Test data is a nightmare",
-                      description:
-                        "You can't test with real patient data. But creating realistic synthetic data that covers edge cases and workflows? That's a project in itself. Most teams either cut corners or test mildly. ",
-                      icon: "star",
-                    },
-                    {
-                      title: "Integrations break quietly",
-                      description:
-                        "Think EMRs, EHRs, hospital systems, insurance APIs. They’re fragile, inconsistently documented, and deeply interconnected. It only takes one bad release to break workflows across an entire health system.",
-                      icon: "user",
-                    },
-                    {
-                      title: "Regulatory documentation never ends",
-                      description:
-                        "Think HIPAA. FDA. SOC 2. Audits demand documented test coverage. Every submission needs proof that you tested what you said you tested.",
-                      icon: "circle",
-                    },
-                    // {
-                    //   title: "Value for Money",
-                    //   description:
-                    //     "Unmatched, high-level QA expertise at a fraction of the cost, ensuring accuracy, speed, and reliability",
-                    //   icon: "arrow",
-                    // },
-                    // {
-                    //   title: "Tailored to your needs.",
-                    //   description:
-                    //     "Ensuring products are intuitive, user-friendly, with user-oriented functionalities, reducing churn.",
-                    //   icon: "arrow",
-                    // },
-                  ]}
-                />
-                <QualityTestingServices title="QA that moves fast "
-                  highlight="and stays compliant"
-                  services={[
-                    {
-                      title: "Synthetic test data that’s safe",
-                      description:
-                        "Our AI generates realistic patient data that covers edge cases without exposing PHI. No more cutting corners because you don't have safe data.",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "code",
-                    },
-                    {
-                      title: "Engineers who know healthcare, inside out",
-                      description:
-                        "Our engineers have tested EMR integrations, HL7 feeds, FHIR APIs, and insurance claim workflows. We know where healthcare software breaks.",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "bolt",
-                    },
-                    {
-                      title: "Built-in audit-ready documentation",
-                      description:
-                        "Every test run is documented. Every coverage gap is visible. When auditors or FDA reviewers ask, you can prove your work.",
-                      learnMoreHref: "/services/functional-testing",
-                      icon: "arrow",
-                    },
-                    // {
-                    //   title: "Performance Testing",
-                    //   description:
-                    //     "Ensures your platform is fast, stable, and responsive, even during peak transaction volumes.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "robot",
-                    // },
-                    // {
-                    //   title: "Regulatory Compliance Testing",
-                    //   description:
-                    //     "Keeps an eye on compliance! Helps you meet regulatory demands with confidence, with no delays. ",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "shield",
-                    // },
-                    // {
-                    //   title: "Security Testing",
-                    //   description:
-                    //     "Safeguards transactions and sensitive data, keeping things secure and trustworthy.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "mobile",
-                    // },
-                    // {
-                    //   title: "Regression Testing",
-                    //   description:
-                    //     "Safeguards what already works, ensuring new updates don’t break critical financial flows.",
-                    //   learnMoreHref: "/services/functional-testing",
-                    //   icon: "mobile",
-                    // },
-                  ]} 
-                />
+              <div className={classes.featuresGrid}>
+
+              <FeatureLineYellowCard
+                title="Test data is a nightmare"
+                description="You can't test with real patient data. But creating realistic synthetic data that covers edge cases and workflows? That's a project in itself. Most teams either cut corners or test mildly."
+              />
+              <FeatureLineYellowCard
+                title="Integrations break quietly"
+                description="Think EMRs, EHRs, hospital systems, insurance APIs. They’re fragile, inconsistently documented, and deeply interconnected. It only takes one bad release to break workflows across an entire health system"
+              />
+              <FeatureLineYellowCard
+                title="Regulatory documentation never ends"
+                description="Think HIPAA. FDA. SOC 2. Audits demand documented test coverage. Every submission needs proof that you tested what you said you tested."
+              />
+            </div>
+              
+              <Regulations
+              title="QA that moves"
+              highlight=" fast and stays compliant "
+              description="Think AI-accelerated QA testing meets engineers with extensive healthcare software experience.Be it generating synthetic test data, automating regression suites, or parallel execution, our AI handles the volume. Our engineers make the calls on what matters clinically, what tends to break, and what auditors demand. The result? 40% faster releases. HIPAA-compliant test data. Documentation that's ready to go."
+              subDescription=""
+            />
+            <div className={classes.featuresGrid}>
+
+              <FeatureLineCard
+                title="Synthetic test data that’s safe"
+                description="Our AI generates realistic patient data that covers edge cases without exposing PHI. No more cutting corners because you don't have safe data."
+              />
+              <FeatureLineCard
+                title="Engineers who know healthcare, inside out"
+                description="Our engineers have tested EMR integrations, HL7 feeds, FHIR APIs, and insurance claim workflows. We know where healthcare software breaks"
+              />
+              <FeatureLineCard
+                title="Built-in audit-ready documentation"
+                description="Every test run is documented. Every coverage gap is visible. When auditors or FDA reviewers ask, you can prove your work. "
+              />
+            </div>
                 <Partnerships
                 
                 imageSrc="/Partnership.png" // your screenshot

@@ -16,6 +16,7 @@ interface FeatureItem {
 interface SmoothReleasesProps {
   title: string;
   highlight: string;
+  description: string;
   features: FeatureItem[];
 }
 
@@ -60,12 +61,13 @@ const iconMap: Record<IconKey, ReactNode> = {
 export const SmoothReleases = ({
   title,
   highlight,
+  description,
   features,
 }: SmoothReleasesProps) => {
   return (
     <section className={styles.section}>
       <SectionHeader title={title} highlight={highlight} />
-
+      <p className={styles.description}>{description}</p> 
       <div className={styles.grid}>
         {features.map((feature, index) => (
           <FeatureCard
