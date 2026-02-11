@@ -35,10 +35,15 @@
   text-align: left;
 }
 .highlight {
-    color: #3ba6ff !important;
-    font-weight: 600;
-    font-style: italic;
-  }
+  color: #3ba6ff;
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-style: italic;
+}
+.normal {
+  font-style: normal;
+}
+
   /* LEFT CONTENT */
   .content {
     flex: 1;
@@ -94,7 +99,7 @@
     background: rgba(17, 32, 45, 0.9);
     border: 1px solid #6E6E6E;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     white-space: nowrap;
     backdrop-filter: blur(10px);
@@ -103,22 +108,22 @@
 
   .metricTagTop {
     z-index: 1;
-    top: 5px;
-    left: 19%;
+    top: -10px;
+    left: 39%;
     transform: translateX(-50%);
   }
 
   .metricTagRight {
     z-index: 3;
-    top: 46%;
+    top: 40%;
     right: -42px;
     transform: translateY(-50%);
   }
 
   .metricTagBottom {
     z-index: 1;
-    bottom: 30px;
-    left: -22px;
+    bottom: -20px;
+    left: 32px;
   }
 
   .visual img {
@@ -161,26 +166,32 @@
   } */
   @media (max-width: 1400px) {
      .hero {
-      padding: 2rem 0;
+      padding: 2rem ;
       display: flex;
       justify-content: center;
       
     }
     .visual img {
-      width: 340px; /* Smaller cube size on mobile */
-      height: 340px;
+      width: 360px; /* Smaller cube size on mobile */
+      height: 360px;
       margin-bottom: 0 !important;
     }
     .metricTagTop {
       z-index: 1;
       top: -15px;
-      left: 20%;
+      left: 40%;
       transform: translateX(-50%);
     }
      .metricTagBottom {
       z-index: 1;
       bottom: -14px;
       left: 12px;
+    }
+    .metricTagRight {
+      z-index: 3;
+      top: 40%;
+      right: -62px;
+      transform: translateY(-50%);
     }
   
   }

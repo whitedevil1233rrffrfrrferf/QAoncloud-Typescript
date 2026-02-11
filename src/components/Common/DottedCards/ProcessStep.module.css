@@ -1,0 +1,44 @@
+.processStep {
+  text-align: center;
+  max-width: 1020px;
+  flex: 1;
+  position: relative;
+}
+
+.iconContainer {
+  width: 95px;
+  height: 95px;
+  background: #171717B2;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  color: #60A5FA;
+  stroke-width: 2;
+}
+
+.title {
+  
+  color: #FFFFFF;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.description {
+  
+  
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .processStep {
+    max-width: 400px;
+  }
+}

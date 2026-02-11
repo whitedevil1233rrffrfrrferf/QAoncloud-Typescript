@@ -3,14 +3,11 @@
   align-items: center;
   justify-content: center;
 
-  width: 12rem;
-  padding: 0.7rem;
-  border-radius: 15px;
-  margin-right: 3rem;
+  border-radius: 14px;
+  margin-right: 1rem;
   
-  font-size: var(--text-body);
-  
-
+  font-size: 12px; /* Set to 12px instead of var(--text-body) */
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 
@@ -18,36 +15,61 @@
   white-space: nowrap;
 }
 
-/* PRIMARY */
-.primary {
-  background:#3093E8;
-  color: #ffffff;
-
-  
+/* SIZE VARIANTS */
+.default {
+  width: 12rem;
+  padding: 0.7rem;
 }
 
-/* SECONDARY */
-.secondary {
-  background: transparent;
+.small {
+  width: 9rem;
+  padding: 0.7rem;
+}
+
+/* PRIMARY */
+.primary {
+  background: #3093E8;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* SECONDARY - with dark outline */
+.secondary {
+  background: #050505;
+  color: #ffffff;
+  border: 1px solid #3A3A3A;
+  box-shadow: 
+    0px 8px 10px -6px #1C398E1A,
+    0px 20px 25px -5px #1C398E1A;
 }
 
 .secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: #0a0a0a;
+  border: 1px solid #4A4A4A;
+  box-shadow: 
+    0px 8px 10px -6px #1C398E33,
+    0px 20px 25px -5px #1C398E33;
 }
 
 @media (max-width: 600px) {
- .button {
-  width: 9rem;
-  margin-right: 2rem;
- }
-
-}
-@media (max-width: 500px) {
- .button {
-  width: 8rem;
+  .default {
+    width: 9rem;
+    margin-right: 2rem;
+  }
   
- }
+  .small {
+    width: 8rem;
+    margin-right: 2rem;
+    padding: 0.45rem 0.5rem;
+  }
+}
 
+@media (max-width: 500px) {
+  .default {
+    width: 8rem;
+  }
+  
+  .small {
+    width: 7rem;
+    padding: 0.4rem 0.5rem;
+  }
 }

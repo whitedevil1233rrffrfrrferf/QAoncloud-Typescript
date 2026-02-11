@@ -50,14 +50,7 @@
   display: flex;
   justify-content: center;
 }
-.releaseSection h2 {
-  color: #fff;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
+
 .highlight {
   color: #3ba6ff;
 }

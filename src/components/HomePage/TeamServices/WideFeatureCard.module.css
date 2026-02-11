@@ -1,0 +1,103 @@
+.card {
+  position: relative;
+  border-radius: 16px;
+  background: #0c0c0c; /* Solid color instead of transparent */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 28px;
+  padding-bottom: 0;
+  min-height:200px;
+  
+  overflow: hidden;
+
+  /* DARK BASE (not flat black) */
+  
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+
+
+/* 🔥 SINGLE, SOFT CORNER GLOW */
+.card::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  width: 500px;
+  height: 500px;
+  
+  background: radial-gradient(
+    circle at bottom right,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(59, 130, 246, 0.12) 40%,
+    rgba(59, 130, 246, 0.06) 40%,
+    rgba(59, 130, 246, 0.02) 90%,
+    transparent 75%
+  );
+  
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+.description{
+  max-width: 1000px;
+}
+.quote{
+  margin-top: 2rem;
+  max-width: 1100px;
+  font-weight: 400 !important;
+}
+/* ICON CONTAINER */
+/* ICON CONTAINER */
+.iconWrapper {
+  position: absolute;
+  right: -115px;
+  bottom: -120px;
+  
+  isolation: isolate;
+
+  width:350px;
+  height:350px;
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  /* Layered effect: gray core → transparent gap → blue glow */
+  background: 
+    /* Outer blue glow (starts at 45%, fades to 100%) - CIRCULAR */
+    
+    /* Inner gray base (0-35%, fades out 35-45%) - CIRCULAR */
+    radial-gradient(
+      circle at center,
+      rgba(16, 16, 16, 0.9) 0%,
+      rgba(16, 16, 16, 0.9) 22%,
+      rgba(16, 16, 16, 0.5) 36%,
+      rgba(16, 16, 16, 0.8) 44%,
+      transparent 52%
+);
+}
+
+/* TEXT ABOVE GLOW */
+.title,
+.description {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+@media (max-width: 1300px) {
+  .description {
+  max-width: 380px;
+}
+}
+@media (max-width: 1034px) {
+  .description {
+  max-width: 100%;
+}
+}

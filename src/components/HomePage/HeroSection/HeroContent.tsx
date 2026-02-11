@@ -10,7 +10,9 @@ export default function HeroContent() {
       </span>
 
       <h1>
-        40% <span className={styles.highlight}>faster QA.</span> <span className={styles.miniHeader}>Accelerated by AI, driven by experts.</span>
+        <span className={styles.highlight}>
+  <span className={styles.normal}>40%</span> faster QA.
+</span> Accelerated by AI, driven by experts.
       </h1>
       
       <p>
@@ -21,10 +23,10 @@ export default function HeroContent() {
       </p> */}
 
       <div className={styles.buttonContainer}>
-        <Button href="/how-we-work" variant="primary">
-          Talk to an expert
+        <Button href="/how-we-work" variant="primary" size="small">
+          Talk to a QA expert
         </Button>
-        <Button href="/How-we-work" variant="primary">
+        <Button href="/How-we-work" variant="secondary" size="small">
           See How We Work
         </Button>
         {/* <button className="primaryBtn">Talk to a QA expert</button>

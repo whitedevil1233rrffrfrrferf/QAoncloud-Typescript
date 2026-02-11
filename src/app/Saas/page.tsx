@@ -24,13 +24,13 @@ export default function page() {
               <ServicePageHeader />
             </div> 
             <ClientSlider heading='Trusted by SaaS teams at '/>
-           <QualityAssurance
-                  title="Your QA is slowing you down "
-                  highlight="more than you think"
-                  description="You built a CI/CD pipeline to help you ship faster. But releases kept piling up for testing. Your engineers had to write test cases when they should’ve been building code. Bugs slipped through. "
-                  subDescription="Somehow, somewhere along the way, QA became a bottleneck. Now you’re struggling to choose between shipping fast and shipping safe, while all your competitors are stepping it up. "
-                  marginBottom={2}
-                />
+            <QualityAssurance
+                    title="Your QA is slowing you down "
+                    highlight="more than you think"
+                    description="You built a CI/CD pipeline to help you ship faster. But releases kept piling up for testing. Your engineers had to write test cases when they should’ve been building code. Bugs slipped through. "
+                    subDescription="Somehow, somewhere along the way, QA became a bottleneck. Now you’re struggling to choose between shipping fast and shipping safe, while all your competitors are stepping it up. "
+                    marginBottom={2}
+                  />
             <ContentWrapper>
                 <SmoothReleases
                   title="BFSI testing services that are a "

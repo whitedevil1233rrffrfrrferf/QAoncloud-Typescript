@@ -2,6 +2,7 @@ import styles from "./CaseStudiesSection.module.css";
 import CaseCard from "../../Common/CaseStudyCard/CaseCard";
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import Button from "@/components/Common/Button/Button";
+import { WideFeatureSection } from "../TeamServices/WideFeatureSection";
 
 export default function CaseStudiesSection() {
   return (
@@ -14,7 +15,7 @@ export default function CaseStudiesSection() {
           description="Discover how our tailored QA solutions have transformed software quality for diverse industries."
         />
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <CaseCard
             image="/saas.jpg"
             tag="SaaS"
@@ -38,8 +39,9 @@ export default function CaseStudiesSection() {
             title="HIPAA-compliant by design. "
             description="Healthcare QA requires a fine balance of precision and restraint. Our synthetic test data ensures compliance, while still testing real-world scenarios. Our engineers have worked across EMR integrations, patient portals, and clinical workflows, where reliability is critical. "
           />
-        </div>
+        </div> */}
       </div>
+      <WideFeatureSection />
       <div className={styles.buttonContainer}>
         <Button href="/how-we-work" variant="primary">
           Talk to an expert

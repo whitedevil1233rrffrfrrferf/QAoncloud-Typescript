@@ -14,6 +14,10 @@ import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStu
 import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
 import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
 import FAQs from "@/components/Industries/FAQS/FAQs";
+import { ProcessSection } from "@/components/Common/DottedCards/ProcessSection";
+import { WideFeatureCard } from "@/components/HomePage/TeamServices/WideFeatureCard";
+import QualityAssurance from "@/components/Industries/QualityAssurance/QualityAssurance";
+import { WideFeatureSection } from "@/components/HomePage/TeamServices/WideFeatureSection";
 
 
 export default function Home() {
@@ -31,14 +35,24 @@ export default function Home() {
 
             </div>
               <ClientSlider />
+               <QualityAssurance
+                    title="Your engineers aren’t stalling releases. "
+                    highlight="Your QA is."
+                    description="Your QA is slowing you down more than you think. Your engineers are on QA-duty when they should be building. Your tests take hours. Your “automation” needs hand-holding. And every release is a shot in the dark. Meanwhile, your competitors ship weekly.
+                    But it doesn’t have to be this way. Our AI-accelerated, expert-driven QA services ensure you ship quickly, frequently and confidently."
+                    subDescription=""
+                    marginBottom={2}
+                  />
               <ContentWrapper> 
                 <GreenCards />
+                <ProcessSection />
               </ContentWrapper> 
               
-              <PartnerSection />
+              {/* <PartnerSection /> */}
               <ContentWrapper> 
-                <QAoncloudGuarentee />
+                {/* <QAoncloudGuarentee /> */}
                 <TestingServices />
+                
               </ContentWrapper>
               
               <Testimonials />

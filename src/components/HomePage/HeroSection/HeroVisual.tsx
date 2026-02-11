@@ -6,13 +6,13 @@ export default function HeroVisual() {
     <div className={styles.visual}>
       <div className={styles.visualInner}>
         <div className={`${styles.metricTag} ${styles.metricTagTop}`}>
-          200+ Successful Release
+          40% Faster than in house team
         </div>
         <div className={`${styles.metricTag} ${styles.metricTagRight}`}>
-          98% Bug Caught
+          60+ Global Team Trust Us
         </div>
         <div className={`${styles.metricTag} ${styles.metricTagBottom}`}>
-          80% Faster Release
+          12+ Years of QA Testing Services
         </div>
 
         <Image

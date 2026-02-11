@@ -8,13 +8,13 @@ import Button from "@/components/Common/Button/Button";
 
 const caseStudies = [
   {
-    company: "FinTech",
-    logo: "", // replace with actual path
+    company: "AOL",
+    logo: "/logos/AOI.png", // replace with actual path
     topColor: "#2A5068",
     tags: ["FinTech"],
-    title: "FinTech saw a 45% reduction in their QA cycle time.",
-    description: "Series B payments startup",
-    subdescription:"Zero critical bugs in production over 6 months",
+    title: "Series B payments startup",
+    description: "AOL. saw a 45% reduction in their QA cycle time.",
+    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
     url:"https://docsend.com/view/zw3jj5g3ra69apry"
     
   },
@@ -23,8 +23,9 @@ const caseStudies = [
     logo: "/logos/avanti.png",
     topColor: "#623B2B",
     tags: ["Integration Testing", "User Testing", "Performance QA"],
-    title: "Avanti Finance - Financial Services",
-    description: "Learn how Avanti achieved bug reduction and faster feature implementation through partnership.",
+    title: "Series B payments startup",
+    description: "AOL. saw a 45% reduction in their QA cycle time.",
+    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
     url:"https://docsend.com/view/gxyqru5wr72twj8p"
   },
   {
@@ -32,8 +33,9 @@ const caseStudies = [
     logo: "/logos/redblacktree.png",
     topColor: "#3B2C66",
     tags: ["Compliance QA", "User Testing", "Security Testing"],
-    title: "RedBlackTree - HRMS",
-    description: "Discover how RBT ensures their customer’s products are tested and delivered bug free with QAonCloud.",
+    title: "Series B payments startup",
+    description: "AOL. saw a 45% reduction in their QA cycle time.",
+    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
     url:"https://docsend.com/view/9kqq39c6tmhkubby"
   }
 ];

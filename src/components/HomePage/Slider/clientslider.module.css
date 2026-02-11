@@ -55,9 +55,10 @@
   align-items: center;
   justify-content: center;
 
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, #D5D5D5 0%, #DBF3FF 100%);
+
   border-radius: 20px;
-  padding:1rem;
+  padding:0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
 
@@ -96,10 +97,10 @@
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
-.logoCard:hover {
+/* .logoCard:hover {
   border-color: rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.04);
-}
+} */
 
 .logo {
   width: auto;

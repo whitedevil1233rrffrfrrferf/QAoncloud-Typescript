@@ -5,21 +5,21 @@ import Button from "@/components/Common/Button/Button";
 export default function GreenCards() {
     return(
         <section className={classes.releaseSection}>
-            <SectionHeader
+            {/* <SectionHeader
                 title="Your engineers aren’t stalling releases. " 
                 highlight="Your QA is."
                 description="Your QA is slowing you down more than you think."
                 subDescription="Your engineers are on QA-duty when they should be building. Your tests take hours. Your “automation” needs hand-holding. And every release is a shot in the dark. Meanwhile, your competitors ship weekly.But it doesn’t have to be this way. Our AI-accelerated, expert-driven QA services ensure you ship quickly, frequently and confidently. "
-            />
+            /> */}
 
              {/* <SectionHeader
                 title="Our AI keeps it "
                 highlight="fast."
                 marginBottom={0}
             /> */}
-            <h2>Our AI keeps it <span className={classes.highlight}>lightning fast</span></h2>
+            
             <SectionHeader
-                title="Our engineers keep it. " highlight="aligned"
+                title="AI keeps it lightning fast. Engineers" highlight=" keep it aligned. "
                 description="Our lightning-fast, impeccably thorough AI does all the grunt work, under the watchful eye of our engineers who understand product intricacies. Speedy automation meets unmatched human expertise, to give you the best of both.The result? QA that once took 12 months, now needs just 7. Same impeccable quality. Same unmatched rigor. Just 2X faster."
                 subDescription=""
                 

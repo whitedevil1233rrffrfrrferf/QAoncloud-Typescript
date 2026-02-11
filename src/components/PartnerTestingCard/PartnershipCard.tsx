@@ -8,6 +8,7 @@ interface PartnershipCardProps {
   tags: string[];
   title: string;
   description: string;
+  subdescription: string;
   url: string;
 }
 
@@ -18,6 +19,7 @@ export default function PartnershipCard({
   tags,
   title,
   description,
+  subdescription,
   url
 }: PartnershipCardProps) {
   return (
@@ -34,6 +36,7 @@ export default function PartnershipCard({
         <img src={logo} alt={company} className={styles.logo} />
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
+        <p className={styles.description}>{subdescription}</p>
       </div>
     </div>
     </a>
