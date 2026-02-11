@@ -8,7 +8,7 @@ interface PartnershipCardProps {
   tags: string[];
   title: string;
   description: string;
-  subdescription: string;
+  subdescription?: string; // Made optional with ?
   url: string;
 }
 
@@ -25,21 +25,20 @@ export default function PartnershipCard({
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className={styles.link}>
       <div className={styles.card}>
-      <div className={styles.top} style={{ backgroundColor: topColor }}>
-        <div className={styles.tags}>
-          {tags.map((tag, idx) => (
-            <span key={idx} className={styles.tag}>{tag}</span>
-          ))}
+        <div className={styles.top} style={{ backgroundColor: topColor }}>
+          <div className={styles.tags}>
+            {tags.map((tag, idx) => (
+              <span key={idx} className={styles.tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
+        <div className={styles.content}>
+          <img src={logo} alt={company} className={styles.logo} />
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
+          {subdescription && <p className={styles.description}>{subdescription}</p>}
         </div>
       </div>
-      <div className={styles.content}>
-        <img src={logo} alt={company} className={styles.logo} />
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
-        <p className={styles.description}>{subdescription}</p>
-      </div>
-    </div>
     </a>
-    
   );
 }
