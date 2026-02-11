@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   align-items: center;
-  padding: 0 0.25rem;
+  padding:  0.5rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -124,7 +124,7 @@
 }
 
 .contactBtn {
-  background-color: #0d6efd;  
+  background-color: #3093E8;  
   color: #fff;
   padding: 7px 0px;
   font-size: 13px;
