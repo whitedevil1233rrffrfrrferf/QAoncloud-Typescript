@@ -35,7 +35,7 @@ h1 {
 
 h2 {
   font-size: var(--text-h2);
-  
+  font-weight: 600;
   margin-bottom: 0;
   margin-top: 0%;
 }
@@ -53,13 +53,12 @@ h4 {
 p {
   font-family: var(--font-secondary);
   font-size: var(--text-body);
-  font-weight: var(--weight-light);
+  font-weight: 500;
   line-height: var(--line-para);
   color: var(--color-muted);
-  max-width: 600px;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+  max-width: 750px;
+  color: #fff !important;
+ 
   
   overflow: hidden;
 }
@@ -85,7 +84,5 @@ p {
 }
 
 @media (max-width: 1250px) {
-  p{
-    max-width: 950px;
-  }
+  
 }

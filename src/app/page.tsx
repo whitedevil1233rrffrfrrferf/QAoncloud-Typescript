@@ -1,5 +1,5 @@
 import GreenCards from "@/components/HomePage/GreenCardsSection/GreenCards";
-import Hero from "@/components/HomePage/HeroSection/Hero";
+
 
 import ClientSlider from "@/components/HomePage/Slider/Slider";
 import classes from './page.module.css'
@@ -18,6 +18,7 @@ import { ProcessSection } from "@/components/Common/DottedCards/ProcessSection";
 import { WideFeatureCard } from "@/components/HomePage/TeamServices/WideFeatureCard";
 import QualityAssurance from "@/components/Industries/QualityAssurance/QualityAssurance";
 import { WideFeatureSection } from "@/components/HomePage/TeamServices/WideFeatureSection";
+import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
 
 
 export default function Home() {
@@ -25,12 +26,7 @@ export default function Home() {
     <div>
        <div className={classes.container}>
           <div className={classes.pageContent}>
-            <div className={classes.homeHeroBg}> 
-              <ContentWrapper> 
-                <Hero />
-              </ContentWrapper>  
-              
-            </div>
+            <HeroSection />            
             <div>
 
             </div>
