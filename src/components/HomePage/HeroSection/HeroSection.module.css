@@ -3,19 +3,18 @@
   background-color: #0a0a0f;
   overflow: hidden;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; 
+  height: auto; /* THIS is critical */
   /* NO flex here — flex was centering things vertically and messing layout */
 }
 
 /* ── Glow image — absolute, covers full section, starts from left ── */
 .glowWrapper {
   position: absolute;
-  top: 0;
-  left: 0px;          /* 👈 START FROM SCREEN EDGE */
-  width: 100%;     /* 👈 FULL VIEWPORT WIDTH */
-  height: 100%;
+  inset: 0;          /* cleaner than top/left/width/height */
   z-index: 0;
   pointer-events: none;
+      /* Push glow image down to create space */
 }
 
 .glowImage {
@@ -31,10 +30,24 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 5rem 2rem 4rem;    /* top gap for navbar */
+  padding: 5rem 2rem 3rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 3rem 1.5rem 2rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2.5rem 1rem 2rem;
+    gap: 1.5rem;
+  }
 }
 
 /* ── Text block ── */
@@ -106,30 +119,24 @@
 .spacer {
   width: 100%;
   height: 2px;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
 
 /* ── Stats row ── */
 .stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
   max-width: 600px;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
 }
 
-.stats .statItem:nth-child(1),
-.stats .statItem:nth-child(2) {
-  flex: 1;
-  min-width: 200px;
-}
-
+/* Third item spans full row */
 .stats .statItem:nth-child(3) {
-  flex: 1;
-  min-width: 300px;
+  grid-column: 1 / -1;
   margin-top: 0.5rem;
+  justify-self: start;
 }
-
 .statItem {
   display: flex;
   flex-direction: column;
@@ -157,7 +164,25 @@
   
 }
 
+@media (max-width: 480px) {
+  
+}
 /* ── Responsive ── */
+@media (max-width: 1366px) {
+  .content {
+    padding: 4rem 2rem 2rem;
+    gap: 1rem;
+  }
+  
+  .spacer {
+    margin: 0.5rem 0 1rem 0;
+  }
+  
+  .stats {
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .glowImage {
     opacity: 0.4;
