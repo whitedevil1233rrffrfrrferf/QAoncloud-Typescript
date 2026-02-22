@@ -19,6 +19,8 @@ import { WideFeatureCard } from "@/components/HomePage/TeamServices/WideFeatureC
 import QualityAssurance from "@/components/Industries/QualityAssurance/QualityAssurance";
 import { WideFeatureSection } from "@/components/HomePage/TeamServices/WideFeatureSection";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
+import WhyQAonCloud from "@/components/HomePage/WhyQaoncloud/WhyQAonCloud";
+import ServicesSection from "@/components/HomePage/TestingServices/ServicesSection";
 
 
 export default function Home() {
@@ -40,14 +42,14 @@ export default function Home() {
                     marginBottom={2}
                   />
               <ContentWrapper> 
-                <GreenCards />
+                
                 <ProcessSection />
               </ContentWrapper> 
               
               {/* <PartnerSection /> */}
               <ContentWrapper> 
                 {/* <QAoncloudGuarentee /> */}
-                <TestingServices />
+                <ServicesSection  />
                 
               </ContentWrapper>
               
@@ -58,7 +60,8 @@ export default function Home() {
                 
                 <PartnershipSection /> 
                 <CaseStudiesSection />
-                <FAQs
+                <WhyQAonCloud />
+                {/* <FAQs
                 title="Why global teams"
                 highlight="prefer QAonCloud over others"
                 faqs={[
@@ -84,14 +87,17 @@ export default function Home() {
                   },
                   
                 ]}
-              />
+              /> */}
                 <Banner
-                  title="Ready to ship "
+                  title="Ready to ship"
                   highlight="faster? "
                   description="It takes just 10 mins to make your releases 40% faster. Talk to our team about your QA challenges and we’ll find the best solution for you. "
                   //subDescription="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most  shipping great software that works."
                   ctaLabel="Talk to an expert"
                   ctaHref="/how-we-work"
+                  decorativeImage="/Images/Footer/HomePage.png"
+                    
+                  
                 />
                </ContentWrapper>
               

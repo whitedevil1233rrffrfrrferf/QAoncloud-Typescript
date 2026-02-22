@@ -1,7 +1,6 @@
 // Banner.tsx
 import React from "react"
 import styles from "./Banner.module.css"
-import SectionHeader from "../SectionHeader/SectionHeader"
 import Button from "../Button/Button"
 
 export interface BannerProps {
@@ -11,7 +10,8 @@ export interface BannerProps {
   subDescription?: string
   ctaLabel: string
   ctaHref?: string
-  onCtaClick?: () => void
+  decorativeImage?: string
+  decorativeImageAlt?: string
 }
 
 export const Banner: React.FC<BannerProps> = ({
@@ -21,22 +21,44 @@ export const Banner: React.FC<BannerProps> = ({
   subDescription,
   ctaLabel,
   ctaHref = "/how-we-work",
-  
+  decorativeImage,
+  decorativeImageAlt = "",
 }) => {
   return (
     <section className={styles.container}>
+      {/* Left: text content */}
       <div className={styles.inner}>
-        <SectionHeader
-          title={title}
-          highlight={highlight}
-          description={description}
-          subDescription={subDescription}
-        />
+        <h2 className={styles.title}>
+          {title}
+          {highlight && <span className={styles.highlight}>{highlight}</span>}
+        </h2>
 
-        <Button href={ctaHref} variant="primary" >
-          {ctaLabel}
-        </Button>
+        {description && (
+          <p className={styles.description}>{description}</p>
+        )}
+        {subDescription && (
+          <p className={styles.description}>{subDescription}</p>
+        )}
+
+        <div className={styles.buttonContainer}>
+          <Button href={ctaHref} variant="primary">
+            {ctaLabel}
+          </Button>
+        </div>
       </div>
+
+      {/* Right: decorative image — positioned via Figma specs */}
+      {decorativeImage && (
+        <div className={styles.imageWrapper} aria-hidden="true">
+          <img
+            src={decorativeImage}
+            alt={decorativeImageAlt}
+            className={styles.decorativeImage}
+          />
+        </div>
+      )}
     </section>
   )
 }
+
+export default Banner

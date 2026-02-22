@@ -1,50 +1,13 @@
+.section {
+  width: 100%;
+  margin-top: var(--section-header-margin);
+  position: relative;
+  overflow: hidden;
+}
+
 .inner {
   position: relative;
   z-index: 1;
-
-  text-align: center;
-}
-.section{
-  
-  /* margin-top: 5rem !important; */
-  margin-top: var(--section-header-margin);
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-.heading {
-  font-size: 44px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.section::before {
-  content: "";
-  position: absolute;
-  top: -15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(59, 130, 246, 0.15) 0%,
-    rgba(59, 130, 246, 0.10) 35%,
-    rgba(59, 130, 246, 0.05) 60%,
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(60px);
-}
-.highlight {
-  color: #3b82f6;
-}
-
-.subheading {
-  color: #9ca3af;
-  max-width: 620px;
-  margin: 0 auto 64px;
-  font-size: 16px;
 }
 
 .grid {
@@ -53,8 +16,79 @@
   gap: 24px;
   margin-top: 48px;
 }
-.buttonContainer {
-  margin-top: var(--button-top-margin);
-  display: flex;
-  justify-content: center;
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
 }
+
+/* .card:hover {
+  border-color: rgba(59, 139, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.card.active {
+  border-color: rgba(59, 139, 255, 0.8);
+  box-shadow: 0 0 0 1px rgba(59, 139, 255, 0.4);
+} */
+
+/* ─── Image wrapper: gradient + noise as background ─── */
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 410 / 261;
+  overflow: hidden;
+  position: relative;
+  /* This gradient shows through wherever the image doesn't cover */
+  background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
+  box-shadow: 0px 0.43px 1.08px 0px #7070700F;
+}
+
+/* Monotone noise overlay on the image area only */
+.imageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23FFFFFF' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Key: left-align so the subject shows on the left, right side crops off */
+  object-position: left center;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.cardBody {
+  padding: 20px 24px 28px;
+  background-color: #0a0d14;
+}
+
+.cardTitle {
+  
+  color: #3B8BFF;
+  margin: 0 0 8px 0;
+  font-family: 'Sora', 'DM Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  
+  margin: 0;
+  line-height: 1.55;
+  font-family: 'DM Sans', sans-serif;
+}
+

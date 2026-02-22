@@ -1,74 +1,103 @@
 .container {
-  
   margin: 0 auto;
   border-radius: 16px;
-  padding: 4rem;
   margin-top: var(--section-header-margin);
-  background:
-    /* SOLID BASE (this blocks stars) */
-    #0c0c0c,
-
-    /* GRADIENT LAYER */
-    radial-gradient(
-      80% 120% at 50% 0%,
-      #1a2733 0%,
-      #0e141a 45%,
-      #0c0c0c 100%
-    );
-
+  background: var(--color-blue-linear-grad);
+  border: 1px solid #1F1F1F;
+  box-shadow: 0px 0.43px 1.08px 0px #7070700F;
   display: flex;
-  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
 }
 
-.inner{
-  text-align: center;
-  
-  
+/* Monotone noise — size 0.86px, density 0.4, #FFFFFF33 */
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23FFFFFF33'/%3E%3C/svg%3E");
+  background-size: 86px 86px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
 }
+
+/* Left text block */
+.inner {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 3rem 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 55%;
+  text-align: left;
+}
+
 .title {
-  font-size: clamp(32px, 5vw, 48px);
-  max-width: 20%;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-  
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem 0;
 }
 
 .highlight {
   color: #4f8cff;
-  display: block;
-  margin-top: 8px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 0.35em;
 }
 
 .description {
-  margin: 0 auto;
-  max-width: 600px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.5rem 0;
+  max-width: 720px;
 }
 
-.button {
-  padding: 12px 28px;
+.buttonContainer {
+  margin-top: 1.75rem;
+}
+
+/* Decorative image — Figma specs: 742.54×314.86px, rotate 15deg, top: -63.68px, left: 599.64px */
+.imageWrapper {
+  position: absolute;
+  width: 742.54px;
+  height: 314.86px;
+  top: 53.68px;
+  left: 825.64px;
+  transform: rotate(-15deg);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1;
+  /* Fade left edge so it blends into the gradient */
+  mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+.decorativeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
   border-radius: 8px;
-  background: #4f8cff;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(79, 140, 255, 0.2);
 }
 
-.button:hover {
-  background: #3b7cff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(79, 140, 255, 0.3);
-}
-.buttonContainer{
-  /* margin-top: 2rem; */
+@media (max-width: 768px) {
+  .inner {
+    max-width: 100%;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .imageWrapper {
+    display: none;
+  }
 }

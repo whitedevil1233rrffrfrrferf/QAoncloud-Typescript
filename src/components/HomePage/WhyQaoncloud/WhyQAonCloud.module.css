@@ -1,0 +1,200 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--section-header-margin);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(253.33deg, #002a8d -29.66%, #090c0e 81.95%);
+  box-shadow: 0px 4px 10px 0px #7070700f;
+  overflow: hidden;
+  
+  position: relative;
+}
+
+/* Noise / starfield overlay */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23FFFFFF33'/%3E%3C/svg%3E");
+  background-size: 106px 106px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 1;
+}
+
+/* ── Header ── */
+.header {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.titleWhite {
+  color: #ffffff;
+}
+
+.highlight {
+  color: #3093e8;
+}
+
+.divider {
+  height: 1px;
+  background: #4a4a4a;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Body ── */
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* Left side gets more breathing room, image naturally fills its container */
+  gap: 0;
+  padding: 2.5rem 0 2.5rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Feature List ── */
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Takes up space, image gets the rest */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-right: 2rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Icon box — border matches design */
+.starIcon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #3093e8;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3093e8;
+  /* Slightly glow */
+  box-shadow: 0 0 8px rgba(48, 147, 232, 0.25);
+}
+
+.featureText {
+  color: #ffffff;
+  font-size: var(--text-h3);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* ── Visual ── */
+.visual {
+  /* Occupies 42% of the body width, flush to the right edge of card */
+  flex: 0 0 42%;
+  /* Let it stretch to full card height */
+  align-self: stretch;
+  position: relative;
+  /* No margin/padding — butts up against right edge */
+  overflow: hidden;
+  padding-right: 1.75rem;
+}
+
+/* The fill container inside visual */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 12px 0 0 12px; /* rounded on left side only since right is flush to card */
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .body {
+    padding: 2rem 0 2rem 2rem;
+    gap: 0;
+  }
+
+  .visual {
+    flex: 0 0 46%;
+  }
+
+  .imageWrapper {
+    min-height: 240px;
+  }
+}
+
+/* Mobile — image moves to TOP */
+@media (max-width: 640px) {
+  .header {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .body {
+    flex-direction: column-reverse;
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .visual {
+    flex: unset;
+    width: 100%;
+    align-self: unset;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 12px;
+  }
+
+  .featureList {
+    gap: 1.25rem;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .featureText {
+    font-size: 0.95rem;
+  }
+
+  .starIcon {
+    width: 30px;
+    height: 30px;
+  }
+}
