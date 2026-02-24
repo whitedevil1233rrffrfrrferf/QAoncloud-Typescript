@@ -79,11 +79,7 @@
   }
 
   .connector {
-    width: 100px;
-    height: 80px;
-    transform: rotate(90deg);
-    left: 50% !important;
-    margin-left: -50px;
+    display: none;
   }
 
   .first {

@@ -8,7 +8,8 @@
 .iconContainer {
   width: 95px;
   height: 95px;
-  background: #171717B2;
+  background: #0F0F0F;
+  border: 1px solid #292929;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -19,13 +20,13 @@
 .icon {
   width: 35px;
   height: 35px;
-  color: #60A5FA;
+  color: #FF8641;
   stroke-width: 2;
 }
 
 .title {
   
-  color: #FFFFFF;
+  color: #3093e8;
   margin: 0 0 16px 0;
   line-height: 1.4;
 }

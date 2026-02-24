@@ -8,6 +8,7 @@
     overflow: hidden;
     
   }
+  
   .testimonialsContainer::before {
   content: "";
   position: absolute;

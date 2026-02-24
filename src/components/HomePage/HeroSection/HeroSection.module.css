@@ -44,9 +44,7 @@
 }
 
 .heading {
-  color: #ffffff;
-  font-weight: 700;
-  line-height: 1.15;
+  
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -54,6 +52,7 @@
 .subheading {
   color: #a0a0b0;
   line-height: 1.6;
+  max-width: 660px;
   margin: 0;
 }
 
@@ -149,52 +148,100 @@
   color: #7070a0;
 }
 
-/* ── Height-based (1366x768 laptops) ── */
-@media (max-height: 800px) {
+@media (max-width: 1200px) {
+  /* Hide the glow image entirely */
+  .glowWrapper {
+    display: none;
+  }
+  .hero {
+    position: relative;
+    background-color: #0a0a0f;
+    overflow: hidden;
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+  }
+  /* Center all content */
   .content {
-    padding: 3.5rem 2rem 2.5rem;
-  }
-
-  .divider {
-    margin: 1.5rem 0;
-  }
-}
-
-/* ── Width breakpoints ── */
-@media (max-width: 1366px) {
-  .content {
-    padding: 4rem 2rem 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .glowImage {
-    opacity: 0.4;
-    object-position: center center;
-  }
-
-  .content {
-    padding: 4rem 1.25rem 3rem;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem 3rem;
   }
 
   .textBlock {
     max-width: 100%;
+    align-items: center;
   }
 
+  /* Center buttons */
+  .buttons {
+    justify-content: center;
+  }
+
+  /* Center divider */
   .divider {
-    width: 70%;
-    margin: 2rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  /* Center stats */
+  .stats {
+    margin-top: 0;
+    max-width: 100%;
+    justify-items: center;
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  .stats .statItem:nth-child(3) {
+    justify-self: center;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .content {
-    padding: 2.5rem 1rem 2rem;
+    padding: 3rem 0.2rem 3rem;
   }
 
-  .buttons {
-    flex-direction: column;
+  .divider {
+    width: 80%;
   }
+  .subheading {
+    color: #a0a0b0;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 2.5rem 1.25rem 2rem;
+    align-items: center;
+    text-align: center;
+  }
+   .subheading {
+    color: #a0a0b0;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+  .textBlock {
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .heading {
+   max-width: 400px;
+  }
+
+  
+
+  /* .buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  } */
 
   .btnPrimary,
   .btnSecondary {
@@ -202,16 +249,61 @@
     text-align: center;
   }
 
-  .statNumber {
-    font-size: 1.5rem;
+  .divider {
+    width: 80%;
+    margin: 1.5rem auto;
+  }
+
+  /* Stack stats one below another */
+  .stats {
+    grid-template-columns: 1fr; /* single column */
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.5rem;
+    gap: 1.25rem;
+    justify-items: center;
+  }
+
+  .stats .statItem:nth-child(3) {
+    grid-column: 1; /* reset span */
+    margin-top: 0;
+    justify-self: center;
+  }
+
+  .statItem {
+    align-items: center;
+    text-align: center;
   }
 
   .statLabel {
     font-size: 16px;
   }
+}
+@media (max-width: 480px) {
+  .content {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  /* .buttons {
+    flex-direction: column;
+    width: 100%;
+  } */
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    text-align: center;
+  }
 
   .divider {
     width: 100%;
-    margin: 1.5rem 0;
   }
+  /* .subheading {
+    color: #a0a0b0;
+    line-height: 1.6;
+    max-width: 660px;} */
+  /* .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  } */
 }

@@ -133,8 +133,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  
-  border-radius: 12px 0 0 12px; /* rounded on left side only since right is flush to card */
+  border: 1px solid #4A4A4A;
+  border-radius: 30px; /* rounded on left side only since right is flush to card */
   overflow: hidden;
 }
 
@@ -146,7 +146,7 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .body {
-    padding: 2rem 0 2rem 2rem;
+    padding:  2rem ;
     gap: 0;
   }
 
@@ -155,14 +155,24 @@
   }
 
   .imageWrapper {
-    min-height: 240px;
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
+  
+
+.image {
+  object-fit: contain;
+  transform: scale(1.4); /* zoom out */
+  transform-origin: center center;
+}
 }
 
 /* Mobile — image moves to TOP */
 @media (max-width: 640px) {
   .header {
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 0;
   }
 
   .body {

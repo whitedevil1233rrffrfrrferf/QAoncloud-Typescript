@@ -7,7 +7,19 @@
   
   overflow: hidden;
 }
-
+.industryTag {
+    display: inline-block;
+    background-color: #2B2B2B;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    letter-spacing: 0.01em;
+    width: 70px;
+  }
 .sliderContainer {
   position: relative;
   width: 100%;
