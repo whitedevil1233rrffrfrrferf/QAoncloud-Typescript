@@ -1,4 +1,6 @@
 import styles from './HeroSection.module.css';
+import { Link } from 'lucide-react';
+import { Button } from 'bootstrap';
 
 export default function HeroSection() {
   return (
@@ -24,8 +26,9 @@ export default function HeroSection() {
             QA software testing services that deliver impeccable quality, 2X faster.
             No chaos, no compromises.
           </p>
-          <div className={styles.buttons}>
-            <button className={styles.btnPrimary}>Talk to a QA expert</button>
+           <div className={styles.buttons}>
+            <a href="Contact-us">
+           <button className={styles.btnSecondary}>Talk To An Expert</button>  </a> 
             <button className={styles.btnSecondary}>See How We Work</button>
           </div>
           
@@ -37,14 +40,14 @@ export default function HeroSection() {
         <div className={styles.stats}>
           <div className={styles.statItem}>
             <h2 className={styles.statNumber}>40%</h2>
-            <p className={styles.statLabel}>Faster than in house team</p>
+            <p className={styles.statLabel}>Faster than in-house team</p>
           </div>
           <div className={styles.statItem}>
-            <h2 className={styles.statNumber}>12+ yrs</h2>
+            <h2 className={styles.statNumber}>12+ years</h2>
             <p className={styles.statLabel}>Of QA Testing Services.</p>
           </div>
           <div className={styles.statItem}>
-            <h2 className={styles.statNumberOrange}>Fintech, Healthtech &amp; SAAS</h2>
+            <h2 className={styles.statNumberOrange}>FinTech, HealthTech &amp; SaaS</h2>
             <p className={styles.statLabel}>Vertical Expertise</p>
           </div>
         </div>

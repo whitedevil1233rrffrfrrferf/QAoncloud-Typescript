@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import styles from './CaseStudiesSection.module.css'
 import SectionHeader from '@/components/Common/SectionHeader/SectionHeader'
+import { useRouter } from "next/navigation"
 
 interface TeamCard {
   id: string
@@ -10,6 +11,7 @@ interface TeamCard {
   description: string
   imageSrc: string
   imageAlt: string
+  link: string
 }
 
 const cards: TeamCard[] = [
@@ -19,6 +21,7 @@ const cards: TeamCard[] = [
     description: 'Compliance-ready from day one',
     imageSrc: '/Images/HomePage/CaseStudies/FinTech.png',
     imageAlt: 'FinTech - glowing credit card',
+     link: '/Fintech',
   },
   {
     id: 'healthtech',
@@ -26,6 +29,8 @@ const cards: TeamCard[] = [
     description: 'HIPAA-compliant by design.',
     imageSrc: '/Images/HomePage/CaseStudies/HealthTech.png',
     imageAlt: 'HealthTech - medical capsule visualization',
+    link: '/HealthCare',
+
   },
   {
     id: 'saas',
@@ -33,11 +38,13 @@ const cards: TeamCard[] = [
     description: 'Ship continuously, without breaking things',
     imageSrc: '/Images/HomePage/CaseStudies/Saas.png',
     imageAlt: 'SaaS - data bar chart visualization',
+     link: '/Saas',
   },
 ]
 
 export const CaseStudies: React.FC = () => {
   const [activeCard, setActiveCard] = useState<string>('healthtech')
+  const router = useRouter()
 
   return (
     <section className={styles.section}>
@@ -49,11 +56,15 @@ export const CaseStudies: React.FC = () => {
             <div
               key={card.id}
               className={`${styles.card} ${activeCard === card.id ? styles.active : ''}`}
-              onClick={() => setActiveCard(card.id)}
+              onClick={() => {
+                setActiveCard(card.id)
+                router.push(card.link)
+              }}
             >
               <div className={styles.imageWrapper}>
                 <img src={card.imageSrc} alt={card.imageAlt} />
               </div>
+
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDesc}>{card.description}</p>

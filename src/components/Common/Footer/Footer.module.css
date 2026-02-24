@@ -1,123 +1,123 @@
 .footer {
   background: #000;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-left: -2rem;
   color: #fff;
-  padding: 8rem;
+  padding: 4rem 2rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .container {
-  max-width: 1200px;
+
   margin: 0 auto;
-  
-  display: flex;
-  flex-direction: column;  
-  align-items: center;     
-  gap: 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32rem;
+  margin-bottom: 1rem;
+
+  padding: 1rem 0;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
-
-/* Brand */
-.brand {
+/* Brand Section */
+.brandSection {
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  margin-top: -5%;
+  gap: 1rem;
 }
 
-
 .logo {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: -2rem;
+   margin-left: -0.25rem;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-style: light;
+  font-family: Inter;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3.9px;
+}
+
+.desicrewLogo {
+  height: 20px;
+  width: 130.19px;
+  object-fit: contain;
+}
+
+.qaoncloudLogo {
+  height: 50px;
+  width: 156px;   
+
 }
 
 .description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 24px;
-    text-align: center;
+  margin-bottom: 2rem;
+  max-width: 350px;
 }
 
-.socials {
-  display: flex;
-  gap: 12px;
-}
-
-.socials a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.socials a:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
-}
-
+/* Social Media Icons */
 .socialContainer {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem; /* spacing between buttons, similar to mx-1 */
-  padding-top: 0;
+  gap: 0.75rem;
 }
 
 .btnSocial {
-  height: 1.5rem;
-  width: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  background-color: #0d6efd; /* same as old */
+  background-color: #1a1a1a;
   border-radius: 50%;
   color: white;
   text-decoration: none;
   transition: transform 0.2s, background-color 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btnSocial:hover {
-  background-color: #0b5ed7; /* slightly darker on hover */
+  background-color: #333;
   transform: scale(1.1);
 }
 
 .btnSocial svg {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 1rem;
+  height: 1rem;
 }
-
 
 /* Columns */
 .columns {
-  display: flex;            
-  flex-wrap: wrap;          
-  justify-content: center;  
-  gap: 64px;
+  display: flex;
+  gap: 6rem;
 }
 
-
 .column h4 {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 16px;
-    text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
 }
 
 .column a {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   transition: color 0.2s ease;
-    text-align: center;
 }
 
 .column a:hover {
@@ -127,25 +127,25 @@
 /* Bottom bar */
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 24px;
+  padding: 1rem 0;
   display: flex;
-  flex-direction: column;  
-  align-items: center;    
-  gap: 10px;
-  font-size: 13px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6);
+  max-width: 1350px;
+  margin: 0 auto;
 }
-
-
 
 .legal {
   display: flex;
-  gap: 24px;
+  gap: 2rem;
 }
 
 .legal a {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .legal a:hover {
@@ -156,26 +156,165 @@
 /* RESPONSIVE */
 /* -------------------- */
 
-@media (max-width: 900px) {
+/* Large Tablets */
+@media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 3rem;
+    max-width: 900px;
   }
 
   .columns {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 6rem;
+    justify-content: center;
   }
 }
 
-@media (max-width: 600px) {
+/* Small Tablets */
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .container {
+    gap: 2.5rem;
+    max-width: 100%;
+  }
+
   .columns {
-    grid-template-columns: 1fr;
+    gap: 4rem;
+    justify-content: flex-start;
+  }
+
+  .brandSection {
+    text-align: center;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .subtitle {
+    justify-content: center;
+  }
+
+  .socialContainer {
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .container {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .column {
+    text-align: center;
+    width: 100%;
+  }
+
+  .column h4 {
+    text-align: center;
+  }
+
+  .column a {
+    text-align: center;
+  }
+
+  .brandSection {
+    text-align: center;
+    align-items: center;
+  }
+
+  .description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .qaoncloudLogo {
+    height: 40px;
+    width: 125px;
+  }
+
+  .desicrewLogo {
+    height: 18px;
+    width: 117px;
   }
 
   .bottom {
     flex-direction: column;
-    gap: 12px;
+    gap: 1rem;
     text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .legal {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 400px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .container {
+    gap: 1.5rem;
+  }
+
+  .columns {
+    gap: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .qaoncloudLogo {
+    height: 35px;
+    width: 110px;
+  }
+
+  .desicrewLogo {
+    height: 16px;
+    width: 104px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .socialContainer {
+    gap: 0.5rem;
+  }
+
+  .btnSocial {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .btnSocial svg {
+    width: 0.875rem;
+    height: 0.875rem;
   }
 }

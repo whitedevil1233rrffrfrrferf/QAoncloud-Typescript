@@ -36,7 +36,16 @@ export default function PartnershipCard({
           <img src={logo} alt={company} className={styles.logo} />
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.description}>{description}</p>
-          {subdescription && <p className={styles.description}>{subdescription}</p>}
+          {subdescription && (
+            <a 
+              href={url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.readMoreLink}
+            >
+              {subdescription}
+            </a>
+          )}
         </div>
       </div>
     </a>

@@ -1,28 +1,37 @@
 .card {
   position: relative;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, #000 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, #000 100%);
   border-radius: 16px;
   border: 3px solid #141414;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .top {
   height: 80px;
-  background-color: #2A5068; /* fully opaque color */
-  border-top-left-radius: 16px;
+  background-color: #2A5068;
+  /* fully opaque color */
+    border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  border-bottom-left-radius: 25px; /* Add curved bottom-left corner */
+  border-bottom-left-radius: 25px;
+  /* Add curved bottom-left corner */
   z-index: 1;
   position: relative;
   padding: 14px 16px;
-  padding-left: 80px; /* Add space for the logo on the left */
+  padding-left: 80px;
+  /* Add space for the logo on the left */
 }
 
 .content {
@@ -36,30 +45,35 @@
   top: -38px;
   left: 10px;
   z-index: 2;
-  width: 58px;       /* or 48px like before */
+  width: 58px;
+  /* or 48px like before */
   height: 58px;
-  object-fit: contain; /* maintain aspect ratio */
+  object-fit: contain;
+  /* maintain aspect ratio */
   border-radius: 50%;
-  background-color: #fff; /* fallback if PNG has transparency */
-  padding: 8px; /* optional for spacing inside circle */
+  background-color: #fff;
+  /* fallback if PNG has transparency */
+  padding: 8px;
+  /* optional for spacing inside circle */
 }
 
 .tags {
   position: absolute;
   top: 12px;
   right: 12px;
-  
+
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  justify-content: flex-end; /* Align tags to the right */
+  justify-content: flex-end;
+  /* Align tags to the right */
   align-items: flex-start;
   margin-bottom: 12px;
   max-width: 280px;
 }
 
 .tag {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
   padding: 4px 10px;
   font-size: 0.75rem;
@@ -67,9 +81,13 @@
 }
 
 .title {
-  max-width: 80%;
-  
-  margin: 8px 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  color: #3093E8;
+  margin: 0;
 }
 
 .description {
@@ -77,6 +95,39 @@
   font-size: 0.9rem;
   line-height: 1.5;
 }
-.link{
+
+.link {
   text-decoration: none;
+}
+
+.p {
+  font-family: var(--font-secondary);
+  font-size: var(--text-body);
+  font-weight: 500;
+  line-height: var(--line-para);
+  color: var(--color-muted);
+  max-width: 750px;
+  color: #85eb9b !important;
+
+
+  overflow: hidden;
+}
+
+.readMore {
+  margin-top: auto;
+}
+
+.readMoreLink {
+  color: #3093E8;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.readMoreLink:hover {
+  color: #2563eb;
 }

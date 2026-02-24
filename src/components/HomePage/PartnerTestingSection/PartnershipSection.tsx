@@ -9,34 +9,36 @@ import Button from "@/components/Common/Button/Button";
 const caseStudies = [
   {
     company: "AOL",
-    logo: "/logos/AOI.png", // replace with actual path
-    topColor: "#2A5068",
-    tags: ["FinTech"],
-    title: "Series B payments startup",
-    description: "AOL. saw a 45% reduction in their QA cycle time.",
-    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
-    url:"https://docsend.com/view/zw3jj5g3ra69apry"
-    
+    logo: "/logos/Akyrian.png", // replace with actual path
+    topColor: "#242430CC",
+    tags: ["Automation", "User Testing", "Functional QA"],
+    title: "40% cost optimization & efficiency gains.",
+
+    description: "We tackled Akyrian's process inefficiencies and compliance complexities, building scalable quality processes.",
+    subdescription: "Read Full Case Study →",
+    url: "https://docsend.com/view/zw3jj5g3ra69apry"
+
   },
   {
     company: "Avanti",
     logo: "/logos/avanti.png",
-    topColor: "#623B2B",
+    topColor: "#F8D23499",
     tags: ["Integration Testing", "User Testing", "Performance QA"],
-    title: "Series B payments startup",
-    description: "AOL. saw a 45% reduction in their QA cycle time.",
-    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
-    url:"https://docsend.com/view/gxyqru5wr72twj8p"
+    title: "High-quality, defect-free releases.",
+
+    description: "We ensured Avanti's releases were stable, and secure,  improving app quality and QA cycle time.",
+    subdescription: "Read Full Case Study →",
+    url: "https://docsend.com/view/gxyqru5wr72twj8p"
   },
   {
     company: "RedBlackTree",
-    logo: "/logos/redblacktree.png",
-    topColor: "#3B2C66",
+    logo: "/logos/FORATravel.png",
+    topColor: "#4C4C4C99",
     tags: ["Compliance QA", "User Testing", "Security Testing"],
-    title: "Series B payments startup",
-    description: "AOL. saw a 45% reduction in their QA cycle time.",
-    subdescription:"We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
-    url:"https://docsend.com/view/9kqq39c6tmhkubby"
+    title: "269 defects identified.",
+    description: "We developed a comprehensive test plan for FORA, ensuring high-quality, defect-free builds for every release. ",
+    subdescription: "Read Full Case Study →",
+    url: "https://docsend.com/view/9kqq39c6tmhkubby"
   }
 ];
 
@@ -44,8 +46,8 @@ export default function PartnershipSection() {
   return (
     <section className={styles.section}>
       <SectionHeader
-        title="Built for teams like yours"
-        
+        title="Real partnerships. "
+        highlight="Real wins." 
       />
 
       <div className={styles.cardsGrid}>
@@ -54,12 +56,8 @@ export default function PartnershipSection() {
         ))}
       </div>
 
-      <div className={styles.buttonContainer}>
-        <Button href="/how-we-work" variant="primary">
-        Talk to an expert
-      </Button>
-      </div>
-      
+ 
+
     </section>
   );
 }

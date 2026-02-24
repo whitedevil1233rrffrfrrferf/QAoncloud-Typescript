@@ -53,6 +53,7 @@
   color: #a0a0b0;
   line-height: 1.6;
   max-width: 660px;
+  font-size: 18px;
   margin: 0;
 }
 
@@ -97,6 +98,7 @@
 .btnSecondary:hover {
   border-color: #555;
   color: #fff;
+  background-color: #2573c7;
 }
 
 /* ── Divider — sits between buttons and stats ── */
@@ -174,9 +176,12 @@
   }
 
   /* Center buttons */
-  .buttons {
-    justify-content: center;
-  }
+ .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
 
   /* Center divider */
   .divider {
@@ -294,7 +299,24 @@
     width: 100%;
     text-align: center;
   }
+  .btnSecondary {
+    background-color: #050505;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
 
+  .btnSecondary:hover {
+           
+    transform: translateY(-2px);     /* lift effect */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
   .divider {
     width: 100%;
   }
