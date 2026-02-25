@@ -1,115 +1,71 @@
-/* .wrapper {
-  padding: 80px 0;
-  background-color: #050505;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.06) 1px,
-    transparent 1px
-  );
-  background-size: 24px 24px;
-  overflow: hidden;
- 
- 
-} */
- .wrapper {
-  margin-bottom: 5rem;
+.wrapper {
   padding: 2rem;
- }
+  margin-bottom: 5rem;
+}
+
 .container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 24px;
-  position:relative
-
+  position: relative;
 }
 
 .heading {
-  margin-left: auto;
-  margin-right: auto;
-  color: #ffffff;
   text-align: center;
+  color: #fff;
   margin-bottom: 3rem;
-  
 }
 
-.heading span {
-  color: #ffffff;
-  font-weight: 600;
+.marquee {
+  overflow: hidden;
+  position: relative;
 }
 
-.clientSlider {
-  width: 100%;
-}
-
-.clientSlide {
-  width: auto !important;
+.track {
   display: flex;
-  align-items: center;
+  gap: 40px;
+  animation: scroll 20s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused; /* pause immediately on hover */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* scroll half of duplicated content */
+  }
 }
 
 .logoCard {
   min-width: 220px;
   height: 72px;
-  padding: 0 32px;
-  position: relative;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: linear-gradient(180deg, #D5D5D5 0%, #DBF3FF 100%);
-
   border-radius: 20px;
-  padding:0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
-
   transition: border 0.3s ease, background 0.3s ease;
 }
-.logoCard::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  padding: 1px;
-  
-  /* Top-left corner gradient */
-  background: 
-    /* Top-left corner */
-    linear-gradient(
-      135deg,
-      rgba(220, 220, 220, 0.75) 0%,
-      transparent 50%
-    ) 0 0 / 50% 50% no-repeat,
-    /* Bottom-right corner */
-    linear-gradient(
-      -45deg,
-      rgba(220, 220, 220, 0.75) 0%,
-      transparent 50%
-    ) 100% 100% / 50% 50% no-repeat;
-  
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
 
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
+.logoCard:hover { 
+  cursor: pointer;
 }
-/* .logoCard:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-} */
 
 .logo {
-  width: auto;
   height: 38px;
+  width: auto;
   opacity: 0.9;
-  
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .logoCard:hover .logo {
-  filter: grayscale(0%);
   opacity: 1;
+  filter: grayscale(0%);
 }
