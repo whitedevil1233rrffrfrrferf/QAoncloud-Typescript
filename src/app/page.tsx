@@ -3,7 +3,7 @@ import GreenCards from "@/components/HomePage/GreenCardsSection/GreenCards";
 
 import ClientSlider from "@/components/HomePage/Slider/Slider";
 import classes from './page.module.css'
-import TestingServices from "@/components/HomePage/TestingServices/TestingServices";
+
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
 import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
 import { Banner } from "@/components/Common/Banner/Banner";
