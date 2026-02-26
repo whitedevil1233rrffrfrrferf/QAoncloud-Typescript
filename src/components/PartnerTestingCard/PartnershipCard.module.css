@@ -38,6 +38,11 @@
   position: relative;
   padding: 44px 20px 20px;
   text-align: left;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;   /* ✅ fills remaining card height */
 }
 
 .logo {
@@ -98,6 +103,7 @@
 
 .link {
   text-decoration: none;
+  
 }
 
 .p {
@@ -118,12 +124,13 @@
 }
 
 .readMoreLink {
-  color: #3093E8;
+  margin-top: auto;   /* ✅ pushes to bottom */
+
+  color: #ffffff;
   text-decoration: underline;
   text-underline-offset: 4px;
   font-size: 0.875rem;
   font-weight: 500;
-  margin-top: 1rem;
   display: inline-block;
   transition: color 0.2s ease;
 }

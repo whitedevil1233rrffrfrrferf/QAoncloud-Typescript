@@ -3,24 +3,17 @@ import GreenCards from "@/components/HomePage/GreenCardsSection/GreenCards";
 
 import ClientSlider from "@/components/HomePage/Slider/Slider";
 import classes from './page.module.css'
-
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
-import QAoncloudGuarentee from "@/components/HomePage/QAoncloudGuarentee/QAoncloudGuarentee";
 import { Banner } from "@/components/Common/Banner/Banner";
-import Footer from "@/components/Common/Footer/Footer";
-import { FeatureGrid } from "@/components/Common/FeatureGrid/FeatureGrid";
 import PartnershipSection from "@/components/HomePage/PartnerTestingSection/PartnershipSection";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
-import PartnerSection from "@/components/HomePage/PartnerSection/PartnerSection";
 import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
-import FAQs from "@/components/Industries/FAQS/FAQs";
 import { ProcessSection } from "@/components/Common/DottedCards/ProcessSection";
-import { WideFeatureCard } from "@/components/HomePage/TeamServices/WideFeatureCard";
 import QualityAssurance from "@/components/Industries/QualityAssurance/QualityAssurance";
-import { WideFeatureSection } from "@/components/HomePage/TeamServices/WideFeatureSection";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
 import WhyQAonCloud from "@/components/HomePage/WhyQaoncloud/WhyQAonCloud";
 import ServicesSection from "@/components/HomePage/TestingServices/ServicesSection";
+import SectionDivider from "@/components/Common/SectionDivider/SectionDivider";
 
 
 export default function Home() {
@@ -33,6 +26,7 @@ export default function Home() {
 
             </div>
               <ClientSlider />
+              <SectionDivider />
                <QualityAssurance
                     title="Your engineers aren’t stalling releases. "
                     highlight="Your QA is."
@@ -41,54 +35,40 @@ export default function Home() {
                     subDescription=""
                     marginBottom={2}
                   />
+                  <SectionDivider />
               <ContentWrapper> 
                 
                 <ProcessSection />
               </ContentWrapper> 
-              
+              <SectionDivider />
               {/* <PartnerSection /> */}
               <ContentWrapper> 
                 {/* <QAoncloudGuarentee /> */}
                 <ServicesSection  />
                 
               </ContentWrapper>
-              
-              <Testimonials />
-              
-              
+              <SectionDivider />
+              <ContentWrapper>
+                <CaseStudiesSection />
+              </ContentWrapper>
+              <SectionDivider /> 
+                <Testimonials />
+              <SectionDivider />
+              <ContentWrapper>
+                  <WhyQAonCloud />
+                </ContentWrapper>
+                <SectionDivider /> 
               <ContentWrapper> 
                 
-                <PartnershipSection /> 
-                <CaseStudiesSection />
-                <WhyQAonCloud />
-                {/* <FAQs
-                title="Why global teams"
-                highlight="prefer QAonCloud over others"
-                faqs={[
-                  {
-                    question: "Much faster than hiring in-house",
-                    answer:
-                      "Hiring, training and equipping an in-house QA team takes 6+ months. And when someone leaves, you’re left with coverage gaps and piling tasks. We’re productive in weeks, with zero recruiting costs or management overhead. With us, your QA coverage stays consistent, evolving with your product. ",
-                  },
-                  {
-                    question: "More reliable than offshore vendors",
-                    answer:
-                      "Offshore QA is often synonymous with junior resources, constant supervision, and communication gaps. Quality remains questionable, and teams end up spending more time managing QA than ever. Our senior engineers become part of the team, learn your product, and own outcomes. No chaos, no hand-holding. Just quality you can trust. ",
-                  },
-                  {
-                    question: "More effective than AI tools alone",
-                    answer:
-                      "There’s a lot that AI testing tools can do. But they don’t understand users, edge cases, or what a bug signifies. You can’t call an algorithm when you’ve got a problem! We combine AI-accelerated QA with senior engineers whose expertise offers context, optimizes prioritization, and ensures accountability. ",
-                  },
-                  {
-                    question: "More efficient than engineers on QA",
-                    answer:
-                      "Every minute your engineers spend on QA is time they aren’t doing what they were hired to do. This puts a pause on feature delivery, slowing releases. Let your engineers do what they do best. Leave the testing to our specialists.  ",
-                  },
-                  
-                ]}
-              /> */}
-                <Banner
+                <PartnershipSection />
+              </ContentWrapper>
+              <SectionDivider />
+
+              
+               
+                
+                <ContentWrapper>
+                  <Banner
                   title="Ready to ship"
                   highlight="faster? "
                   description="It takes just 10 mins to make your releases 40% faster. Talk to our team about your QA challenges and we’ll find the best solution for you. "
@@ -96,11 +76,9 @@ export default function Home() {
                   ctaLabel="Talk to an expert"
                   ctaHref="/how-we-work"
                   decorativeImage="/Images/Footer/HomePage.png"
-                    
-                  
                 />
-               </ContentWrapper>
-              
+                </ContentWrapper>
+               <SectionDivider />   
                      
           </div>
       

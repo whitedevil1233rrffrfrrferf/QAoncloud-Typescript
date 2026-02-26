@@ -3,31 +3,31 @@
 } */
   .testimonialsContainer {
     position: relative;
-    padding-top: 2rem;
+    /* padding: 2rem; */
     margin-top: var(--section-header-margin);
     overflow: hidden;
     
   }
   
-  .testimonialsContainer::before {
-  content: "";
-  position: absolute;
-  top: -15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(59, 130, 246, 0.15) 0%,
-    rgba(59, 130, 246, 0.10) 35%,
-    rgba(59, 130, 246, 0.05) 60%,
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(60px);
-}
+  /* .testimonialsContainer::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(59, 130, 246, 0.15) 0%,
+      rgba(59, 130, 246, 0.10) 35%,
+      rgba(59, 130, 246, 0.05) 60%,
+      transparent 80%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+} */
 /* .testimonialsContainer::before {
   content: "";
   position: absolute;

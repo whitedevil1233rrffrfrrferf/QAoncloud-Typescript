@@ -5,6 +5,7 @@
   margin-top: var(--section-header-margin);
   width: 100%;
   box-sizing: border-box;
+  padding-bottom: 4rem;
 }
 
 .card {
