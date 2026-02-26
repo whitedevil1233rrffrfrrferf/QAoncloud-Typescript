@@ -115,7 +115,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 2rem;
   max-width: 600px;
-  margin-top: clamp(3rem, 15vh, 10rem);  /* scales with viewport height, not fixed */
+  margin-top: clamp(3rem, 14vh, 8.5rem);  /* scales with viewport height, not fixed */
   margin-bottom: 3rem;
 }
 
