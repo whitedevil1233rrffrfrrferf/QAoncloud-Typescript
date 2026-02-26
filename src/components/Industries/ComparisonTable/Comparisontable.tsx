@@ -1,0 +1,78 @@
+import styles from "./Comparisontable.module.css";  
+
+const rows = [
+  {
+    alternative: "In-house QA team",
+    problem: "It takes 6 months to hire and train someone who understands Fintech compliance.",
+    difference: "We're productive in weeks with experienced engineers who know regulatory landscape.",
+  },
+  {
+    alternative: "Offshore QA vendors",
+    problem: "Offshore QA involves junior resources with negligible regulatory context.",
+    difference:
+      "Our senior engineers have deep domain expertise, having worked in FinTech. Regulatory compliance is their forte, and you won't have to babysit them.",
+  },
+  {
+    alternative: "AI testing tools alone",
+    problem:
+      "No one to call when an auditor has questions. It requires strategic interventions to determine what actually matters.",
+    difference:
+      "AI handles volume. Engineers handle judgment. You can't call an algorithm at 2AM, but you can call us.",
+  },
+  {
+    alternative: "Your engineers doing QA",
+    problem: "Puts development on pause, and tires out your team. They're not compliance experts anyway.",
+    difference:
+      "Frees up your engineers to build like they were meant to. Compliance is built-in from day one.",
+  },
+];
+
+const ComparisonTable = () => {
+  return (
+    <section className={styles.section}>
+      <div className={styles.glowBlob} aria-hidden="true" />
+      <div className={styles.container}>
+        <h2 className={styles.title}>
+          Here's why <span className={styles.highlight}>FinTech Teams prefer us</span>
+        </h2>
+
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr className={styles.theadRow}>
+                <th className={styles.thAlternative}>Alternative</th>
+                <th className={styles.thProblem}>
+                  <span className={styles.thIcon}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 8h-2.81A6 6 0 0 0 15 5.5V4a1 1 0 0 0-2 0v1.17A5.98 5.98 0 0 0 12 5c-.34 0-.68.03-1 .08V4a1 1 0 0 0-2 0v1.5A6 6 0 0 0 6.81 8H4a1 1 0 0 0 0 2h2.09A5.96 5.96 0 0 0 6 11v1H4a1 1 0 0 0 0 2h2v1a6 6 0 0 0 .09 1H4a1 1 0 0 0 0 2h2.81A6 6 0 0 0 18 16v-1h2a1 1 0 0 0 0-2h-2v-1c0-.34-.03-.68-.09-1H20a1 1 0 0 0 0-2zM12 7a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0v-5a4 4 0 0 1 4-4zm-1 4h2v2h-2v-2zm0 4h2v2h-2v-2z" fill="#E8730E"/>
+                    </svg>
+                  </span>
+                  The Problem
+                </th>
+                <th className={styles.thDifference}>
+                  <span className={styles.thIcon}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 2L2 8L12 22L22 8L18 2H6ZM16 4L18.5 8H13.5L16 4ZM8 4L10.5 8H5.5L8 4ZM4.5 10H9L12 18L4.5 10ZM11 10H13L12 13.5L11 10ZM15 10H19.5L12 18L15 10Z" fill="#3093E8"/>
+                    </svg>
+                  </span>
+                  How We're Different
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, index) => (
+                <tr key={index} className={styles.row}>
+                  <td className={styles.tdAlternative}>{row.alternative}</td>
+                  <td className={styles.tdProblem}>{row.problem}</td>
+                  <td className={styles.tdDifference}>{row.difference}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ComparisonTable;

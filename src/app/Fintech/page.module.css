@@ -3,6 +3,7 @@
   min-height: 100vh;   /* 🔑 REQUIRED */
   background-color: var(--color-container);
   overflow: hidden;
+  
 }
 
 
@@ -19,7 +20,7 @@
   );
 
   background-size: 22px 22px;
-  opacity: 0.5;
+  opacity: 0.65;
 
   pointer-events: none;
   z-index: 1;

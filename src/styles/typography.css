@@ -24,7 +24,7 @@
   --text-h3: clamp(18px, 1.9vw, 24px); /* 16px → 20px */
   --text-h4: clamp(15px, 2vw, 18px);
   --text-body-lg: 1.125rem; /* 18px */
-  --text-body: clamp(14px, 1.8vw, 20px);
+  --text-body: clamp(14px, 1.2vw, 17px);
   --text-caption: 0.875rem; /* 14px */
 
   /* ===== LINE HEIGHTS ===== */

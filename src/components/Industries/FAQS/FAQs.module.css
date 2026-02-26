@@ -1,15 +1,16 @@
 .faqsSection {
-  
-  /* background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px); */
   background-size: 20px 20px;
   padding: 2rem;
   position: relative;
   margin-top: var(--section-header-margin);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-.faqsSection::before {
-  content: "";
+
+/* Blue glow blob behind the FAQs heading */
+.glowBlob {
   position: absolute;
-  top: -20%;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
@@ -25,23 +26,11 @@
   z-index: 0;
   filter: blur(60px);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.title {
-  
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 60px;
-  line-height: 1.2;
-}
-
-.highlight {
-  color: #00d4ff;
-  font-weight: 400;
 }
 
 .faqList {
@@ -55,15 +44,14 @@
   border-radius: 12px;
   margin-bottom: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
-.faqItem:hover {
-  
+/* Active item gets a subtle blue border highlight */
+.faqItemActive {
+  border-color: rgba(0, 212, 255, 0.2);
 }
-.answerpara{
-  max-width: 1000px;
-}
+
 .question {
   width: 100%;
   background: none;
@@ -74,58 +62,78 @@
   align-items: center;
   cursor: pointer;
   text-align: left;
-  
-  font-weight: 600;
-  color: #ffffff;
   transition: all 0.3s ease;
+  gap: 20px;
 }
 
-.question:hover {
-  color: #00d4ff;
-}
-
-.question span:first-child {
+/* Question text — matches Figma typography spec */
+.questionText {
   flex: 1;
-  padding-right: 20px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  font-style: 'Semi Bold';
+  line-height: 31px;
+  letter-spacing: -0.52px; /* -2% of 26px */
+  background: #3093E8;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s ease;
+}
+
+.question:hover .questionText {
+  opacity: 0.85;
 }
 
 .icon {
   flex-shrink: 0;
-  width: 40px; /* Increased from 24px */
-  height: 40px; /* Increased from 24px */
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease;
-  color: #ffff;
-  background: #121212; /* Added gray background */
-  border-radius: 8px; /* Added rounded corners */
-  display: flex; /* Added to center the SVG */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  color: #696969;
+  background: #121212;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Rotated 180deg means chevron points UP = expanded */
 .icon.active {
   transform: rotate(180deg);
+  color: #3093E8;
 }
 
 .icon svg {
-  width: 24px; /* Keep SVG at original size */
+  width: 24px;
   height: 24px;
 }
+
 .answer {
-  width: 100%;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.35s ease, padding 0.35s ease;
   background: #0c0c0c;
 }
 
 .answer.active {
-  max-height: 100px;
+  /* Large enough max-height to accommodate any answer length */
+  max-height: 300px;
   padding: 0 32px 24px 32px;
 }
 
-.answer p {
-  /*  */
+.answerpara {
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: Medium;
+  line-height: 26px;
+  letter-spacing: -1.5px;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 1000px;
 }
 
 /* Responsive Design */
@@ -133,19 +141,23 @@
   .faqsSection {
     padding: 60px 0;
   }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
+
   .question {
     padding: 20px 24px;
-    font-size: 1rem;
   }
-  
+
+  .questionText {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
   .answer.active {
     padding: 0 24px 20px 24px;
+  }
+
+  .answerpara {
+    font-size: 17px;
+    line-height: 23px;
   }
 }
 
@@ -153,22 +165,24 @@
   .faqsSection {
     padding: 40px 0;
   }
-  
-  .title {
-    font-size: 1.75rem;
-    margin-bottom: 30px;
-  }
-  
+
   .question {
     padding: 16px 20px;
-    font-size: 0.95rem;
   }
-  
+
+  .questionText {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+  }
+
   .answer.active {
     padding: 0 20px 16px 20px;
   }
-  
-  .answer p {
-    font-size: 0.9rem;
+
+  .answerpara {
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: -1px;
   }
 }

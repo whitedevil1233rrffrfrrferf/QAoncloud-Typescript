@@ -20,45 +20,59 @@ interface FAQsProps {
 /* ---------------- COMPONENT ---------------- */
 
 const FAQs = ({ title, highlight, faqs }: FAQsProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndexes, setActiveIndexes] = useState<Set<number>>(new Set()); //  all FAQs as closed view
+
+  //  all FAQs as open (expanded)  view
+  /* const [activeIndexes, setActiveIndexes] = useState<Set<number>>(
+    new Set(faqs.map((_, i) => i))
+  );*/
 
   const toggleFAQ = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndexes((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
   };
 
   return (
     <section className={styles.faqsSection}>
+      {/* Glow blob behind the header */}
+      <div className={styles.glowBlob} aria-hidden="true" />
       <div className={styles.container}>
         <SectionHeader title={title} highlight={highlight} />
 
         <div className={styles.faqList}>
-          {faqs.map((faq, index) => (
-            <div key={index} className={styles.faqItem}>
-              <button
-                className={styles.question}
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={activeIndex === index}
-              >
-                <h3>{faq.question}</h3>
-
-                <span
-                  className={`${styles.icon} ${
-                    activeIndex === index ? styles.active : ""
-                  }`}
+          {faqs.map((faq, index) => {
+            const isActive = activeIndexes.has(index);
+            return (
+              <div key={index} className={`${styles.faqItem} ${isActive ? styles.faqItemActive : ""}`}>
+                <button
+                  className={styles.question}
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isActive}
                 >
-                  <ChevronIcon />
-                </span>
-              </button>
+                  <h3 className={styles.questionText}>{faq.question}</h3>
 
-              <div
-                className={`${styles.answer} ${
-                  activeIndex === index ? styles.active : ""
-                }`}
-              >
-                <p className={styles.answerpara}>{faq.answer}</p>
+                  <span
+                    className={`${styles.icon} ${isActive ? styles.active : ""}`}
+                  >
+                    <ChevronIcon />
+                  </span>
+                </button>
+
+                <div
+                  className={`${styles.answer} ${isActive ? styles.active : ""}`}
+                >
+                  <p className={styles.answerpara}>{faq.answer}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
