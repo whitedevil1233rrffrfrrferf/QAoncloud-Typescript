@@ -7,6 +7,7 @@
   width: 100%;
   box-sizing: border-box;
   padding-bottom: var(--padding-bottom);
+  
 }
 .wrapper::before {
     content: "";
@@ -34,22 +35,23 @@
   background: linear-gradient(253.33deg, #002a8d -29.66%, #090c0e 81.95%);
   box-shadow: 0px 4px 10px 0px #7070700f;
   overflow: hidden;
-  
+  border-color: #7070700f;
   position: relative;
 }
 
 /* Noise / starfield overlay */
 .card::before {
-  content: '';
+   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1; 
   pointer-events: none;
-  z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23FFFFFF33'/%3E%3C/svg%3E");
-  background-size: 106px 106px;
-  background-repeat: repeat;
-  mix-blend-mode: overlay;
-  opacity: 1;
+  /* Real random dot noise — generated pixel-by-pixel to match Figma speckle pattern */ 
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");  background-repeat: repeat;
+  opacity: 15%;
+   background-repeat: repeat;
+  mix-blend-mode: screen; 
+  size: 0.86px;  ; 
 }
 
 /* ── Header ── */
@@ -225,3 +227,4 @@
     height: 30px;
   }
 }
+

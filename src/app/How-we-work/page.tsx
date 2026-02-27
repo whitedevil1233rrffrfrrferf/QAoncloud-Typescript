@@ -8,7 +8,7 @@ import { SmoothReleases } from '@/components/Industries/SmoothReleases/SmoothRel
 import QualityTestingServices from '@/components/Industries/QualityServices/QualityServices'
 import FAQs from '@/components/Industries/FAQS/FAQs'
 import { Banner } from '@/components/Common/Banner/Banner'
-import ServicePageHeader from '@/components/Industries/Healthcare/Header/ServicePageHeader'
+import ServicePageHeader from '@/components/Industries/HealthcareHeader/Header/ServicePageHeader'
 import Partnerships from '@/components/Industries/Partnership/Partnership'
 import QABenefits from '@/components/Industries/Benefits/Benefits'
 import ClientSlider from '@/components/Industries/Slider/Slider'

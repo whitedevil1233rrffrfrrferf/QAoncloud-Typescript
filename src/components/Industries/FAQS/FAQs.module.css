@@ -116,6 +116,7 @@
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
   background: #0c0c0c;
+  
 }
 
 .answer.active {
@@ -132,7 +133,7 @@
   font-style: Medium;
   line-height: 26px;
   letter-spacing: -1.5px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
   max-width: 1000px;
 }
 
