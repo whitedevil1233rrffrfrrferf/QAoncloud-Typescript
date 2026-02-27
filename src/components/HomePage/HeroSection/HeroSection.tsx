@@ -6,14 +6,14 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       {/* Background glow image */}
-      <div className={styles.glowWrapper}>
+      {/* <div className={styles.glowWrapper}>
         <img
           src="/Images/Banner/HomeBanner.png"
           alt=""
           className={styles.glowImage}
           aria-hidden="true"
         />
-      </div>
+      </div> */}
 
       <div className={styles.content}>
         {/* Text block */}
@@ -28,7 +28,7 @@ export default function HeroSection() {
           </p>
            <div className={styles.buttons}>
             
-           <button className={styles.btnSecondary}>Talk To An Expert</button> 
+           <button className={styles.btnPrimary}>Talk To An Expert</button> 
             <button className={styles.btnSecondary}>See How We Work</button>
           </div>
           

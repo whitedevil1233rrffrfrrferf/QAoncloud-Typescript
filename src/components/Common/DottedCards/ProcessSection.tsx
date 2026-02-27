@@ -23,7 +23,7 @@ const CurvedConnector = ({ position }: { position: 'first' | 'second' }) => (
 
 export const ProcessSection: React.FC = () => {
   return (
-    <section className={styles.processSection}>
+    <section className={styles.section}>
       <div className={styles.header}>
         {/* <h2 className={styles.heading}>
           How do we deliver <span className={styles.highlight}>2X faster</span>?

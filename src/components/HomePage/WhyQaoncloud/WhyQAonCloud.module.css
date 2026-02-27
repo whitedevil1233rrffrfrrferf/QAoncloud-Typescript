@@ -1,11 +1,31 @@
 .wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: var(--section-header-margin);
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: 4rem;
+  padding-bottom: var(--padding-bottom);
+}
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 700px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(14, 165, 233, 0.19) 0%,
+        rgba(14, 165, 233, 0.12) 35%,
+        rgba(14, 165, 233, 0.04) 60%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
 }
 
 .card {
@@ -97,16 +117,12 @@
 /* Icon box — border matches design */
 .starIcon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border: 2px solid #3093e8;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #3093e8;
-  /* Slightly glow */
-  box-shadow: 0 0 8px rgba(48, 147, 232, 0.25);
 }
 
 .featureText {

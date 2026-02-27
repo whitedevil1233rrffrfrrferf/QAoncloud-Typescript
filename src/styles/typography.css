@@ -2,6 +2,7 @@
   /* ===== FONT FAMILIES ===== */
   --font-primary: var(--font-raleway), sans-serif;
   --font-secondary: var(--font-poppins), sans-serif;
+  --font-Inter:var(--font-inter), sans-serif;
 
   /* ===== FONT WEIGHTS ===== */
   --weight-light: 300;
@@ -16,6 +17,10 @@
   --header-bottom-margin:5rem;
   --section-header-margin:5rem;
   --button-top-margin:3rem;
+
+  /* ===== Margin  ===== */
+
+  --padding-bottom:4rem;
 
   /* ===== FONT SIZES ===== */
   --text-h1: clamp(24px, 4vw, 46px);
@@ -35,4 +40,6 @@
 
   /* ===== Max-width ===== */
   --width-lg:1440px;
+
+
 }
