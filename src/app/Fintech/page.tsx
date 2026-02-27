@@ -18,8 +18,8 @@ import ComparisonTable from '@/components/Industries/ComparisonTable/Comparisont
 import FinTechteamSection from '@/components/Industries/FinTechteams/FinTechteamSection'
 import avanti from '../../../assets/logos/indihood_logo.png';
 
- 
- 
+
+
 const finTechData = {
   title: "FinTech teams",
   highlight: "ship faster with QAonCloud",
@@ -64,7 +64,7 @@ const finTechData = {
   ],
 };
 
- 
+
 
 export default function page() {
   return (
@@ -214,9 +214,10 @@ export default function page() {
               highlight="bug free releases"
               description="Talk to an expert & learn how you can speed up your QA process today."
               ctaLabel="Talk To An Expert"
+              ctaHref="/Contact-us"
               linkDescription="Or see"
               linkDescriptionText="How Neo bank cut release time by 40%"
-              linkDescriptionHref="/case-studies/neo-bank"
+              linkDescriptionHref="#"
               decorativeImage="/Images/Footer/HomePage.png"
             />
 

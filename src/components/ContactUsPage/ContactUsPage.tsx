@@ -39,19 +39,19 @@ const ContactUsPage = () => {
           <div className={styles.logoWrapper}>
             <Link href="/" className={styles.logo}>
               <Image
-                src="/Logo.png"
+                src="/logos/qaoncloud3dlogo.png"
                 alt="QAonCloud"
-                width={150}
-                height={150}
+                width={250}
+                height={250}
                 priority
               />
             </Link>
           </div>
 
-        <div className={styles.titleWrapper}>
-  <span className={styles.figmaEllipse} aria-hidden />
-  <h1 className={styles.headerTitl}>Contact Us</h1>
-</div>
+          <div className={styles.titleWrapper}>
+            <span className={styles.figmaEllipse} aria-hidden />
+            <h1 className={styles.headerTitl}>Contact Us</h1>
+          </div>
 
 
 

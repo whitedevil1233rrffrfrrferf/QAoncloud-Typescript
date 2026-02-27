@@ -8,7 +8,7 @@ import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 
 export interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 interface FAQsProps {
@@ -68,7 +68,7 @@ const FAQs = ({ title, highlight, faqs }: FAQsProps) => {
                 <div
                   className={`${styles.answer} ${isActive ? styles.active : ""}`}
                 >
-                  <p className={styles.answerpara}>{faq.answer}</p>
+                  <div className={styles.answerpara}>{faq.answer}</div>
                 </div>
               </div>
             );
