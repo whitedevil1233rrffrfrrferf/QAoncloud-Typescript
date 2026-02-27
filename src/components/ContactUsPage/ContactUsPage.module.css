@@ -1,20 +1,53 @@
+
+/* ── Base ── */
 .contactPage {
   min-height: 100vh;
-  background-color: #0a0a0a;
+  background-color: #090c0e;
   color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
-/* ================= HEADER ================= */
-
+/* ══════════════════════════════════
+   HEADER
+══════════════════════════════════ */
 .headerSection {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 50px 24px;
   overflow: hidden;
-  background: none;
+  background: linear-gradient(290deg, #002A8D 0%, #090C0E 100%);
+  min-height: 493px;
+  box-shadow: 0px 0.43px 1.08px 0px rgba(112, 112, 112, 0.06);
 }
+
+/* Dot-grid texture overlay */
+.headerSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.figmaEllipse {
+  position: absolute;
+  bottom: 120px;            /* just below text baseline */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 30px;
+  background: rgba(0, 1, 1, 0.75);
+  border-radius: 50%;
+  filter: blur(15px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 
 .headerContent {
@@ -23,146 +56,147 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 21px;
-  width: 504px;
-  max-width: 100%;
-}
-
-
-.blueLogo {
-  width: 30px;
-  height: 30px;
-  /* background: #0d6efd; */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-}
- 
-
-.headerTitle {
-  font-family: Inter, sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 0;
-  letter-spacing: -1px;
-  text-align: center;
-  text-shadow: none;
-}
-
-
-.blueLogo {
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.blueLogo img {
+  gap: 24px;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  max-width: 504px;
 }
 
+/* Logo */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* ================= MAIN ================= */
+.logo {
+  display: block;
+  line-height: 0;
+}
 
+/* Title wrapper — holds glow ellipse + h1 */
+.titleWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+   padding-bottom: 24px; 
+}
+
+/* ══════════════════════════════════
+   MAIN CONTENT
+══════════════════════════════════ */
 .mainContent {
-  padding: 2rem;
-  /* background-image: radial-gradient(
-    rgba(255, 255, 255, 0.06) 1px,
-    transparent 0
-  ); */
-  background-size: 24px 24px;
+  padding: 48px 24px 64px;
 }
 
 .contentContainer {
-  max-width: 1400px;
+  max-width: 1266px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 3rem;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
-/* ================= LEFT CARD ================= */
-
+/* ══════════════════════════════════
+   LEFT — Find Us card
+══════════════════════════════════ */
 .leftSection {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .contactCard {
-  background: linear-gradient(180deg, #0d0d0d, #060606);
+  background: linear-gradient(180deg, #0d0d0d 0%, #060606 100%);
   border-radius: 16px;
-  padding: 2.5rem 2rem;
-  border: 1px solid #1c1c1c;
+  padding: 36px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .cardTitle {
   font-size: 1.4rem;
-  margin-bottom: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
 }
 
 .contactItem {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contactText {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .icon {
-  color: #2da8ff;
+  color: #FF8641;
   font-size: 1.2rem;
-  margin-top: 0.3rem;
-}
-
-.contactLabel {
-  color: #9aa0a6;
-  font-size: 0.85rem;
-  margin-bottom: 0.3rem;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .contactValue {
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
 }
 
-/* ================= FORM ================= */
-
+/* ══════════════════════════════════
+   RIGHT — Form
+══════════════════════════════════ */
 .rightSection {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .formContainer {
   width: 100%;
-  max-width: 720px;
 }
 
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 10px;
 }
 
+/* Label above, input below via column-reverse */
 .formGroup {
   display: flex;
-   flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  gap: 6px;
 }
 
+.formLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+}
 
 .formInput,
 .formTextarea {
   width: 100%;
-  padding: 1.2rem 1.4rem;
+  padding: 14px 16px;
   background: #0f0f0f;
-  border: 1px solid #222;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
   outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .formInput:focus,
@@ -171,83 +205,98 @@
   background: #111;
 }
 
-.formLabel {
-  position: static;         
-  margin-bottom: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #ffffff;
-  background: none;
-  padding: 0;
-}
-
-
 .formTextarea {
   min-height: 120px;
-  resize: none;
+  resize: vertical;
 }
 
-/* ================= BUTTON ================= */
-
+/* ── Submit Button ── */
 .submitButton {
-  margin-top: 1.5rem;
-  height: 48px;
-  background: linear-gradient(90deg, #1e90ff, #3ab0ff);
+  margin-top: 8px;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(90deg, #1a6fd4 0%, #3093E8 100%);
   border: none;
   border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
   color: #fff;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.submitButton:hover {
-  opacity: 0.9;
-}
+.submitButton:hover { opacity: 0.88; }
+.submitButton:active { opacity: 0.75; }
 
-/* ================= RESPONSIVE ================= */
-
+/* ══════════════════════════════════
+   RESPONSIVE  ≤ 1024px — stack columns
+══════════════════════════════════ */
 @media (max-width: 1024px) {
   .contentContainer {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .leftSection {
-    order: 2;
-  }
+  .leftSection { order: 2; }
+  .rightSection { order: 1; }
 
-  .rightSection {
-    order: 1;
-  }
+  .contactCard { padding: 28px 24px; }
 }
 
+/* ══════════════════════════════════
+   RESPONSIVE  ≤ 768px
+══════════════════════════════════ */
 @media (max-width: 768px) {
-  .headerTitle {
-    font-size: 2.2rem;
+  .headerSection {
+    padding: 40px 20px;
+    min-height: 360px;
   }
 
-  .blueLogo {
-    width: 60px;
-    height: 60px;
+  .headerTitl { font-size: 32px; }
+
+  .figmaEllipse { width: 240px; height: 90px; }
+
+  .mainContent { padding: 32px 16px 48px; }
+
+  .formInput,
+  .formTextarea { padding: 12px 14px; font-size: 0.9rem; }
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE  ≤ 480px
+══════════════════════════════════ */
+@media (max-width: 480px) {
+  .headerSection {
+    padding: 32px 16px;
+    min-height: 300px;
   }
+
+  .headerTitl { font-size: 26px; letter-spacing: -0.5px; }
+
+  .figmaEllipse { width: 180px; height: 70px; filter: blur(60px); }
+
+  .mainContent { padding: 24px 12px 40px; }
+
+  .contactCard { padding: 22px 16px; gap: 20px; }
+
+  .cardTitle { font-size: 1.2rem; }
+
+  .contactValue { font-size: 0.875rem; }
+
+  .formLabel { font-size: 0.8rem; }
+
+  .formInput,
+  .formTextarea { padding: 11px 12px; font-size: 0.875rem; }
+
+  .submitButton { height: 46px; font-size: 0.95rem; }
 }
 
- .titleWrapper {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;  
-}
-
-
-
-/* Title */
-.headerTitle {
-    font-family: 'Inter', sans-serif;
-  font-weight: 700;         
-  font-size: 46px;
-  line-height: 1;           
-  letter-spacing: -1px;
-  text-align: center;
-  
+/* ══════════════════════════════════
+   RESPONSIVE  ≤ 360px
+══════════════════════════════════ */
+@media (max-width: 360px) {
+  .headerTitl { font-size: 22px; }
+  .contactValue { font-size: 0.82rem; }
+  .formInput, .formTextarea { font-size: 0.82rem; }
 }
