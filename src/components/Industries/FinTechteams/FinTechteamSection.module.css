@@ -1,0 +1,335 @@
+/* =====================================================
+   FinTechteamSection.module.css — fully responsive
+   ===================================================== */
+
+.section {
+  background: #0e1117;
+  color: #f0f4ff;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  padding: 52px 0 0;
+  box-sizing: border-box;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: clip;
+}
+
+/* ── Heading wrap + ellipse glow ── */
+.headingWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+  padding: 0 24px;
+}
+
+.ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 384px;
+  height: 159px;
+  background: rgba(48, 147, 232, 0.9);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+    color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.headingHighlight {
+  color: #3da9f5;
+}
+
+/* ── Featured: 2-col grid ── */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 56px 48px;
+  gap: 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ── Logo ── */
+.logoWrap {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 52px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.stat {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e8edf8;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.statHighlight { color: #f97316; }
+
+.quote {
+  font-size: 0.95rem;
+    color: #ffffff;
+  line-height: 1.72;
+  margin: 0;
+  font-style: normal;
+}
+
+/* ── Author ── */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  display: block;
+}
+
+.authorName {
+  font-size: 0.875rem;
+  font-weight: 600;
+    color: #ffffff;
+}
+
+.authorRole {
+  font-size: 0.78rem;
+  color: #5e6a80;
+  margin-top: 2px;
+}
+
+/* ── Hero image ── */
+.featuredImage {
+  width: 90%;
+  height: 351px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(290deg, #002a8d 0%, #090c0e 90%);
+  flex-shrink: 0;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Testimonials: 2-col grid ── */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.testimonialCard {
+  padding: 32px 56px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.testimonialCard:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 3px 10px;
+  width: fit-content;
+}
+
+.testimonialQuote {
+  font-size: 0.97rem;
+  color: #ffffff;
+  line-height: 1.65;
+  margin: 0;
+  font-style: normal;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.bigQuote {
+  font-size: 1.6rem;
+   color: #ffffff;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+
+/* ══════════════════════════════════════════
+   TABLET  ≤ 1024px
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .featured {
+    padding: 0 32px 36px;
+    gap: 28px;
+  }
+
+  .featuredImage { height: 280px; }
+
+  .testimonialCard { padding: 28px 32px 36px; }
+
+  .heading { font-size: 1.75rem; }
+}
+
+
+/* ══════════════════════════════════════════
+   TABLET SMALL  ≤ 768px  — stack layout
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section { padding-top: 40px; }
+
+  .heading { font-size: 1.4rem; }
+
+  .headingWrap { margin-bottom: 32px; }
+
+  .ellipse { width: 260px; height: 110px; }
+
+  /* Stack featured: text → image */
+  .featured {
+    grid-template-columns: 1fr;
+    padding: 0 20px 32px;
+    gap: 24px;
+  }
+
+  .featuredImage {
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .stat { font-size: 0.98rem; }
+
+  .quote { font-size: 0.9rem; }
+
+  /* Stack testimonials */
+  .testimonials { grid-template-columns: 1fr; }
+
+  .testimonialCard:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .testimonialCard { padding: 24px 20px 28px; }
+}
+
+
+/* ══════════════════════════════════════════
+   MOBILE  ≤ 480px
+══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .section { padding-top: 28px; }
+
+  .heading { font-size: 1.15rem; }
+
+  .headingWrap { padding: 0 16px; margin-bottom: 24px; }
+
+  .ellipse { width: 200px; height: 80px; }
+
+  .featured { padding: 0 16px 24px; gap: 18px; }
+
+  .logoWrap { width: 110px; height: 42px; }
+
+  .stat { font-size: 0.88rem; }
+
+  /* Let highlight wrap naturally on tiny screens */
+  .statHighlight { display: inline; }
+
+  .quote { font-size: 0.85rem; line-height: 1.65; }
+
+  .avatar {
+    width: 34px; height: 34px;
+    min-width: 34px; min-height: 34px;
+    max-width: 34px; max-height: 34px;
+  }
+
+  .authorName { font-size: 0.8rem; }
+
+  .authorRole { font-size: 0.7rem; }
+
+  .featuredImage { height: 185px; border-radius: 10px; }
+
+  .testimonialCard { padding: 20px 16px 24px; gap: 14px; }
+
+  .testimonialQuote { font-size: 0.875rem; }
+
+  .bigQuote { font-size: 1.3rem; }
+
+  .badge { font-size: 0.65rem; }
+}
+
+
+/* ══════════════════════════════════════════
+   MOBILE XS  ≤ 360px
+══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .heading { font-size: 1rem; }
+  .stat { font-size: 0.82rem; }
+  .quote, .testimonialQuote { font-size: 0.8rem; }
+  .featuredImage { height: 160px; }
+}

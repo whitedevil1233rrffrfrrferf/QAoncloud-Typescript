@@ -12,6 +12,10 @@ export interface BannerProps {
   ctaHref?: string
   decorativeImage?: string
   decorativeImageAlt?: string
+  // All link props are optional
+  linkDescription?: string
+  linkDescriptionText?: string
+  linkDescriptionHref?: string
 }
 
 export const Banner: React.FC<BannerProps> = ({
@@ -23,6 +27,9 @@ export const Banner: React.FC<BannerProps> = ({
   ctaHref = "/how-we-work",
   decorativeImage,
   decorativeImageAlt = "",
+  linkDescription,
+  linkDescriptionText,
+  linkDescriptionHref = "#",
 }) => {
   return (
     <section className={styles.container}>
@@ -45,6 +52,18 @@ export const Banner: React.FC<BannerProps> = ({
             {ctaLabel}
           </Button>
         </div>
+        {/* Only renders if linkDescription is passed */}
+        {linkDescription && (
+          <p className={styles.linkDescription}>
+            {linkDescription}{" "}
+            {linkDescriptionText && (
+              <a href={linkDescriptionHref} className={styles.linkDescriptionAnchor}>
+                {linkDescriptionText}
+              </a>
+            )}{" "}
+            with us.
+          </p>
+        )}
       </div>
 
       {/* Right: decorative image — positioned via Figma specs */}

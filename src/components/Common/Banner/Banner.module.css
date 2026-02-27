@@ -9,7 +9,7 @@
   align-items: stretch;
   position: relative;
   overflow: hidden;
-  min-height: 220px;
+  height: 310x;
 }
 
 /* Monotone noise — size 0.86px, density 0.4, #FFFFFF33 */
@@ -49,7 +49,7 @@
 
 .highlight {
   color: #4f8cff;
-  font-style: italic;
+  /*font-style: italic;*/
   font-weight: 700;
   margin-left: 0.35em;
 }
@@ -61,18 +61,53 @@
   max-width: 720px;
 }
 
+ 
+
+/* Button container */
 .buttonContainer {
+  display: flex; 
   margin-top: 1.75rem;
 }
+
+.buttonContainer a,
+.buttonContainer button {
+  font-family: 'Inter', sans-serif; 
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -1px;
+  text-align: center;
+  color: #FFFFFF; 
+}
+
+.linkDescription {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1rem;
+}
+
+.linkDescriptionAnchor {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.linkDescriptionAnchor:hover {
+  color: #4f8cff;
+}
+
+
+
 
 /* Decorative image — Figma specs: 742.54×314.86px, rotate 15deg, top: -63.68px, left: 599.64px */
 .imageWrapper {
   position: absolute;
   width: 742.54px;
-  height: 314.86px;
-  top: 53.68px;
-  left: 825.64px;
-  transform: rotate(-15deg);
+  height: 320.86px;
+  top: 50.68px;
+  left: 810.64px;
+  transform: rotate(-10deg);
   transform-origin: center center;
   pointer-events: none;
   z-index: 1;

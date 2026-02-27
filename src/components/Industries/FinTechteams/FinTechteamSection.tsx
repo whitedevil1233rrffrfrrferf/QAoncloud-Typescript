@@ -1,0 +1,109 @@
+import styles from "./FinTechteamSection.module.css";
+
+/* ---------------- TYPES ---------------- */
+
+interface Author {
+  name: string;
+  role: string;
+  avatar: string;
+}
+
+interface FeaturedTestimonial {
+  logoSrc: string;
+  logoAlt: string;
+  statHighlight: string;
+  statRest: string;
+  quote: string;
+  author: Author;
+  image: string;
+  imageAlt: string;
+}
+
+interface TestimonialItem {
+  label: string;
+  quote: string;
+  author: Author;
+}
+
+interface FinTechteamSectionProps {
+  title: string;
+  highlight: string;
+  featured: FeaturedTestimonial;
+  testimonials: TestimonialItem[];
+}
+
+/* ---------------- COMPONENT ---------------- */
+
+function FinTechteamSection({
+  title,
+  highlight,
+  featured,
+  testimonials,
+}: FinTechteamSectionProps) {
+  return (
+    <section className={styles.section}>
+
+      {/* Heading with ellipse glow behind it */}
+      <div className={styles.headingWrap}>
+        <div className={styles.ellipse} aria-hidden="true" />
+        <h1 className={styles.heading}>
+          {title} <span className={styles.headingHighlight}>{highlight}</span>
+        </h1>
+      </div>
+
+      {/* Featured testimonial */}
+      <div className={styles.featured}>
+        <div className={styles.featuredContent}>
+          <div className={styles.logoWrap}>
+            <img src={featured.logoSrc} alt={featured.logoAlt} className={styles.logoImg} />
+          </div>
+
+          <p className={styles.stat}>
+            <span className={styles.statHighlight}>{featured.statHighlight}</span>
+            {" "}{featured.statRest}
+          </p>
+
+          <blockquote className={styles.quote}>{featured.quote}</blockquote>
+
+          <div className={styles.author}>
+            <img src={featured.author.avatar} alt={featured.author.name} className={styles.avatar} />
+            <div>
+              <div className={styles.authorName}>{featured.author.name}</div>
+              <div className={styles.authorRole}>{featured.author.role}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.featuredImage}>
+          <img src={featured.image} alt={featured.imageAlt} className={styles.heroImg} />
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className={styles.divider} />
+
+      {/* Testimonials row */}
+      <div className={styles.testimonials}>
+        {testimonials.map((item, index) => (
+          <div key={index} className={styles.testimonialCard}>
+            <span className={styles.badge}>{item.label}</span>
+            <blockquote className={styles.testimonialQuote}>
+              <span className={styles.bigQuote}>"</span>
+              {item.quote}
+            </blockquote>
+            <div className={styles.author}>
+              <img src={item.author.avatar} alt={item.author.name} className={styles.avatar} />
+              <div>
+                <div className={styles.authorName}>{item.author.name}</div>
+                <div className={styles.authorRole}>{item.author.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </section>
+  );
+}
+
+export default FinTechteamSection;
