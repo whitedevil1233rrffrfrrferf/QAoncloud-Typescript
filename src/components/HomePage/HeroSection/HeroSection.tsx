@@ -6,14 +6,14 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       {/* Background glow image */}
-      {/* <div className={styles.glowWrapper}>
+      <div className={styles.glowWrapper}>
         <img
           src="/Images/Banner/HomeBanner.png"
           alt=""
           className={styles.glowImage}
           aria-hidden="true"
         />
-      </div> */}
+      </div>
 
       <div className={styles.content}>
         {/* Text block */}
