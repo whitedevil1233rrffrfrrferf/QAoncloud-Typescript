@@ -1,43 +1,33 @@
-import styles from "./Comparisontable.module.css";  
+import styles from "./Comparisontable.module.css";
 
-const rows = [
-  {
-    alternative: "In-house QA team",
-    problem: "It takes 6 months to hire and train someone who understands Fintech compliance.",
-    difference: "We're productive in weeks with experienced engineers who know regulatory landscape.",
-  },
-  {
-    alternative: "Offshore QA vendors",
-    problem: "Offshore QA involves junior resources with negligible regulatory context.",
-    difference:
-      "Our senior engineers have deep domain expertise, having worked in FinTech. Regulatory compliance is their forte, and you won't have to babysit them.",
-  },
-  {
-    alternative: "AI testing tools alone",
-    problem:
-      "No one to call when an auditor has questions. It requires strategic interventions to determine what actually matters.",
-    difference:
-      "AI handles volume. Engineers handle judgment. You can't call an algorithm at 2AM, but you can call us.",
-  },
-  {
-    alternative: "Your engineers doing QA",
-    problem: "Puts development on pause, and tires out your team. They're not compliance experts anyway.",
-    difference:
-      "Frees up your engineers to build like they were meant to. Compliance is built-in from day one.",
-  },
-];
+export interface ComparisonRow {
+  alternative: string;
+  problem: string;
+  difference: string;
+}
 
-const ComparisonTable = () => {
+interface ComparisonTableProps {
+  title: string;
+  highlight: string;
+  rows: ComparisonRow[];
+}
+
+const ComparisonTable = ({ title, highlight, rows }: ComparisonTableProps) => {
   return (
     <section className={styles.section}>
       <div className={styles.glowBlob} aria-hidden="true" />
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Here's why <span className={styles.highlight}>FinTech Teams prefer us</span>
+          {title} <span className={styles.highlight}>{highlight}</span>
         </h2>
 
         <div className={styles.tableWrapper}>
           <table className={styles.table}>
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
             <thead>
               <tr className={styles.theadRow}>
                 <th className={styles.thAlternative}>Alternative</th>

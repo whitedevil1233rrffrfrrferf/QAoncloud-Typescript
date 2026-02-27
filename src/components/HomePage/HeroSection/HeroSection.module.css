@@ -3,8 +3,8 @@
   background-color: #0a0a0f;
   overflow: hidden;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: 100svh;
+  height: max-content; /* resolved height so inset:0 works */
 }
 
 /* ── Glow image — full section cover ── */
@@ -20,6 +20,7 @@
   height: 100%;
   object-fit: cover;
   object-position: right center;
+  display: block;
 }
 
 /* ── Content ── */
@@ -29,10 +30,11 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 5rem 2rem 4rem;
+  padding: 3rem 2rem 4rem;
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-height: 80svh; /* ← this is the missing piece */
 }
 
 /* ── Text block ── */
@@ -79,7 +81,7 @@
 }
 
 .btnPrimary:hover {
-  background-color: #2573c7;
+  background-color: #216BAB;
 }
 
 .btnSecondary {
@@ -96,9 +98,9 @@
 }
 
 .btnSecondary:hover {
-  border-color: #555;
+  border-color: #1D1C1C;
   color: #fff;
-  background-color: #2573c7;
+  background-color: #1D1C1C;
 }
 
 /* ── Divider — sits between buttons and stats ── */
@@ -115,10 +117,9 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 2rem;
   max-width: 600px;
-  margin-top: clamp(3rem, 15vh, 10rem);  /* scales with viewport height, not fixed */
-  margin-bottom: 3rem;
+  margin-top: auto;      /* pushes to bottom */
+  margin-bottom: 3rem;   /* your breathing room */
 }
-
 .stats .statItem:nth-child(3) {
   grid-column: 1 / -1;
   margin-top: 0.5rem;
@@ -132,7 +133,7 @@
 }
 
 .statNumber {
-  color: #e8a030;
+  color: #FF8641;
   margin-bottom: 0 !important;
   line-height: 1;
 }
@@ -152,22 +153,29 @@
 
 @media (max-width: 1200px) {
   /* Hide the glow image entirely */
-  .glowWrapper {
+  /* .glowWrapper {
     display: none;
-  }
+  } */
+  
   .hero {
+    min-height: unset;  /* kill the 100svh */
     position: relative;
     background-color: #0a0a0f;
+   
+    
+    
     overflow: hidden;
     width: 100%;
-    min-height: 70vh;
+    
     height: auto;
   }
   /* Center all content */
   .content {
+    
     align-items: center;
     text-align: center;
-    padding: 5rem 2rem 3rem;
+    min-height: 0svh;
+    padding: 2rem 
   }
 
   .textBlock {
@@ -220,6 +228,13 @@
 }
 
 @media (max-width: 600px) {
+  .hero{
+    min-height: 50svh;
+    background-size: auto 600px; /* fixed, won't grow the section */
+  }
+  .content{
+    min-height: 60svh;
+  }
   .content {
     padding: 2.5rem 1.25rem 2rem;
     align-items: center;
@@ -267,6 +282,7 @@
     margin-top: 1.5rem;
     gap: 1.25rem;
     justify-items: center;
+    
   }
 
   .stats .statItem:nth-child(3) {
@@ -288,7 +304,9 @@
   .content {
     padding: 2.5rem 0;
   }
-
+  .hero{
+    min-height: 50vh !important;
+  }
   /* .buttons {
     flex-direction: column;
     width: 100%;
@@ -296,7 +314,7 @@
 
   .btnPrimary,
   .btnSecondary {
-    width: 100%;
+    width: auto;
     text-align: center;
   }
   .btnSecondary {
@@ -312,11 +330,7 @@
     white-space: nowrap;
   }
 
-  .btnSecondary:hover {
-           
-    transform: translateY(-2px);     /* lift effect */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-  }
+
   .divider {
     width: 100%;
   }

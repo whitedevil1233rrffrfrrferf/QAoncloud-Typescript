@@ -2,8 +2,8 @@
 @import "../styles/tokens.css";
 
 body {
-  
-  font-family: var(--font-secondary); /* Poppins */
+  overflow-x: hidden;
+  font-family: var(--font-Inter); /* Inter */
   font-size: var(--text-body);
   line-height: var(--line-relaxed);
   color: var(--color-text-primary);
@@ -13,10 +13,11 @@ body {
 
 /* HEADINGS = Raleway */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
+  font-family: var(--font-Inter);
   line-height: var(--line-tight);
   
 }
+
 
 /* BRAND RULES */
 h1 {
@@ -51,7 +52,7 @@ h4 {
 }
 
 p {
-  font-family: var(--font-secondary);
+  font-family: var(--font-Inter);
   font-size: var(--text-body);
   font-weight: 500;
   line-height: var(--line-para);

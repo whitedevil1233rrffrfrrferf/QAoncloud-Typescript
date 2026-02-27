@@ -5,7 +5,7 @@
 .section {
   position: relative;
   margin-top: var(--section-header-margin);
-  padding-bottom: 4.5rem;
+  padding-bottom: var(--padding-bottom);
   
 }
 .section::before {

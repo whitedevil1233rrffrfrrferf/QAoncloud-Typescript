@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Poppins } from 'next/font/google';
+import { Raleway, Poppins, Inter } from 'next/font/google';
 import "./globals.css";
 import ClientLayout from './ClientLayout';
 import Footer from "@/components/Common/Footer/Footer";
@@ -16,6 +16,12 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+});
+
 export const metadata: Metadata = {
   title: "QAonCloud - Quality Assurance Solutions",
   description: "Delivering exceptional QA services with a focus on quality and innovation",
@@ -27,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${raleway.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${raleway.variable} ${poppins.variable} ${inter.variable}`}>
       <body style={{ margin: 0, padding: 0 }}>
         <ClientLayout>
           {children}

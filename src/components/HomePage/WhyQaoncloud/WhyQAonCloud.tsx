@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Plus } from "lucide-react";
+import { Sparkle } from "lucide-react";
 import styles from "./WhyQAonCloud.module.css";
 
 const features: string[] = [
@@ -30,7 +30,7 @@ export default function WhyQAonCloud() {
             {features.map((feature: string, i: number) => (
               <li key={i} className={styles.featureItem}>
                 <span className={styles.starIcon} aria-hidden="true">
-                  <Plus size={18} strokeWidth={2} />
+                  <Sparkle size={24} strokeWidth={1.5} />
                 </span>
                 <span className={styles.featureText}>{feature}</span>
               </li>
