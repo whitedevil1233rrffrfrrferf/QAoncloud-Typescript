@@ -11,10 +11,16 @@ import { FiMenu, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showIndustries, setShowIndustries] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const industriesRef = useRef<HTMLDivElement>(null);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
-  // Close dropdown when clicking outside and handle window resize
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (industriesRef.current && !industriesRef.current.contains(event.target as Node)) {
@@ -30,7 +36,6 @@ const Navbar = () => {
       }
     };
 
-    // Add/remove body class for mobile menu
     if (isOpen) {
       document.body.classList.add('menu-open');
       document.addEventListener('mousedown', handleClickOutside);
@@ -45,12 +50,11 @@ const Navbar = () => {
       window.removeEventListener('resize', handleResize);
       document.body.classList.remove('menu-open');
     };
-  }, [isMobile, isOpen]);
+  }, [isOpen]);
 
   const toggleMenu = () => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
-
     if (!newIsOpen) {
       setShowIndustries(false);
     }
@@ -64,55 +68,56 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.container}>
-        <div className={styles.logoWrapper}>
-          <Link href="/" className={styles.logo}>
-            <Image
-              src="/QAoncloud_logo.png"
-              alt="QAonCloud"
-              width={150}
-              height={40}
-              priority
-            />
-          </Link>
-        </div>
-
-        <div className={`${styles.navLinks} ${isOpen ? styles.mobileMenuOpen : ''}`}>
-          <div className={styles.navLeft}>
-            <Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
-              SERVICES
+    <>
+      <nav className={styles.navbar}>
+        <div className={styles.container}>
+          <div className={styles.logoWrapper}>
+            <Link href="/" className={styles.logo}>
+              <Image
+                src="/QAoncloud_logo.png"
+                alt="QAonCloud"
+                width={150}
+                height={40}
+                priority
+              />
             </Link>
+          </div>
 
-            <div
-              className={styles.industriesDropdown}
-              ref={industriesRef}
-              onMouseEnter={() => !isMobile && setShowIndustries(true)}
-              onMouseLeave={() => !isMobile && setShowIndustries(false)}
-            >
-              <button
-                className={styles.industriesButton}
-                onClick={toggleIndustries}
-                aria-expanded={showIndustries}
+          <div className={`${styles.navLinks} ${isOpen ? styles.mobileMenuOpen : ''}`}>
+            <div className={styles.navLeft}>
+              <Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
+                SERVICES
+              </Link>
+
+              <div
+                className={styles.industriesDropdown}
+                ref={industriesRef}
+                onMouseEnter={() => !isMobile && setShowIndustries(true)}
+                onMouseLeave={() => !isMobile && setShowIndustries(false)}
               >
-                INDUSTRIES
-                <span className={styles.chevron}>
-                  {showIndustries ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
-                </span>
-              </button>
+                <button
+                  className={styles.industriesButton}
+                  onClick={toggleIndustries}
+                  aria-expanded={showIndustries}
+                >
+                  INDUSTRIES
+                  <span className={styles.chevron}>
+                    {showIndustries ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
+                  </span>
+                </button>
 
-              <div className={`${styles.industriesMenu} ${showIndustries ? styles.show : ''}`}>
-                <Link href="/Fintech" className={styles.industryLink} onClick={() => setIsOpen(false)}>
-                  Fintech
-                </Link>
-                <Link href="/Saas" className={styles.industryLink} onClick={() => setIsOpen(false)}>
-                  Saas
-                </Link>
-                <Link href="/HealthCare" className={styles.industryLink} onClick={() => setIsOpen(false)}>
-                  HealthCare
-                </Link>
+                <div className={`${styles.industriesMenu} ${showIndustries ? styles.show : ''}`}>
+                  <Link href="/Fintech" className={styles.industryLink} onClick={() => { setIsOpen(false); setShowIndustries(false); }}>
+                    Fintech
+                  </Link>
+                  <Link href="/Saas" className={styles.industryLink} onClick={() => { setIsOpen(false); setShowIndustries(false); }}>
+                    Saas
+                  </Link>
+                  <Link href="/HealthCare" className={styles.industryLink} onClick={() => { setIsOpen(false); setShowIndustries(false); }}>
+                    HealthCare
+                  </Link>
+                </div>
               </div>
-            </div>
 
             <Link href="/About-us" className={styles.navLink} onClick={() => setIsOpen(false)}>
               ABOUT
@@ -128,32 +133,40 @@ const Navbar = () => {
 
 
 
-          <div className={styles.navRight}>
-            <div className={styles.continue_btn}>
-              <Button
-                href="/Contact-us"
-                variant="primary"
-                className={styles.contactBtn}
-              >
-                CONTACT US
-              </Button>
+            <div className={styles.navRight}>
+              <div className={styles.continue_btn}>
+                <Button
+                  href="/Contact-us"
+                  variant="primary"
+                  className={styles.contactBtn}
+                >
+                  CONTACT US
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
 
-
-        <div className={styles.menuButtonWrapper}>
-          <button
-            className={styles.menuButton}
-            onClick={toggleMenu}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
+          <div className={styles.menuButtonWrapper}>
+            <button
+              className={styles.menuButton}
+              onClick={toggleMenu}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Overlay for mobile */}
+      {isOpen && (
+        <div
+          className={styles.overlay}
+          onClick={() => { setIsOpen(false); setShowIndustries(false); }}
+        />
+      )}
+    </>
   );
 };
 

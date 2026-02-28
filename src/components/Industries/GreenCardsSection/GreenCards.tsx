@@ -1,4 +1,4 @@
-import { CircleCheck, TriangleAlert } from "lucide-react";
+import { Check, TriangleAlert } from "lucide-react";
 import styles from "./GreenLineCard.module.css";
 
 interface FeatureLineCardProps {
@@ -21,19 +21,19 @@ export default function FeatureLineCard({
           className={styles.checkIcon}
           style={{ color: isGreen ? "#00FF59" : "#FFB042" }}
         >
-          {isGreen ? <CircleCheck size={24} /> : <TriangleAlert size={24} />}
+          {isGreen ? <Check size={14} /> : <TriangleAlert size={14} />}
         </span>
         <span
           className={styles.line}
           style={{
-            background: `linear-gradient(90deg, ${
+            borderImage: `linear-gradient(90deg, ${
               isGreen ? "#00FF59" : "#FFB042"
-            } 0%, rgba(255, 255, 255, 0.1) 100%)`,
+            } 0%, rgba(255, 255, 255, 0.1) 100%) 1`,
           }}
         />
       </div>
       <div className={styles.content}>
-        <h3 className={styles.featureTitle}  style={{ color: isGreen ? "#00FF59" : "#FFB042" }}>{title}</h3>
+        <h3 className={styles.featureTitle}>{title}</h3>
         <p className={styles.featureDescription}>{description}</p>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import GreenCards from "@/components/HomePage/GreenCardsSection/GreenCards";
+import GreenCards from "@/components/Industries/GreenCardsSection/GreenCards";
 
 
-import ClientSlider from "@/components/HomePage/Slider/Slider";
+import ClientSlider from "@/components/Common/Slider/Slider";
 import classes from './page.module.css'
 import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials";
 import { Banner } from "@/components/Common/Banner/Banner";
@@ -14,6 +14,7 @@ import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
 import WhyQAonCloud from "@/components/HomePage/WhyQaoncloud/WhyQAonCloud";
 import ServicesSection from "@/components/HomePage/TestingServices/ServicesSection";
 import SectionDivider from "@/components/Common/SectionDivider/SectionDivider";
+import { Code2, Sparkles, Zap } from "lucide-react";
 
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
             <div>
 
             </div>
-              <ClientSlider />
+              <ClientSlider heading="We’ve helped 60+ global teams ship with confidence "/>
               <SectionDivider />
                <QualityAssurance
                     title="Your engineers aren’t stalling releases. "
@@ -38,7 +39,26 @@ export default function Home() {
                   <SectionDivider />
               <ContentWrapper> 
                 
-                <ProcessSection />
+                <ProcessSection title="How do we deliver"
+                  highlight="2X faster?"
+                  description="Accelerated by AI, validated by human expertise, our QA testing services are reliable, thorough, and a lot faster than traditional QA."
+                  steps={[
+                    {
+                      icon: Sparkles,
+                      title: "1. AI handles the grunt work",
+                      description: "Be it test case generation, scriptless automation, or synthetic test data, our AI handles high-volume, repetitive work that slows teams down.",
+                    },
+                    {
+                      icon: Code2,
+                      title: "2. Engineers make the calls",
+                      description: "Nothing about your product or your users is generic. Our engineers learn your product, understand user behaviour, and make the strategic calls that algorithms can't.",
+                    },
+                    {
+                      icon: Zap,
+                      title: "3. You ship 2X faster",
+                      description: "Detailed, weekly reports. Bugs caught before production. Engineers doing what they do best instead of testing.",
+                    },
+                  ]} />
               </ContentWrapper> 
               <SectionDivider />
               {/* <PartnerSection /> */}

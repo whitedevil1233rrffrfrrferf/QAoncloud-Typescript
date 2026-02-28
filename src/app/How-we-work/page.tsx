@@ -1,6 +1,9 @@
 import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
 import { Banner } from '@/components/Common/Banner/Banner'
-import FAQs from '@/components/Industries/FAQS/FAQs'
+
+import Partnerships from '@/components/Industries/Partnership/Partnership'
+import QABenefits from '@/components/Industries/Benefits/Benefits'
+
 import HowWeWork from '@/components/How-we-work/Header/HowWeWork'
 import WorkingTogether from '@/components/How-we-work/WorkingTogether/WorkingTogether'
 import HighlightCards from '@/components/How-we-work/HighlightCards/HighlightCards'

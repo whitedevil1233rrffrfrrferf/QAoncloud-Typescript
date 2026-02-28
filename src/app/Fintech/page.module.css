@@ -9,7 +9,7 @@
 
 
 /* ⭐ Stars layer */
-.container::after {
+/* .container::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -24,7 +24,7 @@
 
   pointer-events: none;
   z-index: 1;
-}
+} */
 .homeHeroBg {
   position: relative;
   background-color: transparent !important;
@@ -33,7 +33,7 @@
 }
 
 /* Blue radial glow */
-.homeHeroBg::before {
+/* .homeHeroBg::before {
   content: "";
   position: absolute;
   inset: -20%;
@@ -52,13 +52,13 @@
 
   pointer-events: none;
   z-index: -1;
-}
+} */
 .pageContent{
   position: relative;
   z-index: 2;
 }
 
-.blueDiv::before {
+/* .blueDiv::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -75,4 +75,4 @@
 .blueDiv > * {
   position: relative;
   z-index: 1;
-}
+} */

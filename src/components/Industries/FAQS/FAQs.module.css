@@ -70,10 +70,7 @@
 .questionText {
   flex: 1;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  font-style: 'Semi Bold';
+  
   line-height: 31px;
   letter-spacing: -0.52px; /* -2% of 26px */
   background: #3093E8;
@@ -127,10 +124,9 @@
 
 .answerpara {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  font-style: Medium;
+  
+  font-size: var(--text-body);
+  font-weight: 600;
   line-height: 26px;
   letter-spacing: -1.5px;
   color: #ffffff;
@@ -156,10 +152,7 @@
     padding: 0 24px 20px 24px;
   }
 
-  .answerpara {
-    font-size: 17px;
-    line-height: 23px;
-  }
+  
 }
 
 @media (max-width: 480px) {

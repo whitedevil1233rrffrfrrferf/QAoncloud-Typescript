@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import styles from "./Comparisontable.module.css";
 
 export interface ComparisonRow {
@@ -17,9 +18,8 @@ const ComparisonTable = ({ title, highlight, rows }: ComparisonTableProps) => {
     <section className={styles.section}>
       <div className={styles.glowBlob} aria-hidden="true" />
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          {title} <span className={styles.highlight}>{highlight}</span>
-        </h2>
+        <SectionHeader title={title} highlight={highlight} />
+        
 
         <div className={styles.tableWrapper}>
           <table className={styles.table}>

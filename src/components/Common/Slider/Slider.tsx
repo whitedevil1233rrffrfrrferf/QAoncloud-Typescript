@@ -32,7 +32,11 @@ const clientLogos = [
 
 const SLIDE_BY = 180;
 
-export default function ClientSlider() {
+type ClientSliderProps = {
+  heading: string;
+};
+
+export default function ClientSlider({ heading }: ClientSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -64,7 +68,7 @@ export default function ClientSlider() {
   <section className={classes.wrapper}>
     <div className={classes.container}>
       <h4 className={classes.heading}>
-        We've helped 60+ global teams ship with confidence
+        {heading}
       </h4>
     </div>
 
