@@ -23,7 +23,7 @@ const IndustryPageHeader = ({
   imageSrc,
   imageAlt,
   buttonText = "Talk To An Expert",
-  buttonHref = "/how-we-work",
+  buttonHref = "/Contact-us",
 }: IndustryPageHeaderProps) => {
   return (
     <section className={styles.section}>

@@ -18,20 +18,16 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  /* Figma specs */
   width: 100%;
   max-width: 1366px;
   height: 600px;
   margin: 0 auto;
   margin-top: 80px;
   padding: 50px;
-
   overflow: hidden;
   background: linear-gradient(180deg, #0a1628 0%, #050510 100%);
 }
 
-/* Star dots */
 .heroSection::after {
   content: "";
   position: absolute;
@@ -43,8 +39,6 @@
   z-index: 0;
 }
 
-
-/* Blue radial glow */
 .heroSection::before {
   content: "";
   position: absolute;
@@ -56,20 +50,48 @@
   z-index: 0;
 }
 
+.logoWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.ellipse2017 {
+  position: absolute;
+  width: 204px;
+  height: 45px;
+  top: 241px;
+  left: -70px;
+  background: rgba(0, 0, 0, 0.50);
+  border-radius: 50%;
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ellipse2018 {
+  position: absolute;
+  width: 102px;
+  height: 27px;
+  top: 236px;
+  left: 60px;
+  background: rgba(0, 0, 0, 0.50);
+  border-radius: 50%;
+  filter: blur(20px);
+  transform: rotate(-28.64deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .heroContent {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px; 
-}
-
-.heroLogo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
+  gap: 40px;
 }
 
 .heroTitle {
@@ -77,40 +99,28 @@
   font-weight: 700;
   color: #fff;
   margin: 0;
-  line-height: 1.0;
+  line-height: 1.2;
 }
 
-.heroSubtitle { 
+.heroSubtitle {
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  line-height: 1.0;
+  line-height: 1.6;
 }
 
 /* ─────────────────────────────────────────
-   CONTENT SECTIONS (alternating layout)
+   CONTENT SECTIONS
 ───────────────────────────────────────── */
 .contentSection {
   position: relative;
-  padding: 5rem 5rem;
+  padding: 5rem;
   overflow: hidden;
   background-color: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Star dots on content sections */
-.contentSection::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 2.2px);
-  background-size: 22px 22px;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Monotone noise */
 .contentSection::after {
   content: "";
   position: absolute;
@@ -126,9 +136,7 @@
   opacity: 10%;
 }
 
-.contentSection.altBg {
-  background-color: #000000;
-}
+.contentSection.altBg { background-color: #000000; }
 
 .sectionInner {
   position: relative;
@@ -141,13 +149,8 @@
   align-items: center;
 }
 
-.sectionInner.reversed {
-  direction: rtl;
-}
-
-.sectionInner.reversed>* {
-  direction: ltr;
-}
+.sectionInner.reversed { direction: rtl; }
+.sectionInner.reversed > * { direction: ltr; }
 
 .sectionText {
   display: flex;
@@ -163,9 +166,7 @@
   line-height: 1.25;
 }
 
-.sectionHighlight {
-  color: #00acff;
-}
+.sectionHighlight { color: #00acff; }
 
 .sectionDescription {
   font-size: 0.95rem;
@@ -175,17 +176,19 @@
 }
 
 .sectionImageWrapper {
-  border-radius: 12px;
+  border-radius: 20px;           
   overflow: hidden;
+  width: 423px;             
+  height: 408px;                 
+  flex-shrink: 0;
 }
 
 .sectionImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 20px;
   display: block;
-  max-height: 320px;
 }
 
 /* ─────────────────────────────────────────
@@ -294,6 +297,7 @@
   position: relative;
   z-index: 1;
 }
+
 /* ─────────────────────────────────────────
    BOARD MEMBERS
 ───────────────────────────────────────── */
@@ -305,7 +309,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 .boardSection::before {
   content: "";
   position: absolute;
@@ -315,25 +318,13 @@
   width: 80%;
   height: 40%;
   background: radial-gradient(ellipse at 50% 30%,
-      rgba(0, 140, 255, 0.22) 0%,
-      rgba(21, 93, 252, 0.10) 45%,
-      transparent 70%);
+    rgba(0, 140, 255, 0.22) 0%,
+    rgba(21, 93, 252, 0.10) 45%,
+    transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
 
-.boardSection::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 2.2px);
-  background-size: 22px 22px;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Monotone noise */
 .boardSection::after {
   content: "";
   position: absolute;
@@ -352,8 +343,9 @@
 .boardInner {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1370px;           /* 1250px cards + 60px each side */
   margin: 0 auto;
+  padding: 0 60px;             /* Figma: left 60px */
 }
 
 .boardTitle {
@@ -364,34 +356,36 @@
   margin: 0 0 3rem;
 }
 
-.boardTitleHighlight {
-  color: #00acff;
-}
+.boardTitleHighlight { color: #00acff; }
 
-/* Figma: 3-col grid, gap 20px */
+/* Figma: width 1250, gap 40px, 3-col */
 .boardGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 390px);  /* Figma: each card 390px */
+  gap: 40px;                                /* Figma: gap 40px */
+  justify-content: center;
 }
 
+/* Center last 2 cards */
+.memberCard:nth-child(4) { grid-column: 1 / 2; }
+.memberCard:nth-child(5) { grid-column: 2 / 3; }
+
+/* ── Member Card — Figma: 390×549, radius 20, border 1px, padding-bottom 40px ── */
 .memberCard {
-  /* Figma bg: Linear gradient #002A8D → #090C0E */
   background: linear-gradient(210deg, #2D2D2D 0%, #090C0E 100%);
-  border-radius: 20px;
+  border: 1px solid transparent;
+  border-radius: 20px;           /* Figma: border-radius 20px */
   overflow: hidden;
-  width: 390px;
-  height: 549px;
+  width: 390px;                  /* Figma: width 390px */
+  height: auto;                  /* auto so bio text never gets clipped */
   display: flex;
   flex-direction: column;
   position: relative;
   transition: transform 0.2s ease;
-  /* Gradient border trick */
-  border: 1px solid transparent;
   background-clip: padding-box;
 }
 
-/* Gradient border: #2D2D2D → #090C0E */
+/* Gradient border */
 .memberCard::before {
   content: "";
   position: absolute;
@@ -399,73 +393,66 @@
   border-radius: 20px;
   padding: 1px;
   background: linear-gradient(180deg, #2D2D2D 0%, #090C0E 100%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
   z-index: 2;
 }
 
-.memberCard:hover {
-  transform: translateY(-4px);
-}
+.memberCard:hover { transform: translateY(-4px); }
 
+/* Figma: photo 390×299 */
 .memberPhoto {
   width: 390px;
-  height: 299px;
+  height: 299px;                
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   display: block;
-  opacity: 1;
-  border-bottom-right-radius: 24px;
-  border-bottom-left-radius: 24px;
-  border-top-right-radius: 24px;
-  border-top-left-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  border-radius: 20px 20px 0 0;
 }
 
+/* Figma: info area — width 373, height 186, gap 20, padding 20px L/R, padding-bottom 40px */
 .memberInfo {
-  padding: 1rem 1.25rem 1.25rem;
+  width: 100%;
+  height: auto;               
+  min-height: 186px;             
+  padding: 16px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
 }
 
+/* Figma: role — Inter 600, 20px, line-height 100%, letter-spacing -6% */
 .memberRole {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 100%;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.06em;
   color: #FF8641;
-  margin-bottom: 0.3rem;
+  margin-bottom: 8px;
 }
-
-.memberName {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.memberBio {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
-  letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 
 .memberNameRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+/* Figma: name — Inter 700, 30px, line-height 100%, letter-spacing -6% */
+.memberName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 30px;               
+  line-height: 100%;
+   letter-spacing: -6%;       
+  color: #fff;
+  margin: 0;
 }
 
 .memberLinkedIn {
@@ -482,9 +469,7 @@
   transition: opacity 0.2s;
 }
 
-.memberLinkedIn:hover {
-  opacity: 0.85;
-}
+.memberLinkedIn:hover { opacity: 0.85; }
 
 .memberLinkedIn svg {
   width: 18px;
@@ -495,53 +480,108 @@
 .memberDivider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.10);
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
-
-
-
+/* Figma: bio — Inter 500, 20px, line-height 26px, letter-spacing -6% */
+.memberBio {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;               
+  line-height: 26px;           
+  letter-spacing: -6%;       
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
 
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
-@media (max-width: 768px) {
 
-  .contentSection,
-  .visionMissionSection,
-  .boardSection,
-  .bannerSection {
-    padding: 3rem 1.5rem;
-  }
-
-  .sectionInner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .sectionInner.reversed {
-    direction: ltr;
-  }
-
+/* ── Large desktop tweaks (1280px–1440px) ── */
+@media (max-width: 1279px) {
   .boardGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-
-  .vmCard {
-    flex-direction: column;
-    padding: 1.5rem;
+  .memberCard { width: 100%; height: auto; min-height: unset; }
+  /* Photo: aspect-ratio keeps faces visible instead of fixed height */
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
   }
-
-  .vmCardIcon {
-    width: 120px;
-    height: 120px;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+  .memberInfo { height: auto; }
+  .sectionImageWrapper { width: 100%; height: auto; }
 }
 
-@media (max-width: 480px) {
-  .boardGrid {
-    grid-template-columns: 1fr;
+/* ── Tablet landscape / small desktop (768px–1023px) ── */
+@media (max-width: 1023px) {
+  .boardInner { padding: 0 2rem; }
+  .boardGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .memberCard:nth-child(4),
+  .memberCard:nth-child(5) { grid-column: unset; }
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
   }
+  .memberInfo { height: auto; }
+  .memberName { font-size: 24px; }
+  .memberBio { font-size: 16px; }
+  .memberRole { font-size: 15px; }
+}
+
+/* ── Tablet portrait / large mobile (768px) ── */
+@media (max-width: 767px) {
+  .contentSection,
+  .visionMissionSection,
+  .boardSection { padding: 3rem 1.5rem; }
+  .sectionInner { grid-template-columns: 1fr; gap: 2rem; }
+  .sectionInner.reversed { direction: ltr; }
+  .sectionImageWrapper { width: 100%; height: 260px; }
+  .vmCard { flex-direction: column; padding: 1.75rem; }
+  .vmCardText { padding-right: 0; padding-bottom: 1rem; max-width: 100%; }
+  .vmCardIcon { width: 100px; height: 100px; margin: 0; align-self: flex-end; }
+
+  /* Single-column board on mobile */
+  .boardGrid { grid-template-columns: 1fr; gap: 20px; }
+  .memberCard { width: 100%; height: auto; }
+
+  /* Key fix: use aspect-ratio so full face is always visible */
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;          /* wider crop = more face visible */
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+  }
+
+  .memberInfo { height: auto; padding-bottom: 1.5rem; }
+  .memberName { font-size: 22px; }
+  .memberBio { font-size: 10px; line-height: 22px; }
+  .memberRole { font-size: 14px; }
+}
+
+/* ── Small mobile (≤479px) ── */
+@media (max-width: 479px) {
+  .contentSection,
+  .visionMissionSection,
+  .boardSection { padding: 2rem 1rem; }
+  .heroSection { margin-top: 56px; padding: 24px 16px; height: auto; }
+
+  .memberPhoto {
+    aspect-ratio: 4 / 3;          /* taller crop for very small screens */
+    object-position: top center;
+  }
+
+  .memberName { font-size: 20px; }
+  .memberBio { font-size: 14px; line-height: 20px; }
+  .memberRole { font-size: 13px; }
+  .boardGrid { gap: 16px; }
 }

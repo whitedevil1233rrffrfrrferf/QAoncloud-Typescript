@@ -26,8 +26,8 @@ export default function GreenCards() {
                 />
             </div>
             <div className={classes.buttonContainer}>
-                <Button href="/how-we-work" variant="primary">
-                    Talk to an expert
+                <Button href="/Contact-us" variant="primary">
+                     Talk To An Expert 
                 </Button>
             </div>
             

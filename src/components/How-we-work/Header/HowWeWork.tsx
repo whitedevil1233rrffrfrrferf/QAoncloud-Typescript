@@ -17,7 +17,7 @@ const HowWeWork = () => {
             You ship 2× faster, more frequently, minus the added anxiety.
           </p>
           <div className={styles.buttonContainer}>
-            <Button href="/contact" variant="primary">
+            <Button href="/Contact-us" variant="primary">
               Talk To An Expert
             </Button>
           </div>
