@@ -56,16 +56,16 @@ const releaseRegulationsData = {
   highlight: "releases and regulations",
   description: `Audit-ready documentation. Engineers who know what PCI-DSS actually requires & AI to handle volume & enhance speed to give you 40% faster releases.`,
   cards: [
-    { title: "Compliance is relentless", description: "PCI-DSS, SOC 2, PSD2, state regulations. And they keep changing. Every release needs documented test coverage you can show auditors." },
-    { title: "Security isn't optional", description: `You can't ship with "we'll test that later." Vulnerabilities in Fintech get exploited fast, and the consequences aren't just technical.` },
-    { title: "Audit prep is a fire drill", description: "Our engineers have seen it all. We're experienced in FinTech, Healthtech, and SaaS, minimizing ramp-up time." },
+    { title: "Compliance built in, not bolted on", description: "Automated compliance reporting and test coverage documentation is audit-ready by default." },
+    { title: "Security testing from day one", description: "Security isn’t a final step. It's embedded in every test cycle, every release, every deployment." },
+    { title: "Engineers who speak FinTech fluently", description: "Our experts have seen it all - payment processors, neobanks, and trading platforms. Your edge cases won’t break us" },
   ],
 }
 
 const WorkWellData = {
   title: "We work well with",
   highlight: "FinTech teams",
-  description: "Our engineers are fluent in FinTech, so don't worry about explaining PCI-DSS, SOC 2, and PSD2 to us.",
+  description: "",
   steps: [
             { icon: Headset, title: '1. Discovery call', description: 'We learn your product, your compliance requirements, and where QA is slowing you down. ' },
             { icon: ScanEye, title: '2. A focused Pilot', description: "We’ll start with a focused 1-month engagement. You’ll know we’re a fit, when you see 40% faster releases. " },
@@ -152,7 +152,7 @@ export default function page() {
                     depends entirely on the scope of work and complexity involved.
                     <br />
                     Want to put a real number to our services?{" "}
-                    <a href="/contact" style={{ color: "#3093E8", textDecoration: "underline" }}>
+                    <a href="/Contact-us" style={{ color: "#3093E8", textDecoration: "underline" }}>
                       Book a quick discovery call
                     </a>{" "}
                     with us today.
