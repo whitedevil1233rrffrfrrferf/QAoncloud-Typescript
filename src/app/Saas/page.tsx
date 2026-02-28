@@ -1,13 +1,8 @@
 import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
 import React from 'react'
 import classes from "./page.module.css"
-import QualityAssurance from '@/components/Industries/QualityAssurance/QualityAssurance'
-import { SmoothReleases } from '@/components/Industries/SmoothReleases/SmoothReleases'
-import QualityTestingServices from '@/components/Industries/QualityServices/QualityServices'
 import FAQs from '@/components/Industries/FAQS/FAQs'
 import { Banner } from '@/components/Common/Banner/Banner'
-
-import ServicePageHeader from '@/components/Industries/SaasHeader/Header/ServicePageHeader'
 import ComparisonTable from '@/components/Industries/ComparisonTable/Comparisontable';
 import FinTechteamSection from '@/components/Industries/FinTech/FinTechteams/FinTechteamSection'
 import { ComparisonRow } from '@/components/Industries/ComparisonTable/Comparisontable';

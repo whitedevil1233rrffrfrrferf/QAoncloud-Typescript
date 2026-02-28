@@ -1,0 +1,167 @@
+/* ─── Section wrapper ─────────────────────────────────────────── */
+.section {
+  width: 100%;
+  margin-top: var(--section-header-margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  width: 100%;
+  
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.highlight {
+  color: #4f8ef7;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #8a9bb5;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ─── Two-column grid ─────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Card ────────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  min-height: 320px;
+
+  background: #12171f;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Text area ───────────────────────────────────────────────── */
+.cardContent {
+  padding: 32px 28px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Card title ──────────────────────────────────────────────── */
+.cardTitle {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+/* ─── List ────────────────────────────────────────────────────── */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: #c8d4e8;
+  line-height: 1.5;
+}
+
+/* ─── Sparkle icon ────────────────────────────────────────────── */
+.icon {
+  flex-shrink: 0;
+  color: #4f8ef7;
+}
+
+/* ─── Image: large, pushed past the bottom-right edge ────────── */
+/*
+  Key idea: imageWrap is position:absolute anchored to bottom-right.
+  It's intentionally LARGER than the card — overflow:hidden on .card clips it.
+  Negative bottom/right pushes it further outside so more gets cropped,
+  creating the "peeking in from the corner" Figma effect.
+*/
+.imageWrap {
+  position: absolute;
+  bottom: -80px;        /* aggressively push DOWN — top half of image gets clipped */
+  right: -60px;         /* aggressively push RIGHT — left side gets clipped */
+  width: 480px;
+  height: 480px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.image {
+  object-fit: contain;
+  object-position: bottom right; /* subject stays pinned to bottom-right as container clips */
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+  .imageWrap {
+    width: 400px;
+    height: 400px;
+    bottom: -70px;
+    right: -50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageWrap {
+    width: 340px;
+    height: 340px;
+    bottom: -60px;
+    right: -40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .imageWrap {
+    width: 260px;
+    height: 260px;
+    bottom: -40px;
+    right: -30px;
+  }
+
+  .listItem {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageWrap {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    right: -20px;
+  }
+}

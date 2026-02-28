@@ -3,20 +3,17 @@ import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper
 
 import React from 'react'
 import classes from "./page.module.css"
-import QualityAssurance from '@/components/Industries/QualityAssurance/QualityAssurance'
-import { SmoothReleases } from '@/components/Industries/SmoothReleases/SmoothReleases'
-import QualityTestingServices from '@/components/Industries/QualityServices/QualityServices'
+
 import FAQs from '@/components/Industries/FAQS/FAQs'
 import { Banner } from '@/components/Common/Banner/Banner'
 
-import Partnerships from '@/components/Industries/Partnership/Partnership'
-import QABenefits from '@/components/Industries/Benefits/Benefits'
 
-import HowWeWork from '@/components/How-we-work/Header/HowWeWork'
-import WorkingTogether from '@/components/How-we-work/WorkingTogether/WorkingTogether'
-import HighlightCards from '@/components/How-we-work/HighlightCards/HighlightCards'
 import { MilestoneSection } from '@/components/How-we-work/MilestoneSection/MilestoneSection'
 import FeatureShowcase from '@/components/How-we-work/FeatureShowcase/FeatureShowcase'
+import Header from '@/components/Common/Header/Header'
+import PhaseSection from '@/components/How-we-work/PhaseSection/PhaseSection'
+import TwoSystems from '@/components/How-we-work/TwoSystems/TwoSystems'
+import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 
 export default function page() {
@@ -25,14 +22,21 @@ export default function page() {
       <div className={classes.container}>
           <div className={classes.pageContent}>
             <div className={classes.homeHeroBg}> 
-              <HowWeWork />
+              <Header title='How we deliver QA 40% faster' 
+              description='AI handles the slow, repetitive tasks. Our engineers handle the strategic decisions. You ship 2X faster, more frequently, minus the added anxiety.'
+              imageSrc="/Images/How-We-Work/Banner.png"
+              imageAlt="How We Work Banner"/>
             </div> 
             <ContentWrapper>
-                <WorkingTogether />
-                <HighlightCards />
+                <TwoSystems />
+            </ContentWrapper>    
+                <SectionDivider />
                 <FeatureShowcase />
+                <SectionDivider />
                 <MilestoneSection />
-            </ContentWrapper>
+                <PhaseSection />
+                
+            
             
             <FAQs
                 title="Questions we're frequently asked."
