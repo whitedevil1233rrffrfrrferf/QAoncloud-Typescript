@@ -1,76 +1,82 @@
 .container {
   position: relative;
-  min-height: 100vh;   /* 🔑 REQUIRED */
-  background-color: var(--color-container);
+  min-height: 100vh;
+  background-color: var(--color-container, #050505);
   overflow: hidden;
 }
 
-
-
-/* ⭐ Stars layer */
+/* Star dot layer */
 .container::after {
   content: "";
   position: absolute;
   inset: 0;
-
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.12) 1.2px,
     transparent 2.2px
   );
-
   background-size: 22px 22px;
   opacity: 0.5;
-
   pointer-events: none;
   z-index: 1;
 }
-.homeHeroBg {
-  position: relative;
-  background-color: transparent !important;
-  overflow: hidden;
-  
+
+/* Monotone noise */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 258px 258px;
+  mix-blend-mode: screen;
+  opacity: 8%;
 }
 
-/* Blue radial glow */
+/* Hero background wrapper */
+.homeHeroBg {
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+/* Blue radial glow behind hero */
 .homeHeroBg::before {
   content: "";
   position: absolute;
   inset: -20%;
-
   background:
-    radial-gradient(
-      700px 700px at 75% 45%,
-      rgba(0, 172, 255, 0.22),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 900px at 25% 65%,
-      rgba(21, 93, 252, 0.15),
-      transparent 65%
-    );
-
+    radial-gradient(700px 700px at 75% 45%, rgba(0, 172, 255, 0.22), transparent 60%),
+    radial-gradient(900px 900px at 25% 65%, rgba(21, 93, 252, 0.15), transparent 65%);
   pointer-events: none;
   z-index: -1;
 }
-.pageContent{
+
+.pageContent {
   position: relative;
   z-index: 2;
+}
+
+/* Optional: sections needing a centred blue glow */
+.blueDiv {
+  position: relative;
 }
 
 .blueDiv::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: radial-gradient(
     500px 800px at 50% 45%,
     rgba(0, 172, 255, 0.12),
     rgba(5, 5, 5, 1) 70%
   );
-
   pointer-events: none;
   z-index: 0;
 }
+
 .blueDiv > * {
   position: relative;
   z-index: 1;

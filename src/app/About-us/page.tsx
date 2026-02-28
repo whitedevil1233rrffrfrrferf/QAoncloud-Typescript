@@ -48,9 +48,7 @@ export default function AboutPage() {
     <div className={classes.pageWrapper}>
 
       {/* HEADER */}
-      <header className={styles.headerSection}>
-        <div className={styles.ellipse2017} />
-        <div className={styles.ellipse2018} />
+      <header className={styles.headerSection}> 
         <div className={styles.logoWrapper}>
           <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
         </div>
@@ -76,7 +74,7 @@ export default function AboutPage() {
           </div>
           <div className={classes.sectionImageWrapper}>
             <Image
-              src="/images/AboutUs/Saloni MalhotraTeam.png"
+              src="/Images/AboutUs/Saloni MalhotraTeam.png"
               alt="Built by Desicrew in 2016"
               width={520}
               height={320}
@@ -109,7 +107,7 @@ export default function AboutPage() {
           </div>
           <div className={classes.sectionImageWrapper}>
             <Image
-              src="/images/AboutUs/Our approach is simple.png"
+              src="/Images/AboutUs/Our approach is simple.png"
               alt="QAonCloud team"
               width={520}
               height={320}
@@ -133,7 +131,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Image
-              src="/images/AboutUs/vision-icon.png"
+              src="/Images/AboutUs/Vision-icon.png"
               alt="Vision"
               width={220}
               height={220}
@@ -152,7 +150,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Image
-              src="/images/AboutUs/Mission-icon.png"
+              src="/Images/AboutUs/Mission-icon.png"
               alt="Mission"
               width={220}
               height={220}

@@ -11,7 +11,6 @@ export const Cards = ({ title, items, icon }: FeatureCardProps) => {
   return (
     <div className={styles.card}>
       {icon && <div className={styles.iconWrapper}>{icon}</div>}
-
       <h3 className={styles.title}>{title}</h3>
       <ul className={styles.list}>
         {items.map((item, index) => (

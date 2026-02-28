@@ -9,37 +9,34 @@ export const MilestoneSection = () => {
       items: [
         "Kickoff complete, strategy defined",
         "Integrations live",
-        "Named engineer(s) in your Slack"
-      ]
+        "Named engineer(s) in your Slack",
+      ],
     },
     {
       day: 14,
       items: [
         "First test cycles running",
         "Initial bugs caught",
-        "Coverage baseline established"
-      ]
+        "Coverage baseline established",
+      ],
     },
     {
       day: 30,
       items: [
         "QA running in sync with your releases",
         "40% speed difference visible",
-        "Clear path forward—or part ways cleanly"
-      ]
-    }
+        "Clear path forward—or part ways cleanly",
+      ],
+    },
   ];
 
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
-        <SectionHeader title="What you're " highlight="signing up for" description="Clear milestones. No surprises." />
-        {/* <h2 className={styles.title}>
-          What you're <span className={styles.highlight}>signing up for</span>
-        </h2>
-        <p className={styles.subtitle}>Clear milestones. No surprises.</p> */}
-      </div>
-
+      <SectionHeader
+        title="What you can expect "
+        highlight="in 30 days"
+        description="With QAonCloud, you get a clear picture of what to expect. No confusion. No surprises. Just clear milestones."
+      />
       <div className={styles.grid}>
         {milestones.map((milestone) => (
           <MilestoneCard
