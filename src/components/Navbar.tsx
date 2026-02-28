@@ -85,9 +85,9 @@ const Navbar = () => {
 
           <div className={`${styles.navLinks} ${isOpen ? styles.mobileMenuOpen : ''}`}>
             <div className={styles.navLeft}>
-              <Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              {/*<Link href="/services" className={styles.navLink} onClick={() => setIsOpen(false)}>
                 SERVICES
-              </Link>
+              </Link>*/}
 
               <div
                 className={styles.industriesDropdown}
