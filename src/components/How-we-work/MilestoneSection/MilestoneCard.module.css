@@ -1,58 +1,46 @@
 .card {
-  position: relative;
-  background: #0c0c0c;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 32px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.25s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
 }
 
 .dayTitle {
-  /* font-size: 24px;
-  font-weight: 600; */
+  font-size: 18px;
+  font-weight: 700;
   color: #ffffff;
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
 }
 
 .list {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .listItem {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .checkIcon {
   flex-shrink: 0;
-  margin-top: 2px;
-}
-
-@media (max-width: 768px) {
-  .card {
-    padding: 24px;
-  }
-
-  .dayTitle {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  .listItem {
-    font-size: 15px;
-  }
+  margin-top: 1px;
 }

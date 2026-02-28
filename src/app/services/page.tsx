@@ -39,8 +39,8 @@ function ServicesPage() {
                   description="We’re fast, thorough, and great at what we do. Let our experts spot bugs and vulnerabilities while you focus on what you do best. "
                   
                   
-                  ctaLabel="Talk to an expert"
-                  ctaHref="/how-we-work"
+                  ctaLabel="Talk To An Expert"
+                  ctaHref="/Contact-us"
                 />
             </ContentWrapper>
             

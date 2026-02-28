@@ -35,9 +35,7 @@ export default function page() {
                 <SectionDivider />
                 <MilestoneSection />
                 <PhaseSection />
-                
-            
-            
+
             <FAQs
                 title="Questions we're frequently asked."
                 highlight="(FAQs)"

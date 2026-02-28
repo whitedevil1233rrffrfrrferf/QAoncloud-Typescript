@@ -48,9 +48,7 @@ export default function AboutPage() {
     <div className={classes.pageWrapper}>
 
       {/* HEADER */}
-      <header className={styles.headerSection}>
-        <div className={styles.ellipse2017} />
-        <div className={styles.ellipse2018} />
+      <header className={styles.headerSection}> 
         <div className={styles.logoWrapper}>
           <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
         </div>

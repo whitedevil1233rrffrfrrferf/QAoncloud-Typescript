@@ -1,6 +1,7 @@
 import styles from './HeroSection.module.css';
 import { Link } from 'lucide-react';
 import { Button } from 'bootstrap';
+import NextLink from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -26,16 +27,19 @@ export default function HeroSection() {
             QA software testing services that deliver impeccable quality, 2X faster.
             No chaos, no compromises.
           </p>
-           <div className={styles.buttons}>
-            
-           <button className={styles.btnPrimary}>Talk To An Expert</button> 
-            <button className={styles.btnSecondary}>See How We Work</button>
+          <div className={styles.buttons}>
+            <NextLink href="/Contact-us" className={styles.btnPrimary}>
+              Talk To An Expert
+            </NextLink>
+            <NextLink href="/how-we-work" className={styles.btnSecondary}>
+              See How We Work
+            </NextLink>
           </div>
-          
+
           {/* Invisible spacer for positioning */}
           <div className={styles.spacer}></div>
         </div>
-        
+
         {/* Stats */}
         <div className={styles.stats}>
           <div className={styles.statItem}>

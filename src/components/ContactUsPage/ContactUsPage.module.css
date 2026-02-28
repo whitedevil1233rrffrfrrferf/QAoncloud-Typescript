@@ -46,6 +46,35 @@
    z-index: 2;
  }
 
+ /* Shadow ellipses under logo — Figma Ellipse 2017 & 2018 */
+.ellipse2017 {
+  position: absolute;
+  width: 204px;
+  height: 45px;
+  top: calc(50% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateX(-20px);
+  background: rgba(0, 0, 0, 0.60);
+  border-radius: 50%;
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ellipse2018 {
+  position: absolute;
+  width: 110px;
+  height: 27px;
+  top: calc(50% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateX(30px) rotate(-28.64deg);
+  background: rgba(0, 0, 0, 0.60);
+  border-radius: 50%;
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 1;
+}
+
  /* Contact Us title  */
  .headerTitle {
    font-family: 'Inter', sans-serif;

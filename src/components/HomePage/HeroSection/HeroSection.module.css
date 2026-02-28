@@ -97,6 +97,11 @@
   white-space: nowrap;
 }
 
+.btnPrimary,
+.btnSecondary {
+  display: inline-block;
+  text-decoration: none;
+}
 .btnSecondary:hover {
   border-color: #1D1C1C;
   color: #fff;

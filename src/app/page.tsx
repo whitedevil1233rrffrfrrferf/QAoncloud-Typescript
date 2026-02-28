@@ -93,7 +93,7 @@ export default function Home() {
                   highlight="faster? "
                   description="It takes just 10 mins to make your releases 40% faster. Talk to our team about your QA challenges and we’ll find the best solution for you. "
                   //subDescription="You've got a product to build and users to delight. Let us handle the testing so you can focus on what matters most  shipping great software that works."
-                  ctaLabel="Talk to an expert"
+                  ctaLabel=" Talk To An Expert"
                   ctaHref="/Contact-us"
                   decorativeImage="/Images/Footer/HomePage.png"
                 />

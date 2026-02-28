@@ -18,8 +18,8 @@ const ServicePageHeader = () => {
               Rest assured, we'll cover all angles, check all possibilities, and make sure there are no delays. Because your wins are our wins, Partner! 
             </p>
             <div className={styles.buttonContainer}>
-                <Button href="/how-we-work" variant="primary">
-                    Talk to an expert
+                <Button href="/Contact-us" variant="primary">
+                     Talk To An Expert 
                 </Button>
             </div>
         </div>   

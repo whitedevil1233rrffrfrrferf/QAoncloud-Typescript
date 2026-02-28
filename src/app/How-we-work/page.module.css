@@ -1,7 +1,7 @@
 .container {
   position: relative;
-  min-height: 100vh;   /* 🔑 REQUIRED */
-  background-color: var(--color-container);
+  min-height: 100vh;
+  background-color: var(--color-container, #050505);
   overflow: hidden;
   
 }
@@ -13,12 +13,10 @@
   content: "";
   position: absolute;
   inset: 0;
-
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.12) 1.2px,
     transparent 2.2px
   );
-
   background-size: 22px 22px;
   opacity: 0.65;
 
@@ -37,19 +35,9 @@
   content: "";
   position: absolute;
   inset: -20%;
-
   background:
-    radial-gradient(
-      700px 700px at 75% 45%,
-      rgba(0, 172, 255, 0.22),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 900px at 25% 65%,
-      rgba(21, 93, 252, 0.15),
-      transparent 65%
-    );
-
+    radial-gradient(700px 700px at 75% 45%, rgba(0, 172, 255, 0.22), transparent 60%),
+    radial-gradient(900px 900px at 25% 65%, rgba(21, 93, 252, 0.15), transparent 65%);
   pointer-events: none;
   z-index: -1;
 } */
@@ -62,16 +50,15 @@
   content: "";
   position: absolute;
   inset: 0;
-
   background: radial-gradient(
     500px 800px at 50% 45%,
     rgba(0, 172, 255, 0.12),
     rgba(5, 5, 5, 1) 70%
   );
-
   pointer-events: none;
   z-index: 0;
 }
+
 .blueDiv > * {
   position: relative;
   z-index: 1;
