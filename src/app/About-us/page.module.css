@@ -1,78 +1,549 @@
-.container {
-  position: relative;
-  min-height: 100vh;   /* 🔑 REQUIRED */
-  background-color: var(--color-container);
+/* ─────────────────────────────────────────
+   PAGE WRAPPER
+───────────────────────────────────────── */
+.pageWrapper {
+  background-color: var(--color-container, #050510);
+  color: #fff;
+  font-family: inherit;
   overflow: hidden;
-  padding: 5rem;
 }
 
+/* ─────────────────────────────────────────
+   HERO SECTION
+───────────────────────────────────────── */
+.heroSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
+  /* Figma specs */
+  width: 100%;
+  max-width: 1366px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 50px;
 
-/* ⭐ Stars layer */
-.container::after {
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a1628 0%, #050510 100%);
+}
+
+/* Star dots */
+.heroSection::after {
   content: "";
   position: absolute;
   inset: 0;
-
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.12) 1.2px,
-    transparent 2.2px
-  );
-
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 2.2px);
   background-size: 22px 22px;
   opacity: 0.5;
-
-  pointer-events: none;
-  z-index: 1;
-}
-.homeHeroBg {
-  position: relative;
-  background-color: transparent !important;
-  overflow: hidden;
-  
-}
-
-/* Blue radial glow */
-.homeHeroBg::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-
-  background:
-    radial-gradient(
-      700px 700px at 75% 45%,
-      rgba(0, 172, 255, 0.22),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 900px at 25% 65%,
-      rgba(21, 93, 252, 0.15),
-      transparent 65%
-    );
-
-  pointer-events: none;
-  z-index: -1;
-}
-.pageContent{
-  position: relative;
-  z-index: 2;
-}
-
-.blueDiv::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: radial-gradient(
-    500px 800px at 50% 45%,
-    rgba(0, 172, 255, 0.12),
-    rgba(5, 5, 5, 1) 70%
-  );
-
   pointer-events: none;
   z-index: 0;
 }
-.blueDiv > * {
+
+
+/* Blue radial glow */
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(700px 700px at 75% 45%, rgba(0, 172, 255, 0.22), transparent 60%),
+    radial-gradient(900px 900px at 25% 65%, rgba(21, 93, 252, 0.15), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContent {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  /* gap: 40px from Figma */
+}
+
+.heroLogo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────
+   CONTENT SECTIONS (alternating layout)
+───────────────────────────────────────── */
+.contentSection {
+  position: relative;
+  padding: 5rem 5rem;
+  overflow: hidden;
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Star dots on content sections */
+.contentSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 2.2px);
+  background-size: 22px 22px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Monotone noise */
+.contentSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 258px 258px;
+  mix-blend-mode: screen;
+  opacity: 10%;
+}
+
+.contentSection.altBg {
+  background-color: #000000;
+}
+
+.sectionInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sectionInner.reversed {
+  direction: rtl;
+}
+
+.sectionInner.reversed>* {
+  direction: ltr;
+}
+
+.sectionText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.sectionHighlight {
+  color: #00acff;
+}
+
+.sectionDescription {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.sectionImageWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  max-height: 320px;
+}
+
+/* ─────────────────────────────────────────
+   VISION & MISSION CARDS
+───────────────────────────────────────── */
+.visionMissionSection {
+  position: relative;
+  padding: 4rem 5rem;
+  background-color: #000000;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visionMissionSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 258px 258px;
+  mix-blend-mode: screen;
+  opacity: 10%;
+}
+
+.cardsWrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.vmCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #0e1521;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  padding: 2.75rem 0 0 2.75rem;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.vmCard::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -5%;
+  width: 25%;
+  height: 130%;
+  background: radial-gradient(ellipse at 80% 55%,
+    rgba(0, 140, 255, 0.30) 0%,
+    rgba(0, 80, 200, 0.14) 40%,
+    transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vmCardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 2.75rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.vmCardLabel {
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #2F93E8;
+  margin: 0;
+}
+
+.vmCardDescription {
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 200;
+  line-height: 26px;
+  letter-spacing: -0.001em;
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+.vmCardIcon {
+  flex-shrink: 0;
+  width: clamp(120px, 16vw, 220px);
+  height: clamp(120px, 16vw, 200px);
+  object-fit: contain;
+  display: block;
+  align-self: flex-end;
+  margin-right: -10px;
+  margin-bottom: -30px;
+  position: relative;
+  z-index: 1;
+}
+/* ─────────────────────────────────────────
+   BOARD MEMBERS
+───────────────────────────────────────── */
+.boardSection {
+  position: relative;
+  padding: 5rem;
+  background-color: #000000;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.boardSection::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40%;
+  background: radial-gradient(ellipse at 50% 30%,
+      rgba(0, 140, 255, 0.22) 0%,
+      rgba(21, 93, 252, 0.10) 45%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.boardSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 2.2px);
+  background-size: 22px 22px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Monotone noise */
+.boardSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 258px 258px;
+  mix-blend-mode: screen;
+  opacity: 10%;
+}
+
+.boardInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.boardTitle {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 3rem;
+}
+
+.boardTitleHighlight {
+  color: #00acff;
+}
+
+/* Figma: 3-col grid, gap 20px */
+.boardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.memberCard {
+  /* Figma bg: Linear gradient #002A8D → #090C0E */
+  background: linear-gradient(210deg, #2D2D2D 0%, #090C0E 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 390px;
+  height: 549px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease;
+  /* Gradient border trick */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Gradient border: #2D2D2D → #090C0E */
+.memberCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(180deg, #2D2D2D 0%, #090C0E 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.memberCard:hover {
+  transform: translateY(-4px);
+}
+
+.memberPhoto {
+  width: 390px;
+  height: 299px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  opacity: 1;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.memberInfo {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.memberRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #FF8641;
+  margin-bottom: 0.3rem;
+}
+
+.memberName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.memberBio {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.memberNameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.memberLinkedIn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: #2F93E8;
+  border: 2px solid #2F93E8;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.memberLinkedIn:hover {
+  opacity: 0.85;
+}
+
+.memberLinkedIn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.memberDivider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  margin: 0 0 10px 0;
+}
+
+
+
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .contentSection,
+  .visionMissionSection,
+  .boardSection,
+  .bannerSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .sectionInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sectionInner.reversed {
+    direction: ltr;
+  }
+
+  .boardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vmCard {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .vmCardIcon {
+    width: 120px;
+    height: 120px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .boardGrid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -119,10 +119,19 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <Link href="/about" className={styles.navLink} onClick={() => setIsOpen(false)}>
-                ABOUT
-              </Link>
-            </div>
+            <Link href="/About-us" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              ABOUT
+            </Link>
+            {/* <Link href="/resources" className={styles.navLink} onClick={() => setIsOpen(false)}>
+              RESOURCES
+            </Link> */}
+
+          </div>
+
+
+
+
+
 
             <div className={styles.navRight}>
               <div className={styles.continue_btn}>
