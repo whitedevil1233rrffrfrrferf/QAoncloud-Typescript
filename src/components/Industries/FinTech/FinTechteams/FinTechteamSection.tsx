@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
 import styles from "./FinTechteamSection.module.css";
 
 /* ---------------- TYPES ---------------- */
@@ -46,9 +47,8 @@ function FinTechteamSection({
       {/* Heading with ellipse glow behind it */}
       <div className={styles.headingWrap}>
         <div className={styles.ellipse} aria-hidden="true" />
-        <h1 className={styles.heading}>
-          {title} <span className={styles.headingHighlight}>{highlight}</span>
-        </h1>
+        <SectionHeader title={title} highlight={highlight} />
+        
       </div>
 
       {/* Featured testimonial */}
@@ -58,10 +58,10 @@ function FinTechteamSection({
             <img src={featured.logoSrc} alt={featured.logoAlt} className={styles.logoImg} />
           </div>
 
-          <p className={styles.stat}>
+          <h3 className={styles.stat}>
             <span className={styles.statHighlight}>{featured.statHighlight}</span>
             {" "}{featured.statRest}
-          </p>
+          </h3>
 
           <blockquote className={styles.quote}>{featured.quote}</blockquote>
 

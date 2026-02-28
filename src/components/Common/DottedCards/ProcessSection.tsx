@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ProcessSection.module.css';
 import { ProcessStep } from './ProcessStep';
-import { Sparkles, Code2, Zap } from 'lucide-react';
+import { Sparkles, Code2, Zap, LucideIcon } from 'lucide-react';
 import SectionHeader from '../SectionHeader/SectionHeader';
 
 const CurvedConnector = ({ position }: { position: 'first' | 'second' }) => (
@@ -21,37 +21,40 @@ const CurvedConnector = ({ position }: { position: 'first' | 'second' }) => (
   </svg>
 );
 
-export const ProcessSection: React.FC = () => {
+interface ProcessStepData {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface ProcessSectionProps {
+  title: string;
+  highlight: string;
+  description: string;
+  steps: ProcessStepData[];
+}
+
+export const ProcessSection: React.FC<ProcessSectionProps> = ({
+  title,
+  highlight,
+  description,
+  steps,
+}) => {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        {/* <h2 className={styles.heading}>
-          How do we deliver <span className={styles.highlight}>2X faster</span>?
-        </h2>
-        <p className={styles.subheading}>
-          Accelerated by AI, validated by human expertise, our QA testing services are reliable, thorough, and a lot faster than traditional QA.
-        </p> */}
-        <SectionHeader title='How do we deliver' highlight='2X faster?' description='Accelerated by AI, validated by human expertise, our QA testing services are reliable, thorough, and a lot faster than traditional QA.' />
+        <SectionHeader title={title} highlight={highlight} description={description} />
       </div>
 
       <div className={styles.stepsContainer}>
-        <ProcessStep
-          icon={Sparkles}
-          title="1. AI handles the grunt work"
-          description="Be it test case generation, scriptless automation, or synthetic test data, our AI handles high-volume, repetitive work that slows teams down."
-        />
-
-        <ProcessStep
-          icon={Code2}
-          title="2. Engineers make the calls"
-          description="Nothing about your product or your users is generic. Our engineers learn your product, understand user behaviour, and make the strategic calls that algorithms can't."
-        />
-
-        <ProcessStep
-          icon={Zap}
-          title="3. You ship 2X faster"
-          description="Detailed, weekly reports. Bugs caught before production. Engineers doing what they do best instead of testing."
-        />
+        {steps.map((step, index) => (
+          <ProcessStep
+            key={index}
+            icon={step.icon}
+            title={step.title}
+            description={step.description}
+          />
+        ))}
 
         <CurvedConnector position="first" />
         <CurvedConnector position="second" />

@@ -6,11 +6,17 @@ import { SmoothReleases } from '@/components/Industries/SmoothReleases/SmoothRel
 import QualityTestingServices from '@/components/Industries/QualityServices/QualityServices'
 import FAQs from '@/components/Industries/FAQS/FAQs'
 import { Banner } from '@/components/Common/Banner/Banner'
-import ClientSlider from '@/components/Industries/Slider/Slider'
+
 import ServicePageHeader from '@/components/Industries/SaasHeader/Header/ServicePageHeader'
 import ComparisonTable from '@/components/Industries/ComparisonTable/Comparisontable';
-import FinTechteamSection from '@/components/Industries/FinTechteams/FinTechteamSection'
+import FinTechteamSection from '@/components/Industries/FinTech/FinTechteams/FinTechteamSection'
 import { ComparisonRow } from '@/components/Industries/ComparisonTable/Comparisontable';
+import ClientSlider from '@/components/Common/Slider/Slider'
+import IndustryPageHeader from '@/components/Industries/FinTech/Header/IndustryPageHeader'
+import { Headset,ScanEye,BarChart3 } from 'lucide-react'
+import Mistakes from '@/components/Industries/Mistakes/Mistakes'
+import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
+import WorkWell from '@/components/Industries/WorkWell/WorkWell'
 
 
 export const saasData = {
@@ -54,7 +60,37 @@ export const saasData = {
     },
   ],
 };
+const mistakesData = {
+  title: "Your QA is slowing you down  ",
+  highlight: "more than you think ",
+  description: `You built a CI/CD pipeline to help you ship faster. But releases kept piling up for testing. Your engineers had to write test cases when they should’ve been building code. Bugs slipped through. Somehow, somewhere along the way, QA became a bottleneck. Now you’re struggling to choose between shipping fast and shipping safe, while all your competitors are stepping it up.`,
+  cards: [
+    { title: "QA is the bottleneck", description: "Your engineers are doing their best, turning in code on time. But releases wait days for testing. QA always seems to fall behind and eventually something slips through." },
+    { title: "Your engineers are on QA-duty", description: `Let’s face it, you developers didn't sign up to write test scripts. But they spend 20-30% of their time testing, when they should be building features.` },
+    { title: "Your customers find bugs before you do", description: "Flaky tests, missed edge cases, or bugs in production, lead to an overall loss of trust. Sounds like a nightmare, doesn’t it? " },
+  ],
+}
 
+const releaseRegulationsData = {
+  title: "AI-accelerated QA that ",
+  highlight: "keeps up with your cadence",
+  description: `We combine AI-accelerated QA testing with product-savvy engineers who embed into your workflow in no time.The AI handles the volume: test generation, testing across browsers and devices, regression suites that run in parallel. Meanwhile, the engineers handle the strategic decisions, such as what needs testing, what matters, and what's broken.The result? 40% faster releases. Tests that catch real bugs. Engineers who are free to do what they were hired to do`,
+  cards: [
+    { title: "QA that keeps up with you", description: "Want to ship daily? We’ll make it happen! We plug into your CI/CD pipeline to facilitate daily deployments. No more releases waiting on testing." },
+    { title: "Free your engineers to build", description: `Free up 20-30% of your developers’ time so they can focus on what they do best - writing code. We’ll handle all the testing.` },
+    { title: "Catch bugs before customers ", description: "You won’t be discovering new bugs after production. Because our tests actually work. Our coverage catches real issues, it doesn’t just pass." },
+  ],
+}
+
+const WorkWellData = {
+  title: "We work well with",
+  highlight: "SaaS teams",
+  description: "",
+  steps: [
+            { icon: Headset, title: '1. Discovery call', description: 'We’ll discuss your product, your compliance requirements, and your biggest QA pain points, in a 30-minute call. No pitch deck, just an honest conversation. ' },
+            { icon: ScanEye, title: '2. A focused Pilot', description: "Most teams start with a focused 1-month pilot, depending on the highest-priority surface. You'll soon see your releases are 40% faster, with no added anxiety." },
+            { icon: BarChart3, title: '3. Scale together', description: "We’ll grow with you as your product grows - more surfaces, more test types, more coverage. One thing remains constant, the diligent team that knows your product." },
+  ]}
 export const saasRows: ComparisonRow[] = [
   {
     alternative: "In-house QA team",
@@ -84,44 +120,32 @@ export default function page() {
       <div className={classes.container}>
         <div className={classes.pageContent}>
           <div className={classes.homeHeroBg}>
-            <ServicePageHeader />
+            <IndustryPageHeader
+              tag="AI-accelerated QA for SaaS."
+              title="Fewer bugs, faster releases."
+              description="40% faster releases. Bugs caught before production. AI-accelerated QA that keeps up with your deployment schedule. 
+              Our Saas-literate engineers embed seamlessly into your workflow, 
+              without putting a dent in your roadmap."
+              imageSrc="/Images/Saas/SaasHeader.png"
+              imageAlt="SaaS Header Image"
+              />
           </div>
           <ClientSlider heading="Trusted by SaaS teams around the world" />
-          <QualityAssurance
-            title="In Fintech, mistakes can be"
-            highlight="costly"
-            description="Other industries are more forgiving when it comes to bugs. But not FinTech."
-            subDescription="Because in FinTech, a bug isn't just a mistake. It's a regulatory incident. A glaring headline. An act of non-compliance. That's why most FinTech teams are forced to choose between compliance and speed."
-            marginBottom={2}
-          />
+         
           <ContentWrapper>
-            <SmoothReleases
-              title="BFSI testing services that are a "
-              highlight="cut above the rest"
-              features={[
-                { title: "Compliance is relentless", description: "PCI-DSS, SOC 2, PSD2, state regulations. And they keep changing. Every release needs documented test coverage you can show auditors.", icon: "star" },
-                { title: "Security testing isn't optional", description: "Let's face it, you developers didn't sign up to write test scripts. But they spend 20-30% of their time testing, when they should be building features.", icon: "user" },
-                { title: "Audit prep is a fire drill", description: "When auditors ask for test documentation, scrambling to recreate it is a red flag. You need records that exist before anyone asks.", icon: "circle" },
-              ]}
+            <Mistakes
+              {...mistakesData}
             />
-            <SmoothReleases
-              title="QA that keeps up with "
-              highlight="releases and regulations"
-              features={[
-                { title: "Compliance built in, not bolted on", description: "Automated compliance reporting and test coverage documentation is audit-ready by default. So, no more scrambling when regulators call", icon: "star" },
-                { title: "Security testing from day one", description: "Security isn't a final step. It's embedded in every test cycle, every release, every deployment.", icon: "user" },
-                { title: "Engineers who speak FinTech fluently", description: "Our experts have seen it all - payment processors, neobanks, and trading platforms. Your edge cases won't break us.", icon: "circle" },
-              ]}
+
+            <ReleaseRegulations
+              {...releaseRegulationsData}
             />
-            <QualityTestingServices
-              title="We work well with "
-              highlight="FinTech teams"
-              services={[
-                { title: "Discovery call", description: "We learn your product, your compliance requirements, and where QA is slowing you down. No sales pitch, no fuss, just an honest conversation", learnMoreHref: "/services/functional-testing", icon: "code" },
-                { title: "A focused Pilot", description: "We'll start with a focused 1-month engagement. You'll know we're a fit, when you see 40% faster releases.", learnMoreHref: "/services/functional-testing", icon: "bolt" },
-                { title: "Scale together", description: "We'll grow with your product. More surfaces, more test coverage, more ownership. And the same, reliable team that sticks with you.", learnMoreHref: "/services/functional-testing", icon: "arrow" },
-              ]}
+            <WorkWell
+              {...WorkWellData}
+              
+              
             />
+           
 
 
             <FinTechteamSection
