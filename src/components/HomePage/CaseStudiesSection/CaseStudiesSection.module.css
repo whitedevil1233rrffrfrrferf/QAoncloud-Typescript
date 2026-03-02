@@ -3,7 +3,8 @@
   margin-top: var(--section-header-margin);
   position: relative;
   padding-bottom: var(--padding-bottom);
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 .section::before {
     content: "";
@@ -60,7 +61,7 @@
 /* ─── Image wrapper: gradient + noise as background ─── */
 .imageWrapper {
   width: 100%;
-  aspect-ratio: 410 / 261;
+   aspect-ratio: 410 / 240;   /* shorter blue section */
   overflow: hidden;
   position: relative;
   /* This gradient shows through wherever the image doesn't cover */
@@ -89,11 +90,31 @@
   /* Key: left-align so the subject shows on the left, right side crops off */
   object-position: left center;
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 1;
   right: -12ch;
 }
+.img_fintech {
+  
+  top: 20px;
+  left: 170px;
+  object-fit: contain;
+}
+.img_healthtech {
+  width: 298px !important;
+  height: 298px !important;
+  top: -18px;
+  left: 172px;
+  object-fit: contain;
+}
 
+.img_saas {
+  width: 280px;   /* adjust to match your design spec */
+  height: 260px;
+  top: 30px;
+  left: 130px;
+  object-fit: contain;
+}
 .cardBody {
   padding: 20px 24px 28px;
   background-color: #0a0d14;
@@ -114,19 +135,129 @@
   font-family: 'DM Sans', sans-serif;
 }
  
+
+@media (max-width: 1300px) {
+  .img_fintech {
+    
+    top: 0px;
+    left: 150px;
+    object-fit: contain;
+  }
+  .img_healthtech {
+    width: 258px !important;
+    height: 258px !important;
+    top: -8px;
+    left: 142px;
+    object-fit: contain;
+  }
+  .img_saas {
+    width: 320px !important;   /* adjust to match your design spec */
+    height: 260px;
+    top: 10px;
+    left: 130px;
+    object-fit: contain;
+  }
+}
+@media (max-width: 1162px) {
+  .imageWrapper {
+    width: 100%;
+    aspect-ratio: 380 / 180;   /* shorter blue section */
+    overflow: hidden;
+    position: relative;
+    /* This gradient shows through wherever the image doesn't cover */
+    background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
+    box-shadow: 0px 0.43px 1.08px 0px #7070700F;
+  }
+  .img_fintech {
+    height: 400px !important;
+    width: 400px !important;
+    top: -30px;
+    left: 230px;
+    object-fit: contain;
+  }
+  .img_healthtech {
+    width: 298px !important;
+    height: 298px !important;
+    top: -18px;
+    left: 262px;
+    object-fit: contain;
+  }
+  .img_saas {
+    width: 320px !important;   /* adjust to match your design spec */
+    height: 260px;
+    top: 10px;
+    left: 290px;
+    object-fit: contain;
+  }
+}
+@media (max-width: 1025px) {
+  .imageWrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    /* keep the sizes so images don't blow up */
+    
+    object-fit: contain;
+  }
+  .imageWrapper img,
+  .img_fintech,
+  .img_healthtech,
+  .img_saas {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 75% !important;
+    height: 85% !important;
+    object-fit: cover !important;
+  }
+   .img_healthtech {
+    width: 258px !important;
+    height: 108px !important;
+    top: -18px;
+    left: 202px;
+    object-fit: contain;
+  }
+}
 @media (max-width: 788px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   /* force single column */
   }
-
-   .imageWrapper {
-    aspect-ratio: 16 / 6; /* was 16/10, now shorter */
+  .imageWrapper {
+    aspect-ratio: unset;
+    height: 160px;   /* exact height */
   }
-
   .imageWrapper img {
-    width: 100%;
-    height: 100%;
-    right: 0;
-    object-position: center center;
+    aspect-ratio: 1/2 !important;
+    object-fit: cover !important;
+  }
+  /* shared centering for ALL */
+  .img_fintech,
+  .img_healthtech,
+  .img_saas {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 75% !important;
+    height: 20% !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+  }
+
+  /* individual sizes — NO .imageWrapper img here */
+  .img_fintech {
+    width: 15% !important;
+    height: 15% !important;
+  }
+
+  .img_healthtech {
+    width: 55% !important;
+    height: 60% !important;
+  }
+
+  .img_saas {
+    width: 60% !important;
+    height: 65% !important;
   }
 }

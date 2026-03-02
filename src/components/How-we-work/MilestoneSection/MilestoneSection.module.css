@@ -1,5 +1,6 @@
 .section {
-  margin-top: var(--section-header-margin, 80px);
+  margin-top: var(--section-header-margin);
+  padding-bottom: 4rem;
 }
 
 

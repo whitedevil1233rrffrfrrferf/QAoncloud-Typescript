@@ -60,3 +60,8 @@
   text-underline-offset: 6px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
