@@ -183,9 +183,9 @@ export default function page() {
 
           <ContentWrapper>
             <Banner
-              title="Faster, frequent,"
-              highlight="bug free releases"
-              description="Talk to an expert & learn how you can speed up your QA process today."
+              title="Ready to put"
+              highlight="your app to the test?"
+              description="Our Saas QA experts are always up for a quick chat. No pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can speed up your releases and ensure quality"
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"

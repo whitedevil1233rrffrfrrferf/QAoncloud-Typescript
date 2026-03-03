@@ -164,7 +164,8 @@ export default function page() {
               {
                 question: "How does pricing work?", answer: (<> We typically work on monthly engagements starting with a focused pilot engagement. Pricing
                     depends entirely on the scope of work and complexity involved. <br /> Want to put a real number to our services?{" "}
-                    <a href="/contact" style={{ color: "#3093E8", textDecoration: "underline" }}> Book a quick discovery call </a>{" "} with us today.
+                    <a href="/Contact-us" style={{ color: "#3093E8", textDecoration: "underline" }}>
+                     Book a quick discovery call </a>{" "} with us today.
                   </>
                 ),
               },
@@ -174,9 +175,9 @@ export default function page() {
 
           <ContentWrapper>
             <Banner
-              title="Faster, frequent,"
-              highlight="bug free releases"
-              description="Talk to an expert & learn how you can speed up your QA process today."
+              title="Ship faster with"
+              highlight="no compliance anxiety"
+              description="Talk to a healthtech QA expert today. We’ll keep it simple - no pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can help with your QA needs."
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
