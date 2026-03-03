@@ -78,7 +78,7 @@ const releaseRegulationsData = {
 }
 
 const WorkWellData = {
-  title: "We work well with",
+  title: "How we work with",
   highlight: "HealthTech teams",
   description: "",
   steps: [

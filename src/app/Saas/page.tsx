@@ -78,7 +78,7 @@ const releaseRegulationsData = {
 }
 
 const WorkWellData = {
-  title: "We work well with",
+  title: "How we work with",
   highlight: "SaaS teams",
   description: "",
   steps: [
@@ -150,7 +150,7 @@ export default function page() {
               testimonials={saasData.testimonials}
             />
 
-            <ComparisonTable title="Here's why" highlight="SaaS Teams prefer us" rows={saasRows} />
+            <ComparisonTable title="Here's why" highlight="SaaS Teams choose us" rows={saasRows} />
           </ContentWrapper>
 
           <FAQs

@@ -3,7 +3,7 @@ import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper
 import React from 'react'
 import classes from "./page.module.css"
 import Image from 'next/image'
-import styles from '@/components/ContactUsPage/ContactUsPage.module.css';
+import styles from '@/app/About-us/page.module.css';
 
 const boardMembers = [
   {
@@ -11,7 +11,7 @@ const boardMembers = [
     role: 'Chairman of DesiCrew',
     bio: 'Founding member of Infosys BPO, Ex-COO of OnMobile, Investor in Social Enterprises',
     photo: '/Images/AboutUs/Rajiv Kuchhal.png',
-    linkedin:'#',
+    linkedin:'https://in.linkedin.com/in/rajiv-kuchhal-4557a42',
   },
   {
     name: 'Saloni Malhotra',
@@ -32,14 +32,14 @@ const boardMembers = [
     role: 'Board Member',
     bio: 'Managing Partner, Ventureast',
     photo: '/Images/AboutUs/Sarath Naru.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/sarathnaru/',
   },
   {
     name: 'Sandip Sen',
     role: 'Board Member',
     bio: 'Ex-Global CEO, Aegis Ltd',
     photo: '/Images/AboutUs/Sandip Sen.png',
-    linkedin: '#',
+    linkedin: 'https://in.linkedin.com/in/sandipsen',
   },
 ]
 
@@ -50,6 +50,8 @@ export default function AboutPage() {
       {/* HEADER */}
       <header className={styles.headerSection}> 
         <div className={styles.logoWrapper}>
+           <div className={styles.ellipse2017} />
+        <div className={styles.ellipse2018} />
           <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
         </div>
         <h1 className={classes.heroTitle}>We are QAonCloud</h1>

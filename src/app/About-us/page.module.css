@@ -11,6 +11,106 @@
 /* ─────────────────────────────────────────
    HERO SECTION
 ───────────────────────────────────────── */
+  .headerSection {
+   position: relative; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 50px;
+   gap: 40px;
+   width: 100%;
+   background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
+   box-shadow: 0px 0.432119px 1.0803px rgba(112, 112, 112, 0.06);
+   box-sizing: border-box;
+   min-height: 600px;
+   justify-content: center;
+   overflow: hidden;
+    
+ }
+
+
+/* Monotone noise */
+.headerSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  /* Real random dot noise — generated pixel-by-pixel to match Figma speckle pattern */
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");  background-repeat: repeat;
+  opacity: 15%;
+  background-repeat: repeat; 
+  mix-blend-mode: screen; 
+}
+   
+ .logoWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 2;
+ }
+
+ /* Shadow ellipses under logo — Figma Ellipse 2017 & 2018 */
+.ellipse2017 {
+  position: absolute;
+  width: 204px;
+  height: 45px;
+  top: calc(70% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateX(-20px);
+  background: rgba(0, 0, 0, 0.60);
+  border-radius: 50%;
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ellipse2018 {
+  position: absolute;
+  width: 110px;
+  height: 27px;
+  top: calc(75% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateX(30px) rotate(-28.64deg);
+  background: rgba(0, 0, 0, 0.60);
+  border-radius: 50%;
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.heroTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.heroSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -1px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .heroSection {
   position: relative;
   display: flex;
@@ -57,58 +157,10 @@
   justify-content: center;
   z-index: 1;
 }
+ 
+ 
 
-.ellipse2017 {
-  position: absolute;
-  width: 204px;
-  height: 45px;
-  top: 241px;
-  left: -70px;
-  background: rgba(0, 0, 0, 0.50);
-  border-radius: 50%;
-  filter: blur(20px);
-  pointer-events: none;
-  z-index: 0;
-}
 
-.ellipse2018 {
-  position: absolute;
-  width: 102px;
-  height: 27px;
-  top: 236px;
-  left: 60px;
-  background: rgba(0, 0, 0, 0.50);
-  border-radius: 50%;
-  filter: blur(20px);
-  transform: rotate(-28.64deg);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.heroTitle {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.heroSubtitle {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
 
 /* ─────────────────────────────────────────
    CONTENT SECTIONS

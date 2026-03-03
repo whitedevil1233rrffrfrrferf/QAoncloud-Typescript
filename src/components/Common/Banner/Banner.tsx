@@ -8,7 +8,7 @@ export interface BannerProps {
   highlight?: string
   description: string
   subDescription?: string
-  ctaLabel: string
+  ctaLabel?: string
   ctaHref?: string
   decorativeImage?: string
   decorativeImageAlt?: string
@@ -16,6 +16,8 @@ export interface BannerProps {
   linkDescription?: string
   linkDescriptionText?: string
   linkDescriptionHref?: string
+  hideLinkSuffix?: boolean
+  hidectaLabel?: boolean
 }
 
 export const Banner: React.FC<BannerProps> = ({
@@ -24,12 +26,14 @@ export const Banner: React.FC<BannerProps> = ({
   description,
   subDescription,
   ctaLabel,
-  ctaHref = "/how-we-work",
+  ctaHref = "/Contact-us",
   decorativeImage,
   decorativeImageAlt = "",
   linkDescription,
   linkDescriptionText,
   linkDescriptionHref = "#",
+  hideLinkSuffix = false,
+  hidectaLabel = false,
 }) => {
   return (
     <section className={styles.container}>
@@ -47,11 +51,14 @@ export const Banner: React.FC<BannerProps> = ({
           <p className={styles.description}>{subDescription}</p>
         )}
 
-        <div className={styles.buttonContainer}>
-          <Button href={ctaHref} variant="primary">
-            {ctaLabel}
-          </Button>
-        </div>
+
+        {!hidectaLabel && ctaLabel && (
+          <div className={styles.buttonContainer}>
+            <Button href={ctaHref} variant="primary">
+              {ctaLabel}
+            </Button>
+          </div>
+        )}
         {/* Only renders if linkDescription is passed */}
         {linkDescription && (
           <p className={styles.linkDescription}>
@@ -61,7 +68,7 @@ export const Banner: React.FC<BannerProps> = ({
                 {linkDescriptionText}
               </a>
             )}{" "}
-            with us.
+            {!hideLinkSuffix && "with us."}
           </p>
         )}
       </div>

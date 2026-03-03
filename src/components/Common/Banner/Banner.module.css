@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   height: 300px;
-  min-height: 330px;
+  min-height: 345px;
   bottom: 30px;
 }
 
@@ -34,11 +34,11 @@
   inset: 0;
   z-index: 100;
   pointer-events: none;
-  /* Real random dot noise — generated pixel-by-pixel to match Figma speckle pattern */
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");  background-repeat: repeat;
   opacity: 10%;
   mix-blend-mode: screen; 
 }
+
 /* Left text block */
 .inner {
   position: relative;
@@ -52,15 +52,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .title {
-  
   line-height: 100%;
   letter-spacing: -2%;
   color: #ffffff;
   margin: 0 0 1rem 0; 
+    width: max-content;
+
 }
 
 .highlight {
-  
   line-height: 100%;
   letter-spacing: -2%;
   color: #4f8cff;
@@ -68,15 +68,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .description {
-  
   line-height: 30px;
   letter-spacing: 0.12%;
   color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 0.5rem 0;
-  max-width: 950px;
+  margin: 0 0 0.1rem 0;
+  max-width: 1000px;
 }
-
- 
 
 /* Button container */
 .buttonContainer {
@@ -117,56 +114,231 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   color: #4f8cff;
 }
 
-
-
-
-/* Decorative image — Figma specs: 742.54×314.86px, rotate 15deg, top: -63.68px, left: 599.64px */
+/* =====================================================
+   DECORATIVE IMAGE — right-anchored, scales with container
+   ===================================================== */
 .imageWrapper {
   position: absolute;
-  width: 742.54px;
-  height: 320.86px;
-  top: 50.68px;
-  left: 810.64px;
-  transform: rotate(-10deg);
-  transform-origin: center center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 65%;
   pointer-events: none;
   z-index: 1;
-  /* Fade left edge so it blends into the gradient */
-  mask-image: linear-gradient(to right, transparent 0%, black 20%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 25%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
 }
 
-.decorativeImage { 
+.decorativeImage {
   position: absolute;
-  right: -80px;
-  top: 22px;
-  height: 300px;
-  transform: rotate(-5deg);
+  right: -30px;
+  bottom: -10px;
+  height: 110%;
+  width: auto;
+  transform: rotate(-6deg);
+  transform-origin: bottom right;
   pointer-events: none;
 }
 
+/* ================================================
+   FULL DEVICE RESPONSIVE — Banner
+   ================================================ */
 
-
+/* tablet/mobile shared — no bottom offset, no fixed height */
 @media (max-width: 768px) {
+  .container {
+    height: auto;
+    min-height: unset;
+    bottom: 0;
+  }
   .inner {
     max-width: 100%;
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    align-items: center;
   }
-  .title{
+  .title {
     text-align: center;
   }
   .description {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
   }
-
   .imageWrapper {
     display: none;
   }
   .buttonContainer {
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* ===== WIDE DESKTOP (> 1440px) ===== */
+@media (min-width: 1441px) {
+  .container {
+    height: auto;
+    min-height: 340px;
+  }
+  .inner {
+    padding: 3.5rem 4rem 3.5rem 5rem;
+    max-width: 55%;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .description {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  /* imageWrapper stays right-anchored — no override needed */
+}
+
+/* ===== MAC / LAPTOP (1024px – 1440px) ===== */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    height: auto;
+    min-height: 300px;
+  }
+  .inner {
+    max-width: 55%;
+    padding: 3rem 3rem 3rem 3.5rem;
+  }
+  /* imageWrapper stays right-anchored — no override needed */
+}
+
+/* ===== TABLET LANDSCAPE (768px – 1023px) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    height: auto;
+    min-height: 280px;
+    border-radius: 12px;
+    bottom: 0;
+  }
+  .inner {
+    max-width: 55%;
+    padding: 2.5rem 2rem 2.5rem 2.5rem;
+  }
+  .title {
+    font-size: 26px;
+    margin-bottom: 0.75rem;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .buttonContainer {
+    margin-top: 1.25rem;
+  }
+  .buttonContainer a,
+  .buttonContainer button {
+    font-size: 15px;
+  }
+  .linkDescription {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  /* imageWrapper stays right-anchored at 52% width — looks good on tablet */
+}
+
+/* ===== MOBILE (< 767px) ===== */
+@media (max-width: 767px) {
+  .container {
+    height: auto;
+    min-height: unset;
+    border-radius: 12px;
+    bottom: 0;
+    flex-direction: column;
+  }
+  .inner {
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+  .title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  .buttonContainer {
+    margin-top: 1.25rem;
+    justify-content: center;
+  }
+  .buttonContainer a,
+  .buttonContainer button {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  .linkDescription {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .imageWrapper {
+    display: none;
+  }
+  .decorativeImage {
+    display: none;
+  }
+}
+
+/* ===== MOBILE SMALL (< 480px) ===== */
+@media (max-width: 479px) {
+  .container {
+    border-radius: 10px;
+    min-height: unset;
+    bottom: 0;
+  }
+  .inner {
+    padding: 1.75rem 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    font-size: 19px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 0.6rem;
+  }
+  .highlight {
+    display: inline;
+    font-size: 19px;
+  }
+  .description {
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+  }
+  .buttonContainer {
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+  .buttonContainer a,
+  .buttonContainer button {
+    font-size: 14px;
+    width: 100%;
+  }
+  .linkDescription {
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+  .imageWrapper {
+    display: none;
   }
 }
