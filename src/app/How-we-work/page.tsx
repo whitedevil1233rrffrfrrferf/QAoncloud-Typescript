@@ -31,19 +31,9 @@ export default function page() {
                 <TwoSystems />
             </ContentWrapper>    
                 <SectionDivider />
-            <ContentWrapper>
-            
-            <ContentWrapper>
-              <FeatureShowcase />
-            </ContentWrapper>  
-              
-            </ContentWrapper>    
-                
+                <FeatureShowcase />
                 <SectionDivider />
-            <ContentWrapper>
-               <MilestoneSection />
-            </ContentWrapper>    
-            <SectionDivider />   
+                <MilestoneSection />
                 <PhaseSection />
 
             <FAQs

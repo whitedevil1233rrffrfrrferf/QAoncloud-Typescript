@@ -58,7 +58,7 @@ export default function TwoSystems() {
                 {card.items.map((item) => (
                   <li key={item} className={styles.listItem}>
                     <Sparkle
-                      size={22}
+                      size={16}
                       strokeWidth={1.5}
                       className={styles.icon}
                     />

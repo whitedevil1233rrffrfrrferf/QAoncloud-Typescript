@@ -4,6 +4,7 @@ import React from 'react'
 import classes from "./page.module.css"
 import Image from 'next/image'
 import styles from '@/components/ContactUsPage/ContactUsPage.module.css';
+import ContentSection from '@/components/About-Us/ContentSection'
 
 const boardMembers = [
   {
@@ -59,63 +60,32 @@ export default function AboutPage() {
       </header>
 
       {/* BUILT BY DESICREW */}
-      <section className={classes.contentSection}>
-        <div className={classes.sectionInner}>
-          <div className={classes.sectionText}>
-            <h2 className={classes.sectionTitle}>
-              Built by <span className={classes.sectionHighlight}>Desicrew in 2016</span>
-            </h2>
-            <p className={classes.sectionDescription}>
-              QAonCloud was formed to solve an issue teams constantly face - frequent delays and buggy releases.
+      <ContentSection
+  title={<>Built by <span className={classes.sectionHighlight}>Desicrew in 2016</span></>}
+  imageSrc="/Images/AboutUs/Saloni MalhotraTeam.png"
+  imageAlt="Built by Desicrew in 2016"
+>
+  <p>QAonCloud was formed to solve an issue teams constantly face - frequent delays and buggy releases.
               We're a trusted software testing company, and we've worked with startups and global businesses
               across industries, combining fast, precise automation with reliable, skilled engineers with deep
-              domain expertise.
-            </p>
-          </div>
-          <div className={classes.sectionImageWrapper}>
-            <Image
-              src="/Images/AboutUs/Saloni MalhotraTeam.png"
-              alt="Built by Desicrew in 2016"
-              width={520}
-              height={320}
-              className={classes.sectionImage}
-            />
-          </div>
-        </div>
-      </section>
+              domain expertise.</p>
+</ContentSection>
 
-      {/* OUR APPROACH */}
-      <section className={`${classes.contentSection} ${classes.altBg}`}>
-        <div className={`${classes.sectionInner} ${classes.reversed}`}>
-          <div className={classes.sectionText}>
-            <h2 className={classes.sectionTitle}>
-              Our approach <span className={classes.sectionHighlight}>is simple</span>
-            </h2>
-            <p className={classes.sectionDescription}>
-              Our AI handles the repetitive, high-volume work, while our engineers make the strategic calls.
+<ContentSection
+  title={<>Our approach <span className={classes.sectionHighlight}>is simple</span></>}
+  imageSrc="/Images/AboutUs/Our approach is simple.png"
+  imageAlt="QAonCloud team"
+  reversed
+  altBg
+>
+  <p> Our AI handles the repetitive, high-volume work, while our engineers make the strategic calls.
               The result? 40% faster QA. We build strong partnerships, and our clients trust us to deliver,
-              again and again.
-            </p>
-            <p className={classes.sectionDescription}>
-              We don't look in from the outside. We embed into your workflow, sit in your standups, and take
+              again and again.</p>
+  <p>We don't look in from the outside. We embed into your workflow, sit in your standups, and take
               ownership, alongside your team. When something's wrong, we'll be the first to tell you, and
-              we'll stick with you until it's resolved.
-            </p>
-            <p className={classes.sectionDescription}>
-              We're here to help you ship confidently, with every release.
-            </p>
-          </div>
-          <div className={classes.sectionImageWrapper}>
-            <Image
-              src="/Images/AboutUs/Our approach is simple.png"
-              alt="QAonCloud team"
-              width={520}
-              height={320}
-              className={classes.sectionImage}
-            />
-          </div>
-        </div>
-      </section>
+              we'll stick with you until it's resolved.</p>
+  <p>We're here to help you ship confidently, with every release.</p>
+</ContentSection>
 
       {/* VISION & MISSION */}
       <section className={classes.visionMissionSection}>
