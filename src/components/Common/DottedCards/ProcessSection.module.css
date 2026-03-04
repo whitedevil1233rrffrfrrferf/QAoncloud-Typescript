@@ -70,6 +70,7 @@
 
 .first {
   left: calc(33.333% - 90px);
+  rotate: 180deg;
 }
 
 .second {

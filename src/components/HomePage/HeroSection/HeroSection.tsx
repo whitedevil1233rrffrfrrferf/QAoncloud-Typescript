@@ -31,7 +31,7 @@ export default function HeroSection() {
             <NextLink href="/Contact-us" className={styles.btnPrimary}>
               Talk To An Expert
             </NextLink>
-            <NextLink href="/how-we-work" className={styles.btnSecondary}>
+            <NextLink href="/How-we-work" className={styles.btnSecondary}>
               See How We Work
             </NextLink>
           </div>

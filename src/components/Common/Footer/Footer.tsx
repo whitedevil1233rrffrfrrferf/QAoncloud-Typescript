@@ -19,15 +19,24 @@ export default function Footer() {
         <div className={styles.brandSection}>
           <div className={styles.logo}> <img src="QAoncloud_logo.png" alt="QAoncloud" className={styles.qaoncloudLogo} /></div>
           <div className={styles.subtitle}>
-            Strategic QA Unit of <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} /> 
+            Strategic QA Unit of <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} />
           </div>
           <p className={styles.description}>
             Elevating software quality through next-gen testing solutions and
             AI-driven automation.
           </p>
-          
+
           {/* Social Media Icons */}
           <div className={styles.socialContainer}>
+            <a
+              href="https://www.linkedin.com/company/qaoncloud/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className={styles.btnSocial}
+            >
+               <FaLinkedinIn />
+            </a>
             <a
               href="https://twitter.com/QAonCloud"
               target="_blank"
@@ -35,7 +44,7 @@ export default function Footer() {
               aria-label="Twitter"
               className={styles.btnSocial}
             >
-              <FaTwitter />
+              <FaTwitter /> 
             </a>
             <a
               href="https://www.facebook.com/QAonCloud/"
@@ -44,16 +53,7 @@ export default function Footer() {
               aria-label="Facebook"
               className={styles.btnSocial}
             >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/qaoncloud/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className={styles.btnSocial}
-            >
-              <FaLinkedinIn />
+               <FaFacebookF /> 
             </a>
             <a
               href="https://www.instagram.com/qaoncloud/"
@@ -64,7 +64,7 @@ export default function Footer() {
             >
               <FaInstagram />
             </a>
-            <a
+            {/*<a
               href="https://wa.me/9884292684"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,7 +81,7 @@ export default function Footer() {
               className={styles.btnSocial}
             >
               <FaYoutube />
-            </a>
+            </a>*/}
           </div>
         </div>
 

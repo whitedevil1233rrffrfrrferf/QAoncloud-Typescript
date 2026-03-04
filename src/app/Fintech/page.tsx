@@ -12,6 +12,7 @@ import WorkWell from '@/components/Industries/WorkWell/WorkWell'
 import { BarChart3, Headset,ScanEye } from 'lucide-react'
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import IndustryPageHeader from '@/components/Industries/FinTech/Header/IndustryPageHeader'
+import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 const finTechData = {
   title: "FinTech teams",
@@ -111,14 +112,20 @@ export default function page() {
             />
           </div>
           <ClientSlider heading="Trusted by global FinTech teams" />
+          <SectionDivider />
           <ContentWrapper>
             <Mistakes
               {...mistakesData}
             />
-
+          </ContentWrapper>
+          <SectionDivider />
+          <ContentWrapper>
             <ReleaseRegulations
               {...releaseRegulationsData}
             />
+          </ContentWrapper>
+            <SectionDivider />
+            <ContentWrapper>  
             <WorkWell
               {...WorkWellData}
               

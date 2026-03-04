@@ -1,5 +1,6 @@
 .section {
   margin-top: var(--section-header-margin);
+  padding-bottom: var(--padding-bottom);
   background: transparent;
   color: #ffffff;
   position: relative;

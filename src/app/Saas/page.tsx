@@ -12,6 +12,7 @@ import { Headset,ScanEye,BarChart3 } from 'lucide-react'
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
+import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 
 export const saasData = {
@@ -29,7 +30,7 @@ export const saasData = {
       role: "CEO, Healthtech",
       avatar: "/Images/Fintech/Quentin Mussche.png",
     },
-    image: "/Images/Saas/Saas teams ship faster.png.png",
+    image: "/Images/Saas/Saas teams ship faster.png",
     imageAlt: "Glowing cloud SaaS",
   },
   testimonials: [
@@ -78,7 +79,7 @@ const releaseRegulationsData = {
 }
 
 const WorkWellData = {
-  title: "We work well with",
+  title: "How we work with",
   highlight: "SaaS teams",
   description: "",
   steps: [
@@ -126,22 +127,24 @@ export default function page() {
               />
           </div>
           <ClientSlider heading="Trusted by SaaS teams around the world" />
-         
+          <SectionDivider />           
           <ContentWrapper>
             <Mistakes
               {...mistakesData}
             />
-
+          </ContentWrapper>
+          <SectionDivider />
+          <ContentWrapper>
             <ReleaseRegulations
               {...releaseRegulationsData}
             />
+          </ContentWrapper>
+          <SectionDivider />
+          <ContentWrapper>
             <WorkWell
               {...WorkWellData}
-              
-              
+                
             />
-           
-
 
             <FinTechteamSection
               title={saasData.title}
@@ -150,7 +153,7 @@ export default function page() {
               testimonials={saasData.testimonials}
             />
 
-            <ComparisonTable title="Here's why" highlight="SaaS Teams prefer us" rows={saasRows} />
+            <ComparisonTable title="Here's why" highlight="SaaS Teams choose us" rows={saasRows} />
           </ContentWrapper>
 
           <FAQs

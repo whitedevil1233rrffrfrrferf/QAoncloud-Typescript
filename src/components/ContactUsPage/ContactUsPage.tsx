@@ -13,6 +13,8 @@ export default function ContactUsPage() {
   const [privacyChecked, setPrivacy] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const [uploadedFile, setFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   /* ── Business state ── */
@@ -43,16 +45,97 @@ export default function ContactUsPage() {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const handleBizSubmit = (e: React.FormEvent) => {
+  const handleBizSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!privacyChecked) { alert('Please agree to the privacy policy'); return; }
-    console.log('Business submit', biz, uploadedFile);
+    if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'business',
+          formData: biz,
+          file: uploadedFile ? {
+            name: uploadedFile.name,
+            size: uploadedFile.size
+          } : null
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setBiz({
+          firstName: '', lastName: '', company: '', workEmail: '',
+          phone: '', country: '', service: '', howHeard: '', budgetRange: '', message: '',
+        });
+        setFile(null);
+        setPrivacy(false);
+        if (fileInputRef.current) fileInputRef.current.value = '';
+      } else {
+        setSubmitStatus('error');
+        alert(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      alert('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleCareerSubmit = (e: React.FormEvent) => {
+  const handleCareerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!privacyChecked) { alert('Please agree to the privacy policy'); return; }
-    console.log('Career submit', career, uploadedFile);
+    if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'career',
+          formData: career,
+          file: uploadedFile ? {
+            name: uploadedFile.name,
+            size: uploadedFile.size
+          } : null
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setCareer({
+          firstName: '', lastName: '', email: '', phone: '', jobRole: '', location: '',
+        });
+        setFile(null);
+        setPrivacy(false);
+        if (fileInputRef.current) fileInputRef.current.value = '';
+      } else {
+        setSubmitStatus('error');
+        alert(data.error || 'Failed to send application. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      alert('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   /* ── Shared upload zone ── */
@@ -283,7 +366,21 @@ export default function ContactUsPage() {
                 </div>
 
                 {/* Send Request button */}
-                <button type="submit" className={styles.submitButton}>Send Request</button>
+                <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Request'}
+                </button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className={styles.successMessage}>
+                    ✅ Your message has been sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className={styles.errorMessage}>
+                    ❌ Failed to send message. Please try again.
+                  </div>
+                )}
               </form>
             )}
 
@@ -352,7 +449,21 @@ export default function ContactUsPage() {
                 </div>
 
                 {/* Submit button */}
-                <button type="submit" className={styles.submitButton}>Submit</button>
+                <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className={styles.successMessage}>
+                    ✅ Your application has been sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className={styles.errorMessage}>
+                    ❌ Failed to send application. Please try again.
+                  </div>
+                )}
               </form>
             )}
 

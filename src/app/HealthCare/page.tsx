@@ -13,6 +13,7 @@ import IndustryPageHeader from '@/components/Industries/FinTech/Header/IndustryP
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
+import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 export const healthcareData = {
   title: "HealthTech teams",
@@ -78,7 +79,7 @@ const releaseRegulationsData = {
 }
 
 const WorkWellData = {
-  title: "We work well with",
+  title: "How we work with",
   highlight: "HealthTech teams",
   description: "",
   steps: [
@@ -126,30 +127,40 @@ export default function page() {
             />
           </div>
           <ClientSlider heading="Trusted by HealthTech team around the world" />
-          
+          <SectionDivider />
           <ContentWrapper>
             <Mistakes
               {...mistakesData}
             />
-
+          </ContentWrapper> 
+          <SectionDivider />
+          <ContentWrapper>
             <ReleaseRegulations
               {...releaseRegulationsData}
             />
+          </ContentWrapper>
+           <SectionDivider />
+          <ContentWrapper>  
             <WorkWell
               {...WorkWellData}
               
               
             />
-
-
+          </ContentWrapper>  
+            
+            
             <FinTechteamSection
               title={healthcareData.title}
               highlight={healthcareData.highlight}
               featured={healthcareData.featured}
               testimonials={healthcareData.testimonials}
             />
-            <ComparisonTable title="Here's why" highlight="Healthcare Teams prefer us" rows={healthcareRows} />
-          </ContentWrapper>
+            
+            <ContentWrapper>
+               <ComparisonTable title="Here's why" highlight="Healthcare Teams prefer us" rows={healthcareRows} />
+            </ContentWrapper>
+           
+          
 
 
           <FAQs

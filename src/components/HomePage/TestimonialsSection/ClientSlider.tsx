@@ -11,12 +11,12 @@ import styles from "./TestimonialSlider.module.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonials = [
-// {
-//     text: "Throughout the project, they demonstrated professionalism, expertise, and effective communication from inquiry to closure. We rate the quality of their work 9 out of 10. The testing team showcased excellent technical skills and attention to detail, achieving thorough testing according to the plan. We appreciate the comprehensive project closure report. Overall, we highly recommend QAonCloud as a software testing company.",
-//     name: "Kavitha Sivashankaran",
-//     role: " Quality and Regulatory Affairs , G3 MEDICAL SYSTEMS PVT LTD",
-//     img: "/59-Kavitha Sivashankaran - G3 -.jpeg", // replace with your image path
-//   },
+  // {
+  //     text: "Throughout the project, they demonstrated professionalism, expertise, and effective communication from inquiry to closure. We rate the quality of their work 9 out of 10. The testing team showcased excellent technical skills and attention to detail, achieving thorough testing according to the plan. We appreciate the comprehensive project closure report. Overall, we highly recommend QAonCloud as a software testing company.",
+  //     name: "Kavitha Sivashankaran",
+  //     role: " Quality and Regulatory Affairs , G3 MEDICAL SYSTEMS PVT LTD",
+  //     img: "/59-Kavitha Sivashankaran - G3 -.jpeg", // replace with your image path
+  //   },
   {
     text: "QAonCIoud has helped us detect app crashes which were affecting our downloads significantly. They have now taken the responsibility of giving a QA clear to all our development sprints. We would like to expand the team further.",
     name: "Gautam Chakravarthy",
@@ -59,7 +59,7 @@ const testimonials = [
     img: "/Hasnain Baxamoosa.jpg",
     industry: "Real Estate",
   },
-    {
+  {
     text: "Thank you for all the time you have taken off our hands to test our growing product and do it well. We appreciate all the attention to detail and promptness of response.",
     name: "Pratyush Singh",
     role: "Co-founder, Venzi",
@@ -73,14 +73,14 @@ const testimonials = [
     img: "/Ishansh - Avanti.jpg",
     industry: "Real Estate",
   },
-   {
+  {
     text: "QAonCIoud has constantly impressed us with quick turnarounds and detailed reports on testing. In addition, they have accommodated our requests for quick tests and sanity tests within a few hours.",
     name: "Leya Sathyan",
     role: "Program Manager, Indihood",
     img: "/leya - indihood.jpg",
     industry: "Real Estate",
   },
-    {
+  {
     text: "QAonCloud is a great addition to our team, helping us out with testing and maintaining the quality of our product. They are very flexible and easily adapted to our processes and tools. They are very rigorous during the testing process, pay attention to detail, and always ask questions of our development team if something is unclear.",
     name: "Daan Depaepe",
     role: "Chief Technology Officer, Prompto",
@@ -98,7 +98,7 @@ export default function TestimonialSlider() {
   return (
     <section className={styles.section}>
       <div className={styles.sliderContainer}>
-        <button 
+        <button
           className={`${styles.navButton} ${styles.prevButton} ${isBeginning ? styles.disabled : ''}`}
           onClick={() => swiperRef.current?.slidePrev()}
           disabled={isBeginning}
@@ -106,7 +106,7 @@ export default function TestimonialSlider() {
         >
           <FaChevronLeft />
         </button>
-        
+
         <div className={styles.sliderWrap}>
           <Swiper
             modules={[Pagination]}
@@ -121,9 +121,13 @@ export default function TestimonialSlider() {
             }}
             pagination={{
               clickable: true,
-              dynamicBullets: true,
+              dynamicBullets: false,
               el: '.swiper-pagination',
-              type: 'bullets'
+              type: 'bullets',
+              renderBullet: function (index, className) {
+                if (index >3) return '';
+                return `<span class="${className}"></span>`;
+              },
             }}
             loop={false}
             className={styles.swiper}
@@ -138,28 +142,28 @@ export default function TestimonialSlider() {
               1280: { slidesPerView: 3, spaceBetween: 40, centeredSlides: false }
             }}
           >
-          {testimonials.map((item, i) => (
-            <SwiperSlide key={i} className={styles.slide}>
-              <div className={styles.card}>
-                {item.industry && (
-                  <span className={styles.industryTag}>{item.industry}</span>
-                )}
-                <h3 className={styles.quote}>{item.text}</h3>
-                <div className={styles.footer}>
-                  <img src={item.img} alt={item.name} className={styles.avatar} />
-                  <div>
-                    <div className={styles.name}>{item.name}</div>
-                    <div className={styles.role}>{item.role}</div>
+            {testimonials.map((item, i) => (
+              <SwiperSlide key={i} className={styles.slide}>
+                <div className={styles.card}>
+                  {item.industry && (
+                    <span className={styles.industryTag}>{item.industry}</span>
+                  )}
+                  <h3 className={styles.quote}>{item.text}</h3>
+                  <div className={styles.footer}>
+                    <img src={item.img} alt={item.name} className={styles.avatar} />
+                    <div>
+                      <div className={styles.name}>{item.name}</div>
+                      <div className={styles.role}>{item.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
           </Swiper>
           <div className="swiper-pagination"></div>
         </div>
 
-        <button 
+        <button
           className={`${styles.navButton} ${styles.nextButton} ${isEnd ? styles.disabled : ''}`}
           onClick={() => swiperRef.current?.slideNext()}
           disabled={isEnd}
