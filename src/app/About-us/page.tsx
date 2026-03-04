@@ -12,7 +12,7 @@ const boardMembers = [
     role: 'Chairman of DesiCrew',
     bio: 'Founding member of Infosys BPO, Ex-COO of OnMobile, Investor in Social Enterprises',
     photo: '/Images/AboutUs/Rajiv Kuchhal.png',
-    linkedin:'https://in.linkedin.com/in/rajiv-kuchhal-4557a42',
+    linkedin: 'https://in.linkedin.com/in/rajiv-kuchhal-4557a42',
   },
   {
     name: 'Saloni Malhotra',
@@ -25,7 +25,7 @@ const boardMembers = [
     name: 'Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/Manivannan.png',
+    photo: '/Images/AboutUs/Mani.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {
@@ -49,10 +49,10 @@ export default function AboutPage() {
     <div className={classes.pageWrapper}>
 
       {/* HEADER */}
-      <header className={styles.headerSection}> 
+      <header className={styles.headerSection}>
         <div className={styles.logoWrapper}>
-           <div className={styles.ellipse2017} />
-        <div className={styles.ellipse2018} />
+          <div className={styles.ellipse2017} />
+          <div className={styles.ellipse2018} />
           <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
         </div>
         <h1 className={classes.heroTitle}>We are QAonCloud</h1>
@@ -63,31 +63,31 @@ export default function AboutPage() {
 
       {/* BUILT BY DESICREW */}
       <ContentSection
-  title={<>Built by <span className={classes.sectionHighlight}>Desicrew in 2016</span></>}
-  imageSrc="/Images/AboutUs/Saloni MalhotraTeam.png"
-  imageAlt="Built by Desicrew in 2016"
->
-  <p>QAonCloud was formed to solve an issue teams constantly face - frequent delays and buggy releases.
-              We're a trusted software testing company, and we've worked with startups and global businesses
-              across industries, combining fast, precise automation with reliable, skilled engineers with deep
-              domain expertise.</p>
-</ContentSection>
+        title={<>Built by <span className={classes.sectionHighlight}>Desicrew in 2016</span></>}
+        imageSrc="/Images/AboutUs/Saloni MalhotraTeam.png"
+        imageAlt="Built by Desicrew in 2016"
+      >
+        <p>QAonCloud was formed to solve an issue teams constantly face - frequent delays and buggy releases.
+          We're a trusted software testing company, and we've worked with startups and global businesses
+          across industries, combining fast, precise automation with reliable, skilled engineers with deep
+          domain expertise.</p>
+      </ContentSection>
 
-<ContentSection
-  title={<>Our approach <span className={classes.sectionHighlight}>is simple</span></>}
-  imageSrc="/Images/AboutUs/Our approach is simple.png"
-  imageAlt="QAonCloud team"
-  reversed
-  altBg
->
-  <p> Our AI handles the repetitive, high-volume work, while our engineers make the strategic calls.
-              The result? 40% faster QA. We build strong partnerships, and our clients trust us to deliver,
-              again and again.</p>
-  <p>We don't look in from the outside. We embed into your workflow, sit in your standups, and take
-              ownership, alongside your team. When something's wrong, we'll be the first to tell you, and
-              we'll stick with you until it's resolved.</p>
-  <p>We're here to help you ship confidently, with every release.</p>
-</ContentSection>
+      <ContentSection
+        title={<>Our approach <span className={classes.sectionHighlight}>is simple</span></>}
+        imageSrc="/Images/AboutUs/Our approach is simple.png"
+        imageAlt="QAonCloud team"
+        reversed
+        altBg
+      >
+        <p> Our AI handles the repetitive, high-volume work, while our engineers make the strategic calls.
+          The result? 40% faster QA. We build strong partnerships, and our clients trust us to deliver,
+          again and again.</p>
+        <p>We don't look in from the outside. We embed into your workflow, sit in your standups, and take
+          ownership, alongside your team. When something's wrong, we'll be the first to tell you, and
+          we'll stick with you until it's resolved.</p>
+        <p>We're here to help you ship confidently, with every release.</p>
+      </ContentSection>
 
       {/* VISION & MISSION */}
       <section className={classes.visionMissionSection}>
@@ -174,7 +174,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section> 
+      </section>
     </div>
   )
 }

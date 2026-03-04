@@ -8,7 +8,7 @@ import Button from "@/components/Common/Button/Button";
 
 const caseStudies = [
   {
-    company: "AOL",
+    company: "Akyrian",
     logo: "/logos/Akyrian.png", // replace with actual path
     topColor: "#242430CC",
     tags: ["Automation", "User Testing", "Functional QA"],
@@ -31,14 +31,14 @@ const caseStudies = [
     url: "https://docsend.com/view/gxyqru5wr72twj8p"
   },
   {
-    company: "RedBlackTree",
+    company: "FORATravel",
     logo: "/logos/FORATravel.png",
     topColor: "#4C4C4C99",
     tags: ["Compliance QA", "User Testing", "Security Testing"],
     title: "269 defects identified.",
     description: "We developed a comprehensive test plan for FORA, ensuring high-quality, defect-free builds for every release. ",
     subdescription: "Read Full Case Study →",
-    url: "https://docsend.com/view/9kqq39c6tmhkubby"
+    url: "https://docsend.com/view/v8jfi9rsm7jmdbs9"
   }
 ];
 
