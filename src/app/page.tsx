@@ -110,7 +110,7 @@ export default function Home() {
               decorativeImage="/Images/Footer/HomePage.png"
             />
           </ContentWrapper>
-          <SectionDivider />
+          
 
         </div>
 

@@ -13,6 +13,7 @@ import { forwardRef } from 'react'
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
+import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 
 export const saasData = {
@@ -30,7 +31,7 @@ export const saasData = {
       role: "CEO, Healthtech",
       avatar: "/Images/Fintech/Quentin Mussche.png",
     },
-    image: "/Images/Saas/Saas teams ship faster.png.png",
+    image: "/Images/Saas/Saas teams ship faster.png",
     imageAlt: "Glowing cloud SaaS",
   },
   testimonials: [
@@ -155,22 +156,24 @@ export default function page() {
               />
           </div>
           <ClientSlider heading="Trusted by SaaS teams around the world" />
-         
+          <SectionDivider />           
           <ContentWrapper>
             <Mistakes
               {...mistakesData}
             />
-
+          </ContentWrapper>
+          <SectionDivider />
+          <ContentWrapper>
             <ReleaseRegulations
               {...releaseRegulationsData}
             />
+          </ContentWrapper>
+          <SectionDivider />
+          <ContentWrapper>
             <WorkWell
               {...WorkWellData}
-              
-              
+                
             />
-           
-
 
             <FinTechteamSection
               title={saasData.title}

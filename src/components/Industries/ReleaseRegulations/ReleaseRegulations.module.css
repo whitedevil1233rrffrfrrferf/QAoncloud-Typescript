@@ -1,5 +1,7 @@
 .container {
-  margin-top: var(--section-header-margin)}
+  margin-top: var(--section-header-margin);
+  padding-bottom: var(--padding-bottom);
+}
   
 .featuresGrid {
   display: grid;

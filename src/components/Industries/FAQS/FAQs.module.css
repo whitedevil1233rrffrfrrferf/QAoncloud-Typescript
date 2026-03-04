@@ -1,8 +1,8 @@
 .faqsSection {
   background-size: 20px 20px;
-  padding: 2rem;
+  
   position: relative;
-  margin-top: var(--section-header-margin);
+  
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -31,6 +31,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  margin-top: var(--section-header-margin) !important;
+  padding-bottom: var(--padding-bottom) !important;
 }
 
 .faqList {

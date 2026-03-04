@@ -1,6 +1,7 @@
 .wrapper {
-  padding: 2rem;
-  margin-bottom: 5rem;
+  
+  padding-bottom: var(--padding-bottom);
+  margin-top: var(--section-header-margin);
 }
 
 .container {

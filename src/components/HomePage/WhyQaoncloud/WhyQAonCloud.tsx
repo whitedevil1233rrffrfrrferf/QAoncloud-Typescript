@@ -14,10 +14,11 @@ export default function WhyQAonCloud() {
     <section className={styles.wrapper}>
       <div className={styles.card}>
         {/* Header */}
+        
         <div className={styles.header}>
           <h2 className={styles.title}>
-            Why <span className={styles.highlight}>global</span>{" "}
-            <span className={styles.titleWhite}>teams prefer QAonCloud</span>
+            Why global{" "}
+            <span className={styles.highlight}>teams prefer QAonCloud</span>
           </h2>
         </div>
 

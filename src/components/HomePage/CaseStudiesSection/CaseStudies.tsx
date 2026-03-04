@@ -62,7 +62,11 @@ export const CaseStudies: React.FC = () => {
               }}
             >
               <div className={styles.imageWrapper}>
-                <img src={card.imageSrc} alt={card.imageAlt} />
+                <img 
+                  src={card.imageSrc} 
+                  alt={card.imageAlt}
+                  className={styles[`img_${card.id}`]}  
+                />
               </div>
 
               <div className={styles.cardBody}>
