@@ -52,7 +52,7 @@ export default function HeroSection() {
           </div>
           <div className={styles.statItem}>
             <h2 className={styles.statNumberOrange}>FinTech, HealthTech &amp; SaaS</h2>
-            <p className={styles.statLabel}>Vertical Expertise</p>
+            <p className={styles.statLabel}>Deep domain expertise</p>
           </div>
         </div>
       </div>

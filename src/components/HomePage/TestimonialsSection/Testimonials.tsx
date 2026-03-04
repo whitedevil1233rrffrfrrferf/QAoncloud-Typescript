@@ -7,8 +7,8 @@ function Testimonials() {
   return (
     <div className={classes.testimonialsContainer}>
         <SectionHeader
-            title="Teams like you trust us "
-            highlight="to deliver "
+            title="Here’s what it’s like to "
+            highlight="work with us"
             description=''
         />
         <ClientSlider />

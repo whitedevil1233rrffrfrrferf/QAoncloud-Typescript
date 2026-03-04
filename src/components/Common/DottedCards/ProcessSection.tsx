@@ -22,7 +22,7 @@ const CurvedConnector = ({ position }: { position: 'first' | 'second' }) => (
 );
 
 interface ProcessStepData {
-  icon: LucideIcon;
+  icon: LucideIcon | React.ForwardRefExoticComponent<{ size?: number; color?: string; className?: string } & React.RefAttributes<SVGSVGElement>>;
   title: string;
   description: string;
 }

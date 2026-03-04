@@ -8,7 +8,8 @@ import FinTechteamSection from '@/components/Industries/FinTech/FinTechteams/Fin
 import { ComparisonRow } from '@/components/Industries/ComparisonTable/Comparisontable';
 import ClientSlider from '@/components/Common/Slider/Slider'
 import IndustryPageHeader from '@/components/Industries/FinTech/Header/IndustryPageHeader'
-import { Headset,ScanEye,BarChart3 } from 'lucide-react'
+import { Headset, ScanEye } from 'lucide-react'
+import { forwardRef } from 'react'
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
@@ -77,6 +78,32 @@ const releaseRegulationsData = {
   ],
 }
 
+
+const ChartTrendIcon = forwardRef<SVGSVGElement, { size?: number; color?: string; className?: string }>(
+  ({ size = 35, color = "#FF8641", className = "" }, ref) => (
+    <svg
+      ref={ref}
+      width={size}
+      height={size}
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Vertical bars */}
+      <line x1="3"  y1="20" x2="3"  y2="14" />
+      <line x1="7"  y1="20" x2="7"  y2="11" />
+      <line x1="11" y1="20" x2="11" y2="14" />
+      <line x1="15" y1="20" x2="15" y2="9"  />
+      {/* Trend line — starts ABOVE bars with a gap */}
+      <polyline points="1,12 6,7 10,10 21,2" />
+    </svg>
+  )
+)
+
 const WorkWellData = {
   title: "How we work with",
   highlight: "SaaS teams",
@@ -84,8 +111,10 @@ const WorkWellData = {
   steps: [
             { icon: Headset, title: '1. Discovery call', description: 'We’ll discuss your product, your compliance requirements, and your biggest QA pain points, in a 30-minute call. No pitch deck, just an honest conversation. ' },
             { icon: ScanEye, title: '2. A focused Pilot', description: "Most teams start with a focused 1-month pilot, depending on the highest-priority surface. You'll soon see your releases are 40% faster, with no added anxiety." },
-            { icon: BarChart3, title: '3. Scale together', description: "We’ll grow with you as your product grows - more surfaces, more test types, more coverage. One thing remains constant, the diligent team that knows your product." },
+            { icon: ChartTrendIcon, title: '3. Scale together', description: "We’ll grow with you as your product grows - more surfaces, more test types, more coverage. One thing remains constant, the diligent team that knows your product." },
   ]}
+
+  
 export const saasRows: ComparisonRow[] = [
   {
     alternative: "In-house QA team",

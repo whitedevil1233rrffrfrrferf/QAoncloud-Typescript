@@ -3,7 +3,7 @@ import styles from './ProcessStep.module.css';
 import { LucideIcon } from 'lucide-react';
 
 interface ProcessStepProps {
-  icon: LucideIcon;
+  icon: LucideIcon | React.FC<{ size?: number; color?: string; className?: string }>;
   title: string;
   description: string;
   className?: string;

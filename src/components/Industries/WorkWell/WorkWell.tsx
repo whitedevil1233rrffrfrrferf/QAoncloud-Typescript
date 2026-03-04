@@ -1,8 +1,9 @@
 import { ProcessSection } from '@/components/Common/DottedCards/ProcessSection'
 import { LucideIcon } from 'lucide-react'
+import React from 'react'
 
 type Step = {
-  icon: LucideIcon
+  icon: LucideIcon | React.ForwardRefExoticComponent<{ size?: number; color?: string; className?: string } & React.RefAttributes<SVGSVGElement>>
   title: string
   description: string
 }

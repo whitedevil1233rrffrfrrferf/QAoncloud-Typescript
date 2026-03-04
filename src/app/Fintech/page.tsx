@@ -9,7 +9,8 @@ import { ComparisonRow } from '@/components/Industries/ComparisonTable/Compariso
 import ClientSlider from '@/components/Common/Slider/Slider'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
-import { BarChart3, Headset,ScanEye } from 'lucide-react'
+import { Headset, ScanEye } from 'lucide-react'
+import { forwardRef } from 'react'
 import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import IndustryPageHeader from '@/components/Industries/FinTech/Header/IndustryPageHeader'
 
@@ -62,6 +63,30 @@ const releaseRegulationsData = {
   ],
 }
 
+const ChartTrendIcon = forwardRef<SVGSVGElement, { size?: number; color?: string; className?: string }>(
+  ({ size = 35, color = "#FF8641", className = "" }, ref) => (
+    <svg
+      ref={ref}
+      width={size}
+      height={size}
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Vertical bars */}
+      <line x1="3"  y1="20" x2="3"  y2="14" />
+      <line x1="7"  y1="20" x2="7"  y2="11" />
+      <line x1="11" y1="20" x2="11" y2="14" />
+      <line x1="15" y1="20" x2="15" y2="9"  />
+      {/* Trend line — starts ABOVE bars with a gap */}
+      <polyline points="1,12 6,7 10,10 21,2" />
+    </svg>
+  )
+)
 const WorkWellData = {
   title: "We work well with",
   highlight: "FinTech teams",
@@ -69,7 +94,7 @@ const WorkWellData = {
   steps: [
             { icon: Headset, title: '1. Discovery call', description: 'We learn your product, your compliance requirements, and where QA is slowing you down. ' },
             { icon: ScanEye, title: '2. A focused Pilot', description: "We’ll start with a focused 1-month engagement. You’ll know we’re a fit, when you see 40% faster releases. " },
-            { icon: BarChart3, title: '3. Scale together', description: "We’ll grow with your product. More surfaces, more test coverage, more ownership." },
+            { icon: ChartTrendIcon, title: '3. Scale together', description: "We’ll grow with your product. More surfaces, more test coverage, more ownership." },
   ]}
 
 

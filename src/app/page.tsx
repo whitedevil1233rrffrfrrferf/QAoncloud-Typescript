@@ -41,7 +41,7 @@ export default function Home() {
 
             <ProcessSection title="How do we deliver"
               highlight="2X faster?"
-              description="Accelerated by AI, validated by human expertise, our QA testing services are reliable, thorough, and a lot faster than traditional QA."
+              description=""
               steps={[
                 {
                   icon: Sparkles,
@@ -74,7 +74,7 @@ export default function Home() {
               title="You could ship"
               highlight="2X faster too!"
               description=""
-               hidectaLabel={true}
+              hidectaLabel={true}
               ctaHref="/Contact-us"
               linkDescription=" "
               linkDescriptionText="Talk to an expert today to see how we can perfect your QA process."
