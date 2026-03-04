@@ -55,11 +55,9 @@ const IndustryPageHeader = ({
         <p className={styles.description}>{description}</p>
 
         {/* Button */}
-        <div className={styles.buttonContainer}>
-          <Button href={buttonHref} variant="primary">
-            {buttonText}
-          </Button>
-        </div>
+        <Button href="/Contact-us" variant="heroPrimary" size="content">
+                            Talk To An Expert
+                          </Button>
 
       </div>
     </section>

@@ -67,23 +67,6 @@
   margin-top: 1.5rem;
 }
 
-.btnPrimary {
-  background-color: #3093E8;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.7rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  white-space: nowrap;
-}
-
-.btnPrimary:hover {
-  background-color: #216BAB;
-}
-
 .btnSecondary {
   background-color: #050505;
   color: #fff;
@@ -97,7 +80,6 @@
   white-space: nowrap;
 }
 
-.btnPrimary,
 .btnSecondary {
   display: inline-block;
   text-decoration: none;
@@ -317,7 +299,6 @@
     width: 100%;
   } */
 
-  .btnPrimary,
   .btnSecondary {
     width: auto;
     text-align: center;

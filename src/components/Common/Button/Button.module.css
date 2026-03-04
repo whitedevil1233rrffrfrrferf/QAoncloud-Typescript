@@ -26,6 +26,15 @@
   padding: 0.7rem;
 }
 
+.content {
+  width: auto;
+  margin-right: 0;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 /* PRIMARY */
 .primary {
   background: #3093E8;
@@ -50,6 +59,15 @@
     0px 20px 25px -5px #1C398E33;
 }
 
+.heroPrimary {
+  background: #3093E8;
+  color: #ffffff;
+}
+
+.heroPrimary:hover {
+  background: #216BAB;
+}
+
 @media (max-width: 600px) {
   .default {
     width: 9rem;
@@ -61,6 +79,11 @@
     margin-right: 2rem;
     padding: 0.45rem 0.5rem;
   }
+
+  .content {
+    width: auto;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 500px) {
@@ -71,5 +94,9 @@
   .small {
     width: 7rem;
     padding: 0.4rem 0.5rem;
+  }
+
+  .content {
+    width: auto;
   }
 }
