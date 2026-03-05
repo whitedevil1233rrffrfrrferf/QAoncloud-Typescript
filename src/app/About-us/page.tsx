@@ -11,7 +11,7 @@ const boardMembers = [
     name: 'Rajiv Kuchhal',
     role: 'Chairman of DesiCrew',
     bio: 'Founding member of Infosys BPO, Ex-COO of OnMobile, Investor in Social Enterprises',
-    photo: '/Images/AboutUs/Rajiv Kuchhal.png',
+    photo: '/Images/AboutUs/RajivKuchhal.png',
     linkedin: 'https://in.linkedin.com/in/rajiv-kuchhal-4557a42',
   },
   {
@@ -39,7 +39,7 @@ const boardMembers = [
     name: 'Sandip Sen',
     role: 'Board Member',
     bio: 'Ex-Global CEO, Aegis Ltd',
-    photo: '/Images/AboutUs/Sandip Sen.png',
+    photo: '/Images/AboutUs/Sandip Sen1.png',
     linkedin: 'https://in.linkedin.com/in/sandipsen',
   },
 ]
