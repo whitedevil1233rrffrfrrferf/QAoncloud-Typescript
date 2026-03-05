@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
@@ -20,13 +20,30 @@ export default function ContactUsPage() {
   /* ── Business state ── */
   const [biz, setBiz] = useState({
     firstName: '', lastName: '', company: '', workEmail: '',
-    phone: '', country: '', service: '', howHeard: '', budgetRange: '', message: '',
+    phone: '', country: '', services: [] as string[], howHeard: '', budgetRange: '', message: '',
   });
 
   /* ── Career state ── */
   const [career, setCareer] = useState({
     firstName: '', lastName: '', email: '', phone: '', jobRole: '', location: '',
   });
+
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleFile = (file: File | null) => {
     if (!file) return;
@@ -48,6 +65,7 @@ export default function ContactUsPage() {
   const handleBizSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
+    if (biz.services.length === 0) { alert('Please select at least one service'); return; }
     
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -60,7 +78,18 @@ export default function ContactUsPage() {
         },
         body: JSON.stringify({
           type: 'business',
-          formData: biz,
+          formData: {
+            firstName: biz.firstName,
+            lastName: biz.lastName,
+            company: biz.company,
+            workEmail: biz.workEmail,
+            phone: biz.phone,
+            country: biz.country,
+            services: biz.services.join(', '),
+            howHeard: biz.howHeard,
+            budgetRange: biz.budgetRange,
+            message: biz.message
+          },
           file: uploadedFile ? {
             name: uploadedFile.name,
             size: uploadedFile.size
@@ -75,7 +104,7 @@ export default function ContactUsPage() {
         // Reset form
         setBiz({
           firstName: '', lastName: '', company: '', workEmail: '',
-          phone: '', country: '', service: '', howHeard: '', budgetRange: '', message: '',
+          phone: '', country: '', services: [], howHeard: '', budgetRange: '', message: '',
         });
         setFile(null);
         setPrivacy(false);
@@ -311,15 +340,44 @@ export default function ContactUsPage() {
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Service I am interested in <span className={styles.req}>*</span></label>
-                    <select className={styles.formSelect} value={biz.service}
-                      onChange={e => setBiz(p => ({ ...p, service: e.target.value }))} required>
-                      <option value="">Select</option>
-                      <option>Functional Testing</option>
-                      <option>Performance Testing</option>
-                      <option>Security Testing</option>
-                      <option>Automation Testing</option>
-                      <option>Compliance Testing</option>
-                    </select>
+                    <div className={styles.multiSelectDropdown} ref={dropdownRef}>
+                      <div 
+                        className={styles.dropdownHeader}
+                        onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                      >
+                        <span>
+                          {biz.services.length > 0 
+                            ? `${biz.services.length} service${biz.services.length > 1 ? 's' : ''} selected`
+                            : 'Select services'
+                          }
+                        </span>
+                        <span className={styles.dropdownArrow}>{servicesDropdownOpen ? '▲' : '▼'}</span>
+                      </div>
+                      {servicesDropdownOpen && (
+                        <div className={styles.dropdownContent}>
+                          {['Functional Testing', 'Performance Testing', 'Security Testing', 'Automation Testing', 'Compliance Testing'].map(service => (
+                            <label key={service} className={styles.dropdownItem}>
+                              <input
+                                type="checkbox"
+                                className={styles.checkbox}
+                                value={service}
+                                checked={biz.services.includes(service)}
+                                onChange={e => {
+                                  const checked = e.target.checked
+                                  setBiz(p => ({
+                                    ...p,
+                                    services: checked
+                                      ? [...p.services, service]
+                                      : p.services.filter(s => s !== service)
+                                  }))
+                                }}
+                              />
+                              {service}
+                            </label>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>How did you hear about us? <span className={styles.req}>*</span></label>

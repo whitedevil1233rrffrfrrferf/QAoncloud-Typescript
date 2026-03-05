@@ -1,3 +1,4 @@
+"use client"
 import styles from "./Footer.module.css";
 import Link from "next/link";
 
@@ -16,10 +17,17 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* Brand Section */}
-        <div className={styles.brandSection}>
-          <div className={styles.logo}> <img src="QAoncloud_logo.png" alt="QAoncloud" className={styles.qaoncloudLogo} /></div>
+         <div className={styles.brandSection}>
+  <div className={styles.logo}>
+    <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+      <img src="QAoncloud_logo.png" alt="QAoncloud" className={styles.qaoncloudLogo} />
+    </a>
+  </div>
           <div className={styles.subtitle}>
-            Strategic QA Unit of <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} />
+            Strategic QA Unit of{" "}
+            <a href="https://desicrew.in" target="_blank" rel="noopener noreferrer">
+              <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} />
+            </a>
           </div>
           <p className={styles.description}>
             Elevating software quality through next-gen testing solutions and
@@ -35,7 +43,7 @@ export default function Footer() {
               aria-label="LinkedIn"
               className={styles.btnSocial}
             >
-               <FaLinkedinIn />
+              <FaLinkedinIn />
             </a>
             <a
               href="https://twitter.com/QAonCloud"
@@ -44,7 +52,7 @@ export default function Footer() {
               aria-label="Twitter"
               className={styles.btnSocial}
             >
-              <FaTwitter /> 
+              <FaTwitter />
             </a>
             <a
               href="https://www.facebook.com/QAonCloud/"
@@ -53,7 +61,7 @@ export default function Footer() {
               aria-label="Facebook"
               className={styles.btnSocial}
             >
-               <FaFacebookF /> 
+              <FaFacebookF />
             </a>
             <a
               href="https://www.instagram.com/qaoncloud/"
@@ -89,7 +97,7 @@ export default function Footer() {
         <div className={styles.columns}>
           <div className={styles.column}>
             <h4>Company</h4>
-            <Link href="/About-us">About Us</Link>
+            <Link href="/About-us">About</Link>
             <Link href="/Contact-us">Contact Us</Link>
           </div>
 

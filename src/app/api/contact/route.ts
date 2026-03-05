@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Email:</strong> ${formData.workEmail}</p>
         <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
         <p><strong>Country:</strong> ${formData.country || 'Not provided'}</p>
-        <p><strong>Service:</strong> ${formData.service || 'Not provided'}</p>
+        <p><strong>Service:</strong> ${formData.services || 'Not provided'}</p>
         <p><strong>How they heard about us:</strong> ${formData.howHeard || 'Not provided'}</p>
         <p><strong>Budget Range:</strong> ${formData.budgetRange || 'Not provided'}</p>
         <p><strong>Message:</strong></p>

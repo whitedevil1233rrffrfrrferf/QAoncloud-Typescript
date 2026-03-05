@@ -14,7 +14,7 @@ const caseStudies = [
     tags: ["Automation", "User Testing", "Functional QA"],
     title: "Fintech App: Reducing Production Defects",
     description: "We strengthened their QA process, improved test coverage, and helped cut defect leakage across releases.",
-    url:"https://docsend.com/view/zw3jj5g3ra69apry"
+    url:"https://docsend.com/view/whb97ns2ev3i9erb"
   },
   {
     company: "Avanti",

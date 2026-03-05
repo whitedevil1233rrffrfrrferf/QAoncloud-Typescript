@@ -63,7 +63,7 @@ export default function AboutPage() {
 
       {/* BUILT BY DESICREW */}
       <ContentSection
-        title={<>Built by <span className={classes.sectionHighlight}>Desicrew in 2016</span></>}
+        title={<>Built by <span className={classes.sectionHighlight}>DesiCrew in 2016</span></>}
         imageSrc="/Images/AboutUs/Saloni MalhotraTeam.png"
         imageAlt="Built by Desicrew in 2016"
       >
