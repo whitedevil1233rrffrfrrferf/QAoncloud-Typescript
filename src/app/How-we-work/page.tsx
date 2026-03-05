@@ -1,6 +1,4 @@
 import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
-
-
 import React from 'react'
 import classes from "./page.module.css"
 
@@ -31,9 +29,13 @@ export default function page() {
             <TwoSystems />
           </ContentWrapper>
           <SectionDivider />
-          <FeatureShowcase />
+          <ContentWrapper><FeatureShowcase /></ContentWrapper>
+          
           <SectionDivider />
-          <MilestoneSection />
+          <ContentWrapper>
+            <MilestoneSection />
+          </ContentWrapper>
+          <SectionDivider />
           <PhaseSection />
 
           <FAQs

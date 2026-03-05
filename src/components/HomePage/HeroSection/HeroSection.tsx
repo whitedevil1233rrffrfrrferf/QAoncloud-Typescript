@@ -1,7 +1,6 @@
 import styles from './HeroSection.module.css';
-import { Link } from 'lucide-react';
-import { Button } from 'bootstrap';
 import NextLink from 'next/link';
+import Button from '../../Common/Button/Button';
 
 export default function HeroSection() {
   return (
@@ -28,9 +27,9 @@ export default function HeroSection() {
             No chaos, no compromises.
           </p>
           <div className={styles.buttons}>
-            <NextLink href="/Contact-us" className={styles.btnPrimary}>
+            <Button href="/Contact-us" variant="heroPrimary" size="content">
               Talk To An Expert
-            </NextLink>
+            </Button>
             <NextLink href="/How-we-work" className={styles.btnSecondary}>
               See How We Work
             </NextLink>

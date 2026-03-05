@@ -3,6 +3,7 @@ import styles from './HowWeWork.module.css';
 import Image from 'next/image';
 import Button from '@/components/Common/Button/Button';
 
+
 const HowWeWork = () => {
   return (
     <section className={styles.section}>
@@ -17,9 +18,9 @@ const HowWeWork = () => {
             You ship 2× faster, more frequently, minus the added anxiety.
           </p>
           <div className={styles.buttonContainer}>
-            <Button href="/Contact-us" variant="primary">
-              Talk To An Expert
-            </Button>
+            <Button href="/Contact-u" variant="heroPrimary" size="content">
+                            Talk To An Expert
+                          </Button>
           </div>
         </div>
 

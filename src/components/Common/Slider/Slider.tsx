@@ -67,9 +67,9 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
   return (
   <section className={classes.wrapper}>
     <div className={classes.container}>
-      <h3 className={classes.heading}>
+      <h4 className={classes.heading}>
         {heading}
-      </h3>
+      </h4>
     </div>
 
     <div className={classes.sliderContainer}>

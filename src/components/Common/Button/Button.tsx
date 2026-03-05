@@ -2,14 +2,14 @@ import Link from "next/link";
 import React from "react";
 import styles from "./Button.module.css";
 
-type ButtonVariant = "primary" | "secondary";
-type ButtonSize = "default" | "small"; // Add size type
+type ButtonVariant = "primary" | "secondary" | "heroPrimary";
+type ButtonSize = "default" | "small" | "content";
 
 interface ButtonProps {
   href: string;
   children: React.ReactNode;
   variant?: ButtonVariant;
-  size?: ButtonSize; // Add size prop
+  size?: ButtonSize;
   className?: string;
 }
 
@@ -17,7 +17,7 @@ export default function Button({
   href,
   children,
   variant = "primary",
-  size = "default", // Default size
+  size = "default",
   className = "",
 }: ButtonProps) {
   return (

@@ -54,9 +54,9 @@ export const Banner: React.FC<BannerProps> = ({
 
         {!hidectaLabel && ctaLabel && (
           <div className={styles.buttonContainer}>
-            <Button href={ctaHref} variant="primary">
-              {ctaLabel}
-            </Button>
+            <Button href="/Contact-us" variant="heroPrimary" size="content">
+                            Talk To An Expert
+                          </Button>
           </div>
         )}
         {/* Only renders if linkDescription is passed */}
