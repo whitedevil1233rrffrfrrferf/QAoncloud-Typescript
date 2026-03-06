@@ -25,6 +25,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "QAonCloud - Quality Assurance Solutions",
   description: "Delivering exceptional QA services with a focus on quality and innovation",
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({

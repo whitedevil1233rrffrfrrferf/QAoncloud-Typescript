@@ -65,7 +65,7 @@ export default function ContactUsPage() {
   const handleBizSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
-    if (biz.services.length === 0) { alert('Please select at least one service'); return; }
+    if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) { alert('Please fill in all required fields'); return; }
     
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -303,9 +303,9 @@ export default function ContactUsPage() {
                 {/* Row 2: Company + Work Email */}
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>Company <span className={styles.req}>*</span></label>
+                    <label className={styles.formLabel}>Company</label>
                     <input className={styles.formInput} placeholder="Enter Here" value={biz.company}
-                      onChange={e => setBiz(p => ({ ...p, company: e.target.value }))} required />
+                      onChange={e => setBiz(p => ({ ...p, company: e.target.value }))} />
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Work Email <span className={styles.req}>*</span></label>
@@ -322,9 +322,9 @@ export default function ContactUsPage() {
                       onChange={e => setBiz(p => ({ ...p, phone: e.target.value }))} required />
                   </div>
                   <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>Country <span className={styles.req}>*</span></label>
+                    <label className={styles.formLabel}>Country</label>
                     <select className={styles.formSelect} value={biz.country}
-                      onChange={e => setBiz(p => ({ ...p, country: e.target.value }))} required>
+                      onChange={e => setBiz(p => ({ ...p, country: e.target.value }))}>
                       <option value="">Select</option>
                       <option>United States</option>
                       <option>United Kingdom</option>
@@ -339,7 +339,7 @@ export default function ContactUsPage() {
                 {/* Row 4: Service + How heard */}
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>Service I am interested in <span className={styles.req}>*</span></label>
+                    <label className={styles.formLabel}>Service I am interested in</label>
                     <div className={styles.multiSelectDropdown} ref={dropdownRef}>
                       <div 
                         className={styles.dropdownHeader}
@@ -380,9 +380,9 @@ export default function ContactUsPage() {
                     </div>
                   </div>
                   <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>How did you hear about us? <span className={styles.req}>*</span></label>
+                    <label className={styles.formLabel}>How did you hear about us?</label>
                     <select className={styles.formSelect} value={biz.howHeard}
-                      onChange={e => setBiz(p => ({ ...p, howHeard: e.target.value }))} required>
+                      onChange={e => setBiz(p => ({ ...p, howHeard: e.target.value }))}>
                       <option value="">Select</option>
                       <option>Google Search</option>
                       <option>LinkedIn</option>
@@ -395,9 +395,9 @@ export default function ContactUsPage() {
 
                 {/* Budget range */}
                 <div className={styles.formGroupFull}>
-                  <label className={styles.formLabel}>My budget range <span className={styles.req}>*</span></label>
+                  <label className={styles.formLabel}>My budget range</label>
                   <select className={styles.formSelect} value={biz.budgetRange}
-                    onChange={e => setBiz(p => ({ ...p, budgetRange: e.target.value }))} required>
+                    onChange={e => setBiz(p => ({ ...p, budgetRange: e.target.value }))}>
                     <option value="">Select</option>
                     <option>Under $5,000</option>
                     <option>$5,000 – $15,000</option>
@@ -408,9 +408,9 @@ export default function ContactUsPage() {
 
                 {/* How can we help   */}
                 <div className={styles.formGroupFull}>
-                  <label className={styles.formLabel}>How can we help? <span className={styles.req}>*</span></label>
+                  <label className={styles.formLabel}>How can we help?</label>
                   <textarea className={styles.formTextarea} placeholder="Enter Here"
-                    value={biz.message} onChange={e => setBiz(p => ({ ...p, message: e.target.value }))} required />
+                    value={biz.message} onChange={e => setBiz(p => ({ ...p, message: e.target.value }))} />
                 </div>
 
                 {/* Privacy  */}
@@ -527,8 +527,7 @@ export default function ContactUsPage() {
 
           </section>
         </div>
-      </main>
-      <FooterAll />
+      </main> 
     </div>
   );
 }
