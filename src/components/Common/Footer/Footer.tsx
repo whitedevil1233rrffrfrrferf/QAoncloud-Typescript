@@ -24,7 +24,7 @@ export default function Footer() {
             </a>
           </div>
           <div className={styles.subtitle}>
-            Strategic QA Unit of{" "}
+            Strategic QA Unit of
             <a href="https://desicrew.in" target="_blank" rel="noopener noreferrer">
               <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} />
             </a>

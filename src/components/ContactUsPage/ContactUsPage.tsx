@@ -89,7 +89,7 @@ export default function ContactUsPage() {
       },
       'ud7uHNDNt2PuqT5zM'     // ← paste your Public Key here
     );
-    await emailjs.send('service_pe85kpk', 'template_2s7nubr', {
+    await emailjs.send('service_pe85kpk', 'template_lr226wc', {
       user_name: biz.firstName,
       user_email: biz.workEmail,
     }, 'ud7uHNDNt2PuqT5zM');
@@ -249,30 +249,27 @@ export default function ContactUsPage() {
           <section className={styles.rightSection}>
 
             {/* Tabs   */}
-            <div className={styles.tabs}>
-              <button
+            {/* <div className={styles.tabs}> */}
+              {/* <button
                 className={`${styles.tab} ${activeTab === 'business' ? styles.tabActive : ''}`}
                 onClick={() => switchTab('business')}
               >
                 Business
-              </button>
+              </button> */}
               {/* <button
                 className={`${styles.tab} ${activeTab === 'career' ? styles.tabActive : ''}`}
                 onClick={() => switchTab('career')}
               >
                 Career
               </button> */}
-            </div>
+            {/* </div> */}
 
             {/*  BUSINESS FORM  */}
             {activeTab === 'business' && (
               <form onSubmit={handleBizSubmit} className={styles.form}>
 
                 {/* Upload (Frame 459) */}
-                <div className={styles.uploadSection}>
-                  <label className={styles.uploadLabel}>Upload Document (max 5MB)</label>
-                  <UploadZone />
-                </div>
+                
 
                 {/* Row 1: First Name + Last Name */}
                 <div className={styles.formGrid}>
@@ -400,7 +397,10 @@ export default function ContactUsPage() {
                   <textarea className={styles.formTextarea} placeholder="Enter Here"
                     value={biz.message} onChange={e => setBiz(p => ({ ...p, message: e.target.value }))} />
                 </div>
-
+                <div className={styles.uploadSection}>
+                  <label className={styles.uploadLabel}>Upload Document (max 5MB)</label>
+                  <UploadZone />
+                </div>         
                 {/* Privacy  */}
                 <div className={styles.privacyRow}>
                   <input type="checkbox" id="priv-b" className={styles.checkbox}
@@ -415,7 +415,7 @@ export default function ContactUsPage() {
                 <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Request'}
                 </button>
-
+                     
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
                   <div className={styles.successMessage}>

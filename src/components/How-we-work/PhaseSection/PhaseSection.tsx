@@ -121,14 +121,16 @@ function PhaseCard({ phase }: { phase: Phase }) {
  * The left card occupies roughly x: 0–500, right card x: 500–1000.
  */
 function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: number }) {
-  const markerId = `arrow-${id}`;
   const gradientId = `gradient-${id}`;
 
   const leftToRight = "M 460 0 L 820 0 Q 850 0 850 30 L 850 100";
   const rightToLeft = "M 540 0 L 150 0 Q 120 0 120 30 L 120 100";
 
+  // Arrow tip x position as a percentage of the wrapper width
+  const arrowLeftPercent = fromPosition === "left" ? "85%" : "12%";
+
   return (
-    <div className={styles.connectorWrapper}>
+    <div className={styles.connectorWrapper} style={{ position: "relative" }}>
       <svg
         className={styles.connectorSvg}
         viewBox="0 0 1000 100"
@@ -137,7 +139,6 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
         preserveAspectRatio="none"
       >
         <defs>
-          {/* Gradient */}
           <linearGradient
             id={gradientId}
             x1={fromPosition === "left" ? "0%" : "100%"}
@@ -148,21 +149,9 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
             <stop offset="0%" stopColor="rgba(255,134,65,0)" />
             <stop offset="100%" stopColor="#FF8641" />
           </linearGradient>
-
-          {/* Arrow marker */}
-          <marker
-            id={markerId}
-            markerWidth="14"
-            markerHeight="14"
-            refX="7"
-            refY="7"
-            orient="auto"
-            markerUnits="userSpaceOnUse"
-          >
-            <path d="M0 0 L14 7 L0 14 z" fill="#FF8641" />
-          </marker>
         </defs>
 
+        {/* Path ends a bit before the bottom so the arrow tip sits on top */}
         <path
           d={fromPosition === "left" ? leftToRight : rightToLeft}
           stroke={`url(#${gradientId})`}
@@ -170,8 +159,24 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
           strokeDasharray="10 8"
           strokeLinecap="round"
           fill="none"
-          markerEnd={`url(#${markerId})`}
         />
+      </svg>
+
+      {/* Standalone arrow tip — not inside the distorted SVG */}
+      <svg
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: arrowLeftPercent,
+          transform: "translateX(-50%)",
+          overflow: "visible",
+        }}
+        width="14"
+        height="10"
+        viewBox="0 0 14 10"
+        fill="none"
+      >
+        <path d="M7 10 L0 0 L14 0 Z" fill="#FF8641" />
       </svg>
     </div>
   );

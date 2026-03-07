@@ -218,7 +218,7 @@ export default function page() {
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
-              linkDescriptionText="How Neo bank cut release time by 40%"
+              linkDescriptionText="How SaaS companies cut release times by 40%"
               linkDescriptionHref="#"
               decorativeImage="/Images/Footer/HomePage.png"
             />
