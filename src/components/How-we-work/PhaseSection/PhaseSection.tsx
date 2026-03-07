@@ -122,10 +122,9 @@ function PhaseCard({ phase }: { phase: Phase }) {
  */
 function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: number }) {
   const markerId = `arrow-${id}`;
+  const gradientId = `gradient-${id}`;
 
-  // Left → Right: horizontal line from ~50% x to the right, then down
   const leftToRight = "M 460 0 L 820 0 Q 850 0 850 30 L 850 100";
-  // Right → Left: horizontal line from ~50% x to the left, then down
   const rightToLeft = "M 540 0 L 150 0 Q 120 0 120 30 L 120 100";
 
   return (
@@ -138,6 +137,19 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
         preserveAspectRatio="none"
       >
         <defs>
+          {/* Gradient */}
+          <linearGradient
+            id={gradientId}
+            x1={fromPosition === "left" ? "0%" : "100%"}
+            y1="0%"
+            x2={fromPosition === "left" ? "100%" : "0%"}
+            y2="0%"
+          >
+            <stop offset="0%" stopColor="rgba(255,134,65,0)" />
+            <stop offset="100%" stopColor="#FF8641" />
+          </linearGradient>
+
+          {/* Arrow marker */}
           <marker
             id={markerId}
             markerWidth="14"
@@ -147,12 +159,13 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
             orient="auto"
             markerUnits="userSpaceOnUse"
           >
-            <path d="M0 0 L14 7 L0 14 z" fill="#f97316" />
+            <path d="M0 0 L14 7 L0 14 z" fill="#FF8641" />
           </marker>
         </defs>
+
         <path
           d={fromPosition === "left" ? leftToRight : rightToLeft}
-          stroke="#f97316"
+          stroke={`url(#${gradientId})`}
           strokeWidth="4"
           strokeDasharray="10 8"
           strokeLinecap="round"

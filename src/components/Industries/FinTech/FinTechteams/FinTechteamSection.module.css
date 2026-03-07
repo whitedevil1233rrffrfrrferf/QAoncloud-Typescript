@@ -320,6 +320,9 @@
   .testimonialCard { padding: 24px 20px 28px; }
 }
 
+@media (max-width: 600px) {
+  
+}
 
 /* ══════════════════════════════════════════
    MOBILE  ≤ 480px

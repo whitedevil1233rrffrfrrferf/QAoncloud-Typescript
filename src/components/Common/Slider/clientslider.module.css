@@ -96,7 +96,8 @@
 @media (max-width: 600px) {
   .wrapper {
     padding: 1.5rem 0.5rem;
-    margin-bottom: 3rem;
+    margin-top: 0;        /* ← kill the section-header-margin */
+    margin-bottom: 0;     /* ← kill the 3rem bottom */
   }
 
   .sliderContainer {
@@ -137,4 +138,9 @@
     opacity: 0.3;
     cursor: not-allowed;
   }
+}
+
+
+@media (max-width: 600px) {
+  
 }

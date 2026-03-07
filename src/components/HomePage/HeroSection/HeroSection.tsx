@@ -19,7 +19,7 @@ export default function HeroSection() {
         {/* Text block */}
         <div className={styles.textBlock}>
           <h1 className={styles.heading}>
-            40% faster QA. Accelerated by AI,<br />
+            40% faster QA. Accelerated by AI,
             driven by experts.
           </h1>
           <p className={styles.subheading}>

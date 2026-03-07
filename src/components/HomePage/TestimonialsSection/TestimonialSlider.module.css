@@ -33,14 +33,14 @@
 .sliderWrap {
   position: relative;
   flex: 1;
-  padding: 20px 0;
+  padding: 0;
   overflow: hidden;
   margin: 0 -30px;
 }
 
 .swiper {
   width: 100%;
-  padding: 20px 0;
+  padding: 0;
   position: relative;
   margin: 0 -10px;
 }
@@ -65,7 +65,7 @@
 
 /* Ensure proper spacing between slides */
 .swiper-wrapper {
-  padding: 16px 0;
+  padding: 0;
   align-items: stretch;
 }
 

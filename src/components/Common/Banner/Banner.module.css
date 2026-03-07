@@ -134,11 +134,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .decorativeImage {
   position: absolute;
-  right: -30px;
-  bottom: -10px;
+  right: -80px;
+  bottom: 50px;
   height: 110%;
   width: auto;
-  transform: rotate(-6deg);
+  transform: rotate(-16deg);
   transform-origin: bottom right;
   pointer-events: none;
 }

@@ -2,7 +2,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 14px;
   margin-right: 1rem;
   
@@ -86,17 +85,25 @@
   }
 }
 
-@media (max-width: 500px) {
-  .default {
-    width: 8rem;
-  }
-  
-  .small {
-    width: 7rem;
-    padding: 0.4rem 0.5rem;
+
+@media (max-width: 480px) {
+  .content {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
   }
 
-  .content {
-    width: auto;
+  .default {
+    width: 8rem;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .small {
+    width: 7rem;
+    font-size: 0.72rem;
+    padding: 0.4rem 0.5rem;
   }
 }
+
+

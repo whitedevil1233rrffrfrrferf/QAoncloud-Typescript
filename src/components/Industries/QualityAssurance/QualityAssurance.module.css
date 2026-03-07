@@ -1,6 +1,7 @@
 .container{
     margin-top: var(--section-header-margin);
     position: relative;
+    padding: 1rem;
     
 }
 .container::before {
@@ -21,4 +22,7 @@
     pointer-events: none;
     z-index: 0;
     filter: blur(80px);
+}
+@media (max-width: 480px) {
+
 }

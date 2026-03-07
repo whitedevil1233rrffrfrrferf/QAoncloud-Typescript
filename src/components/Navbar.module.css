@@ -264,7 +264,8 @@
 }
 
    .container {
-    padding: 0.75rem 1.25rem;
+    padding: 0 1rem;
+    
     justify-content: space-between; /* logo left, burger right */
     display: flex;
     align-items: center;
@@ -288,8 +289,9 @@
   }
 
   .logo img {
-    height: 24px;
+    height: 40px;
     width: auto;
+    margin-left: 0;
   }
 
   /* Slide-in panel */
