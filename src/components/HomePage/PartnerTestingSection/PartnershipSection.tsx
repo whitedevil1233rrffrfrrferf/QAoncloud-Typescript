@@ -16,7 +16,7 @@ const caseStudies = [
 
     description: "We tackled Akyrian's process inefficiencies and compliance complexities, building scalable quality processes.",
     subdescription: "Read Full Case Study →",
-    url: "#"
+    url: "https://docsend.com/view/whb97ns2ev3i9erb"
 
   },
   {

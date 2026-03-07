@@ -17,12 +17,12 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* Brand Section */}
-         <div className={styles.brandSection}>
-  <div className={styles.logo}>
-    <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-      <img src="QAoncloud_logo.png" alt="QAoncloud" className={styles.qaoncloudLogo} />
-    </a>
-  </div>
+        <div className={styles.brandSection}>
+          <div className={styles.logo}>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <img src="QAoncloud_logo.png" alt="QAoncloud" className={styles.qaoncloudLogo} />
+            </a>
+          </div>
           <div className={styles.subtitle}>
             Strategic QA Unit of{" "}
             <a href="https://desicrew.in" target="_blank" rel="noopener noreferrer">
@@ -114,8 +114,8 @@ export default function Footer() {
       <div className={styles.bottom}>
         <span> © 2026 QAonCloud. All rights reserved.</span>
         <div className={styles.legal}>
-          <Link href="#">Privacy Policy</Link>
-          <Link href="#">Terms of Service</Link>
+          <Link href="/Privacy-policy">Privacy Policy</Link>
+          <Link href="/Terms-of-use">Terms of Service</Link>
         </div>
       </div>
     </footer>

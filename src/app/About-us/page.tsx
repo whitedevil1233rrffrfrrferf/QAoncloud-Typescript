@@ -3,7 +3,6 @@ import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper
 import React from 'react'
 import classes from "./page.module.css"
 import Image from 'next/image'
-import styles from '@/components/ContactUsPage/ContactUsPage.module.css';
 import ContentSection from '@/components/About-Us/ContentSection'
 
 const boardMembers = [
@@ -49,10 +48,10 @@ export default function AboutPage() {
     <div className={classes.pageWrapper}>
 
       {/* HEADER */}
-      <header className={styles.headerSection}>
-        <div className={styles.logoWrapper}>
-          <div className={styles.ellipse2017} />
-          <div className={styles.ellipse2018} />
+      <header className={classes.headerSection}>
+        <div className={classes.logoWrapper}>
+          <div className={classes.ellipse2017} />
+          <div className={classes.ellipse2018} />
           <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
         </div>
         <h1 className={classes.heroTitle}>We are QAonCloud</h1>
@@ -175,6 +174,41 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* COMPLIANCE & CERTIFICATIONS */}
+      <section className={classes.certSection}>
+        <div className={classes.certInner}>
+          <h2 className={classes.certTitle}>
+            Compliance &amp; <span className={classes.certTitleHighlight}>Certifications</span>
+          </h2>
+          <div className={classes.certGrid}>
+            {[
+              { src: '/Images/AboutUs/image001-scaled.png', alt: 'ASPIRE Certified Gold Leaf Impact' },
+              { src: '/Images/AboutUs/21-2.png', alt: 'ISO 27001:2013 Certified' },
+              { src: '/Images/AboutUs/22-2.png', alt: 'Great Place To Work Certified' },
+              { src: '/Images/AboutUs/23-2.png', alt: 'UN Sustainable Development Goals' },
+              { src: '/Images/AboutUs/25-2.png', alt: 'ISO 9001:2015 Certified' },
+            ].map((cert, i) => (
+              <div key={i} className={classes.certItem}>
+                <img src={cert.src} alt={cert.alt} className={classes.certImg} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContentWrapper>
+        <Banner
+          title="Want to create experiences users actually come back to?"
+          highlight=""
+          description=""
+          subDescription='30 minutes. No pitch deck. Just a conversation about your setup and whether we can help'
+          ctaLabel="Book a 30-Minute Call"
+          ctaHref="/Contact-us"
+          decorativeImage="/Images/Footer/HomePage.png"
+        />
+      </ContentWrapper>
+
     </div>
   )
 }
