@@ -15,6 +15,7 @@ import WhyQAonCloud from "@/components/HomePage/WhyQaoncloud/WhyQAonCloud";
 import ServicesSection from "@/components/HomePage/TestingServices/ServicesSection";
 import SectionDivider from "@/components/Common/SectionDivider/SectionDivider";
 import { Code2, Sparkles, Zap } from "lucide-react";
+import QABanner from "@/components/Common/SmallBanner/Banner";
 
 
 export default function Home() {
@@ -70,18 +71,10 @@ export default function Home() {
           <SectionDivider />
           <ContentWrapper>
             <CaseStudiesSection />
-            <Banner
-              title="You could ship"
-              highlight="2X faster too!"
-              description=""
-              hidectaLabel={true}
-              ctaHref="/Contact-us"
-              linkDescription=" "
-              linkDescriptionText="Talk to an expert today to see how we can perfect your QA process."
-              linkDescriptionHref="/Contact-us"
-              decorativeImage="/Images/Footer/HomePage.png"
-              hideLinkSuffix={true}
-            />
+            <QABanner
+  ctaHref="/Contact-us"
+  decorativeImage="/Images/Footer/HomePage.png"
+/>
           </ContentWrapper>
           <SectionDivider />
           <Testimonials />

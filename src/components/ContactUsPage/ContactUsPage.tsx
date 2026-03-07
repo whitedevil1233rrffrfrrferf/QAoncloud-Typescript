@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
 import styles from './ContactUsPage.module.css'; 
 import FooterAll from '../Common/FooterAll/FooterAll';
-
+import emailjs from '@emailjs/browser';
 type Tab = 'business' | 'career';
 
 export default function ContactUsPage() {
@@ -62,64 +62,52 @@ export default function ContactUsPage() {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const handleBizSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
-    if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) { alert('Please fill in all required fields'); return; }
-    
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-    
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'business',
-          formData: {
-            firstName: biz.firstName,
-            lastName: biz.lastName,
-            company: biz.company,
-            workEmail: biz.workEmail,
-            phone: biz.phone,
-            country: biz.country,
-            services: biz.services.join(', '),
-            howHeard: biz.howHeard,
-            budgetRange: biz.budgetRange,
-            message: biz.message
-          },
-          file: uploadedFile ? {
-            name: uploadedFile.name,
-            size: uploadedFile.size
-          } : null
-        }),
-      });
+ const handleBizSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
+  if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) {
+    alert('Please fill in all required fields'); return;
+  }
 
-      const data = await response.json();
+  setIsSubmitting(true);
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        // Reset form
-        setBiz({
-          firstName: '', lastName: '', company: '', workEmail: '',
-          phone: '', country: '', services: [], howHeard: '', budgetRange: '', message: '',
-        });
-        setFile(null);
-        setPrivacy(false);
-        if (fileInputRef.current) fileInputRef.current.value = '';
-      } else {
-        setSubmitStatus('error');
-        alert(data.error || 'Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-      alert('Network error. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  try {
+    await emailjs.send(
+      'service_pe85kpk',    // ← paste your Service ID here
+      'template_lr226wc',   // ← paste your Template ID here
+      {
+        name: biz.firstName,           // for {{name}} in subject
+        from_name: `${biz.firstName} ${biz.lastName}`,
+        from_email: biz.workEmail,
+        company: biz.company || 'Not provided',
+        phone: biz.phone,
+        country: biz.country || 'Not provided',
+        services: biz.services.join(', ') || 'Not provided',
+        how_heard: biz.howHeard || 'Not provided',
+        budget: biz.budgetRange || 'Not provided',
+        message: biz.message || 'No message',
+      },
+      'ud7uHNDNt2PuqT5zM'     // ← paste your Public Key here
+    );
+    await emailjs.send('service_pe85kpk', 'template_2s7nubr', {
+      user_name: biz.firstName,
+      user_email: biz.workEmail,
+    }, 'ud7uHNDNt2PuqT5zM');
+    setSubmitStatus('success');
+    setBiz({
+      firstName: '', lastName: '', company: '', workEmail: '',
+      phone: '', country: '', services: [], howHeard: '', budgetRange: '', message: '',
+    });
+    setFile(null);
+    setPrivacy(false);
+
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const handleCareerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -268,12 +256,12 @@ export default function ContactUsPage() {
               >
                 Business
               </button>
-              <button
+              {/* <button
                 className={`${styles.tab} ${activeTab === 'career' ? styles.tabActive : ''}`}
                 onClick={() => switchTab('career')}
               >
                 Career
-              </button>
+              </button> */}
             </div>
 
             {/*  BUSINESS FORM  */}
