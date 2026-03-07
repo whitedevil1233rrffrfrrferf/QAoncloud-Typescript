@@ -35,7 +35,7 @@ const caseStudies = [
     logo: "/logos/FORATravel.png",
     topColor: "#4C4C4C99",
     tags: ["Compliance QA", "User Testing", "Security Testing"],
-    title: "269 defects identified.",
+    title: "Reduction of Production bugs ",
     description: "We developed a comprehensive test plan for FORA, ensuring high-quality, defect-free builds for every release. ",
     subdescription: "Read Full Case Study →",
     url: "https://docsend.com/view/v8jfi9rsm7jmdbs9"

@@ -21,23 +21,30 @@ const finTechData = {
   featured: {
     logoSrc: "/logos/avanti.png",
     logoAlt: "avanti",
-    statHighlight: "40% faster releases",
-    statRest: "while passing SOC 2 audit with zero findings",
-    quote: '"We went from dreading audits to walking in confident. QAonCloud\'s team understood our compliance requirements from day one. We didn\'t have to explain PCI-DSS or why test data matters',
-    author: { name: "Quentin Mussche", role: "CEO, Neobank", avatar: "/Images/Fintech/Quentin Mussche.png" },
+    logoLink: "https://docsend.com/view/gxyqru5wr72twj8p",
+    statHighlight: "Reduction",
+    statRest: "in the number of production defects",
+    quote: '"With domain knowledge and expertise, QA teams, have reduced the bugs and enhanced the app quality by setting up QA processes for a number of test scenarios and features',
+    caseStudyLink: "https://docsend.com/view/gxyqru5wr72twj8p",
     image: "/Images/Fintech/shipfasterimage.png",
     imageAlt: "Glowing crypto coins",
   },
   testimonials: [
+   
     {
-      label: "Testimonial 1",
-      quote: "They caught a PCI compliance gap we'd missed for six months. That alone paid for the engagement.",
-      author: { name: "Richard Crosby", role: "Head of Engineering, Series A Payments Company", avatar: "/Images/Fintech/Richard Crosby.png" },
-    },
-    {
-      label: "Testimonial 2",
+       
       quote: "Our engineers used to spend 30% of their time on QA. Now they build. QAonCloud handles the rest.",
       author: { name: "Quentin Mussche", role: "CTO, Digital Banking Platform", avatar: "/Images/Fintech/Quentin Mussche.png" },
+    },
+     {
+        
+      quote:
+        "The team is highly flexible, and they've done a fantastic job quickly learning both the platform and our clients' specific needs so we can deliver quality working custom software on time.",
+      author: {
+        name: "",
+        role: "Head of Delivery",
+         avatar: "/profile.jpg",
+      },
     },
   ],
 };
