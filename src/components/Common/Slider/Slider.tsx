@@ -38,74 +38,98 @@ type ClientSliderProps = {
 
 export default function ClientSlider({ heading }: ClientSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [marqueeWidth, setMarqueeWidth] = useState(0);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768);
+    const check = () => {
+      const mobile = window.innerWidth <= 600;
+      setIsMobile(mobile);
+      if (marqueeRef.current) {
+        setMarqueeWidth(marqueeRef.current.offsetWidth);
+      }
+    };
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
 
+  // Reset offset when switching between mobile/desktop
+  useEffect(() => {
+    setOffset(0);
+  }, [isMobile]);
+
   const displayLogos = isMobile
     ? clientLogos
     : [...clientLogos, ...clientLogos, ...clientLogos];
 
+  const maxOffset = isMobile
+    ? marqueeWidth * (clientLogos.length - 1)
+    : 0;
+
   const slide = (dir: "left" | "right") => {
+    const cardWidth = isMobile ? marqueeWidth : SLIDE_BY;
     const track = trackRef.current;
     if (!track) return;
-    const maxOffset = track.scrollWidth - track.parentElement!.offsetWidth;
+    const desktopMax = track.scrollWidth - (marqueeRef.current?.offsetWidth ?? 0);
 
     setOffset((prev) => {
-      let next = dir === "right" ? prev + SLIDE_BY : prev - SLIDE_BY;
-      next = Math.max(0, Math.min(next, maxOffset));
+      let next = dir === "right" ? prev + cardWidth : prev - cardWidth;
+      next = Math.max(0, Math.min(next, isMobile ? maxOffset : desktopMax));
       return next;
     });
   };
 
   return (
-  <section className={classes.wrapper}>
-    <div className={classes.container}>
-      <h4 className={classes.heading}>
-        {heading}
-      </h4>
-    </div>
-
-    <div className={classes.sliderContainer}>
-      {/* Left Arrow */}
-      <button
-        className={classes.arrowBtn}
-        onClick={() => slide("left")}
-        disabled={offset === 0}
-      >
-        ‹
-      </button>
-
-      {/* Marquee */}
-      <div className={classes.marquee}>
-        <div
-          ref={trackRef}
-          className={classes.track}
-          style={isMobile ? { transform: `translateX(-${offset}px)` } : undefined}
-        >
-          {displayLogos.map((logo, index) => (
-            <div key={index} className={classes.logoCard}>
-              <Image src={logo.src} alt={logo.alt} height={40} className={classes.logo} />
-            </div>
-          ))}
-        </div>
+    <section className={classes.wrapper}>
+      <div className={classes.container}>
+        <h4 className={classes.heading}>{heading}</h4>
       </div>
 
-      {/* Right Arrow */}
-      <button
-        className={classes.arrowBtn}
-        onClick={() => slide("right")}
-        disabled={offset >= (trackRef.current?.scrollWidth ?? 0) - (trackRef.current?.parentElement?.offsetWidth ?? 0)}
-      >
-        ›
-      </button>
-    </div>
-  </section>
-);
+      <div className={classes.sliderContainer}>
+        {/* Left Arrow */}
+        <button
+          className={classes.arrowBtn}
+          onClick={() => slide("left")}
+          disabled={offset === 0}
+        >
+          ‹
+        </button>
+
+        {/* Marquee */}
+        <div className={classes.marquee} ref={marqueeRef}>
+          <div
+            ref={trackRef}
+            className={classes.track}
+            style={
+              isMobile
+                ? { transform: `translateX(-${offset}px)`, width: `${marqueeWidth * clientLogos.length}px` }
+                : undefined
+            }
+          >
+            {displayLogos.map((logo, index) => (
+              <div
+                key={index}
+                className={classes.logoCard}
+                style={isMobile ? { width: `${marqueeWidth}px`, minWidth: `${marqueeWidth}px` } : undefined}
+              >
+                <Image src={logo.src} alt={logo.alt} height={40} className={classes.logo} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          className={classes.arrowBtn}
+          onClick={() => slide("right")}
+          disabled={offset >= maxOffset}
+        >
+          ›
+        </button>
+      </div>
+    </section>
+  );
 }

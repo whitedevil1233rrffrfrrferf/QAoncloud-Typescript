@@ -24,7 +24,7 @@ const boardMembers = [
     name: 'Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/mani.png',
+    photo: '/Images/AboutUs/ManivannanCEO.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {

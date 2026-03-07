@@ -24,7 +24,7 @@ export default function Footer() {
             </a>
           </div>
           <div className={styles.subtitle}>
-            Strategic QA Unit of{""}
+            Strategic QA Unit of 
             <a href="https://desicrew.in" target="_blank" rel="noopener noreferrer">
               <img src="/logos/desicrew-logo.png" alt="desicrew" className={styles.desicrewLogo} />
             </a>
@@ -104,7 +104,7 @@ export default function Footer() {
 
           <div className={styles.column}>
             <h4>Industries</h4>
-            <Link href="Fintech">FinTech</Link>
+            <Link href="FinTech">FinTech</Link>
             <Link href="HealthCare">HealthTech</Link>
             <Link href="Saas">SaaS</Link>
           </div>
