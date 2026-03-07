@@ -38,7 +38,7 @@
   gap: 3.9px;
 }
 
-.desicrewLogo { height: 20px; width: 130px; object-fit: contain; }
+.desicrewLogo { height: 18px; width: 110px; object-fit: fill; }
 .qaoncloudLogo { height: 50px; width: 156px; }
 
 .description {

@@ -3,8 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
-import styles from './ContactUsPage.module.css'; 
-import FooterAll from '../Common/FooterAll/FooterAll';
+import styles from './ContactUsPage.module.css';  
 
 type Tab = 'business' | 'career';
 
