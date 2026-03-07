@@ -22,39 +22,36 @@ export const healthcareData = {
   featured: {
     logoSrc: "/logos/Akyrian.png",
     logoAlt: "Akyrian",
-    statHighlight: "40% faster releases",
-    statRest: "cycles, FDA submission approved on first review",
+    logoLink: "https://docsend.com/view/whb97ns2ev3i9erb",
+    statHighlight: "30-40% Cost optimization",
+    statRest: " and efficiency gains",
     quote:
-      '"We were terrified of our FDA submission. QAonCloud helped us document our test coverage so thoroughly that the review went smoother than anything we\'d submitted before.',
-    author: {
-      name: "Quentin Mussche",
-      role: "CEO, Healthtech",
-      avatar: "/Images/Fintech/Quentin Mussche.png",
-    },
+      '"Manual HIPAA/GDPR compliance verification processes, Patient data access permission validation across user roles',
+   caseStudyLink: "https://docsend.com/view/whb97ns2ev3i9erb",
     image: "/Images/Healthcare/HealthTech teams ship faster.png",
     imageAlt: "DNA helix healthcare",
   },
   testimonials: [
     {
-      label: "Testimonial 1",
+      
       quote:
-        "They generated synthetic patient data that covered edge cases we never would have thought of. Our test coverage went from 60% to 95%.",
+        "QAonCloud team showcased excellent technical skills and attention to detail, achieving thorough testing according to the plan. We appreciate the comprehensive project closure report. Overall, we highly recommend QAonCloud.",
       author: {
-        name: "Richard Crosby",
-        role: "Head of Engineering, Series A Payments Company",
-        avatar: "/Images/Fintech/Richard Crosby.png",
+        name: "Kavitha Sivashankaran",
+        role: "Engineer, Quality and Regulatory Affairs",
+         avatar: "/Kavitha Sivashankaran.jpg", 
+      },
+    },{
+      
+      quote:
+        "I've worked with a variety of both on and offshore staffing partners for QA. QAoncloud has been the premier partner in the space. Onboarding is quick and easy, and the team is highly flexible and they've done a fantastic job quickly learning both the platform and our clients' specific needs",
+      author: {
+        name: "",
+        role: "Head of Delivery",
+         avatar: "/profile.jpg",
       },
     },
-    {
-      label: "Testimonial 2",
-      quote:
-        "Our EMR integration was a mess. QAonCloud's team had seen it before and knew exactly where to focus. They found three critical bugs in the first week.",
-      author: {
-        name: "Quentin Mussche",
-        role: "CTO, Digital Banking Platform",
-        avatar: "/Images/Fintech/Quentin Mussche.png",
-      },
-    },
+    
   ],
 };
 const mistakesData = {

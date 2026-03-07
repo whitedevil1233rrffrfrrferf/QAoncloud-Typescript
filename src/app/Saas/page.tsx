@@ -22,37 +22,34 @@ export const saasData = {
   featured: {
     logoSrc: "/logos/FORATravel.png",
     logoAlt: "FORATravel",
-    statHighlight: "40% faster releases,",
-    statRest: "3x increase in deployment frequency",
+    logoLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
+    statHighlight: "Reduction",
+    statRest: " of Production bugs",
     quote:
-      '"We were terrified of our FDA submission. QAonCloud helped us document our test coverage so thoroughly that the review went smoother than anything we\'d submitted before.',
-    author: {
-      name: "Quentin Mussche",
-      role: "CEO, Healthtech",
-      avatar: "/Images/Fintech/Quentin Mussche.png",
-    },
+      '"Comprehensive test planning and QA strategy aligned with the requirements for smooth and faster releases ',
+    caseStudyLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
     image: "/Images/Saas/Saas teams ship faster.png",
     imageAlt: "Glowing cloud SaaS",
   },
   testimonials: [
     {
-      label: "Testimonial 1",
+       
       quote:
-        "Our engineers got 25% of their time back. They're building features again instead of writing test scripts",
+        "We went from zero to 100% test coverage without us investing practically any time. For small teams that can't afford dedicated testers, this synergy is great",
       author: {
-        name: "Richard Crosby",
-        role: "Head of Engineering, Series A Payments Company",
-        avatar: "/Images/Fintech/Richard Crosby.png",
+        name: "Miguel Romero Karam",
+        role: "Cofounder & CTO",
+        avatar: "/Miguel Romero Karam.jpg", 
       },
     },
     {
-      label: "Testimonial 2",
+       
       quote:
-        "We used to find out about bugs from customers. Now we find them before they ship. That's worth everything",
+        "Before QAonCloud, we had no resources to find, execute, and understand how we could get better or worse. QAonCloud helped us define the best testing strategy and the reports were coming in pretty much the next day",
       author: {
-        name: "Quentin Mussche",
-        role: "CTO, Digital Banking Platform",
-        avatar: "/Images/Fintech/Quentin Mussche.png",
+        name: "Robert Johnson",
+        role: "Principal Software Engineer, AT&T Cybersecurity",
+        avatar: "/Robert Johnson.jpg",
       },
     },
   ],

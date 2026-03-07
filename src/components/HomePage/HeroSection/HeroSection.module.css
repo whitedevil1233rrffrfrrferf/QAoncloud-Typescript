@@ -1,16 +1,21 @@
+/* ═══════════════════════════════════════════
+   HERO — base (desktop)
+═══════════════════════════════════════════ */
 .hero {
   position: relative;
   background-color: #0a0a0f;
   overflow: hidden;
   width: 100%;
   min-height: 100svh;
-  height: max-content; /* resolved height so inset:0 works */
+  height: max-content;
 }
 
-/* ── Glow image — full section cover ── */
+/* ── Glow image ── */
 .glowWrapper {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
 }
@@ -34,7 +39,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  min-height: 80svh; /* ← this is the missing piece */
+  min-height: 80svh;
 }
 
 /* ── Text block ── */
@@ -46,7 +51,6 @@
 }
 
 .heading {
-  
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -68,6 +72,8 @@
 }
 
 .btnSecondary {
+  display: inline-block;
+  text-decoration: none;
   background-color: #050505;
   color: #fff;
   border: 1px solid #333;
@@ -76,21 +82,16 @@
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
   white-space: nowrap;
 }
-
-.btnSecondary {
-  display: inline-block;
-  text-decoration: none;
-}
 .btnSecondary:hover {
-  border-color: #1D1C1C;
+  border-color: #1d1c1c;
   color: #fff;
-  background-color: #1D1C1C;
+  background-color: #1d1c1c;
 }
 
-/* ── Divider — sits between buttons and stats ── */
+/* ── Divider ── */
 .divider {
   width: 50%;
   height: 1px;
@@ -98,15 +99,16 @@
   margin: 2.5rem 0;
 }
 
-/* ── Stats row ── */
+/* ── Stats ── */
 .stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 2rem;
   max-width: 600px;
-  margin-top: auto;      /* pushes to bottom */
-  margin-bottom: 3rem;   /* your breathing room */
+  margin-top: auto;
+  margin-bottom: 3rem;
 }
+
 .stats .statItem:nth-child(3) {
   grid-column: 1 / -1;
   margin-top: 0.5rem;
@@ -120,13 +122,13 @@
 }
 
 .statNumber {
-  color: #FF8641;
+  color: #ff8641;
   margin-bottom: 0 !important;
   line-height: 1;
 }
 
 .statNumberOrange {
-  color: #FF8641;
+  color: #ff8641;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -138,31 +140,20 @@
   color: #7070a0;
 }
 
+/* ═══════════════════════════════════════════
+   TABLET  ≤ 1200px  — centered layout
+═══════════════════════════════════════════ */
 @media (max-width: 1200px) {
-  /* Hide the glow image entirely */
-  /* .glowWrapper {
-    display: none;
-  } */
-  
   .hero {
-    min-height: unset;  /* kill the 100svh */
-    position: relative;
-    background-color: #0a0a0f;
-   
-    
-    
-    overflow: hidden;
-    width: 100%;
-    
+    min-height: unset;
     height: auto;
   }
-  /* Center all content */
+
   .content {
-    
     align-items: center;
     text-align: center;
-    min-height: 0svh;
-    padding: 2rem 
+    min-height: unset;
+    padding: 3rem 2rem;
   }
 
   .textBlock {
@@ -170,111 +161,24 @@
     align-items: center;
   }
 
-  /* Center buttons */
- .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
+  .buttons {
+    justify-content: center;
+  }
 
-  /* Center divider */
   .divider {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
   }
 
-  /* Center stats */
   .stats {
-    margin-top: 0;
-    max-width: 100%;
-    justify-items: center;
     margin-top: 3rem;
     margin-bottom: 0;
-  }
-
-  .stats .statItem:nth-child(3) {
-    justify-self: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .content {
-    padding: 3rem 0.2rem 3rem;
-  }
-
-  .divider {
-    width: 80%;
-  }
-  .subheading {
-    color: #a0a0b0;
-    line-height: 1.6;
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero{
-    min-height: 50svh;
-    background-size: auto 600px; /* fixed, won't grow the section */
-  }
-  .content{
-    min-height: 60svh;
-  }
-  .content {
-    padding: 2.5rem 1.25rem 2rem;
-    align-items: center;
-    text-align: center;
-  }
-   .subheading {
-    color: #a0a0b0;
-    line-height: 1.6;
-    max-width: 400px;
-  }
-  .textBlock {
     max-width: 100%;
-    width: 100%;
-    align-items: center;
-  }
-
-  .heading {
-   max-width: 400px;
-  }
-
-  
-
-  /* .buttons {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  } */
-
-  
-  .btnSecondary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .divider {
-    width: 80%;
-    margin: 1.5rem auto;
-  }
-
-  /* Stack stats one below another */
-  .stats {
-    grid-template-columns: 1fr; /* single column */
-    width: 100%;
-    max-width: 100%;
-    margin-top: 1.5rem;
-    gap: 1.25rem;
     justify-items: center;
-    
   }
 
   .stats .statItem:nth-child(3) {
-    grid-column: 1; /* reset span */
-    margin-top: 0;
     justify-self: center;
   }
 
@@ -282,50 +186,147 @@
     align-items: center;
     text-align: center;
   }
+}
+
+/* ═══════════════════════════════════════════
+   ≤ 768px
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .divider {
+    width: 80%;
+  }
+
+  .subheading {
+    max-width: 500px;
+  }
 
   .statLabel {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
-@media (max-width: 480px) {
+
+/* ═══════════════════════════════════════════
+   MOBILE  ≤ 600px
+   LEFT-aligned, stacked buttons, glow shows
+   in mid-section, stats 2-col left-aligned
+═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .glowImage {
+    object-position: center 38%;
+    opacity: 1;
+  }
+
   .content {
-    padding: 2.5rem 0;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.75rem 1.25rem 2.5rem;
+    min-height: 100svh;
+    gap: 0;
   }
-  .hero{
-    min-height: 50vh !important;
-  }
-  /* .buttons {
-    flex-direction: column;
+
+  .textBlock {
+    max-width: 100%;
     width: 100%;
-  } */
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    max-width: 100%;
+    line-height: 1.1;
+  }
+
+  .subheading {
+    font-size: 15px;
+    max-width: 100%;
+    color: #9090a8;
+  }
+
+  /* Large top margin = visible gap for the glow image */
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-top: clamp(9rem, 42svh, 15rem);
+    width: auto;
+  }
 
   .btnSecondary {
     width: auto;
+    min-width: 160px;
     text-align: center;
-  }
-  .btnSecondary {
-    background-color: #050505;
-    color: #fff;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
+    padding: 0.72rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    border-color: #444;
   }
 
-
+  /* Plain grey divider line */
   .divider {
     width: 100%;
+    height: 1px;
+    background: #272727;
+    margin: 1.75rem 0;
   }
-  /* .subheading {
-    color: #a0a0b0;
-    line-height: 1.6;
-    max-width: 660px;} */
-  /* .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  /* Stats — 2-col, left-aligned */
+  .stats {
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-  } */
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 1.25rem 1.5rem;
+    justify-items: start;
+  }
+
+  .stats .statItem:nth-child(3) {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    justify-self: start;
+  }
+
+  .statItem {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .statNumber {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .statNumberOrange {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+
+  .statLabel {
+    font-size: 14px;
+    color: #7070a0;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   VERY SMALL  ≤ 390px
+═══════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .content {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .buttons {
+    margin-top: clamp(8rem, 38svh, 13rem);
+  }
 }

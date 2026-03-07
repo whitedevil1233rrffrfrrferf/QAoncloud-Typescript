@@ -12,16 +12,18 @@ interface Author {
 interface FeaturedTestimonial {
   logoSrc: string;
   logoAlt: string;
+  logoLink?: string;
   statHighlight: string;
   statRest: string;
   quote: string;
-  author: Author;
+  author?: Author;
+  caseStudyLink?: string;
   image: string;
   imageAlt: string;
 }
 
 interface TestimonialItem {
-  label: string;
+   
   quote: string;
   author: Author;
 }
@@ -55,7 +57,13 @@ function FinTechteamSection({
       <div className={styles.featured}>
         <div className={styles.featuredContent}>
           <div className={styles.logoWrap}>
-            <img src={featured.logoSrc} alt={featured.logoAlt} className={styles.logoImg} />
+            {featured.logoLink ? (
+              <a href={featured.logoLink} target="_blank" rel="noopener noreferrer">
+                <img src={featured.logoSrc} alt={featured.logoAlt} className={styles.logoImg} />
+              </a>
+            ) : (
+              <img src={featured.logoSrc} alt={featured.logoAlt} className={styles.logoImg} />
+            )}
           </div>
 
           <h3 className={styles.stat}>
@@ -65,13 +73,19 @@ function FinTechteamSection({
 
           <blockquote className={styles.quote}>{featured.quote}</blockquote>
 
-          <div className={styles.author}>
-            <img src={featured.author.avatar} alt={featured.author.name} className={styles.avatar} />
-            <div>
-              <div className={styles.authorName}>{featured.author.name}</div>
-              <div className={styles.authorRole}>{featured.author.role}</div>
+          {featured.caseStudyLink ? (
+            <a href={featured.caseStudyLink} className={styles.caseStudyLink}>
+              Read Full Case Study →
+            </a>
+          ) : featured.author ? (
+            <div className={styles.author}>
+              <img src={featured.author.avatar} alt={featured.author.name} className={styles.avatar} />
+              <div>
+                <div className={styles.authorName}>{featured.author.name}</div>
+                <div className={styles.authorRole}>{featured.author.role}</div>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
 
         <div className={styles.featuredImage}>
@@ -86,7 +100,7 @@ function FinTechteamSection({
       <div className={styles.testimonials}>
         {testimonials.map((item, index) => (
           <div key={index} className={styles.testimonialCard}>
-            <span className={styles.badge}>{item.label}</span>
+           {/*<span className={styles.badge}>{item.label}</span> */}
             <blockquote className={styles.testimonialQuote}>
               <span className={styles.bigQuote}>"</span>
               {item.quote}
