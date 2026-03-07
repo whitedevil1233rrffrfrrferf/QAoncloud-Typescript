@@ -78,7 +78,7 @@ export default function page() {
               ctaHref="/Contact-us"
               linkDescription="Have questions first?"
               linkDescriptionText="Email us directly"
-           linkDescriptionHref="mailto:contactus@qaoncloud.com"
+              linkDescriptionHref="mailto:contactus@qaoncloud.com"
               decorativeImage="/Images/Footer/HomePage.png"
               hideLinkSuffix={true}
             />

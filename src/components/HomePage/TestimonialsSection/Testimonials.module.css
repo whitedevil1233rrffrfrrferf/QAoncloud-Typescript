@@ -5,7 +5,7 @@
     position: relative;
     /* padding: 2rem; */
     margin-top: var(--section-header-margin);
-    
+    padding-bottom: var(--padding-bottom);
     
   }
   .testimonialsContainer::before {

@@ -2,7 +2,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 14px;
   margin-right: 1rem;
   
@@ -107,9 +106,4 @@
   }
 }
 
-@media (max-width: 375px) {
-  .content {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.7rem;
-  }
-}
+

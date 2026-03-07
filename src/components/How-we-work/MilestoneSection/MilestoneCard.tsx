@@ -8,7 +8,7 @@ interface MilestoneCardProps {
 export const MilestoneCard = ({ day, items }: MilestoneCardProps) => {
   return (
     <div className={styles.card}>
-      <h3 className={styles.dayTitle}>By Day {day}</h3>
+      <p className={styles.dayTitle}>By Day {day}</p>
       <ul className={styles.list}>
         {items.map((item, index) => (
           <li key={index} className={styles.listItem}>

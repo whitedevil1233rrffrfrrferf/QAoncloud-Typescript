@@ -73,8 +73,7 @@
   flex: 1;
   margin: 0;
   
-  line-height: 31px;
-  letter-spacing: -0.52px; /* -2% of 26px */
+  
   background: #3093E8;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -128,8 +127,7 @@
   margin: 0;
   
   font-size: var(--text-body);
-  font-weight: 600;
-  line-height: 26px;
+  font-weight: 500;
   letter-spacing: -0.5px;
   color: #ffffff;
   max-width: 1000px;
@@ -145,10 +143,7 @@
     padding: 20px 24px;
   }
 
-  .questionText {
-    font-size: 22px;
-    line-height: 28px;
-  }
+  
 
   .answer.active {
     padding: 0 24px 20px 24px;

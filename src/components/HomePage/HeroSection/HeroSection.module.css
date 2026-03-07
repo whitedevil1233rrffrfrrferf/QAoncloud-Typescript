@@ -68,16 +68,25 @@
 }
 
 .btnSecondary {
-  background-color: #050505;
-  color: #fff;
-  border: 1px solid #333;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
   padding: 0.7rem 1.5rem;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1.5;  /* ← must match */
+  text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+  transition: all 0.25s ease;
+  background: #050505;
+  color: #ffffff;
+  border: 1px solid #3A3A3A;
+  box-shadow: 
+    0px 8px 10px -6px #1C398E1A,
+    0px 20px 25px -5px #1C398E1A;
 }
 
 .btnSecondary {
@@ -223,8 +232,10 @@
   }
 }
 @media (max-width: 768px) {
-  .content {
-    padding: 3rem 0.2rem 3rem;
+ .btnSecondary {
+    padding: 0.55rem 1.4rem;
+    font-size: 0.8rem;
+    
   }
 
   .divider {
@@ -235,6 +246,7 @@
     line-height: 1.6;
     max-width: 500px;
   }
+  
 }
 
 @media (max-width: 600px) {
@@ -319,21 +331,11 @@
     width: 100%;
   } */
 
+  
   .btnSecondary {
-    width: auto;
-    text-align: center;
-  }
-  .btnSecondary {
-    background-color: #050505;
-    color: #fff;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
+    font-size: 0.75rem;
+    padding: 0.9rem;
+    width: 7rem;
   }
 
 
