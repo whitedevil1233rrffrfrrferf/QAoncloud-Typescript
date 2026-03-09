@@ -26,7 +26,7 @@ export const healthcareData = {
     statHighlight: "30-40% Cost optimization",
     statRest: " and efficiency gains",
     quote:
-      '"Manual HIPAA/GDPR compliance verification processes, Patient data access permission validation across user roles',
+      '"Manual HIPAA/GDPR compliance verification processes, Patient data access permission validation across user roles."',
    caseStudyLink: "https://docsend.com/view/whb97ns2ev3i9erb",
     image: "/Images/Healthcare/HealthTech teams ship faster.png",
     imageAlt: "DNA helix healthcare",
@@ -35,7 +35,7 @@ export const healthcareData = {
     {
       
       quote:
-        "QAonCloud team showcased excellent technical skills and attention to detail, achieving thorough testing according to the plan. We appreciate the comprehensive project closure report. Overall, we highly recommend QAonCloud.",
+        "QAonCloud team showcased excellent technical skills and attention to detail, achieving thorough testing according to the plan. We appreciate the comprehensive project closure report. Overall, we highly recommend QAonCloud",
       author: {
         name: "Kavitha Sivashankaran",
         role: "Engineer, Quality and Regulatory Affairs",
@@ -55,7 +55,7 @@ export const healthcareData = {
   ],
 };
 const mistakesData = {
-  title: "In HeathTech ",
+  title: "In HealthTech ",
   highlight: "it isn’t “just a bug” ",
   description: `The stakes are higher, and the regulations are stricter. Bugs aren’t just bad news, they could prove problematic to patient health. But that doesn’t mean you can slow down. Competitors don’t rest, so you can’t either. Your engineers can’t do it all, but your investors expect results.So, do you focus on moving fast or on staying compliant? Most healthtech teams struggle to choose and risk falling behind. `,
   cards: [
@@ -71,7 +71,7 @@ const releaseRegulationsData = {
   description: `Think AI-accelerated QA testing meets engineers with extensive healthcare software experience.Be it generating synthetic test data, automating regression suites, or parallel execution, our AI handles the volume. Our engineers make the calls on what matters clinically, what tends to break, and what auditors demand. The result? 40% faster releases. HIPAA-compliant test data. Documentation that's ready to go.`,
   cards: [
     { title: "Synthetic test data that’s safe", description: "Our AI generates realistic patient data that covers edge cases without exposing PHI. No more cutting corners because you don't have safe data." },
-    { title: "Engineers who know HealthTech, inside out", description: `Our engineers have tested EMR integrations, HL7 feeds, FHIR APIs, and insurance claim workflows. We know where HealthTech software breaks` },
+    { title: "Engineers who know HealthTech, inside out", description: `Our engineers have tested EMR integrations, HL7 feeds, FHIR APIs, and insurance claim workflows. We know where HealthTech software breaks.` },
     { title: "Built-in audit-ready documentation", description: "Every test run is documented. Every coverage gap is visible. When auditors or FDA reviewers ask, you can prove your work. " },
   ],
 }
@@ -214,8 +214,8 @@ export default function page() {
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
-              linkDescriptionText="How Neo bank cut release time by 40%"
-              linkDescriptionHref="#"
+              linkDescriptionText="How HealthTech companies cut release times by 40%"
+              linkDescriptionHref="https://docsend.com/view/whb97ns2ev3i9erb"
               decorativeImage="/Images/Footer/HomePage.png"
             />
           </ContentWrapper>

@@ -124,7 +124,7 @@
   box-sizing: border-box;
   position: relative;
   transform: translateY(-160px);  /* was -80px, now pulls up higher */
-  margin-bottom: -160px;          /* must match the translateY value */
+  margin-bottom: -250px;          /* must match the translateY value */
   z-index: 0;
 }
 

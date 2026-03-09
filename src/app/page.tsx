@@ -94,8 +94,8 @@ export default function Home() {
 
           <ContentWrapper>
             <Banner
-              title="No more glitches"
-              highlight="delays or compliance anxiety!"
+              title="No more glitches,"
+              highlight="delays, or compliance anxiety!"
               description="Start with a 3-month pilot and you'll understand why 60+ global teams stick with us. You'll see the 40% difference in no time. "
               //subDescription=""
               ctaLabel=" Talk To An Expert"

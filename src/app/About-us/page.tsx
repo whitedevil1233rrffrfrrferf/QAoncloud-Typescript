@@ -74,7 +74,7 @@ export default function AboutPage() {
 
       <ContentSection
         title={<>Our approach <span className={classes.sectionHighlight}>is simple</span></>}
-        imageSrc="/Images/AboutUs/Our approach is simple.png"
+        imageSrc="/Images/AboutUs/Our_approach.png"
         imageAlt="QAonCloud team"
         reversed
         altBg

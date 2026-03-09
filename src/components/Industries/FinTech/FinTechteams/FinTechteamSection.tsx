@@ -23,7 +23,7 @@ interface FeaturedTestimonial {
 }
 
 interface TestimonialItem {
-   
+
   quote: string;
   author: Author;
 }
@@ -50,7 +50,7 @@ function FinTechteamSection({
       <div className={styles.headingWrap}>
         <div className={styles.ellipse} aria-hidden="true" />
         <SectionHeader title={title} highlight={highlight} />
-        
+
       </div>
 
       {/* Featured testimonial */}
@@ -74,7 +74,8 @@ function FinTechteamSection({
           <blockquote className={styles.quote}>{featured.quote}</blockquote>
 
           {featured.caseStudyLink ? (
-            <a href={featured.caseStudyLink} className={styles.caseStudyLink}>
+            <a href={featured.caseStudyLink} target="_blank"
+              rel="noopener noreferrer" className={styles.caseStudyLink}>
               Read Full Case Study →
             </a>
           ) : featured.author ? (
@@ -100,7 +101,7 @@ function FinTechteamSection({
       <div className={styles.testimonials}>
         {testimonials.map((item, index) => (
           <div key={index} className={styles.testimonialCard}>
-           {/*<span className={styles.badge}>{item.label}</span> */}
+            {/*<span className={styles.badge}>{item.label}</span> */}
             <blockquote className={styles.testimonialQuote}>
               <span className={styles.bigQuote}>"</span>
               {item.quote}

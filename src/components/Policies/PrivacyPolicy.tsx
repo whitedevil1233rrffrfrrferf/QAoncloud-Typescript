@@ -1,4 +1,7 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import classes from './PrivacyPolicy.module.css';
+import { useEffect, useRef, useState } from 'react';
 
 const sections = [
   {
@@ -87,11 +90,48 @@ const sections = [
 ];
 
 export default function PrivacyPolicyPage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState<string>('');
+  const [isCompact, setIsCompact] = useState<boolean>(false);
+
+  const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    // Add compact class to hero
+    if (heroRef.current) {
+      heroRef.current.classList.add(classes.compact);
+      setIsCompact(true);
+    }
+    
+    // Set active section
+    setActiveSection(sectionId);
+    
+    // Smooth scroll to section
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    window.history.replaceState(null, '', `#${sectionId}`);
+  };
+
+  const handleScroll = () => {
+    // Only restore original height if we're at the top and compact was set by TOC click
+    if (window.scrollY === 0 && isCompact) {
+      if (heroRef.current) {
+        heroRef.current.classList.remove(classes.compact);
+        setIsCompact(false);
+      }
+      setActiveSection('');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isCompact]);
+
   return (
     <div className={classes.page}>
 
       {/* ── HERO (BlogPage style) ── */}
-      <section className={classes.hero}>
+      <section ref={heroRef} className={classes.hero}>
        
         <div className={classes.heroOverlay} />
         <div className={classes.heroContent}>
@@ -109,16 +149,23 @@ export default function PrivacyPolicyPage() {
         <div className={classes.bodyInner}>
 
           {/* Sidebar TOC */}
-          <nav className={classes.toc} aria-label="Table of contents">
-            <p className={classes.tocTitle}>On this page</p>
-            <ul className={classes.tocList}>
-              {sections.map((s) => (
-                <li key={s.id}>
-                  <a href={`#${s.id}`}>{s.title}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+         <nav className={classes.toc} aria-label="Table of contents">
+  <p className={classes.tocTitle}>On this page</p>
+  <ul className={classes.tocList}>
+    {sections.map((s) => (
+      <li key={s.id}>
+        
+          <a
+          href={`#${s.id}`}
+          onClick={(e) => handleTocClick(e, s.id)}
+          className={activeSection === s.id ? classes.active : ''}
+        >
+          {s.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
 
           {/* Sections */}
           <div className={classes.content}>

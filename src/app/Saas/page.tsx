@@ -17,7 +17,7 @@ import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 
 export const saasData = {
-  title: "Saas teams",
+  title: "SaaS teams",
   highlight: "ship faster with Confidence",
   featured: {
     logoSrc: "/logos/FORATravel.png",
@@ -214,12 +214,12 @@ export default function page() {
             <Banner
               title="Ready to put"
               highlight="your app to the test?"
-              description="Our Saas QA experts are always up for a quick chat. No pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can speed up your releases and ensure quality"
+              description="Our SaaS QA experts are always up for a quick chat. No pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can speed up your releases and ensure quality"
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
-              linkDescriptionText="How Neo bank cut release time by 40%"
-              linkDescriptionHref="#"
+              linkDescriptionText="How SaaS companies cut release times by 40%"
+              linkDescriptionHref="https://docsend.com/view/v8jfi9rsm7jmdbs9"
               decorativeImage="/Images/Footer/HomePage.png"
             />
           </ContentWrapper>

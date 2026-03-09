@@ -259,7 +259,7 @@
   
 }
 .card {
-  height: 350px;
+  height: 380px;
   width: 10px;
   background: #050505;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -396,7 +396,7 @@
   font-size: 13px;
 }
 .card {
-  height: 370px;
+  height: 400px;
   width: 10px;
   background: #050505;
   border: 1px solid rgba(255, 255, 255, 0.12);
