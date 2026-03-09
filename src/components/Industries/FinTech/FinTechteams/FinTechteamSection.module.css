@@ -247,18 +247,25 @@
   color: #ffffff;
   line-height: 1.65;
   margin: 0;
+  
   font-style: normal;
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
+  display: block;
 }
 
-.bigQuote {
+.testimonialQuote::before {
+  content: '\201C';
   font-size: 1.6rem;
-  color: #ffffff;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: -2px;
+  line-height: 0;
+  vertical-align: 0.em;
+  margin-right: 3px;
+}
+
+.testimonialQuote::after {
+  content: '\201D';
+  font-size: 1.6rem;
+  line-height: 0;
+  vertical-align: 0.em;
+  margin-left: 3px;
 }
 
 

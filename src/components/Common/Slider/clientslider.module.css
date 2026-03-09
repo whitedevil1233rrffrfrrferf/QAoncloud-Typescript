@@ -96,8 +96,8 @@
 @media (max-width: 600px) {
   .wrapper {
     padding: 1.5rem 0.5rem;
-    margin-top: 0;        /* ← kill the section-header-margin */
-    margin-bottom: 0;     /* ← kill the 3rem bottom */
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .sliderContainer {
@@ -105,13 +105,23 @@
     gap: 8px;
   }
 
+  .marquee {
+    overflow: hidden;
+    width: 0;
+    flex: 1;
+  }
+
   .track {
     animation: none;
-    gap: 16px;
+    gap: 0;
     transition: transform 0.4s ease;
   }
 
-  
+  .logoCard {
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
   .arrowBtn {
     display: flex;
     align-items: center;
@@ -138,9 +148,4 @@
     opacity: 0.3;
     cursor: not-allowed;
   }
-}
-
-
-@media (max-width: 600px) {
-  
 }

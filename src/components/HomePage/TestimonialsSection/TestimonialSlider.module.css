@@ -148,8 +148,7 @@
 .quote {
   font-weight: 500;
   flex-grow: 1;
-  display: flex;
-  align-items: flex-start;
+  display: block;        /* change from flex to block */
   overflow: hidden;
   line-height: 1.5;
   margin: 0 0 16px 0;
@@ -164,15 +163,14 @@
   
 }
 
-/* .quote::after {
+.quote::after {
   content: '"';
   margin-left: 4px;
   font-size: 24px;
   line-height: 1;
-  color: #4f46e5;
-  align-self: flex-end;
-} */
 
+  vertical-align: bottom;  /* instead of align-self: flex-end */
+}
 /* ---------- Footer ---------- */
 
 .footer {

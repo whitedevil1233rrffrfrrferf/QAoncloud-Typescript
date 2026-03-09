@@ -3,8 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
-import styles from './ContactUsPage.module.css'; 
-import FooterAll from '../Common/FooterAll/FooterAll';
+import styles from './ContactUsPage.module.css';
 import emailjs from '@emailjs/browser';
 type Tab = 'business' | 'career';
 
@@ -62,60 +61,60 @@ export default function ContactUsPage() {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
- const handleBizSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
-  if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) {
-    alert('Please fill in all required fields'); return;
-  }
+  const handleBizSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
+    if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) {
+      alert('Please fill in all required fields'); return;
+    }
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    await emailjs.send(
-      'service_pe85kpk',    // ← paste your Service ID here
-      'template_lr226wc',   // ← paste your Template ID here
-      {
-        name: biz.firstName,           // for {{name}} in subject
-        from_name: `${biz.firstName} ${biz.lastName}`,
-        from_email: biz.workEmail,
-        company: biz.company || 'Not provided',
-        phone: biz.phone,
-        country: biz.country || 'Not provided',
-        services: biz.services.join(', ') || 'Not provided',
-        how_heard: biz.howHeard || 'Not provided',
-        budget: biz.budgetRange || 'Not provided',
-        message: biz.message || 'No message',
-      },
-      'ud7uHNDNt2PuqT5zM'     // ← paste your Public Key here
-    );
-    await emailjs.send('service_pe85kpk', 'template_lr226wc', {
-      user_name: biz.firstName,
-      user_email: biz.workEmail,
-    }, 'ud7uHNDNt2PuqT5zM');
-    setSubmitStatus('success');
-    setBiz({
-      firstName: '', lastName: '', company: '', workEmail: '',
-      phone: '', country: '', services: [], howHeard: '', budgetRange: '', message: '',
-    });
-    setFile(null);
-    setPrivacy(false);
+    try {
+      await emailjs.send(
+        'service_pe85kpk',    // ← paste your Service ID here
+        'template_lr226wc',   // ← paste your Template ID here
+        {
+          name: biz.firstName,           // for {{name}} in subject
+          from_name: `${biz.firstName} ${biz.lastName}`,
+          from_email: biz.workEmail,
+          company: biz.company || 'Not provided',
+          phone: biz.phone,
+          country: biz.country || 'Not provided',
+          services: biz.services.join(', ') || 'Not provided',
+          how_heard: biz.howHeard || 'Not provided',
+          budget: biz.budgetRange || 'Not provided',
+          message: biz.message || 'No message',
+        },
+        'ud7uHNDNt2PuqT5zM'     // ← paste your Public Key here
+      );
+      await emailjs.send('service_pe85kpk', 'template_2s7nubr', {
+        user_name: biz.firstName,
+        user_email: biz.workEmail,
+      }, 'ud7uHNDNt2PuqT5zM');
+      setSubmitStatus('success');
+      setBiz({
+        firstName: '', lastName: '', company: '', workEmail: '',
+        phone: '', country: '', services: [], howHeard: '', budgetRange: '', message: '',
+      });
+      setFile(null);
+      setPrivacy(false);
 
-  } catch (error) {
-    console.error('EmailJS error:', error);
-    setSubmitStatus('error');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleCareerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
-    
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -248,28 +247,13 @@ export default function ContactUsPage() {
           {/* ── RIGHT: Tabbed forms ── */}
           <section className={styles.rightSection}>
 
-            {/* Tabs   */}
-            {/* <div className={styles.tabs}> */}
-              {/* <button
-                className={`${styles.tab} ${activeTab === 'business' ? styles.tabActive : ''}`}
-                onClick={() => switchTab('business')}
-              >
-                Business
-              </button> */}
-              {/* <button
-                className={`${styles.tab} ${activeTab === 'career' ? styles.tabActive : ''}`}
-                onClick={() => switchTab('career')}
-              >
-                Career
-              </button> */}
-            {/* </div> */}
+
 
             {/*  BUSINESS FORM  */}
             {activeTab === 'business' && (
               <form onSubmit={handleBizSubmit} className={styles.form}>
 
-                {/* Upload (Frame 459) */}
-                
+
 
                 {/* Row 1: First Name + Last Name */}
                 <div className={styles.formGrid}>
@@ -326,12 +310,12 @@ export default function ContactUsPage() {
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Service I am interested in</label>
                     <div className={styles.multiSelectDropdown} ref={dropdownRef}>
-                      <div 
+                      <div
                         className={styles.dropdownHeader}
                         onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                       >
                         <span>
-                          {biz.services.length > 0 
+                          {biz.services.length > 0
                             ? `${biz.services.length} service${biz.services.length > 1 ? 's' : ''} selected`
                             : 'Select services'
                           }
@@ -397,17 +381,19 @@ export default function ContactUsPage() {
                   <textarea className={styles.formTextarea} placeholder="Enter Here"
                     value={biz.message} onChange={e => setBiz(p => ({ ...p, message: e.target.value }))} />
                 </div>
+
+                {/* Upload (Frame 459) */}
                 <div className={styles.uploadSection}>
                   <label className={styles.uploadLabel}>Upload Document (max 5MB)</label>
                   <UploadZone />
-                </div>         
+                </div>
                 {/* Privacy  */}
                 <div className={styles.privacyRow}>
                   <input type="checkbox" id="priv-b" className={styles.checkbox}
                     checked={privacyChecked} onChange={e => setPrivacy(e.target.checked)} />
                   <label htmlFor="priv-b" className={styles.privacyLabel}>
                     Your privacy is important to us. By filling this form you agree to our{' '}
-                    <Link href="/privacy-policy" className={styles.privacyLink}>privacy policy</Link> *
+                    <Link href="/Privacy-policy" className={styles.privacyLink}>privacy policy</Link> *
                   </label>
                 </div>
 
@@ -415,7 +401,7 @@ export default function ContactUsPage() {
                 <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Request'}
                 </button>
-                     
+
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
                   <div className={styles.successMessage}>
@@ -490,7 +476,7 @@ export default function ContactUsPage() {
                     checked={privacyChecked} onChange={e => setPrivacy(e.target.checked)} />
                   <label htmlFor="priv-c" className={styles.privacyLabel}>
                     Your privacy is important to us. By filling this form you agree to our{' '}
-                    <Link href="/privacy-policy" className={styles.privacyLink}>privacy policy</Link> *
+                    <Link href="test/Privacy-policy" className={styles.privacyLink}>privacy policy</Link> *
                   </label>
                 </div>
 
@@ -515,7 +501,7 @@ export default function ContactUsPage() {
 
           </section>
         </div>
-      </main> 
+      </main>
     </div>
   );
 }

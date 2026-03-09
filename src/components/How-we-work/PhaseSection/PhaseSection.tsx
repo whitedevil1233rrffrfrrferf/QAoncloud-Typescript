@@ -122,15 +122,12 @@ function PhaseCard({ phase }: { phase: Phase }) {
  */
 function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: number }) {
   const gradientId = `gradient-${id}`;
-
   const leftToRight = "M 460 0 L 820 0 Q 850 0 850 30 L 850 100";
   const rightToLeft = "M 540 0 L 150 0 Q 120 0 120 30 L 120 100";
-
-  // Arrow tip x position as a percentage of the wrapper width
-  const arrowLeftPercent = fromPosition === "left" ? "85%" : "12%";
+  const arrowX = fromPosition === "left" ? "85%" : "12%";
 
   return (
-    <div className={styles.connectorWrapper} style={{ position: "relative" }}>
+    <div className={styles.connectorWrapper}>
       <svg
         className={styles.connectorSvg}
         viewBox="0 0 1000 100"
@@ -150,8 +147,6 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
             <stop offset="100%" stopColor="#FF8641" />
           </linearGradient>
         </defs>
-
-        {/* Path ends a bit before the bottom so the arrow tip sits on top */}
         <path
           d={fromPosition === "left" ? leftToRight : rightToLeft}
           stroke={`url(#${gradientId})`}
@@ -162,22 +157,20 @@ function Connector({ fromPosition, id }: { fromPosition: "left" | "right"; id: n
         />
       </svg>
 
-      {/* Standalone arrow tip — not inside the distorted SVG */}
-      <svg
+      {/* Arrow tip anchored to path endpoint */}
+      <div
         style={{
           position: "absolute",
-          bottom: 0,
-          left: arrowLeftPercent,
+          bottom: "-6px",        // slightly below the SVG bottom edge
+          left: arrowX,
           transform: "translateX(-50%)",
-          overflow: "visible",
+          width: 0,
+          height: 0,
+          borderLeft: "12px solid transparent",
+          borderRight: "12px solid transparent",
+          borderTop: "12px solid #FF8641",
         }}
-        width="14"
-        height="10"
-        viewBox="0 0 14 10"
-        fill="none"
-      >
-        <path d="M7 10 L0 0 L14 0 Z" fill="#FF8641" />
-      </svg>
+      />
     </div>
   );
 }

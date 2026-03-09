@@ -20,10 +20,11 @@ export const QABanner: React.FC<QABannerProps> = ({
           <span className={styles.highlight}>2X faster too!</span>
         </h3>
 
-        <p className={styles.description}>
+         <p className={styles.description}>
           <a href={ctaHref} className={styles.descriptionAnchor}>
-            Talk to an expert today to see how we can perfect your QA process.
-          </a>
+            Talk to an expert
+          </a>{" "}
+          today to see how we can perfect your QA process.
         </p>
       </div>
 

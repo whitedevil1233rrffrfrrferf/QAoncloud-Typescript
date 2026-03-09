@@ -17,14 +17,14 @@ const boardMembers = [
     name: 'Saloni Malhotra',
     role: 'Founder, DesiCrew',
     bio: 'Aspen Fellow. Ex-PayTM',
-    photo: '/Images/AboutUs/Saloni Malhotra.png',
+    photo: '/Images/AboutUs/Saloni Malhotra.JPG',
     linkedin: 'https://in.linkedin.com/in/salonimalhotra',
   },
   {
     name: 'Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/Mani.png',
+    photo: '/Images/AboutUs/ManivannanCEO.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {

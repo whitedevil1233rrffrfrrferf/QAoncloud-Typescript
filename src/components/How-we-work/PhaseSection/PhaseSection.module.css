@@ -123,8 +123,9 @@
   height: 100px;
   box-sizing: border-box;
   position: relative;
-  transform: translateY(-160px);  /* was -80px, now pulls up higher */
-  margin-bottom: -160px;          /* must match the translateY value */
+  overflow: visible;          /* ADD THIS — was clipping the arrow tip */
+  transform: translateY(-160px);
+  margin-bottom: -160px;
   z-index: 0;
 }
 

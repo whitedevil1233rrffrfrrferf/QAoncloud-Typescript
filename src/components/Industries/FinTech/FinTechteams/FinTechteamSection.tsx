@@ -101,10 +101,9 @@ function FinTechteamSection({
         {testimonials.map((item, index) => (
           <div key={index} className={styles.testimonialCard}>
            {/*<span className={styles.badge}>{item.label}</span> */}
-            <blockquote className={styles.testimonialQuote}>
-              <span className={styles.bigQuote}>"</span>
-              {item.quote}
-            </blockquote>
+         <blockquote className={styles.testimonialQuote}>
+  {item.quote}
+</blockquote>
             <div className={styles.author}>
               <img src={item.author.avatar} alt={item.author.name} className={styles.avatar} />
               <div>
