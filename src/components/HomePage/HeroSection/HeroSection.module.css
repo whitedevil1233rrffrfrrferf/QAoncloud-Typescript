@@ -71,6 +71,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: auto;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
@@ -88,7 +89,19 @@
     0px 8px 10px -6px #1C398E1A,
     0px 20px 25px -5px #1C398E1A;
 }
-
+.btnSecondary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  border-radius: inherit; /* match button's border-radius */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 8 -3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 7%;
+  
+}
 .btnSecondary:hover {
   border-color: #1D1C1C;
   color: #fff;
@@ -325,9 +338,12 @@
   }
 
   .btnSecondary {
-    font-size: 0.78rem;
-    padding: 0.6rem 1.1rem;
-  }
+  position: relative;
+  font-size: 0.78rem;
+  padding: 0.6rem 1.1rem;
+  overflow: hidden; /* ADD THIS — clips the ::after to the button shape */
+}
+
 
   .divider {
     width: 90%;

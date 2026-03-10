@@ -4,7 +4,7 @@
   justify-content: center;
   border-radius: 14px;
   margin-right: 1rem;
-  
+  position: relative;
   font-size: 12px; /* Set to 12px instead of var(--text-body) */
   font-weight: 600;
   text-decoration: none;
@@ -13,7 +13,18 @@
   transition: all 0.25s ease;
   white-space: nowrap;
 }
-
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  /* Real random dot noise — generated pixel-by-pixel to match Figma speckle pattern */
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");  background-repeat: repeat;
+  opacity: 45%;
+  background-repeat: repeat; 
+  mix-blend-mode: screen; 
+}
 /* SIZE VARIANTS */
 .default {
   width: 12rem;

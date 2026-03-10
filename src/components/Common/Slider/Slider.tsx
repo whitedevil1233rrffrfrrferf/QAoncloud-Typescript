@@ -40,46 +40,52 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [offset, setOffset] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [marqueeWidth, setMarqueeWidth] = useState(0);
 
+  // Detect mobile
   useEffect(() => {
-    const check = () => {
-      const mobile = window.innerWidth <= 600;
-      setIsMobile(mobile);
-      if (marqueeRef.current) {
-        setMarqueeWidth(marqueeRef.current.offsetWidth);
-      }
-    };
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    const checkMobile = () => setIsMobile(window.innerWidth < 600);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Reset offset when switching between mobile/desktop
+  // ResizeObserver for accurate marquee width after paint
   useEffect(() => {
-    setOffset(0);
+    const el = marqueeRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => {
+      const w = el.getBoundingClientRect().width;
+      if (w > 0) setMarqueeWidth(w);
+    });
+    observer.observe(el);
+    const w = el.getBoundingClientRect().width;
+    if (w > 0) setMarqueeWidth(w);
+    return () => observer.disconnect();
   }, [isMobile]);
 
+  // Reset index on breakpoint change
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [isMobile]);
+
+  const totalCards = clientLogos.length;
   const displayLogos = isMobile
     ? clientLogos
     : [...clientLogos, ...clientLogos, ...clientLogos];
 
-  const maxOffset = isMobile
-    ? marqueeWidth * (clientLogos.length - 1)
-    : 0;
-
   const slide = (dir: "left" | "right") => {
-    const cardWidth = isMobile ? marqueeWidth : SLIDE_BY;
-    const track = trackRef.current;
-    if (!track) return;
-    const desktopMax = track.scrollWidth - (marqueeRef.current?.offsetWidth ?? 0);
-
-    setOffset((prev) => {
-      let next = dir === "right" ? prev + cardWidth : prev - cardWidth;
-      next = Math.max(0, Math.min(next, isMobile ? maxOffset : desktopMax));
-      return next;
-    });
+    if (isMobile) {
+      setCurrentIndex(prev => {
+        if (dir === "right") return Math.min(prev + 1, totalCards - 1);
+        return Math.max(prev - 1, 0);
+      });
+    } else {
+      const track = trackRef.current;
+      if (!track) return;
+      // desktop marquee — no-op, handled by CSS animation
+    }
   };
 
   return (
@@ -89,23 +95,29 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
       </div>
 
       <div className={classes.sliderContainer}>
-        {/* Left Arrow */}
+        {/* Left Arrow — mobile only */}
         <button
           className={classes.arrowBtn}
           onClick={() => slide("left")}
-          disabled={offset === 0}
+          disabled={currentIndex === 0}
+          aria-label="Previous"
         >
           ‹
         </button>
 
-        {/* Marquee */}
+        {/* Marquee / Slider */}
         <div className={classes.marquee} ref={marqueeRef}>
           <div
             ref={trackRef}
             className={classes.track}
             style={
-              isMobile
-                ? { transform: `translateX(-${offset}px)`, width: `${marqueeWidth * clientLogos.length}px` }
+              isMobile && marqueeWidth > 0
+                ? {
+                    transform: `translateX(-${currentIndex * marqueeWidth}px)`,
+                    width: `${marqueeWidth * totalCards}px`,
+                    transition: "transform 0.35s ease",
+                    gap: 0,
+                  }
                 : undefined
             }
           >
@@ -113,7 +125,11 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
               <div
                 key={index}
                 className={classes.logoCard}
-                style={isMobile ? { width: `${marqueeWidth}px`, minWidth: `${marqueeWidth}px` } : undefined}
+                style={
+                  isMobile && marqueeWidth > 0
+                    ? { width: `${marqueeWidth}px`, minWidth: `${marqueeWidth}px`, flexShrink: 0 }
+                    : undefined
+                }
               >
                 <Image src={logo.src} alt={logo.alt} height={40} className={classes.logo} />
               </div>
@@ -121,11 +137,12 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
           </div>
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow — mobile only */}
         <button
           className={classes.arrowBtn}
           onClick={() => slide("right")}
-          disabled={offset >= maxOffset}
+          disabled={currentIndex >= totalCards - 1}
+          aria-label="Next"
         >
           ›
         </button>

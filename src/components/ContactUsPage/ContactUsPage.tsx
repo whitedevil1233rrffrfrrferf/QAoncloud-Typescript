@@ -30,6 +30,77 @@ export default function ContactUsPage() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+/* ── Field errors ── */
+  const [bizErrors, setBizErrors] = useState({ firstName: '', lastName: '', phone: '' });
+  const [careerErrors, setCareerErrors] = useState({ firstName: '', lastName: '', phone: '' });
+
+  /* ── Validation helpers ── */
+  const onlyLetters = (value: string) => /^[a-zA-Z\s\-']*$/.test(value);
+
+  const isRepeatedDigits = (digits: string) => /^(\d)\1+$/.test(digits);
+  const isSequentialDigits = (digits: string) => {
+    const seqs = ['0123456789', '9876543210', '1234567890'];
+    return seqs.some(s => digits.includes(s.slice(0, digits.length)));
+  };
+
+  const validatePhone = (value: string, country: string): string => {
+    const trimmed = value.trim();
+    if (!trimmed) return '';
+
+    const digitsOnly = trimmed.replace(/\D/g, '');
+
+    if (country === 'India') {
+      if (!/^[6-9]\d{9}$/.test(trimmed)) {
+        if (trimmed.length !== 10) return 'Indian mobile numbers must be exactly 10 digits';
+        if (!/^[6-9]/.test(trimmed)) return 'Indian mobile numbers must start with 6, 7, 8, or 9';
+        return 'Enter a valid Indian mobile number (e.g. 9876543210)';
+      }
+      if (isRepeatedDigits(trimmed)) return 'Phone number cannot be all repeated digits';
+      if (isSequentialDigits(trimmed)) return 'Phone number cannot be a sequential pattern';
+      return '';
+    }
+
+    // All other countries
+    if (!/^\+?[0-9\s\-]{8,15}$/.test(trimmed)) {
+      return 'Enter a valid phone number (e.g. +1 415 555 2671)';
+    }
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+      return 'Phone number must be between 7 and 15 digits';
+    }
+    if (isRepeatedDigits(digitsOnly)) return 'Phone number cannot be all repeated digits';
+    if (digitsOnly.length >= 10 && isSequentialDigits(digitsOnly)) return 'Phone number cannot be a sequential pattern';
+    return '';
+  };
+
+  const handleNameChange = (
+    value: string,
+    field: 'firstName' | 'lastName',
+    setter: (fn: (p: any) => any) => void,
+    setErrors: (fn: (p: any) => any) => void
+  ) => {
+    if (!onlyLetters(value)) {
+      setErrors((p: any) => ({ ...p, [field]: 'Name cannot contain numbers or special characters' }));
+    } else {
+      setErrors((p: any) => ({ ...p, [field]: '' }));
+    }
+    setter(p => ({ ...p, [field]: value }));
+  };
+
+  const handlePhoneChange = (
+    value: string,
+    country: string,
+    setter: (fn: (p: any) => any) => void,
+    setErrors: (fn: (p: any) => any) => void
+  ) => {
+    // For India: digits only. For others: allow +, spaces, dashes
+    const sanitised = country === 'India'
+      ? value.replace(/\D/g, '')
+      : value.replace(/[^\d+\s\-]/g, '');
+    const error = validatePhone(sanitised, country);
+    setErrors((p: any) => ({ ...p, phone: error }));
+    setter(p => ({ ...p, phone: sanitised }));
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -66,6 +137,13 @@ export default function ContactUsPage() {
     if (!privacyChecked) { alert('Please agree to privacy policy'); return; }
     if (!biz.firstName || !biz.lastName || !biz.workEmail || !biz.phone) {
       alert('Please fill in all required fields'); return;
+    }
+
+    // Phone validation on submit
+    const phoneErr = validatePhone(biz.phone, biz.country);
+    if (phoneErr) {
+      setBizErrors(p => ({ ...p, phone: phoneErr }));
+      return;
     }
 
     setIsSubmitting(true);
@@ -230,7 +308,7 @@ export default function ContactUsPage() {
                 {/* Phone */}
                 <div className={styles.contactItem}>
                   <FiPhone className={styles.icon} />
-                  <p className={styles.contactValue}>+1 (415) 573-3307</p>
+                  <p className={styles.contactValue}>+1 (415) 630-2109</p>
                 </div>
 
                 <div className={styles.divider} />
@@ -260,12 +338,14 @@ export default function ContactUsPage() {
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>First Name <span className={styles.req}>*</span></label>
                     <input className={styles.formInput} placeholder="Enter Here" value={biz.firstName}
-                      onChange={e => setBiz(p => ({ ...p, firstName: e.target.value }))} required />
+                      onChange={e => handleNameChange(e.target.value, 'firstName', setBiz, setBizErrors)} required />
+                    {bizErrors.firstName && <span className={styles.fieldError}>{bizErrors.firstName}</span>}
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Last Name <span className={styles.req}>*</span></label>
                     <input className={styles.formInput} placeholder="Enter Here" value={biz.lastName}
-                      onChange={e => setBiz(p => ({ ...p, lastName: e.target.value }))} required />
+                      onChange={e => handleNameChange(e.target.value, 'lastName', setBiz, setBizErrors)} required />
+                    {bizErrors.lastName && <span className={styles.fieldError}>{bizErrors.lastName}</span>}
                   </div>
                 </div>
 
@@ -287,13 +367,24 @@ export default function ContactUsPage() {
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Phone <span className={styles.req}>*</span></label>
-                    <input className={styles.formInput} type="tel" placeholder="Enter Here" value={biz.phone}
-                      onChange={e => setBiz(p => ({ ...p, phone: e.target.value }))} required />
+                    <input
+                      className={`${styles.formInput}${bizErrors.phone ? ' ' + styles.inputError : ''}`}
+                      type="tel"
+                      placeholder={biz.country === 'India' ? '9876543210' : '+1 234 567 8900'}
+                      value={biz.phone}
+                      onChange={e => handlePhoneChange(e.target.value, biz.country, setBiz, setBizErrors)}
+                      required
+                    />
+                    {bizErrors.phone && <span className={styles.fieldError}>{bizErrors.phone}</span>}
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Country</label>
                     <select className={styles.formSelect} value={biz.country}
-                      onChange={e => setBiz(p => ({ ...p, country: e.target.value }))}>
+                      onChange={e => {
+                        const newCountry = e.target.value;
+                        setBiz(p => ({ ...p, country: newCountry, phone: '' }));
+                        setBizErrors(p => ({ ...p, phone: '' }));
+                      }}>
                       <option value="">Select</option>
                       <option>United States</option>
                       <option>United Kingdom</option>
@@ -433,12 +524,14 @@ export default function ContactUsPage() {
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>First Name <span className={styles.req}>*</span></label>
                     <input className={styles.formInput} placeholder="Enter Here" value={career.firstName}
-                      onChange={e => setCareer(p => ({ ...p, firstName: e.target.value }))} required />
+                       onChange={e => handleNameChange(e.target.value, 'firstName', setCareer, setCareerErrors)} required />
+                    {careerErrors.firstName && <span className={styles.fieldError}>{careerErrors.firstName}</span>}
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Last Name <span className={styles.req}>*</span></label>
                     <input className={styles.formInput} placeholder="Enter Here" value={career.lastName}
-                      onChange={e => setCareer(p => ({ ...p, lastName: e.target.value }))} required />
+                      onChange={e => handleNameChange(e.target.value, 'lastName', setCareer, setCareerErrors)} required />
+                    {careerErrors.lastName && <span className={styles.fieldError}>{careerErrors.lastName}</span>}
                   </div>
                 </div>
 
@@ -451,8 +544,15 @@ export default function ContactUsPage() {
                   </div>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Phone <span className={styles.req}>*</span></label>
-                    <input className={styles.formInput} type="tel" placeholder="Enter Here" value={career.phone}
-                      onChange={e => setCareer(p => ({ ...p, phone: e.target.value }))} required />
+                     <input
+                      className={`${styles.formInput}${careerErrors.phone ? ' ' + styles.inputError : ''}`}
+                      type="tel"
+                      placeholder="+1 234 567 8900"
+                      value={career.phone}
+                      onChange={e => handlePhoneChange(e.target.value, '', setCareer, setCareerErrors)}
+                      required
+                    />
+                    {careerErrors.phone && <span className={styles.fieldError}>{careerErrors.phone}</span>}
                   </div>
                 </div>
 

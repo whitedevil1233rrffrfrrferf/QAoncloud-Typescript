@@ -452,6 +452,19 @@
 .submitButton:active { opacity: 0.72; }
 .submitButton:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* ── Field errors ── */
+.fieldError {
+  font-size: 12px;
+  color: #ff6b6b;
+  margin-top: 2px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+
+.inputError {
+  border: 1px solid #ff6b6b !important;
+}
+
 /* ════════════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════════════ */

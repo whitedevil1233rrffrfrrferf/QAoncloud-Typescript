@@ -1,5 +1,5 @@
 .wrapper {
-  
+  position: relative;
   padding-bottom: var(--padding-bottom);
   margin-top: var(--section-header-margin);
 }
@@ -55,6 +55,7 @@
 
 /* ── Logo Card ── */
 .logoCard {
+  position: relative;
   min-width: 220px;
   height: 72px;
   padding: 0.5rem 1.25rem;
@@ -68,12 +69,7 @@
   transition: border 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logoCard:hover {
-  cursor: pointer;
-  transform: translateY(-3px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
-  background: linear-gradient(180deg, #e8e8e8 0%, #c8eeff 100%);
-}
+
 
 .logo {
   height: 38px;
@@ -82,10 +78,6 @@
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.logoCard:hover .logo {
-  filter: brightness(1.10) saturate(2.4) contrast(1.4) drop-shadow(0 2px 8px rgba(0,0,0,0.1));
-  transform: scale(1);
-}
 
 /* ── Arrow Buttons — hidden on desktop ── */
 .arrowBtn {
@@ -93,28 +85,26 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .wrapper {
-    padding: 1.5rem 0.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    
+    
   }
 
-  .sliderContainer {
-    padding: 0 0.5rem;
-    gap: 8px;
-  }
+  
 
   .marquee {
     overflow: hidden;
-    width: 0;
     flex: 1;
+    min-width: 0;
+    width: 0; /* forces flex child to shrink properly */
   }
 
   .track {
-    animation: none;
+    animation: none !important;
     gap: 0;
-    transition: transform 0.4s ease;
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   .logoCard {

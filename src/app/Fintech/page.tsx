@@ -24,7 +24,7 @@ const finTechData = {
     logoLink: "https://docsend.com/view/gxyqru5wr72twj8p",
     statHighlight: "Reduction",
     statRest: "in the number of production defects",
-    quote: '"With domain knowledge and expertise, QA teams, have reduced the bugs and enhanced the app quality by setting up QA processes for a number of test scenarios and features',
+    quote: '"With domain knowledge and expertise, QA teams, have reduced the bugs and enhanced the app quality by setting up QA processes for a number of test scenarios and features"',
     caseStudyLink: "https://docsend.com/view/gxyqru5wr72twj8p",
     image: "/Images/Fintech/shipfasterimage.png",
     imageAlt: "Glowing crypto coins",
@@ -55,7 +55,7 @@ const mistakesData = {
   description: `A bug isn't just a mistake. It's a regulatory incident. A glaring headline. An act of non-compliance.`,
   cards: [
     { title: "Compliance is relentless", description: "PCI-DSS, SOC 2, PSD2, state regulations. And they keep changing. Every release needs documented test coverage you can show auditors." },
-    { title: "Security isn't optional", description: `You can't ship with "we'll test that later." Vulnerabilities in Fintech get exploited fast, and the consequences aren't just technical.` },
+    { title: "Security isn't optional", description: `You can't ship with "we'll test that later." Vulnerabilities in FinTech get exploited fast, and the consequences aren't just technical.` },
     { title: "Audit prep is a fire drill", description: "When auditors ask for test documentation, scrambling to recreate it is a red flag. You need records that exist before anyone asks." },
   ],
 }
@@ -67,7 +67,7 @@ const releaseRegulationsData = {
   cards: [
     { title: "Compliance built in, not bolted on", description: "Automated compliance reporting and test coverage documentation is audit-ready by default." },
     { title: "Security testing from day one", description: "Security isn’t a final step. It's embedded in every test cycle, every release, every deployment." },
-    { title: "Engineers who speak FinTech fluently", description: "Our experts have seen it all - payment processors, neobanks, and trading platforms. Your edge cases won’t break us" },
+    { title: "Engineers who speak FinTech fluently", description: "Our experts have seen it all - payment processors, neobanks, and trading platforms. Your edge cases won’t break us." },
   ],
 }
 
@@ -109,7 +109,7 @@ const WorkWellData = {
 export const fintechRows: ComparisonRow[] = [
   {
     alternative: "In-house QA team",
-    problem: "It takes 6 months to hire and train someone who understands Fintech compliance.",
+    problem: "It takes 6 months to hire and train someone who understands FinTech compliance.",
     difference: "We're productive in weeks with experienced engineers who know regulatory landscape.",
   },
   {
@@ -136,7 +136,7 @@ export default function page() {
         <div className={classes.pageContent}>
           <div className={classes.homeHeroBg}>
             <IndustryPageHeader
-              tag="AI-accelerated QA for FinTech."
+              tag="AI-accelerated QA for FinTech"
               title="Compliance-ready and right on the money."
               description="With QAonCloud, you'll ship 40% faster, with no added anxiety. No more cutting corners on security or postponing compliance checks. Just smooth, secure releases. Our engineers are fluent in FinTech, so don't worry about explaining PCI-DSS, SOC 2, and PSD2 to us."
               imageSrc="/Images/Fintech/fintech-banner.png"
@@ -203,13 +203,13 @@ export default function page() {
           <ContentWrapper>
             <Banner
               title="Faster, frequent,"
-              highlight="bug free releases"
+              highlight="bug-free releases"
               description="Talk to an expert & learn how you can speed up your QA process today."
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
               linkDescriptionText="How FinTech companies cut release times by 40%"
-              linkDescriptionHref="#"
+              linkDescriptionHref="https://docsend.com/view/gxyqru5wr72twj8p"
               decorativeImage="/Images/Footer/HomePage.png"
             />
           </ContentWrapper>

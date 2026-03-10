@@ -17,7 +17,7 @@ import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 
 
 export const saasData = {
-  title: "Saas teams",
+  title: "SaaS teams",
   highlight: "ship faster with Confidence",
   featured: {
     logoSrc: "/logos/FORATravel.png",
@@ -25,8 +25,7 @@ export const saasData = {
     logoLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
     statHighlight: "Reduction",
     statRest: " of Production bugs",
-    quote:
-      '"Comprehensive test planning and QA strategy aligned with the requirements for smooth and faster releases ',
+    quote: '"Comprehensive test planning and QA strategy aligned with the requirements for smooth and faster releases"',
     caseStudyLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
     image: "/Images/Saas/Saas teams ship faster.png",
     imageAlt: "Glowing cloud SaaS",
@@ -143,7 +142,7 @@ export default function page() {
         <div className={classes.pageContent}>
           <div className={classes.homeHeroBg}>
             <IndustryPageHeader
-              tag="AI-accelerated QA for SaaS."
+              tag="AI-accelerated QA for SaaS"
               title="Fewer bugs, faster releases."
               description="40% faster releases. Bugs caught before production. AI-accelerated QA that keeps up with your deployment schedule. 
               Our Saas-literate engineers embed seamlessly into your workflow, 
@@ -214,12 +213,12 @@ export default function page() {
             <Banner
               title="Ready to put"
               highlight="your app to the test?"
-              description="Our Saas QA experts are always up for a quick chat. No pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can speed up your releases and ensure quality"
+              description="Our SaaS QA experts are always up for a quick chat. No pitch deck, no six-meeting sales cycle. Just an honest conversation about how we can speed up your releases and ensure quality"
               ctaLabel="Talk To An Expert"
               ctaHref="/Contact-us"
               linkDescription="Or see"
               linkDescriptionText="How SaaS companies cut release times by 40%"
-              linkDescriptionHref="#"
+              linkDescriptionHref="https://docsend.com/view/v8jfi9rsm7jmdbs9"
               decorativeImage="/Images/Footer/HomePage.png"
             />
           </ContentWrapper>

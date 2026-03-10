@@ -200,6 +200,25 @@
   .card:last-child {
     grid-column: 1 / -1; /* full width */
   }
+  .section::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 400px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(14, 165, 233, 0.19) 0%,
+        rgba(14, 165, 233, 0.12) 35%,
+        rgba(14, 165, 233, 0.04) 60%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
 }
 
 /* Below 788px — one per row */
@@ -207,7 +226,25 @@
   .grid {
     grid-template-columns: 1fr;
   }
-
+  .section::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 400px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(14, 165, 233, 0.19) 0%,
+        rgba(14, 165, 233, 0.12) 35%,
+        rgba(14, 165, 233, 0.04) 60%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
   .card,
   .colSpan2,
   .card:last-child {

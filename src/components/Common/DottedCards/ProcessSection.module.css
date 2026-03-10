@@ -4,14 +4,14 @@
   padding-bottom: var(--padding-bottom);
   margin-top: var(--section-header-margin);
 }
-.processSection::before {
+.section::before {
     content: "";
     position: absolute;
-    top: -0%;
+    top: -40%;
     left: 50%;
     transform: translateX(-50%);
     width: 1000px;
-    height: 300px;
+    height: 500px;
     background: radial-gradient(
         ellipse at center,
         rgba(14, 165, 233, 0.19) 0%,
@@ -23,6 +23,7 @@
     z-index: 0;
     filter: blur(80px);
 }
+
 .header {
   text-align: center;
   margin-bottom: 80px;
@@ -98,7 +99,25 @@
     align-items: center;
     gap: 80px;
   }
-
+  .section::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 400px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(14, 165, 233, 0.19) 0%,
+        rgba(14, 165, 233, 0.12) 35%,
+        rgba(14, 165, 233, 0.04) 60%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
   .connector {
     display: none;
   }

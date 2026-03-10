@@ -6,8 +6,27 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 4rem;
+  position: relative;
 }
-
+.section::before {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 500px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(14, 165, 233, 0.19) 0%,
+        rgba(14, 165, 233, 0.12) 35%,
+        rgba(14, 165, 233, 0.04) 60%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
 /* ─── Header ──────────────────────────────────────────────────── */
 .header {
   text-align: center;

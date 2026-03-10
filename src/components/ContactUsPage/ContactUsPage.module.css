@@ -1,4 +1,4 @@
- /* ── Page ── */
+/* ── Page ── */
 .contactPage {
   min-height: 100vh;
   background: #050505;
@@ -410,6 +410,19 @@
    letter-spacing: -0.5px;
    color: #ffffff;
  }
+
+/* ── Field error ── */
+.fieldError {
+  font-size: 12px;
+  color: #ff6b6b;
+  margin-top: 2px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+
+.inputError {
+  border: 1px solid #ff6b6b !important;
+}
 
  /* Required asterisk  */
  .req {
