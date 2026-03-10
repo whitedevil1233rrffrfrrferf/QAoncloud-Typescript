@@ -32,9 +32,8 @@ export default function Home() {
           <QualityAssurance
             title="Your engineers aren’t stalling releases. "
             highlight="Your QA is."
-            description="Your QA is slowing you down more than you think. Your engineers are on QA-duty when they should be building. Your tests take hours. Your “automation” needs hand-holding. And every release is a shot in the dark. Meanwhile, your competitors ship weekly.
-                    But it doesn’t have to be this way. Our AI-accelerated, expert-driven QA services ensure you ship quickly, frequently and confidently."
-            subDescription=""
+            description="Your QA is slowing you down more than you think. Your engineers are on QA-duty when they should be building. Your tests take hours. Your “automation” needs hand-holding. And every release is a shot in the dark. Meanwhile, your competitors ship weekly."
+            subDescription="But it doesn’t have to be this way. Our AI-accelerated, expert-driven QA services ensure you ship quickly, frequently and confidently."
             marginBottom={2}
           />
           <SectionDivider />

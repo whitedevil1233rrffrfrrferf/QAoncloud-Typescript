@@ -15,7 +15,12 @@ import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
 import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'QA for HealthTech Teams | QAonCloud',
+  description: 'HIPAA-compliant QA for HealthTech teams. Ship 40% faster with synthetic test data, audit-ready documentation, and engineers experienced in EMR, FHIR, and healthcare compliance.',
+}
 export const healthcareData = {
   title: "HealthTech teams",
   highlight: "ship faster with QAonCloud",
@@ -47,8 +52,8 @@ export const healthcareData = {
         "I've worked with a variety of both on and offshore staffing partners for QA. QAoncloud has been the premier partner in the space. Onboarding is quick and easy, and the team is highly flexible and they've done a fantastic job quickly learning both the platform and our clients' specific needs",
       author: {
         name: "",
-        role: "Head of Delivery",
-         avatar: "/profile.jpg",
+        role: "Head of Delivery, a US-based HealthTech firm",
+         avatar: "/profileHealthcare.jpg",
       },
     },
     
@@ -57,7 +62,8 @@ export const healthcareData = {
 const mistakesData = {
   title: "In HealthTech ",
   highlight: "it isn’t “just a bug” ",
-  description: `The stakes are higher, and the regulations are stricter. Bugs aren’t just bad news, they could prove problematic to patient health. But that doesn’t mean you can slow down. Competitors don’t rest, so you can’t either. Your engineers can’t do it all, but your investors expect results.So, do you focus on moving fast or on staying compliant? Most healthtech teams struggle to choose and risk falling behind. `,
+  description: `The stakes are higher. The regulations are stricter. Bugs could threaten patient health. 
+But you can't afford to slow down, and your engineers can’t do it all. You're forced to choose between moving fast and staying compliant. `,
   cards: [
     { title: "Test data is a nightmare", description: "You can't test with real patient data. But creating realistic synthetic data that covers edge cases and workflows? That's a project in itself. Most teams either cut corners or test mildly." },
     { title: "Integrations break quietly", description: `Think EMRs, EHRs, hospital systems, insurance APIs. They’re fragile, inconsistently documented, and deeply interconnected. It only takes one bad release to break workflows across an entire health system` },

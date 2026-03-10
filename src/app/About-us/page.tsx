@@ -4,6 +4,12 @@ import React from 'react'
 import classes from "./page.module.css"
 import Image from 'next/image'
 import ContentSection from '@/components/About-Us/ContentSection'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Us | QAonCloud',
+  description: 'Learn about QAonCloud — an AI-accelerated QA partner built by DesiCrew in 2016, helping teams ship faster without cutting corners.',
+}
 
 const boardMembers = [
   {
@@ -16,7 +22,7 @@ const boardMembers = [
   {
     name: 'Saloni Malhotra',
     role: 'Founder, DesiCrew',
-    bio: 'Aspen Fellow. Ex-PayTM',
+    bio: 'Aspen Fellow. Ex-Paytm',
     photo: '/Images/AboutUs/Saloni Malhotra.JPG',
     linkedin: 'https://in.linkedin.com/in/salonimalhotra',
   },
@@ -24,7 +30,7 @@ const boardMembers = [
     name: 'Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/ManivannanCEO.png',
+    photo: '/Images/AboutUs/Manivannan.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {

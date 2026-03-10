@@ -18,7 +18,7 @@ const testimonials = [
   //     img: "/59-Kavitha Sivashankaran - G3 -.jpeg", // replace with your image path
   //   },
   {
-    text: "QAonCIoud has helped us detect app crashes which were affecting our downloads significantly. They have now taken the responsibility of giving a QA clear to all our development sprints. We would like to expand the team further.",
+    text: "QAonCloud has helped us detect app crashes which were affecting our downloads significantly. They have now taken the responsibility of giving a QA clear to all our development sprints. We would like to expand the team further.",
     name: "Gautam Chakravarthy",
     role: "Engineering Manager, Tokopedia",
     img: "/Gautam Chakravarthy.jpg",
@@ -53,7 +53,7 @@ const testimonials = [
     industry: "HRMS",
   },
   {
-    text: "QAonCIoud has helped us bring a higher level of quality to our web properties. Their team is highly capable and skilled, and bring a level of proficiency to the table that allows them to be immediately productive.",
+    text: "QAonCloud has helped us bring a higher level of quality to our web properties. Their team is highly capable and skilled, and bring a level of proficiency to the table that allows them to be immediately productive.",
     name: "Hasnain Baxamoosa",
     role: "Sr. Product Manager for Web Technologies, AlienVault",
     img: "/Hasnain Baxamoosa.jpg",
@@ -67,21 +67,21 @@ const testimonials = [
     industry: "Event Management",
   },
   {
-    text: "QAonCloud team members are flexible and adaptive. The QA testers are collaborative and function effectively with the available data, and can easily adapt to the requirements as and when needed. The team manager maintains high efficiency and productivity among the teams while pushing them to be autonomous and self-sufficient.",
+    text: "QAonCloud team members are flexible and adaptive. The QA testers are collaborative & function effectively with the available data, The team manager maintains high efficiency and productivity among the teams while pushing them to be autonomous and self-sufficient.",
     name: "Ishansh Singh",
     role: "Product Specialist, Avanti",
     img: "/Ishansh - Avanti.jpg",
     industry: "Financial Services",
   },
   {
-    text: "QAonCIoud has constantly impressed us with quick turnarounds and detailed reports on testing. In addition, they have accommodated our requests for quick tests and sanity tests within a few hours.",
+    text: "QAonCloud has constantly impressed us with quick turnarounds and detailed reports on testing. In addition, they have accommodated our requests for quick tests and sanity tests within a few hours.",
     name: "Leya Sathyan",
     role: "Program Manager, Indihood",
     img: "/leya - indihood.jpg",
     industry: "FinTech",
   },
   {
-    text: "QAonCloud is a great addition to our team, helping us out with testing and maintaining the quality of our product. They are very flexible and easily adapted to our processes and tools. They are very rigorous during the testing process, pay attention to detail, and always ask questions of our development team if something is unclear.",
+    text: "QAonCloud is a great addition to our team, helping us out with testing and maintaining the quality of our product. They are very flexible and easily adapted to our processes, tools, and always ask questions of our development team if something is unclear.",
     name: "Daan Depaepe",
     role: "Chief Technology Officer, Prompto",
     img: "/Daan Depaep.jpg",

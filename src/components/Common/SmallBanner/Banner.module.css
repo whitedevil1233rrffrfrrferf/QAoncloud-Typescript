@@ -97,11 +97,11 @@
 
 .decorativeImage {
   position: absolute;
-  right: -190px;
-  bottom: 50px;
-  height: 115%;
+  right: -180px;
+  bottom: 55px;
+  height: 118%;
   width: auto;
-  transform: rotate(-18deg);
+  transform: rotate(-20deg);
   transform-origin: bottom right;
   pointer-events: none;
   object-fit: contain;

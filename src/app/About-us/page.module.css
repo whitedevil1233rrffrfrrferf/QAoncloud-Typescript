@@ -383,7 +383,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 20;
+  z-index: 0;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
@@ -426,15 +426,16 @@
 .memberCard {
   background: linear-gradient(210deg, #2D2D2D 0%, #090C0E 100%);
   border: 1px solid transparent;
-  border-radius: 20px;           /* Figma: border-radius 20px */
+  border-radius: 20px;
   overflow: hidden;
-  width: 390px;                  /* Figma: width 390px */
-  height: auto;                  /* auto so bio text never gets clipped */
+  width: 390px;
+  height: auto;
   display: flex;
   flex-direction: column;
   position: relative;
   transition: transform 0.2s ease;
   background-clip: padding-box;
+  isolation: isolate;
 }
 
 /* Gradient border */
@@ -464,6 +465,7 @@
   flex-shrink: 0;
   border-radius: 20px 20px 0 0;
   background: #0f0f0f;
+  isolation: isolate;
 }
 
 /* Figma: info area — width 373, height 186, gap 20, padding 20px L/R, padding-bottom 40px */
@@ -476,6 +478,21 @@
   flex-direction: column;
   gap: 0;
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Noise only on the info/background area, not the photo */
+.memberInfo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: screen;
+  opacity: 12%;
+  z-index: 0;
 }
 
 /* Figma: role — Inter 600, 20px, line-height 100%, letter-spacing -6% */
@@ -650,9 +667,9 @@
   .sectionInner { grid-template-columns: 1fr; gap: 2rem; }
   .sectionInner.reversed { direction: ltr; }
   .sectionImageWrapper { width: 100%; height: 260px; }
-  .vmCard { flex-direction: column; padding: 1.75rem; }
-  .vmCardText { padding-right: 0; padding-bottom: 1rem; max-width: 100%; }
-  .vmCardIcon { width: 100px; height: 100px; margin: 0; align-self: flex-end; }
+  .vmCard { flex-direction: row; align-items: flex-end; padding: 1.5rem 0 0 1.5rem; }
+  .vmCardText { padding-right: 0.75rem; padding-bottom: 1.5rem; max-width: unset; flex: 1; min-width: 0; }
+  .vmCardIcon { width: 130px; height: 130px; margin: 0; align-self: flex-end; flex-shrink: 0; }
   .boardGrid { grid-template-columns: 1fr; gap: 20px; }
   .memberCard { width: 100%; height: auto; }
   .memberPhoto {
@@ -704,9 +721,8 @@
   .boardGrid { gap: 16px; }
   .boardInner { padding: 0 0.5rem; }
   .boardTitle { font-size: 1.6rem; margin-bottom: 2rem; }
-  .vmCard { border-radius: 16px; padding: 1.25rem; }
-  .vmCardLabel { font-size: 16px; }
-  .vmCardDescription { font-size: 14px; }
+  .vmCard { border-radius: 16px; padding: 1.25rem 0 0 1.25rem; }
+  .vmCardIcon { width: 110px; height: 110px; }
   /* Certs — row 1: 2 logos, row 2: 3 logos */
   .certGrid {
     display: grid;
@@ -819,5 +835,3 @@
 .certItem:hover .certImg {
   filter: brightness(1.3) saturate(1.8) drop-shadow(0 0 rgba(255, 255, 255, 0.8));
 }
-
- 

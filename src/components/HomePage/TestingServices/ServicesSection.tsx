@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, Zap, ArrowUpRight, Brain, Shield } from "lucide-react";
+import { Code2, Zap, ArrowUpRight, Sparkles, Shield } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import styles from "./ServicesSection.module.css";
 import SectionHeader from "@/components/Common/SectionHeader/SectionHeader";
@@ -38,7 +38,7 @@ const SERVICES: Service[] = [
     title: "AI/ML QA",
     description:
       "Specialized testing for ML models and AI features. Validate accuracy, bias, and edge cases at scale.",
-    icon: Brain,
+    icon: Sparkles,
     wide: true,
   },
   {
@@ -94,7 +94,7 @@ function ServiceCard({ title, description, icon: Icon, wide }: Service) {
           {/* Inner circle with grid + icon */}
           <div className={styles.innerCircle}>
             <GridPattern />
-            <Icon className={styles.icon} size={28} strokeWidth={1.5} />
+            <Icon className={styles.icon} width={45} height={40} strokeWidth={1.2} />
           </div>
         </div>
 

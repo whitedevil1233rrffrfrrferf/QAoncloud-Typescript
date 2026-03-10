@@ -43,11 +43,11 @@ export default function HeroSection() {
         <div className={styles.stats}>
           <div className={styles.statItem}>
             <h2 className={styles.statNumber}>40%</h2>
-            <p className={styles.statLabel}>Faster than in-house teams</p>
+            <p className={styles.statLabel}>faster than in-house teams</p>
           </div>
           <div className={styles.statItem}>
             <h2 className={styles.statNumber}>12+ years</h2>
-            <p className={styles.statLabel}>Of QA Testing Services</p>
+            <p className={styles.statLabel}>Of QA testing services</p>
           </div>
           <div className={styles.statItem}>
             <h2 className={styles.statNumberOrange}>FinTech, HealthTech &amp; SaaS</h2>

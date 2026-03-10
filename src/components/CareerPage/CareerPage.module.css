@@ -10,24 +10,8 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* ── Status messages ── */
-.successMessage {
-  color: #10b981;
-  background: #10b98120;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-.errorMessage {
-  color: #ef4444;
-  background: #ef444420;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  font-weight: 500;
-}
+/* ── Status messages — handled by modal dialog ── */
+/* .successMessage and .errorMessage removed; use StatusDialog component */
 
 /* ── Header ── */
 .headerSection {
@@ -35,8 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
-  gap: 40px;
+  padding: 40px;
+  gap: 30px;
   width: 100%;
   background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
   box-shadow: 0px 0.432119px 1.0803px rgba(112, 112, 112, 0.06);
@@ -148,7 +132,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 30px;
-  gap: 50px;
+  gap: 40px;
   width: 413px;
   min-height: 100%;
   height: 100%;
@@ -225,7 +209,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
 }
 
@@ -241,7 +225,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 8px;
+  gap: 7px;
 }
 
 .formLabel {
@@ -465,6 +449,27 @@
   border: 1px solid #ff6b6b !important;
 }
 
+/* ── reCAPTCHA ── */
+.recaptchaWrap {
+  width: 100%;
+}
+
+.captchaError {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ════════════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════════════ */
@@ -513,4 +518,4 @@
   .submitButton { height: 46px; }
 
   .uploadLabel { font-size: 15px; }
-}
+} 

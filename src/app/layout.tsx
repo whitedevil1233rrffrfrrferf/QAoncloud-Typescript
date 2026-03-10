@@ -3,6 +3,7 @@ import { Raleway, Poppins, Inter } from 'next/font/google';
 import "./globals.css";
 import ClientLayout from './ClientLayout';
 import Footer from "@/components/Common/Footer/Footer";
+import BackToTop from "@/components/Common/BackToTop/BackToTop";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
           {children}
         </ClientLayout>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

@@ -1,18 +1,20 @@
 import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
 import React from 'react'
 import classes from "./page.module.css"
-
 import FAQs from '@/components/Industries/FAQS/FAQs'
 import { Banner } from '@/components/Common/Banner/Banner'
-
-
 import { MilestoneSection } from '@/components/How-we-work/MilestoneSection/MilestoneSection'
 import FeatureShowcase from '@/components/How-we-work/FeatureShowcase/FeatureShowcase'
 import Header from '@/components/Common/Header/Header'
 import PhaseSection from '@/components/How-we-work/PhaseSection/PhaseSection'
 import TwoSystems from '@/components/How-we-work/TwoSystems/TwoSystems'
 import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'How We Work | QAonCloud',
+  description: 'See how QAonCloud delivers QA 40% faster — AI handles the repetitive tasks while our engineers make the strategic calls, so you ship faster with confidence.',
+}
 
 export default function page() {
   return (
@@ -28,15 +30,18 @@ export default function page() {
           <ContentWrapper>
             <TwoSystems />
           </ContentWrapper>
+
           <SectionDivider />
-          <ContentWrapper><FeatureShowcase /></ContentWrapper>
-          
+          <PhaseSection />
+          <SectionDivider />
+          <ContentWrapper>
+            <FeatureShowcase />
+          </ContentWrapper>
+
           <SectionDivider />
           <ContentWrapper>
             <MilestoneSection />
           </ContentWrapper>
-          <SectionDivider />
-          <PhaseSection />
 
           <FAQs
             title="FAQs"
@@ -82,13 +87,11 @@ export default function page() {
               decorativeImage="/Images/Footer/HomePage.png"
               hideLinkSuffix={true}
             />
-
           </ContentWrapper>
 
         </div>
       </div>
 
     </div>
-
   )
 }

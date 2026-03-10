@@ -14,7 +14,12 @@ import Mistakes from '@/components/Industries/Mistakes/Mistakes'
 import ReleaseRegulations from '@/components/Industries/ReleaseRegulations/ReleaseRegulations'
 import WorkWell from '@/components/Industries/WorkWell/WorkWell'
 import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'QA for SaaS Teams | QAonCloud',
+  description: 'AI-accelerated QA for SaaS teams. Ship 40% faster with fewer bugs, faster releases, and QA that keeps up with your deployment schedule.',
+}
 
 export const saasData = {
   title: "SaaS teams",
@@ -25,7 +30,7 @@ export const saasData = {
     logoLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
     statHighlight: "Reduction",
     statRest: " of Production bugs",
-    quote: '"Comprehensive test planning and QA strategy aligned with the requirements for smooth and faster releases"',
+    quote: '"Comprehensive test planning and QA strategy aligned with the requirements for smooth and faster releases."',
     caseStudyLink: "https://docsend.com/view/v8jfi9rsm7jmdbs9",
     image: "/Images/Saas/Saas teams ship faster.png",
     imageAlt: "Glowing cloud SaaS",

@@ -49,7 +49,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.33%); /* 3x duplicate so divide by 3 */
+    transform: translateX(-33.33%);
   }
 }
 
@@ -69,15 +69,12 @@
   transition: border 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
 .logo {
   height: 38px;
   width: auto;
- filter: saturate(1.6) brightness(0.88);
+  filter: saturate(1.6) brightness(0.88);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
-
 
 /* ── Arrow Buttons — hidden on desktop ── */
 .arrowBtn {
@@ -86,18 +83,19 @@
 
 /* ── Mobile ── */
 @media (max-width: 700px) {
-  .wrapper {
-    
-    
+  .sliderContainer {
+    padding: 0 1rem;
+    gap: 8px;
+    overflow: hidden;
+    justify-content: center;
   }
-
-  
 
   .marquee {
     overflow: hidden;
     flex: 1;
     min-width: 0;
-    width: 0; /* forces flex child to shrink properly */
+    /* constrain marquee so card never bleeds outside */
+    width: 0;
   }
 
   .track {
@@ -105,11 +103,15 @@
     gap: 0;
     display: flex;
     flex-wrap: nowrap;
+    transition: transform 0.4s ease;
   }
 
   .logoCard {
     flex-shrink: 0;
     box-sizing: border-box;
+    /* 100vw minus: 2×arrow(40) + 2×gap(8) + 2×padding(16) = 128px */
+    width: calc(100vw - 128px);
+    min-width: unset;
   }
 
   .arrowBtn {
@@ -127,6 +129,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    z-index: 2;
   }
 
   .arrowBtn:hover:not(:disabled) {

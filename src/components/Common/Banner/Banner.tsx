@@ -1,4 +1,3 @@
-// Banner.tsx
 import React from "react"
 import styles from "./Banner.module.css"
 import Button from "../Button/Button"
@@ -16,6 +15,7 @@ export interface BannerProps {
   linkDescription?: string
   linkDescriptionText?: string
   linkDescriptionHref?: string
+  linkDescriptionOnClick?: (e: React.MouseEvent) => void
   hideLinkSuffix?: boolean
   hidectaLabel?: boolean
 }
@@ -32,6 +32,7 @@ export const Banner: React.FC<BannerProps> = ({
   linkDescription,
   linkDescriptionText,
   linkDescriptionHref = "#",
+  linkDescriptionOnClick,
   hideLinkSuffix = false,
   hidectaLabel = false,
 }) => {
@@ -51,20 +52,24 @@ export const Banner: React.FC<BannerProps> = ({
           <p className={styles.description}>{subDescription}</p>
         )}
 
-
         {!hidectaLabel && ctaLabel && (
           <div className={styles.buttonContainer}>
             <Button href="/Contact-us" variant="heroPrimary" size="content">
-                            Talk To An Expert
-                          </Button>
+              Talk To An Expert
+            </Button>
           </div>
         )}
+
         {/* Only renders if linkDescription is passed */}
         {linkDescription && (
           <p className={styles.linkDescription}>
             {linkDescription}{" "}
             {linkDescriptionText && (
-              <a href={linkDescriptionHref} className={styles.linkDescriptionAnchor}>
+              <a
+                href={linkDescriptionHref}
+                className={styles.linkDescriptionAnchor}
+                onClick={linkDescriptionOnClick}
+              >
                 {linkDescriptionText}
               </a>
             )}{" "}
