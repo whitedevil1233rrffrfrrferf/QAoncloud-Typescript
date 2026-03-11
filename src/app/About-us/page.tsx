@@ -1,15 +1,9 @@
 import { Banner } from '@/components/Common/Banner/Banner'
-import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
+import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper'
 import React from 'react'
 import classes from "./page.module.css"
 import Image from 'next/image'
 import ContentSection from '@/components/About-Us/ContentSection'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'About Us | QAonCloud',
-  description: 'Learn about QAonCloud — an AI-accelerated QA partner built by DesiCrew in 2016, helping teams ship faster without cutting corners.',
-}
 
 const boardMembers = [
   {
@@ -22,23 +16,23 @@ const boardMembers = [
   {
     name: 'Saloni Malhotra',
     role: 'Founder, DesiCrew',
-    bio: 'Aspen Fellow. Ex-Paytm',
+    bio: 'Aspen Fellow. Ex-PayTM',
     photo: '/Images/AboutUs/Saloni Malhotra.JPG',
     linkedin: 'https://in.linkedin.com/in/salonimalhotra',
   },
   {
-    name: 'Manivannan',
+    name: 'JK Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/Manivannan.png',
+    photo: '/Images/AboutUs/ManivannanCEO.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {
     name: 'Sarath Naru',
     role: 'Board Member',
     bio: 'Managing Partner, Ventureast',
-    photo: '/Images/AboutUs/Sarath Naru.png',
-    linkedin: 'https://www.linkedin.com/in/sarathnaru/',
+    photo: '/Images/AboutUs/Sarath_Naru.png',
+    linkedin: 'https://in.linkedin.com/in/sarathnaru/',
   },
   {
     name: 'Sandip Sen',

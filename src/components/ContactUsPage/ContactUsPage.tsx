@@ -273,7 +273,7 @@ export default function ContactUsPage() {
           {/* LEFT */}
           <aside className={styles.leftSection}>
             <div className={styles.contactCard}>
-              <h2 className={styles.cardTitle}>Find Us</h2>
+              <h2 className={styles.cardTitle}>Get In Touch</h2>
               <div className={styles.contactItems}>
                 <div className={styles.contactItem}>
                   <FiMapPin className={styles.icon} />

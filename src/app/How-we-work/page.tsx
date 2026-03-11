@@ -1,4 +1,4 @@
-import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper'
+import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper'
 import React from 'react'
 import classes from "./page.module.css"
 import FAQs from '@/components/Industries/FAQS/FAQs'

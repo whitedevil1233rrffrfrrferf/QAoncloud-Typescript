@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BlogPage.module.css';
-import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
+import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper';
 import { Banner } from "@/components/Common/Banner/Banner";
 import Image from 'next/image'
 

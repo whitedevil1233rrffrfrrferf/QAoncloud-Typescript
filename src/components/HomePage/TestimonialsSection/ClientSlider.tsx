@@ -99,9 +99,8 @@ export default function TestimonialSlider() {
     <section className={styles.section}>
       <div className={styles.sliderContainer}>
         <button
-          className={`${styles.navButton} ${styles.prevButton} ${isBeginning ? styles.disabled : ''}`}
+          className={`${styles.navButton} ${styles.prevButton}`}
           onClick={() => swiperRef.current?.slidePrev()}
-          disabled={isBeginning}
           aria-label="Previous testimonial"
         >
           <FaChevronLeft />
@@ -129,7 +128,7 @@ export default function TestimonialSlider() {
                 return `<span class="${className}"></span>`;
               },
             }}
-            loop={false}
+            loop={true}
             className={styles.swiper}
             spaceBetween={40}
             slidesPerView={2}
@@ -164,9 +163,8 @@ export default function TestimonialSlider() {
         </div>
 
         <button
-          className={`${styles.navButton} ${styles.nextButton} ${isEnd ? styles.disabled : ''}`}
+          className={`${styles.navButton} ${styles.nextButton}`}
           onClick={() => swiperRef.current?.slideNext()}
-          disabled={isEnd}
           aria-label="Next testimonial"
         >
           <FaChevronRight />

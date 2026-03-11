@@ -219,19 +219,34 @@ export default function CareerPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Debug logging for mobile
+    console.log('Form submission started');
+    console.log('Form data:', career);
+    console.log('File uploaded:', !!uploadedFile);
+    console.log('Privacy checked:', privacyChecked);
+    console.log('Captcha token:', !!captchaToken);
+    console.log('Form valid:', isFormValid);
+    
     setTouched({ firstName: true, lastName: true, email: true, phone: true });
-    if (!isFormValid) return; // guard — button should already be disabled
+    if (!isFormValid) {
+      console.log('Form validation failed:', { errors, hasErrors, uploadedFile: !!uploadedFile, privacyChecked, captchaToken: !!captchaToken });
+      return; // guard — button should already be disabled
+    }
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
+      console.log('Starting captcha verification...');
       const captchaRes = await fetch('/api/verify-captcha', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: captchaToken }),
       });
       const captchaData = await captchaRes.json();
+      console.log('Captcha verification result:', captchaData);
+      
       if (!captchaData.success) {
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
@@ -332,6 +347,9 @@ export default function CareerPage() {
                     placeholder="Enter Here" value={career.firstName}
                     onChange={e => handleNameChange(e.target.value, 'firstName')}
                     onBlur={() => setTouched(p => ({ ...p, firstName: true }))}
+                    autoComplete="given-name"
+                    inputMode="text"
+                    enterKeyHint="next"
                   />
                   {showError('firstName') && <span className={styles.fieldError}>{showError('firstName')}</span>}
                 </div>
@@ -342,6 +360,9 @@ export default function CareerPage() {
                     placeholder="Enter Here" value={career.lastName}
                     onChange={e => handleNameChange(e.target.value, 'lastName')}
                     onBlur={() => setTouched(p => ({ ...p, lastName: true }))}
+                    autoComplete="family-name"
+                    inputMode="text"
+                    enterKeyHint="next"
                   />
                   {showError('lastName') && <span className={styles.fieldError}>{showError('lastName')}</span>}
                 </div>
@@ -352,9 +373,12 @@ export default function CareerPage() {
                   <label className={styles.formLabel}>Email <span className={styles.req}>*</span></label>
                   <input
                     className={`${styles.formInput}${showError('email') ? ' ' + styles.inputError : ''}`}
-                    type="text" placeholder="Enter Here" value={career.email}
+                    type="email" placeholder="Enter Here" value={career.email}
                     onChange={e => handleEmailChange(e.target.value)}
                     onBlur={() => setTouched(p => ({ ...p, email: true }))}
+                    autoComplete="email"
+                    inputMode="email"
+                    enterKeyHint="next"
                   />
                   {showError('email') && <span className={styles.fieldError}>{showError('email')}</span>}
                 </div>
@@ -365,6 +389,9 @@ export default function CareerPage() {
                     type="tel" placeholder="+1 234 567 8900" value={career.phone}
                     onChange={e => handlePhoneChange(e.target.value)}
                     onBlur={() => setTouched(p => ({ ...p, phone: true }))}
+                    autoComplete="tel"
+                    inputMode="tel"
+                    enterKeyHint="done"
                   />
                   {showError('phone') && <span className={styles.fieldError}>{showError('phone')}</span>}
                 </div>
@@ -395,7 +422,10 @@ export default function CareerPage() {
                   )}
                   <input ref={fileInputRef} type="file"
                     accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    hidden onChange={e => handleFile(e.target.files?.[0] ?? null)} />
+                    hidden 
+                    onChange={e => handleFile(e.target.files?.[0] ?? null)}
+                    capture={false}
+                  />
                 </div>
               </div>
 
@@ -409,9 +439,20 @@ export default function CareerPage() {
               </div>
 
               <div className={styles.recaptchaWrap}>
-                <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                  theme="dark" onChange={(token: string | null) => { setCaptchaToken(token); setCaptchaError(''); }}
-                  onExpired={() => { setCaptchaToken(null); setCaptchaError('reCAPTCHA expired. Please verify again.'); }} />
+                <ReCAPTCHA 
+                  ref={recaptchaRef} 
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  theme="dark" 
+                  size={typeof window !== 'undefined' && window.innerWidth < 768 ? 'compact' : 'normal'}
+                  onChange={(token: string | null) => { 
+                    setCaptchaToken(token); 
+                    setCaptchaError(''); 
+                  }}
+                  onExpired={() => { 
+                    setCaptchaToken(null); 
+                    setCaptchaError('reCAPTCHA expired. Please verify again.'); 
+                  }} 
+                />
               </div>
               {captchaError && (
                 <p className={styles.captchaError}>{captchaError}</p>

@@ -4,7 +4,7 @@ import ServicePageHeader from '@/components/ServicePage/Header/ServicePageHeader
 import classes from "./page.module.css"
 import QualityAssurance from '@/components/ServicePage/QualityAssurance/QualityAssurance';
 import QualityTestingServices from '@/components/ServicePage/QualityServices/QualityServices';
-import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWraper';
+import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper';
 import CaseStudiesSection from '@/components/ServicePage/CaseStudiesSection/CaseStudiesSection';
 import FeatureLineCard from '@/components/ServicePage/GreenCardsSection/GreenLineCard';
 import GreenCards from '@/components/ServicePage/GreenCardsSection/GreenLineCard';

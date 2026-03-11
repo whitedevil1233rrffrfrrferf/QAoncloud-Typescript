@@ -7,7 +7,7 @@ import Testimonials from "@/components/HomePage/TestimonialsSection/Testimonials
 import { Banner } from "@/components/Common/Banner/Banner";
 import PartnershipSection from "@/components/HomePage/PartnerTestingSection/PartnershipSection";
 import CaseStudiesSection from "@/components/HomePage/CaseStudiesSection/CaseStudies";
-import { ContentWrapper } from "@/components/Common/ContentWrapper/ContentWraper";
+import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper';
 import { ProcessSection } from "@/components/Common/DottedCards/ProcessSection";
 import QualityAssurance from "@/components/Industries/QualityAssurance/QualityAssurance";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";

@@ -218,7 +218,7 @@
   line-height: 1.25;
 }
 
-.sectionHighlight { color: #00acff; }
+.sectionHighlight {font-weight: 700; color: #00acff; }
 
 .sectionDescription {
   font-size: 0.95rem;
@@ -233,6 +233,9 @@
   width: 423px;             
   height: 408px;                 
   flex-shrink: 0;
+  position: relative;
+  z-index: 25;          /* sits above the ::after noise overlay (z-index: 20) */
+  isolation: isolate;   /* creates a new stacking context so noise can't bleed in */
 }
 
 .sectionImage {
@@ -329,10 +332,10 @@
 }
 
 .vmCardDescription {
-  font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 200;
-  line-height: 26px;
-  letter-spacing: -0.001em;
+  font-size: clamp(22px, 1.5vw, 22px);
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -2%;
   color: rgba(255, 255, 255, 0.80);
   margin: 0;
 }
@@ -357,8 +360,9 @@
   position: relative;
   padding: 5rem;
   background-color: #000000;
-  overflow: hidden;
+  overflow: hidden; 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+ 
 }
 
 .boardSection::before {
@@ -413,7 +417,7 @@
 /* Figma: width 1250, gap 40px, 3-col */
 .boardGrid {
   display: grid;
-  grid-template-columns: repeat(3, 390px);  /* Figma: each card 390px */
+  grid-template-columns: repeat(3, 350px);  /* Figma: each card 390px */
   gap: 40px;                                /* Figma: gap 40px */
   justify-content: center;
 }
@@ -497,11 +501,11 @@
 
 /* Figma: role — Inter 600, 20px, line-height 100%, letter-spacing -6% */
 .memberRole {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-family: 'Inter';
+  font-weight: 500;
   font-size: 20px;
-  line-height: 100%;
-  letter-spacing: -0.06em;
+  line-height: 26px;
+  letter-spacing: -6%;
   color: #FF8641;
   margin-bottom: 8px;
 }
@@ -510,19 +514,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 10px;
 }
 
 /* Figma: name — Inter 700, 30px, line-height 100%, letter-spacing -6% */
 .memberName {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   font-weight: 700;
   font-size: 30px;               
   line-height: 100%;
    letter-spacing: -6%;       
-  color: #fff;
-  margin: 0;
+  color: #fff; 
+  font-style: bold;
 }
 
 .memberLinkedIn {
@@ -562,183 +566,6 @@
   letter-spacing: -6%;       
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
-}
-
-/* ─────────────────────────────────────────
-   RESPONSIVE — ALL DEVICES
-   1536px+   : 4K / large monitors
-   1280–1535 : large desktop / MacBook 16"
-   1024–1279 : MacBook 13–14", small desktop
-   768–1023  : iPad landscape / tablet
-   480–767   : iPad portrait / large mobile
-   320–479   : mobile (iPhone SE → 14)
-───────────────────────────────────────── */
-
-/* ── 4K / Ultra-wide (≥1536px) ── */
-@media (min-width: 1536px) {
-  .boardInner { max-width: 1600px; }
-  .boardGrid { grid-template-columns: repeat(3, 460px); gap: 48px; }
-  .heroTitle { font-size: 56px; }
-  .heroSubtitle { font-size: 24px; }
-  .certGrid { gap: 80px; }
-  .certImg { max-height: 160px; max-width: 220px; }
-}
-
-/* ── Large desktop / MacBook 16" (1280–1535px) ── */
-@media (max-width: 1535px) {
-  .boardGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .memberCard { width: 100%; }
-  .memberPhoto {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .memberInfo { height: auto; }
-  .sectionImageWrapper { width: 100%; height: auto; }
-  .certGrid { gap: 48px; }
-  .certImg { max-height: 140px; max-width: 190px; }
-}
-
-/* ── MacBook 13–14" / small desktop (1024–1279px) ── */
-@media (max-width: 1279px) {
-  .boardGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .memberCard { width: 100%; height: auto; min-height: unset; }
-  .memberPhoto {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .memberInfo { height: auto; }
-  .sectionImageWrapper { width: 100%; height: auto; }
-  .heroTitle { font-size: 40px; }
-  .heroSubtitle { font-size: 20px; }
-  .certGrid { gap: 36px; }
-  .certImg { max-height: 120px; max-width: 160px; }
-}
-
-/* ── iPad landscape / tablet (768–1023px) ── */
-@media (max-width: 1023px) {
-  .headerSection { min-height: 480px; padding: 40px 32px; gap: 28px; }
-  .heroTitle { font-size: 36px; letter-spacing: -1.5px; }
-  .heroSubtitle { font-size: 18px; }
-  .boardInner { padding: 0 2rem; }
-  .boardGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .memberCard:nth-child(4),
-  .memberCard:nth-child(5) { grid-column: unset; }
-  .memberPhoto {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .memberInfo { height: auto; }
-  .memberName { font-size: 24px; }
-  .memberBio { font-size: 14px; }
-  .memberRole { font-size: 15px; }
-  .contentSection,
-  .visionMissionSection,
-  .boardSection,
-  .certSection { padding: 3.5rem 2.5rem; }
-  .sectionInner { gap: 2.5rem; }
-  .certGrid { grid-template-columns: repeat(5, 1fr); gap: 28px; }
-  .certImg { max-height: 100px; max-width: 140px; }
-}
-
-/* ── iPad portrait / large mobile (480–767px) ── */
-@media (max-width: 767px) {
-  .headerSection { min-height: 420px; padding: 32px 24px; gap: 24px; }
-  .heroTitle { font-size: 30px; letter-spacing: -1px; }
-  .heroSubtitle { font-size: 16px; line-height: 26px; }
-  .contentSection,
-  .visionMissionSection,
-  .boardSection,
-  .certSection { padding: 3rem 1.5rem; }
-  .sectionInner { grid-template-columns: 1fr; gap: 2rem; }
-  .sectionInner.reversed { direction: ltr; }
-  .sectionImageWrapper { width: 100%; height: 260px; }
-  .vmCard { flex-direction: row; align-items: flex-end; padding: 1.5rem 0 0 1.5rem; }
-  .vmCardText { padding-right: 0.75rem; padding-bottom: 1.5rem; max-width: unset; flex: 1; min-width: 0; }
-  .vmCardIcon { width: 130px; height: 130px; margin: 0; align-self: flex-end; flex-shrink: 0; }
-  .boardGrid { grid-template-columns: 1fr; gap: 20px; }
-  .memberCard { width: 100%; height: auto; }
-  .memberPhoto {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    object-position: top center;
-    flex-shrink: 0;
-  }
-  .memberInfo { height: auto; padding-bottom: 1.5rem; }
-  .memberName { font-size: 22px; }
-  .memberBio { font-size: 13px; line-height: 22px; }
-  .memberRole { font-size: 14px; }
-  /* Certs — row 1: 2 logos, row 2: 3 logos */
-  .certGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto auto;
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-  }
-  .certItem:nth-child(1) { grid-column: 1 / 4; }
-  .certItem:nth-child(2) { grid-column: 4 / 7; }
-  .certItem:nth-child(3) { grid-column: 1 / 3; }
-  .certItem:nth-child(4) { grid-column: 3 / 5; }
-  .certItem:nth-child(5) { grid-column: 5 / 7; }
-  .certImg { max-height: 110px; max-width: 100%; }
-}
-
-/* ── Mobile (320–479px) ── */
-@media (max-width: 479px) {
-  .headerSection { min-height: 360px; padding: 28px 16px; gap: 20px; }
-  .heroTitle { font-size: 26px; letter-spacing: -0.5px; }
-  .heroSubtitle { font-size: 14px; line-height: 22px; letter-spacing: -0.3px; }
-  .contentSection,
-  .visionMissionSection,
-  .boardSection,
-  .certSection { padding: 2rem 1rem; }
-  .heroSection { margin-top: 56px; padding: 24px 16px; height: auto; }
-  .memberPhoto {
-    aspect-ratio: 4 / 3;
-    object-position: top center;
-  }
-  .memberName { font-size: 20px; }
-  .memberBio { font-size: 13px; line-height: 20px; }
-  .memberRole { font-size: 13px; }
-  .boardGrid { gap: 16px; }
-  .boardInner { padding: 0 0.5rem; }
-  .boardTitle { font-size: 1.6rem; margin-bottom: 2rem; }
-  .vmCard { border-radius: 16px; padding: 1.25rem 0 0 1.25rem; }
-  .vmCardIcon { width: 110px; height: 110px; }
-  /* Certs — row 1: 2 logos, row 2: 3 logos */
-  .certGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto auto;
-    gap: 16px;
-    justify-items: center;
-    align-items: center;
-  }
-  .certItem:nth-child(1) { grid-column: 1 / 4; }
-  .certItem:nth-child(2) { grid-column: 4 / 7; }
-  .certItem:nth-child(3) { grid-column: 1 / 3; }
-  .certItem:nth-child(4) { grid-column: 3 / 5; }
-  .certItem:nth-child(5) { grid-column: 5 / 7; }
-  .certImg { max-height: 90px; max-width: 100%; }
-  .certTitle { font-size: 1rem; margin-bottom: 2rem; }
 }
 
 /* ─────────────────────────────────────────
@@ -834,4 +661,184 @@
 
 .certItem:hover .certImg {
   filter: brightness(1.3) saturate(1.8) drop-shadow(0 0 rgba(255, 255, 255, 0.8));
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — ALL DEVICES
+   1536px+   : 4K / large monitors
+   1280–1535 : large desktop / MacBook 16"
+   1024–1279 : MacBook 13–14", small desktop
+   768–1023  : iPad landscape / tablet
+   480–767   : iPad portrait / large mobile
+   320–479   : mobile (iPhone SE → 14)
+───────────────────────────────────────── */
+
+/* ── 4K / Ultra-wide (≥1536px) ── */
+@media (min-width: 1536px) {
+  .boardInner { max-width: 1600px; }
+  .boardGrid { grid-template-columns: repeat(3, 415px); gap: 48px; }
+  .heroTitle { font-size: 56px; }
+  .heroSubtitle { font-size: 24px; }
+  .certGrid { gap: 80px; }
+  .certImg { max-height: 160px; max-width: 220px; }
+}
+
+/* ── Large desktop / MacBook 16" (1280–1535px) ── */
+@media (max-width: 1535px) {
+  .boardGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .memberCard { width: 100%; }
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .memberInfo { height: auto; }
+  .sectionImageWrapper { width: 100%; height: auto; }
+  .certGrid { gap: 48px; }
+  .certImg { max-height: 140px; max-width: 190px; }
+}
+
+/* ── MacBook 13–14" / small desktop (1024–1279px) ── */
+@media (max-width: 1279px) {
+  .boardGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .memberCard { width: 100%; height: auto; min-height: unset; }
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .memberInfo { height: auto; }
+  .sectionImageWrapper { width: 100%; height: auto; }
+  .heroTitle { font-size: 40px; }
+  .heroSubtitle { font-size: 20px; }
+  .certGrid { gap: 36px; }
+  .certImg { max-height: 120px; max-width: 160px; }
+}
+
+/* ── iPad landscape / tablet (768–1023px) ── */
+@media (max-width: 1023px) {
+  .headerSection { min-height: 480px; padding: 40px 32px; gap: 28px; }
+  .heroTitle { font-size: 36px; letter-spacing: -1.5px; }
+  .heroSubtitle { font-size: 18px; }
+  .boardInner { padding: 0 2rem; }
+  .boardGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .memberCard:nth-child(4),
+  .memberCard:nth-child(5) { grid-column: unset; }
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .memberInfo { height: auto; }
+  .memberName { font-size: 24px; }
+  .memberBio { font-size: 14px; }
+  .memberRole { font-size: 15px; }
+  .contentSection,
+  .visionMissionSection,
+  .boardSection,
+  .certSection { padding: 3.5rem 2.5rem; }
+  .sectionInner { gap: 2.5rem; }
+  .certGrid { grid-template-columns: repeat(5, 1fr); gap: 25px; }
+  .certImg { max-height: 100px; max-width: 140px; }
+}
+
+/* ── iPad portrait / large mobile (480–767px) ── */
+@media (max-width: 767px) {
+  .headerSection { min-height: 420px; padding: 32px 24px; gap: 24px; }
+  .heroTitle { font-size: 30px; letter-spacing: -1px; }
+  .heroSubtitle { font-size: 16px; line-height: 26px; }
+  .contentSection,
+  .visionMissionSection,
+  .boardSection,
+  .certSection { padding: 3rem 1.5rem; }
+  .sectionInner { grid-template-columns: 1fr; gap: 2rem; }
+  .sectionInner.reversed { direction: ltr; }
+  .sectionImageWrapper { width: 100%; height: 260px; }
+  .vmCard { flex-direction: row; align-items: flex-end; padding: 1.5rem 0 0 1.5rem; }
+  .vmCardText { padding-right: 0.75rem; padding-bottom: 1.5rem; max-width: unset; flex: 1; min-width: 0; }
+  .vmCardIcon { width: 130px; height: 130px; margin: 0; align-self: flex-end; flex-shrink: 0; }
+  .boardGrid { grid-template-columns: 1fr; gap: 20px; }
+  .memberCard { width: 100%; height: auto; }
+  .memberPhoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+  }
+  .memberInfo { height: auto; padding-bottom: 1.5rem; }
+  .memberName { font-size: 22px; }
+  .memberBio { font-size: 13px; line-height: 22px; }
+  .memberRole { font-size: 14px; }
+  /* Certs — row 1: 2 logos, row 2: 3 logos */
+  .certGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  .certItem:nth-child(1) { grid-column: 1 / 4; }
+  .certItem:nth-child(2) { grid-column: 4 / 7; }
+  .certItem:nth-child(3) { grid-column: 1 / 3; }
+  .certItem:nth-child(4) { grid-column: 3 / 5; }
+  .certItem:nth-child(5) { grid-column: 5 / 7; }
+  .certImg { max-height: 110px; max-width: 100%; }
+}
+
+/* ── Mobile (320–479px) ── */
+@media (max-width: 479px) {
+  .headerSection { min-height: 360px; padding: 28px 16px; gap: 20px; }
+  .heroTitle { font-size: 28px; letter-spacing: -0.5px; }
+  .heroSubtitle { font-size: 14px; line-height: 22px; letter-spacing: -0.3px; }
+  .contentSection,
+  .visionMissionSection,
+   .sectionHighlight {font-size: 24px;letter-spacing: -0.5px; }
+  .boardSection,
+  .certSection { padding: 2rem 1rem; }
+  .heroSection { margin-top: 56px; padding: 24px 16px; height: auto; }
+  .memberPhoto {
+    aspect-ratio: 4 / 3;
+    object-position: top center;
+  }
+  .memberName { font-size: 20px; }
+  .memberBio { font-size: 13px; line-height: 20px; }
+  .memberRole { font-size: 13px; }
+  .boardGrid { gap: 16px; }
+  .boardInner { padding: 0 0.5rem; }
+  .boardTitle { font-size: 1.6rem; margin-bottom: 2rem; }
+  .vmCard { border-radius: 16px; padding: 1.25rem 0 0 1.25rem; }
+  .vmCardIcon { width: 110px; height: 110px; }
+  .vmCardDescription { font-size: 14px; }
+  /* Certs — row 1: 2 logos, row 2: 3 logos */
+  .certGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+    justify-items: center;
+    align-items: center;
+  }
+  .certItem:nth-child(1) { grid-column: 1 / 4; }
+  .certItem:nth-child(2) { grid-column: 4 / 7; }
+  .certItem:nth-child(3) { grid-column: 1 / 3; }
+  .certItem:nth-child(4) { grid-column: 3 / 5; }
+  .certItem:nth-child(5) { grid-column: 5 / 7; }
+  .certImg { max-height: 90px; max-width: 100%; }
+  .certTitle { font-size: 1.3rem; margin-bottom: 2rem; }
 }

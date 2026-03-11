@@ -508,6 +508,38 @@
   .formGrid { grid-template-columns: 1fr; gap: 24px; }
 
   .privacyLabel { font-size: 14px; white-space: normal; }
+
+  /* Mobile-specific improvements */
+  .formInput { 
+    min-height: 48px; /* iOS touch target minimum */
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  .submitButton {
+    min-height: 48px; /* iOS touch target minimum */
+    font-size: 16px; /* Better readability */
+  }
+
+  .browseBtn {
+    min-height: 44px; /* iOS touch target minimum */
+    padding: 8px 16px;
+  }
+
+  .checkbox {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .dropZone {
+    min-height: 120px;
+    padding: 16px;
+  }
+
+  .recaptchaWrap {
+    transform: scale(0.9);
+    transform-origin: left center;
+    margin-bottom: -10px;
+  }
 }
 
 @media (max-width: 480px) {
