@@ -318,20 +318,59 @@ export default function CareerPage() {
             <div className={styles.contactCard}>
               <h2 className={styles.cardTitle}>Find Us</h2>
               <div className={styles.contactItems}>
+
+                {/* US */}
                 <div className={styles.contactItem}>
                   <FiMapPin className={styles.icon} />
-                  <p className={styles.contactValue}>39159 Paseo Padre Pkwy ste 207, Fremont, California 94538, USA.</p>
+                  <div className={styles.contactGroup}>
+                    <span className={styles.contactLabel}>US</span>
+                    <a
+                      href="https://maps.google.com/?q=39159+Paseo+Padre+Pkwy+ste+207,+Fremont,+CA+94538,+United+States"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.contactValue}
+                    >
+                      39159 Paseo Padre Pkwy ste 207,<br />
+                      Fremont, CA 94538, United States
+                    </a>
+                    <div className={styles.phoneRow}>
+                      <FiPhone className={styles.icon} />
+                        <a href="tel:+15103192565" className={styles.contactValue}>+1 (415) 630-2109</a> 
+                    </div>
+                  </div>
                 </div>
+
                 <div className={styles.divider} />
+
+                {/* India */}
                 <div className={styles.contactItem}>
-                  <FiPhone className={styles.icon} />
-                  <p className={styles.contactValue}>+1 (415) 630-2109</p>
+                  <FiMapPin className={styles.icon} />
+                  <div className={styles.contactGroup}>
+                  <span className={styles.contactLabel}>India</span>
+                    <a
+                      href="https://maps.google.com/?q=B3-8,+IIT+Madras+Research+Park,+Kanagam+Rd,+Tharamani,+Chennai,+Tamil+Nadu+600113,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.contactValue}
+                    >
+                      B3 -8, IIT Madras Research Park, <br />Kanagam Rd,
+                      Tharamani, Chennai, <br />Tamil Nadu 600113, India
+                    </a>
+                    <div className={styles.phoneRow}>
+                      <FiPhone className={styles.icon} />
+                        <a href="tel:+919884292684" className={styles.contactValue}>+91 98842 92684</a>
+                    </div>
+                  </div>
                 </div>
+
                 <div className={styles.divider} />
+
+                {/* Email */}
                 <div className={styles.contactItem}>
                   <FiMail className={styles.icon} />
-                  <p className={styles.contactValue}>contactus@qaoncloud.com</p>
+                   <a href="mailto:contactus@qaoncloud.com" className={styles.contactValue} > contactus@qaoncloud.com </a>
                 </div>
+
               </div>
             </div>
           </aside>

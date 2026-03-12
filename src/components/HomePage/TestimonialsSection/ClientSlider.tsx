@@ -25,7 +25,7 @@ const testimonials = [
     industry: "E Commerce",
   },
   {
-    text: "QAonCloud is 40% more cost-effective than other options, the bugs also helped us make design optimization. The team has shown tremendous ownership, has done flawless delivery, and is a very quick learner.",
+    text: "QAonCloud is 40% more cost-effective than other options, aside from identifying bugs, they also helped us optimize the design. The team have shown tremendous ownership, have delivered flawlessly, and are very quick learners.",
     name: "Donald Le",
     role: "Tech Director, AOL",
     img: "Donald Le.jpg",
@@ -39,7 +39,7 @@ const testimonials = [
     industry: "Event Management",
   },
   {
-    text: "QAonCloud helped us set up and formalise our testing from scratch and helped us deliver a great product to our first customers. Thanks for the great work!",
+    text: "QAonCloud helped us set up and formalize our testing from scratch and helped us deliver a great product to our first customers. Thanks for the great work!.",
     name: "Greg Adams",
     role: "CEO, Stabilitas",
     img: "35-greg.jpg",
@@ -67,7 +67,7 @@ const testimonials = [
     industry: "Event Management",
   },
   {
-    text: "QAonCloud team members are flexible and adaptive. The QA testers are collaborative & function effectively with the available data, The team manager maintains high efficiency and productivity among the teams while pushing them to be autonomous and self-sufficient.",
+    text: "QAonCloud team members are flexible and adaptive. The QA testers are collaborative & function effectively with the available data. The team manager maintains high efficiency and productivity among the teams while pushing them to be autonomous and self-sufficient.",
     name: "Ishansh Singh",
     role: "Product Specialist, Avanti",
     img: "/Ishansh - Avanti.jpg",

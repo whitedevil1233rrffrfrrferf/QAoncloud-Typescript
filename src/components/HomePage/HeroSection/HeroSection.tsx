@@ -23,7 +23,7 @@ export default function HeroSection() {
             driven by experts.
           </h1>
           <p className={styles.subheading}>
-            QA software testing services that deliver impeccable quality, 2X faster.
+            QA software testing services that deliver impeccable quality, 40% faster.
             No chaos, no compromises.
           </p>
           <div className={styles.buttons}>

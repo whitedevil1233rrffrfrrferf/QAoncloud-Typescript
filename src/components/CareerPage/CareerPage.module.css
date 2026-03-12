@@ -121,7 +121,7 @@
 /* ── Left section ── */
 .leftSection {
   flex-shrink: 0;
-  width: 413px;
+  width: 450px;
   display: flex;
   flex-direction: column;
 }
@@ -133,7 +133,7 @@
   align-items: flex-start;
   padding: 30px;
   gap: 40px;
-  width: 413px;
+  width: 450px;
   min-height: 100%;
   height: 100%;
   background: linear-gradient(312.51deg, #2D2D2D -29.25%, #090C0E 52.18%);
@@ -148,7 +148,7 @@
   line-height: 34px;
   letter-spacing: -1px;
   color: #ffffff;
-  width: 353px;
+  width: 100%;
   margin: 0;
 }
 
@@ -156,16 +156,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 30px;
-  width: 353px;
+  gap: 24px;
+  width: 100%;
 }
 
 .contactItem {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 20px;
-  width: 353px;
+  gap: 12px;
+  width: 100%;
 }
 
 .icon {
@@ -180,15 +180,51 @@
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.5;
   letter-spacing: -1px;
   color: #ffffff;
-  width: 353px;
+  width: 100%;
   margin: 0;
 }
 
+a.contactValue {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  transition: color 0.2s;
+}
+
+a.contactValue:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.contactLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.phoneRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
 .divider {
-  width: 353px;
+  width: 100%;
   height: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
@@ -473,68 +509,45 @@
 /* ════════════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════════════ */
+/* ── Large Mac (≤1340px) ── */
 @media (max-width: 1340px) {
   .mainContent { padding: 48px 32px 64px; }
   .contentContainer { gap: 32px; }
-
   .leftSection,
   .contactCard { width: 340px; }
-
-  .cardTitle,
-  .contactItems,
-  .contactItem,
-  .contactValue,
-  .divider { width: 100%; }
 }
 
+/* ── iPad Pro / small laptop (≤1024px) ── */
 @media (max-width: 1024px) {
   .contentContainer { flex-direction: column; }
-
   .leftSection,
   .contactCard { width: 100%; min-height: unset; }
-
   .rightSection { width: 100%; }
-
   .headerTitle { font-size: 34px; }
+  .contactValue { font-size: 16px; }
+  .contactLabel { font-size: 15px; }
 }
 
+/* ── iPad / tablet (≤768px) ── */
 @media (max-width: 768px) {
   .mainContent { padding: 32px 20px 48px; }
-
   .headerSection { padding: 40px 20px; min-height: unset; }
-
   .headerTitle { font-size: 28px; letter-spacing: -1px; }
 
+  .contactCard { padding: 20px; }
+  .contactValue { font-size: 15px; line-height: 1.5; }
+  .contactLabel { font-size: 14px; }
+  .icon { width: 22px; height: 22px; font-size: 22px; }
+  .contactItems { gap: 18px; }
+  .contactGroup { min-width: 0; }
+
   .formGrid { grid-template-columns: 1fr; gap: 24px; }
-
   .privacyLabel { font-size: 14px; white-space: normal; }
-
-  /* Mobile-specific improvements */
-  .formInput { 
-    min-height: 48px; /* iOS touch target minimum */
-    font-size: 16px; /* Prevent zoom on iOS */
-  }
-
-  .submitButton {
-    min-height: 48px; /* iOS touch target minimum */
-    font-size: 16px; /* Better readability */
-  }
-
-  .browseBtn {
-    min-height: 44px; /* iOS touch target minimum */
-    padding: 8px 16px;
-  }
-
-  .checkbox {
-    min-width: 24px;
-    min-height: 24px;
-  }
-
-  .dropZone {
-    min-height: 120px;
-    padding: 16px;
-  }
-
+  .formInput { min-height: 48px; font-size: 16px; }
+  .submitButton { min-height: 48px; font-size: 16px; }
+  .browseBtn { min-height: 44px; padding: 8px 16px; }
+  .checkbox { min-width: 24px; min-height: 24px; }
+  .dropZone { min-height: 120px; padding: 16px; }
   .recaptchaWrap {
     transform: scale(0.9);
     transform-origin: left center;
@@ -542,12 +555,32 @@
   }
 }
 
+/* ── iPhone (≤480px) ── */
 @media (max-width: 480px) {
+  .mainContent { padding: 24px 16px 40px; }
   .headerTitle { font-size: 22px; }
-
-  .formInput { height: 46px; font-size: 14px; }
-
+  .contactCard { padding: 16px; gap: 16px; }
+  .contactValue { font-size: 13px; }
+  .contactLabel { font-size: 13px; }
+  .icon { width: 20px; height: 20px; font-size: 20px; }
+  .contactItems { gap: 14px; }
+  .formInput { height: 46px; font-size: 16px; }
   .submitButton { height: 46px; }
-
   .uploadLabel { font-size: 15px; }
-} 
+  .recaptchaWrap {
+    transform: scale(0.82);
+    transform-origin: left center;
+    margin-bottom: -20px;
+  }
+}
+
+/* ── iPhone SE (≤375px) ── */
+@media (max-width: 375px) {
+  .headerTitle { font-size: 20px; }
+  .contactValue { font-size: 12px; }
+  .recaptchaWrap {
+    transform: scale(0.76);
+    transform-origin: left center;
+    margin-bottom: -28px;
+  }
+}

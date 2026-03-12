@@ -76,3 +76,11 @@
   position: relative;
   z-index: 1;
 } */
+
+.brightBadges {
+  color: #ffffff;
+  font-weight: bold; 
+  display: block; 
+  margin-top: 8px;
+  font-size: 1.1em;
+}

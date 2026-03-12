@@ -17,9 +17,10 @@ export const QABanner: React.FC<QABannerProps> = ({
       <div className={styles.inner}>
         <h3 className={styles.title}>
           You could ship{" "}
-          <span className={styles.highlight}>2X faster too!</span>
+          <span className={styles.highlight}>40% faster</span>{" "}
+          too!
         </h3>
-
+ 
          <p className={styles.description}>
           <a href={ctaHref} className={styles.descriptionAnchor}>
             Talk to an expert

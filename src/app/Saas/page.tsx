@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export const saasData = {
   title: "SaaS teams",
-  highlight: "ship faster with Confidence",
+  highlight: "ship faster with confidence",
   featured: {
     logoSrc: "/logos/FORATravel.png",
     logoAlt: "FORATravel",
@@ -72,8 +72,8 @@ const mistakesData = {
 const releaseRegulationsData = {
   title: "AI-accelerated QA that ",
   highlight: "keeps up with your cadence",
-  description: `We combine AI-accelerated QA testing with product-savvy engineers who embed into your workflow in no time.The AI handles the volume: test generation, testing across browsers and devices, regression suites that run in parallel. Meanwhile, the engineers handle the strategic decisions, such as what needs testing, what matters, and what's broken.The result? 40% faster releases. Tests that catch real bugs. Engineers who are free to do what they were hired to do`,
-  cards: [
+ description: `We combine AI-accelerated QA testing with product-savvy engineers who embed into your workflow in no time. The AI handles the volume: test generation, testing across browsers and devices, regression suites that run in parallel. Meanwhile, the engineers handle the strategic decisions, such as what needs testing, what matters, and what's broken. The result? 40% faster releases. Tests that catch real bugs. Engineers who are free to do what they were hired to do.`,
+   cards: [
     { title: "QA that keeps up with you", description: "Want to ship daily? We’ll make it happen! We plug into your CI/CD pipeline to facilitate daily deployments. No more releases waiting on testing." },
     { title: "Free your engineers to build", description: `Free up 20-30% of your developers’ time so they can focus on what they do best - writing code. We’ll handle all the testing.` },
     { title: "Catch bugs before customers ", description: "You won’t be discovering new bugs after production. Because our tests actually work. Our coverage catches real issues, it doesn’t just pass." },
@@ -120,17 +120,17 @@ const WorkWellData = {
 export const saasRows: ComparisonRow[] = [
   {
     alternative: "In-house QA team",
-    problem: "Takes 6+ months to hire and ramp. You're already behind by the time they're productive",
+    problem: "Takes 6+ months to hire and ramp. You're already behind by the time they're productive.",
     difference: "We're productive in weeks. No recruiting, no ramp time, no retention risk.",
   },
   {
     alternative: "Offshore QA vendors",
     problem: "Junior resources who need constant management. You trade one bottleneck for another.",
-    difference: "Senior engineers who learn your product and work autonomously. Less management, not more",
+    difference: "Senior engineers who learn your product and work autonomously. Less management, not more.",
   },
   {
     alternative: "AI testing tools alone",
-    problem: "Great at running tests. Bad at knowing what to test. No one to call when something breaks",
+    problem: "Great at running tests. Bad at knowing what to test. No one to call when something breaks.",
     difference: "AI handles execution. Humans handle judgment. You get speed and expertise together.",
   },
   {
@@ -193,8 +193,8 @@ export default function page() {
               { question: "How fast can you ramp up on our product?", answer: "Since we embed industry experts, most of our QA teams are productive within 2-3 weeks. We'll start with your most critical user flows and take it from there. You'll see your releases speed up within a month." },
               { question: "Do you integrate with our CI/CD pipeline?", answer: "Yes, we do. We work with GitHub Actions, GitLab CI, CircleCI, Jenkins, and most major CI tools. Tests run automatically on every push, PR, or deployment." },
               { question: "Can you test across browsers and devices?", answer: "Yes, we can! Our AI runs tests parallelly across Chrome, Firefox, Safari, Edge, and mobile viewports. You get complete cross-browser coverage, and no time penalty." },
-              { question: "What if we already have some tests written?", answer: "That's not a problem at all! We'll gladly work with what you have. If your existing tests are solid, we'll build on them. If they could use some work, we'll help you clean them up and fine-tune them" },
-              { question: 'What does "40% faster" actually mean?', answer: "Simply put, what usually takes 12 months with traditional QA approaches takes just 7 months with us. We save time by letting our AI handle the repetitive work (test generation, execution, data creation) while our engineers focus on judgment calls and compliance documentation" },
+              { question: "What if we already have some tests written?", answer: "That's not a problem at all! We'll gladly work with what you have. If your existing tests are solid, we'll build on them. If they could use some work, we'll help you clean them up and fine-tune them." },
+              { question: 'What does "40% faster" actually mean?', answer: "Simply put, what usually takes 12 months with traditional QA approaches takes just 7 months with us. We save time by letting our AI handle the repetitive work (test generation, execution, data creation) while our engineers focus on judgment calls and compliance documentation." },
               {
                 question: "How does pricing work?",
 

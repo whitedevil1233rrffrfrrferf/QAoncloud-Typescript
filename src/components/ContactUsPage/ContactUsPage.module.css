@@ -69,8 +69,8 @@
 .ellipse2017 {
   position: absolute;
   width: 204px;
-  height: 45px;
-  top: calc(50% + 20px);
+  height: 40px;
+  top: calc(42% + 20px);
   left: 50%;
   transform: translateX(-50%) translateX(-20px);
   background: rgba(0, 0, 0, 0.60);
@@ -83,9 +83,9 @@
 .ellipse2018 {
   position: absolute;
   width: 110px;
-  height: 27px;
-  top: calc(50% + 20px);
-  left: 50%;
+  height: 20px;
+  top: calc(45% + 20px);
+  left: 52%;
   transform: translateX(-50%) translateX(30px) rotate(-28.64deg);
   background: rgba(0, 0, 0, 0.60);
   border-radius: 50%;
@@ -107,6 +107,17 @@
     z-index: 2;
  }
 
+ .heroSubtitle {
+  font-family: 'Inter';
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
 
  .mainContent {
    padding: 60px 67px 80px;
@@ -166,7 +177,7 @@
    line-height: 34px;
    letter-spacing: -1px;
    color: #ffffff;
-   width: 353px;
+   width: 100%;
    margin: 0;
  }
 
@@ -175,17 +186,17 @@
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   gap: 30px;
-   width: 353px;
+   gap: 24px;
+   width: 100%;
  }
 
  /* Frame  */
  .contactItem {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    align-items: flex-start;
-   gap: 20px;
-   width: 353px;
+   gap: 12px;
+   width: 100%;
  }
 
  /* Icon: 30×30px */
@@ -202,16 +213,55 @@
    font-family: 'Inter', sans-serif;
    font-weight: 600;
    font-size: 18px;
-   line-height: 22px;
+   line-height: 1.5;
    letter-spacing: -1px;
    color: #ffffff;
-   width: 353px;
+   width: 100%;
    margin: 0;
+ }
+
+ a.contactValue {
+   text-decoration: none;
+   color: #ffffff;
+   display: block;
+   transition: color 0.2s;
+ }
+
+ a.contactValue:hover {
+   color: #3b82f6;
+   text-decoration: underline;
+ }
+
+ /* Groups label + address + phone under one icon */
+ .contactGroup {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   flex: 1;
+   min-width: 0;
+ }
+
+ /* "US" / "India" label */
+ .contactLabel {
+   font-family: 'Inter', sans-serif;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 100%;
+   letter-spacing: -1px;
+   color: #ffffff;
+ }
+
+ /* Phone icon + number row */
+ .phoneRow {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   margin-top: 4px;
  }
 
  /* Divider  */
  .divider {
-   width: 353px;
+   width: 100%;
    height: 0;
    border: 1px solid rgba(255, 255, 255, 0.1);
    flex-shrink: 0;
@@ -611,145 +661,111 @@
    opacity: 0.72;
  }
 
- /*  RESPONSIVE   */
- @media (max-width: 1340px) {
-   .mainContent {
-     padding: 48px 32px 64px;
-   }
+ /* ════════════════════════════════════════════════════
+   RESPONSIVE — Desktop → Mac → iPad → iPhone
+════════════════════════════════════════════════════ */
 
-   .contentContainer {
-     gap: 32px;
-   }
+ /* ── Large Mac (≤1340px) ── */
+ @media (max-width: 1340px) {
+   .mainContent { padding: 48px 32px 64px; }
+   .contentContainer { gap: 32px; }
+   .heroSubtitle { font-size: 20px; }
 
    .leftSection,
-   .contactCard {
-     width: 340px;
-   }
-
-   .cardTitle,
-   .contactItems,
-   .contactItem,
-   .contactValue,
-   .divider {
-     width: 100%;
-   }
+   .contactCard { width: 340px; }
 
    .rightSection,
    .form,
    .uploadSection,
-   .dropZone {
-     width: 100%;
-   }
+   .dropZone { width: 100%; }
 
-   .formGrid {
-     grid-template-columns: 1fr 1fr;
-     width: 100%;
-   }
-
-   .formGroupFull {
-     width: 100%;
-   }
-
-   .formTextarea {
-     width: 100%;
-   }
-
-   .privacyRow {
-     width: 100%;
-   }
-
-   .submitButton {
-     width: 100%;
-   }
+   .formGrid { grid-template-columns: 1fr 1fr; width: 100%; }
+   .formGroupFull { width: 100%; }
+   .formTextarea { width: 100%; }
+   .privacyRow { width: 100%; }
+   .submitButton { width: 100%; }
  }
 
-
+ /* ── iPad Pro / small laptop (≤1024px) ── */
  @media (max-width: 1024px) {
-   .contentContainer {
-     flex-direction: column;
-   }
+   .contentContainer { flex-direction: column; }
 
    .leftSection,
-   .contactCard {
-     width: 100%;
-     min-height: unset;
-   }
+   .contactCard { width: 100%; min-height: unset; }
 
-   .rightSection {
-     width: 100%;
-   }
+   .rightSection { width: 100%; }
 
-   .headerTitle {
-     font-size: 34px;
-   }
+   .headerTitle { font-size: 34px; }
+   .heroSubtitle { font-size: 18px; }
+   .contactValue { font-size: 16px; }
+   .contactLabel { font-size: 15px; }
  }
 
+ /* ── iPad / tablet (≤768px) ── */
  @media (max-width: 768px) {
-   .mainContent {
-     padding: 32px 20px 48px;
-   }
+   .mainContent { padding: 32px 20px 48px; }
+   .headerSection { padding: 40px 20px; min-height: unset; }
+   .headerTitle { font-size: 28px; letter-spacing: -1px; }
+   .heroSubtitle { font-size: 16px; line-height: 26px; }
 
-   .headerSection {
-     padding: 40px 20px;
-     min-height: unset;
-   }
+   .contactCard { padding: 20px; }
+   .contactValue { font-size: 15px; line-height: 1.5; }
+   .contactLabel { font-size: 14px; }
+   .icon { width: 22px; height: 22px; font-size: 22px; }
+   .contactItems { gap: 18px; }
+   .contactGroup { min-width: 0; }
 
-   .headerTitle {
-     font-size: 28px;
-     letter-spacing: -1px;
-   }
-
-   .formGrid {
-     grid-template-columns: 1fr;
-   }
-
-   .tabs {
-     gap: 12px;
-     width: auto;
-     height: auto;
-   }
-
-   .tab {
-     font-size: 18px;
-   }
-
-   .formLabel {
-     font-size: 16px;
-   }
-
-   .req {
-     font-size: 16px;
-   }
-
-   .privacyLabel {
-     font-size: 14px;
-     white-space: normal;
+   .formGrid { grid-template-columns: 1fr; }
+   .tabs { gap: 12px; width: auto; height: auto; }
+   .tab { font-size: 18px; }
+   .formLabel { font-size: 16px; }
+   .req { font-size: 16px; }
+   .privacyLabel { font-size: 14px; white-space: normal; }
+   .formInput { min-height: 48px; font-size: 16px; }
+   .formSelect { font-size: 16px; min-height: 48px; }
+   .submitButton { min-height: 48px; font-size: 16px; }
+   .browseBtn { min-height: 44px; padding: 8px 16px; }
+   .checkbox { min-width: 24px; min-height: 24px; }
+   .dropZone { min-height: 120px; padding: 16px; }
+   .recaptchaWrap {
+     transform: scale(0.9);
+     transform-origin: left center;
+     margin-bottom: -10px;
    }
  }
 
-
+ /* ── iPhone (≤480px) ── */
  @media (max-width: 480px) {
-   .headerTitle {
-     font-size: 22px;
-   }
+   .mainContent { padding: 24px 16px 40px; }
+   .headerTitle { font-size: 24px; }
+   .heroSubtitle { font-size: 14px; line-height: 22px; letter-spacing: -0.3px; }
 
-   .tab {
-     font-size: 15px;
-     padding: 10px 14px;
-   }
+   .contactCard { padding: 16px; gap: 16px; }
+   .contactValue { font-size: 13px; }
+   .contactLabel { font-size: 13px; }
+   .icon { width: 20px; height: 20px; font-size: 20px; }
+   .contactItems { gap: 14px; }
 
+   .tab { font-size: 15px; padding: 10px 14px; }
    .formInput,
-   .formSelect {
-     height: 46px;
-     font-size: 14px;
+   .formSelect { height: 46px; font-size: 16px; }
+   .formTextarea { font-size: 14px; }
+   .submitButton { height: 46px; }
+   .recaptchaWrap {
+     transform: scale(0.82);
+     transform-origin: left center;
+     margin-bottom: -20px;
    }
+ }
 
-   .formTextarea {
-     font-size: 14px;
-   }
-
-   .submitButton {
-     height: 46px;
+ /* ── iPhone SE (≤375px) ── */
+ @media (max-width: 375px) {
+   .headerTitle { font-size: 20px; }
+   .contactValue { font-size: 12px; }
+   .recaptchaWrap {
+     transform: scale(0.76);
+     transform-origin: left center;
+     margin-bottom: -28px;
    }
  }
 
@@ -943,4 +959,43 @@
 
 .dialogBtn:hover {
   opacity: 0.85;
+}
+/* ── Address links & phone inline ── */
+.addressLink {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.6;
+  display: block;
+  transition: color 0.2s;
+}
+
+.addressLink:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.contactItemPhone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.iconSmall {
+  color: #3b82f6;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.phoneLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.phoneLink:hover {
+  color: #3b82f6;
 }

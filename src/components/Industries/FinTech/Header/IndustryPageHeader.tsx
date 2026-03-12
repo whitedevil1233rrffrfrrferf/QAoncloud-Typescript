@@ -1,15 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./IndustryPageHeader.module.css";
 import Image from "next/image";
 import Button from "../../../Common/Button/Button";
 import { Inter } from 'next/font/google'
 
-
-
 type IndustryPageHeaderProps = {
   tag: string
   title: string
-  description: string
+  description: ReactNode
   imageSrc: string
   imageAlt: string
   buttonText?: string
