@@ -6,7 +6,7 @@
   color: white;
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.2rem;
 }
 
  
@@ -35,8 +35,8 @@
  /* Floating Image */
 .image {
   width: 100%;
-  max-width: 480px;
-  height: 300px;
+  max-width: 370px;
+  height: 220px;
   object-fit: cover; /* was cover — contain prevents the blue box */
   opacity: 1;
   
@@ -117,8 +117,8 @@
  .description {
     
      
-    font-weight: var(--weight-regular);
-    line-height: var(--line-relaxed);
+    
+    
     margin-left: auto;
     margin-right: auto;
     color: #cbd5e1;

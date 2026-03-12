@@ -9,29 +9,29 @@
   position: relative;
 }
 .section::before {
-    content: "";
-    position: absolute;
-    top: -25%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 500px;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(14, 165, 233, 0.19) 0%,
-        rgba(14, 165, 233, 0.12) 35%,
-        rgba(14, 165, 233, 0.04) 60%,
-        transparent 75%
-    );
-    pointer-events: none;
-    z-index: 0;
-    filter: blur(80px);
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(14, 165, 233, 0.19) 0%,
+    rgba(14, 165, 233, 0.12) 35%,
+    rgba(14, 165, 233, 0.04) 60%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
 }
+
 /* ─── Header ──────────────────────────────────────────────────── */
 .header {
   text-align: center;
   width: 100%;
-  
 }
 
 .title {
@@ -60,7 +60,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
-  
 }
 
 @media (max-width: 700px) {
@@ -76,7 +75,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 16px;
-  min-height: 320px;
+  min-height: 420px;
 
   background: linear-gradient(236deg, #2d2d2d -2%, #090c0e 100%);
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -89,16 +88,18 @@
   z-index: 50;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat; 
+  background-repeat: repeat;
   mix-blend-mode: screen;
   opacity: 0.15;
-  border-radius: 12px; /* match wrapper */
+  border-radius: 12px;
 }
+
 /* ─── Text area ───────────────────────────────────────────────── */
 .cardContent {
   padding: 32px 28px 24px;
   position: relative;
   z-index: 1;
+  max-width: 62%;
 }
 
 /* ─── Card title ──────────────────────────────────────────────── */
@@ -123,76 +124,155 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
-  color: #ffff;
+  font-size: 18px;
+  color: #ffffff;
   line-height: 1.5;
 }
 
 /* ─── Sparkle icon ────────────────────────────────────────────── */
 .icon {
   flex-shrink: 0;
-  color: #3093E8;
+  color: #3093e8;
 }
 
-/* ─── Image: large, pushed past the bottom-right edge ────────── */
-/*
-  Key idea: imageWrap is position:absolute anchored to bottom-right.
-  It's intentionally LARGER than the card — overflow:hidden on .card clips it.
-  Negative bottom/right pushes it further outside so more gets cropped,
-  creating the "peeking in from the corner" Figma effect.
-*/
-.imageWrap {
+/* ─── Shared base for both image wrappers ─────────────────────── */
+.imageWrapAI,
+.imageWrapEngineers {
   position: absolute;
-  bottom: -80px;        /* aggressively push DOWN — top half of image gets clipped */
-  right: -60px;         /* aggressively push RIGHT — left side gets clipped */
-  width: 480px;
-  height: 480px;
   z-index: 0;
   pointer-events: none;
 }
 
 .image {
   object-fit: contain;
-  object-position: bottom right; /* subject stays pinned to bottom-right as container clips */
+}
+
+/* ─── Card 1 — AI: centred bottom, slight upward peek ────────── */
+/*
+  The star/crystal shape in the reference sits roughly centred
+  horizontally within the right half of the card and peeks up
+  from the bottom. Push it right and down so only the top portion
+  shows above the card's bottom edge.
+*/
+.imageWrapAI {
+  width: 490px;
+  height: 460px;
+  bottom: -160px;
+  right: -190px;
+  /* no rotation — the shape is already upright in the source image */
+  transform: none;
+}
+
+/* ─── Card 2 — Engineers: rotated, right-edge peek ───────────── */
+/*
+  The robotic/tool shape in the reference appears tilted ~15–20 °
+  clockwise and is pushed further off the right edge so only the
+  left side (the "arm") is visible. Adjust to taste once you see
+  your actual asset.
+*/
+.imageWrapEngineers {
+  width: 480px;
+  height: 380px;
+  bottom: -130px;
+  right: -170px;
+  transform: rotate(5deg);
+transform-origin: center center;
 }
 
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1280px) {
-  .imageWrap {
-    width: 400px;
-    height: 400px;
-    bottom: -70px;
-    right: -50px;
+  .imageWrapAI {
+    width: 430px;
+    height: 430px;
+     
+  }
+  .card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    min-height: 480px;
+
+    background: linear-gradient(236deg, #2d2d2d -2%, #090c0e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+  .imageWrapEngineers {
+    width: 360px;
+    height: 360px;
+   
+  }
+
+  .cardContent {
+    max-width: 60%;
   }
 }
 
 @media (max-width: 1024px) {
-  .imageWrap {
-    width: 340px;
-    height: 340px;
-    bottom: -60px;
-    right: -40px;
+  
+  .imageWrapAI {
+    display: none;
+  }
+
+  .imageWrapEngineers {
+    display: none;
+  }
+
+  .cardContent {
+    max-width: 58%;
   }
 }
 
 @media (max-width: 700px) {
-  .imageWrap {
+  .card {
+    min-height: 340px;
+  }
+
+  .imageWrapAI {
     width: 260px;
     height: 260px;
-    bottom: -40px;
-    right: -30px;
+    bottom: -50px;
+    right: -40px;
+  }
+
+  .imageWrapEngineers {
+    width: 280px;
+    height: 280px;
+    bottom: -50px;
+    right: -70px;
+    transform: rotate(12deg);
+  }
+
+  .cardContent {
+    max-width: 68%;
   }
 
   .listItem {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .imageWrap {
+  .card {
+    min-height: 300px;
+  }
+
+  .imageWrapAI {
     width: 200px;
     height: 200px;
-    bottom: -30px;
-    right: -20px;
+    bottom: -35px;
+    right: -30px;
+  }
+
+  .imageWrapEngineers {
+    width: 210px;
+    height: 210px;
+    bottom: -35px;
+    right: -55px;
+    transform: rotate(12deg);
+  }
+
+  .cardContent {
+    max-width: 72%;
   }
 }

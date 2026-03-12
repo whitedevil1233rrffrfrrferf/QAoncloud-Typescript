@@ -23,15 +23,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: var(--text-h1);
   font-weight:600;
-  line-height: var(--line-tight);
+  line-height: 100%;
   margin: 0 0 1.5rem 0;
   /* max-width: 550px; */
   color: #fff;
   /* keep same lines */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  
-  overflow: hidden;
+  letter-spacing: -2px !important;
+  overflow: visible;
 }
 
 h2 {
@@ -62,7 +62,8 @@ p {
   color: var(--color-muted);
   max-width: 750px;
   color: #fff !important;
- 
+  
+   
   
   overflow: hidden;
 }

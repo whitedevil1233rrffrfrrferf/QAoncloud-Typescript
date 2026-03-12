@@ -23,31 +23,27 @@ const cards = [
   {
     title: "What AI Handles",
     items: aiItems,
-    image: "/Images/How-We-Work/WhatAiHandles.png",
+    image: "/Images/How-We-Work/WhatAIHandles.png",
     alt: "AI illustration",
+    imageClass: styles.imageWrapAI,
   },
   {
     title: "What Engineers Handle",
     items: engineerItems,
-    image: "/Images/How-We-Work/WhatEngineersHandle.png",
+    image: "/Images/How-We-Work/WhatEngineersHandles.png",
     alt: "Engineers illustration",
+    imageClass: styles.imageWrapEngineers,
   },
 ];
 
 export default function TwoSystems() {
   return (
     <section className={styles.section}>
-      {/* <div className={styles.header}>
-        <h2 className={styles.title}>
-          Two systems <span className={styles.highlight}>working together</span>
-        </h2>
-        <p className={styles.subtitle}>
-          Traditional QA is slower because humans do everything including
-          repetitive work that doesn&apos;t need human strategic interventions.
-          We split the work differently.
-        </p>
-      </div> */}
-      <SectionHeader title="Two systems " highlight='working together' description={`Traditional QA is slower because humans do everything including repetitive work that doesn't need human strategic interventions. We split the work differently.`} />  
+      <SectionHeader
+        title="Two systems "
+        highlight="working together"
+        description={`Traditional QA is slower because humans do everything including repetitive work that doesn't need human strategic interventions. We split the work differently.`}
+      />
       <div className={styles.grid}>
         {cards.map((card) => (
           <div key={card.title} className={styles.card}>
@@ -68,8 +64,8 @@ export default function TwoSystems() {
               </ul>
             </div>
 
-            {/* Bottom-cropped decorative image */}
-            {/* <div className={styles.imageWrap}>
+            {/* Per-card decorative image with individual positioning */}
+            <div className={card.imageClass}>
               <Image
                 src={card.image}
                 alt={card.alt}
@@ -77,7 +73,7 @@ export default function TwoSystems() {
                 className={styles.image}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div> */}
+            </div>
           </div>
         ))}
       </div>
