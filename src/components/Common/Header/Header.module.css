@@ -1,7 +1,7 @@
 .section {
   background: linear-gradient(253.33deg, #002A8D -29.66%, #090C0E 81.95%);
   position: relative;
-  padding: 0rem;
+  padding: 1.2rem;
   text-align: center;
   color: white;
   display: flex;
@@ -36,8 +36,8 @@
  /* Floating Image */
 .image {
   width: 100%;
-  max-width: 245px;
-  height: 405px;
+  max-width: 185px;
+  height: 305px;
   object-fit: cover; /* was cover — contain prevents the blue box */
   opacity: 1;
   transform: rotate(44.63deg) translate(4.79px, -5.75px);  /* Figma values */
@@ -119,14 +119,15 @@
  .description {
     
      
-    font-weight: var(--weight-regular);
-    line-height: var(--line-relaxed);
+    
+    
     margin-left: auto;
     margin-right: auto;
     color: #cbd5e1;
     margin-bottom: var(--button-top-margin);
     max-width: 1050px; 
-     
+    font-size: var(--text-h4);
+    letter-spacing: -2px; 
  }
 
  /* Button container */

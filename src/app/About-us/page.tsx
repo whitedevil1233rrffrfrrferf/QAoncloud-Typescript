@@ -52,7 +52,7 @@ export default function AboutPage() {
         <div className={classes.logoWrapper}>
           <div className={classes.ellipse2017} />
           <div className={classes.ellipse2018} />
-          <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority />
+          <Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority className={classes.logoImage}/>
         </div>
         <h1 className={classes.heroTitle}>We are QAonCloud</h1>
         <p className={classes.heroSubtitle}>

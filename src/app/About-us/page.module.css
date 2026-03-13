@@ -16,19 +16,24 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding: 50px;
+   padding: 1.2rem;
+   padding-bottom: 3rem;
    gap: 40px;
    width: 100%;
    background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
    box-shadow: 0px 0.432119px 1.0803px rgba(112, 112, 112, 0.06);
    box-sizing: border-box;
-   min-height: 600px;
+   
    justify-content: center;
    overflow: hidden;
     
  }
 
-
+.logoImage {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
 /* Monotone noise */
 .headerSection::after {
   content: "";

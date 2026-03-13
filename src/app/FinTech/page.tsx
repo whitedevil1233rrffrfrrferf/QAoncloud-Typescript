@@ -149,9 +149,11 @@ export default function page() {
                   With QAonCloud, you'll ship 40% faster, with no added anxiety. Our engineers are fluent in FinTech, 
                   so no more cutting corners on security or postponing compliance checks. Just quick, smooth, secure releases.
                   <span className={classes.brightBadges}>
-                    ✅ PCI-DSS ✅ SOC 2  ✅PSD2
+                    ✅ PCI-DSS     ✅ SOC 2   ✅PSD2
                   </span>
                 </>
+                
+
               }
               imageSrc="/Images/Fintech/fintech-banner.png"
               imageAlt="FinTech Card"
