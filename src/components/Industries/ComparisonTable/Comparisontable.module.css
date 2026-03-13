@@ -83,8 +83,9 @@
 .thAlternative,
 .thProblem,
 .thDifference {
-  padding: 18px 24px;
-  font-size:var(--text-body);
+  padding: 20px;
+  line-height: 28px;
+  font-size:var(--text-h3);
   font-weight: 600;
   text-align: left;
   letter-spacing: 0.02em;

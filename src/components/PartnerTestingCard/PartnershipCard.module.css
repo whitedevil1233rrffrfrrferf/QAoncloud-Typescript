@@ -87,8 +87,7 @@
 
 .title {
   color: #3093E8;
-  line-height: 29px;
-  letter-spacing: -0.02em;
+  
   
   margin: 0;
 }
@@ -96,7 +95,7 @@
 .description {
   color: #aaa;
   
-  line-height: 1.5;
+  
 }
 
 .link {
@@ -108,7 +107,7 @@
   font-family: var(--font-secondary);
   font-size: var(--text-body);
   font-weight: 500;
-  line-height: var(--line-para);
+  
   color: var(--color-muted);
   max-width: 750px;
   color: #85eb9b !important;

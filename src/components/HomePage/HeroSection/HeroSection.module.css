@@ -52,10 +52,10 @@
 }
 
 .subheading {
-  color: #a0a0b0;
-  line-height: 1.6;
+  color: #ffffff;
+  font-size: var(--text-h4);
   max-width: 660px;
-  
+  letter-spacing: -0.1px;
   margin: 0;
 }
 
@@ -236,7 +236,7 @@
   }
 
   .subheading {
-    font-size: 16px;
+    
     max-width: 480px;
   }
 
@@ -272,7 +272,7 @@
   }
 
   .subheading {
-    font-size: 15px;
+    
     max-width: 420px;
     margin: 0 auto;
   }
@@ -325,7 +325,7 @@
   }
 
   .subheading {
-    font-size: 14px;
+    
     max-width: 320px;
     margin: 0 auto;
   }
