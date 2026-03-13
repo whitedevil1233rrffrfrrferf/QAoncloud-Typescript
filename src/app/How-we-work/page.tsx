@@ -23,7 +23,7 @@ export default function page() {
         <div className={classes.pageContent}>
           <div className={classes.homeHeroBg}>
             <Header title='How we deliver QA 40% faster'
-              description='AI handles the slow, repetitive tasks. Our engineers handle the strategic decisions. You ship 2X faster, more frequently, minus the added anxiety.'
+              description='AI handles the slow, repetitive tasks. Our engineers handle the strategic decisions. You ship 40% faster, more frequently, minus the added anxiety.'
               imageSrc="/Images/How-We-Work/Banner.png"
               imageAlt="How We Work Banner" />
           </div>
@@ -55,7 +55,7 @@ export default function page() {
               {
                 question: "Do we get dedicated engineers or a rotating pool?",
                 answer:
-                  "Dedicated. You'll have named engineers who learn your product and stay with you. No explaining context every sprint.",
+                  "You’ll get dedicated engineers who learn your product and stay with you. So, no explaining context every sprint.",
               },
               {
                 question: "What if we need to scale up or down?",
@@ -65,27 +65,27 @@ export default function page() {
               {
                 question: "How do you handle sensitive data?",
                 answer:
-                  "Synthetic test data by default. For Healthtech clients, we're HIPAA-compliant. For Fintech, we follow SOC 2 practices. We work within your security requirements.",
+                  " We use synthetic test data by default. For HealthTech clients, we're HIPAA-compliant. For FinTech clients, we follow SOC 2 practices. We work within your security requirements.",
               },
               {
                 question: "What if we already have some automation?",
                 answer:
-                  "Great—we'll assess what's working, integrate with it, and fill the gaps. We're not here to throw out what you've built.",
+                  "That’s okay! We'll assess what's working, integrate with it, and fill the gaps. We're not here to throw out what you've already built.",
               },
             ]}
           />
           <ContentWrapper>
             <Banner
-              title="See how this fits"
-              highlight="your needs"
-              description="30 minutes to walk through your setup and see if there's a fit. No pitch deck, no pressure. "
-              ctaLabel="Book a 30-Minute Call"
+              title="See how this"
+              highlight="fits your needs"
+              description="Let’s get on a 30-minute call to walk through your current set up, discuss possibilities, and see if there’s a fit. "
+              ctaLabel="Talk to an Expert"
               ctaHref="/Contact-us"
-              linkDescription="Have questions first?"
-              linkDescriptionText="Email us directly"
+              linkDescription="Have a few questions?"
+              linkDescriptionText="Email us"
               linkDescriptionHref="mailto:contactus@qaoncloud.com"
+              linkDescriptionSuffix="and we'll get back to you."
               decorativeImage="/Images/Footer/HomePage.png"
-              hideLinkSuffix={true}
             />
           </ContentWrapper>
 

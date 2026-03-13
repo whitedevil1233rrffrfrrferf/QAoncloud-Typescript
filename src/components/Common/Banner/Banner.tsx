@@ -16,6 +16,7 @@ export interface BannerProps {
   linkDescriptionText?: string
   linkDescriptionHref?: string
   linkDescriptionOnClick?: (e: React.MouseEvent) => void
+  linkDescriptionSuffix?: string
   hideLinkSuffix?: boolean
   hidectaLabel?: boolean
 }
@@ -33,6 +34,7 @@ export const Banner: React.FC<BannerProps> = ({
   linkDescriptionText,
   linkDescriptionHref = "#",
   linkDescriptionOnClick,
+  linkDescriptionSuffix,
   hideLinkSuffix = false,
   hidectaLabel = false,
 }) => {
@@ -54,8 +56,8 @@ export const Banner: React.FC<BannerProps> = ({
 
         {!hidectaLabel && ctaLabel && (
           <div className={styles.buttonContainer}>
-            <Button href="/Contact-us" variant="heroPrimary" size="content">
-              Talk To An Expert
+            <Button href={ctaHref} variant="heroPrimary" size="content">
+              {ctaLabel}
             </Button>
           </div>
         )}
@@ -73,7 +75,8 @@ export const Banner: React.FC<BannerProps> = ({
                 {linkDescriptionText}
               </a>
             )}{" "}
-            {!hideLinkSuffix && "with us."}
+            {linkDescriptionSuffix && linkDescriptionSuffix}
+            {!hideLinkSuffix && !linkDescriptionSuffix && "with us."}
           </p>
         )}
       </div>

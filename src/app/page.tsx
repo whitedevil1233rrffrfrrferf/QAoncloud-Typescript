@@ -30,17 +30,17 @@ export default function Home() {
           <ClientSlider heading="We’ve helped 60+ global teams ship with confidence " />
           <SectionDivider />
           <QualityAssurance
-            title="Your engineers aren’t stalling releases. "
+            title="Your engineers aren’t stalling releases."
             highlight="Your QA is."
-            description="Your QA is slowing you down more than you think. Your engineers are on QA-duty when they should be building. Your tests take hours. Your “automation” needs hand-holding. And every release is a shot in the dark. Meanwhile, your competitors ship weekly."
-            subDescription="But it doesn’t have to be this way. Our AI-accelerated, expert-driven QA services ensure you ship quickly, frequently and confidently."
+            description="Your engineers are on QA-duty when they should be building. Your tests take forever. Your “automation” needs hand-holding. And every release is a shot in the dark. "
+            subDescription="But it doesn’t have to be this way. With our AI-accelerated, expert-driven QA services, you'll ship quickly, frequently and confidently."
             marginBottom={2}
           />
           <SectionDivider />
           <ContentWrapper>
 
             <ProcessSection title="How do we deliver"
-              highlight="2X faster?"
+              highlight="40% faster"
               description=""
               steps={[
                 {
@@ -55,7 +55,7 @@ export default function Home() {
                 },
                 {
                   icon: Zap,
-                  title: "3. You ship 2X faster",
+                  title: "3. You ship 40% faster",
                   description: "Detailed, weekly reports. Bugs caught before production. Engineers doing what they do best instead of testing.",
                 },
               ]} />

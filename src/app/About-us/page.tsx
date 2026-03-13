@@ -24,7 +24,7 @@ const boardMembers = [
     name: 'JK Manivannan',
     role: 'CEO, DesiCrew',
     bio: 'IIM Bangalore and Anna Univ. Emerging Leaders Fellow - City University (New York)',
-    photo: '/Images/AboutUs/ManivannanCEO.png',
+    photo: '/Images/AboutUs/Manivannan.png',
     linkedin: 'https://in.linkedin.com/in/manijk',
   },
   {
@@ -56,21 +56,29 @@ export default function AboutPage() {
         </div>
         <h1 className={classes.heroTitle}>We are QAonCloud</h1>
         <p className={classes.heroSubtitle}>
-          QAonCloud is an AI-accelerated QA partner for teams looking to ship faster, without cutting corners.
+          The preferred AI-accelerated QA partner for teams looking to ship faster, without cutting corners.
         </p>
       </header>
 
       {/* BUILT BY DESICREW */}
       <ContentSection
-        title={<>Built by <span className={classes.sectionHighlight}>DesiCrew in 2016</span></>}
+        title={<>Keeping releases <span className={classes.sectionHighlight}>bug-free since 2016</span></>}
         imageSrc="/Images/AboutUs/Saloni MalhotraTeam.png"
         imageAlt="Built by Desicrew in 2016"
       >
-        <p>QAonCloud was formed to solve an issue teams constantly face - frequent delays and buggy releases.
-          We're a trusted software testing company, and we've worked with startups and global businesses
-          across industries, combining fast, precise automation with reliable, skilled engineers with deep
-          domain expertise.</p>
-      </ContentSection>
+        <p>
+          QAonCloud is a trusted software testing company, formed to solve an issue teams constantly face - frequent delays and buggy releases.
+          We’re the strategic QA arm of{" "}
+          <a
+            href="https://desicrew.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#ffffff", textDecoration: "underline" }}
+          >
+            DesiCrew
+          </a>
+          , and we’ve worked with startups and global businesses across industries, combining fast, precise automation with reliable, skilled engineers, having deep domain expertise.
+        </p></ContentSection>
 
       <ContentSection
         title={<>Our approach <span className={classes.sectionHighlight}>is simple</span></>}

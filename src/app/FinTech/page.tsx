@@ -52,7 +52,13 @@ const finTechData = {
 const mistakesData = {
   title: "In FinTech, mistakes ",
   highlight: "are costly",
-  description: `A bug isn't just a mistake. It's a regulatory incident. A glaring headline. An act of non-compliance.`,
+  description: (
+    <>
+      Because a bug isn't just a mistake. It's a regulatory incident. A glaring headline. An act of non-compliance.
+      <br /> 
+      That's why most FinTech teams are forced to choose between compliance and speed.
+    </>
+  ),
   cards: [
     { title: "Compliance is relentless", description: "PCI-DSS, SOC 2, PSD2, state regulations. And they keep changing. Every release needs documented test coverage you can show auditors." },
     { title: "Security isn't optional", description: `You can't ship with "we'll test that later." Vulnerabilities in FinTech get exploited fast, and the consequences aren't just technical.` },
@@ -138,7 +144,15 @@ export default function page() {
             <IndustryPageHeader
               tag="AI-accelerated QA for FinTech"
               title="Compliance-ready and right on the money."
-              description="With QAonCloud, you'll ship 40% faster, with no added anxiety. No more cutting corners on security or postponing compliance checks. Just smooth, secure releases. Our engineers are fluent in FinTech, so don't worry about explaining PCI-DSS, SOC 2, and PSD2 to us."
+              description={
+                <>
+                  With QAonCloud, you'll ship 40% faster, with no added anxiety. Our engineers are fluent in FinTech, 
+                  so no more cutting corners on security or postponing compliance checks. Just quick, smooth, secure releases.
+                  <span className={classes.brightBadges}>
+                    ✅ PCI-DSS ✅ SOC 2  ✅PSD2
+                  </span>
+                </>
+              }
               imageSrc="/Images/Fintech/fintech-banner.png"
               imageAlt="FinTech Card"
             />
@@ -183,18 +197,16 @@ export default function page() {
               { question: "Are you familiar with industry-specific regulations?", answer: "We've worked with PCI-DSS, SOC 2 Type II, PSD2, state money transmitter requirements, GDPR, and more. If there's a regulation we haven't encountered, we'll tell you upfront, and we learn about it fast" },
               { question: "What if we already have some QA in place?", answer: "We don’t expect you to change your processes, we integrate into your way of work. Most clients start by handing us their biggest pain point (compliance testing, regression suites, or a specific product surface) and expand from there." },
               { question: "How do you handle sensitive test data?", answer: "We use synthetic test data generation, so real customer data is never exposed. This keeps your compliance with data privacy regulations in check, removing a major security risk from your testing process." },
-              { question: 'What does "40% faster" actually mean?', answer: "We use synthetic test data generation, so real customer data is never exposed. This keeps your compliance with data If traditional QA takes 12 months, we’ll do it in 7. We save a lot of time with our AI handling repetitive work (test generation, execution, data creation), letting our engineers focus on judgment calls and edge cases.privacy regulations in check, removing a major security risk from your testing process." },
-              {
-                question: "How does pricing work?", answer: (
+              { question: 'How do you manage to deliver 40% faster? ', answer: "We use synthetic test data generation, so real customer data is never exposed. This keeps your compliance with data If traditional QA takes 12 months, we’ll do it in 7. We save a lot of time with our AI handling repetitive work (test generation, execution, data creation), letting our engineers focus on judgment calls and edge cases.privacy regulations in check, removing a major security risk from your testing process." },
+              { question: "What about the pricing? ", answer: (
                   <>
-                    We typically work on monthly engagements starting with a focused pilot engagement. Pricing
-                    depends entirely on the scope of work and complexity involved.
+                    Pricing varies from one engagement to another, depending on the scope and complexity of the work.
                     <br />
-                    Want to put a real number to our services?{" "}
+                    The best way to get an accurate quote is to{" "}
                     <a href="/Contact-us" style={{ color: "#3093E8", textDecoration: "underline" }}>
-                      Book a quick discovery call
+                      book a discovery call
                     </a>{" "}
-                    with us today.
+                    with us.
                   </>
                 ),
               },

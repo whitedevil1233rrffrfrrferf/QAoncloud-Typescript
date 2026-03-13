@@ -75,7 +75,7 @@
   padding: 36px;
   position: relative;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 250px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   background: linear-gradient(236deg, #2d2d2d -2%, #090c0e 100%);
 }
@@ -89,7 +89,7 @@
   background-repeat: repeat; 
   mix-blend-mode: screen;
   opacity: 0.15;
-  border-radius: 12px; /* match wrapper */
+  border-radius: 12px;  
 }
 .card:hover {
   border-color: rgba(255, 255, 255, 0.12);
@@ -102,7 +102,7 @@
 
 .cardGradient {
   background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
-  padding-bottom: 36px; /* cadence card has no icons */
+  padding-bottom: 0px;
 }
 
 /* ─── Typography ─────────────────────────────────────────────── */

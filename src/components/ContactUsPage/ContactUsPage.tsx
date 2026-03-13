@@ -19,7 +19,7 @@ function StatusDialog({ status, onClose }: { status: 'success' | 'error'; onClos
         <div className={styles.dialogIconWrap} data-status={status}>
           {isSuccess
             ? <FiCheckCircle size={34} color="#10b981" />
-            : <FiXCircle    size={34} color="#ef4444" />}
+            : <FiXCircle size={34} color="#ef4444" />}
         </div>
         <h3 className={styles.dialogTitle}>
           {isSuccess ? 'Message Sent!' : 'Something went wrong'}
@@ -41,13 +41,13 @@ function StatusDialog({ status, onClose }: { status: 'success' | 'error'; onClos
    Disposable email domains blocklist
 ───────────────────────────────────────── */
 const DISPOSABLE_DOMAINS = new Set([
-  'mailinator.com','10minutemail.com','tempmail.com','guerrillamail.com',
-  'throwaway.email','yopmail.com','trashmail.com','fakeinbox.com',
-  'sharklasers.com','guerrillamailblock.com','grr.la','guerrillamail.info',
-  'spam4.me','dispostable.com','maildrop.cc','spamgourmet.com',
-  'temp-mail.org','getnada.com','mailnull.com','spamgourmet.net',
-  'discard.email','spamhereplease.com','spamex.com','trashmail.at',
-  'trashmail.io','getairmail.com','filzmail.com','throwam.com',
+  'mailinator.com', '10minutemail.com', 'tempmail.com', 'guerrillamail.com',
+  'throwaway.email', 'yopmail.com', 'trashmail.com', 'fakeinbox.com',
+  'sharklasers.com', 'guerrillamailblock.com', 'grr.la', 'guerrillamail.info',
+  'spam4.me', 'dispostable.com', 'maildrop.cc', 'spamgourmet.com',
+  'temp-mail.org', 'getnada.com', 'mailnull.com', 'spamgourmet.net',
+  'discard.email', 'spamhereplease.com', 'spamex.com', 'trashmail.at',
+  'trashmail.io', 'getairmail.com', 'filzmail.com', 'throwam.com',
 ]);
 
 /* ─────────────────────────────────────────
@@ -61,20 +61,20 @@ function validateEmail(email: string): string {
 
   const atCount = (v.match(/@/g) || []).length;
   if (atCount === 0) return 'Email must contain @';
-  if (atCount > 1)   return 'Email must contain only one @';
+  if (atCount > 1) return 'Email must contain only one @';
 
   const [local, domain] = v.split('@');
-  if (!local)              return 'Email must have a local part before @';
-  if (local.length > 64)   return 'Local part must be 64 characters or fewer';
+  if (!local) return 'Email must have a local part before @';
+  if (local.length > 64) return 'Local part must be 64 characters or fewer';
   if (local.startsWith('.')) return 'Email must not start with a dot';
-  if (local.endsWith('.'))   return 'Email must not end with a dot';
-  if (/\.{2,}/.test(local))  return 'Email must not contain consecutive dots';
+  if (local.endsWith('.')) return 'Email must not end with a dot';
+  if (/\.{2,}/.test(local)) return 'Email must not contain consecutive dots';
 
-  if (!domain)                return 'Email must have a domain after @';
-  if (!domain.includes('.'))  return 'Email must contain a valid domain extension (e.g. .com, .in)';
+  if (!domain) return 'Email must have a domain after @';
+  if (!domain.includes('.')) return 'Email must contain a valid domain extension (e.g. .com, .in)';
   if (domain.startsWith('.')) return 'Domain must not start with a dot';
-  if (domain.endsWith('.'))   return 'Domain must not end with a dot';
-  if (/\.{2,}/.test(domain))  return 'Domain must not contain consecutive dots';
+  if (domain.endsWith('.')) return 'Domain must not end with a dot';
+  if (/\.{2,}/.test(domain)) return 'Domain must not contain consecutive dots';
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Enter a valid email address';
 
@@ -105,9 +105,9 @@ function validatePhone(value: string): string {
 
 export default function ContactUsPage() {
   const [privacyChecked, setPrivacy] = useState(false);
-  const [dragOver, setDragOver]     = useState(false);
-  const [uploadedFile, setFile]     = useState<File | null>(null);
-  const [fileError, setFileError]   = useState('');
+  const [dragOver, setDragOver] = useState(false);
+  const [uploadedFile, setFile] = useState<File | null>(null);
+  const [fileError, setFileError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -125,11 +125,11 @@ export default function ContactUsPage() {
 
   /* ── Validation ── */
   const [bizTouched, setBizTouched] = useState({ workEmail: false, phone: false });
-  const [bizErrors, setBizErrors]   = useState({ workEmail: '', phone: '' });
+  const [bizErrors, setBizErrors] = useState({ workEmail: '', phone: '' });
 
   const computeBizErrors = (data: typeof biz) => ({
     workEmail: validateEmail(data.workEmail),
-    phone:     validatePhone(data.phone),
+    phone: validatePhone(data.phone),
   });
 
   useEffect(() => { setBizErrors(computeBizErrors(biz)); }, [biz.workEmail, biz.phone]);
@@ -179,7 +179,7 @@ export default function ContactUsPage() {
 
     setIsSubmitting(true);
     try {
-      const captchaRes  = await fetch('/api/verify-captcha', {
+      const captchaRes = await fetch('/api/verify-captcha', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: captchaToken }),
       });
@@ -194,16 +194,16 @@ export default function ContactUsPage() {
 
       // 1️⃣ Team notification — must succeed
       await emailjs.send('service_pe85kpk', 'template_lr226wc', {
-        name:       biz.firstName,
-        from_name:  `${biz.firstName} ${biz.lastName}`,
+        name: biz.firstName,
+        from_name: `${biz.firstName} ${biz.lastName}`,
         from_email: biz.workEmail,
-        company:    biz.company    || 'Not provided',
-        phone:      biz.phone,
-        country:    biz.country    || 'Not provided',
-        services:   biz.services.join(', ') || 'Not provided',
-        how_heard:  biz.howHeard   || 'Not provided',
-        budget:     biz.budgetRange || 'Not provided',
-        message:    biz.message    || 'No message',
+        company: biz.company || 'Not provided',
+        phone: biz.phone,
+        country: biz.country || 'Not provided',
+        services: biz.services.join(', ') || 'Not provided',
+        how_heard: biz.howHeard || 'Not provided',
+        budget: biz.budgetRange || 'Not provided',
+        message: biz.message || 'No message',
       }, 'ud7uHNDNt2PuqT5zM');
 
       // 2️⃣ Confirmation to sender — failure here does not block success
@@ -264,7 +264,10 @@ export default function ContactUsPage() {
         <div className={styles.logoWrapper}>
           <Link href="/"><Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority /></Link>
         </div>
-        <h1 className={styles.headerTitle}>Contact Us</h1>
+        <h1 className={styles.headerTitle}>Let’s talk about your QA needs </h1>
+        <p className={styles.heroSubtitle}>
+          We’d love to chat about your QA needs. Just leave us your details and we’ll get back to you in no time.
+        </p>
       </header>
 
       <main className={styles.mainContent}>
@@ -275,20 +278,59 @@ export default function ContactUsPage() {
             <div className={styles.contactCard}>
               <h2 className={styles.cardTitle}>Get In Touch</h2>
               <div className={styles.contactItems}>
+
+                {/* US */}
                 <div className={styles.contactItem}>
                   <FiMapPin className={styles.icon} />
-                  <p className={styles.contactValue}>39159 Paseo Padre Pkwy ste 207, Fremont, California 94538, USA.</p>
+                  <div className={styles.contactGroup}>
+                    <span className={styles.contactLabel}>US</span>
+                    <a
+                      href="https://maps.google.com/?q=39159+Paseo+Padre+Pkwy+ste+207,+Fremont,+CA+94538,+United+States"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.contactValue}
+                    >
+                      39159 Paseo Padre Pkwy ste 207,<br />
+                      Fremont, CA 94538, <br />United States
+                    </a>
+                    <div className={styles.phoneRow}>
+                      <FiPhone className={styles.icon} />
+                      <a href="tel:+15103192565" className={styles.contactValue}>+1 (415) 630-2109</a> 
+                    </div>
+                  </div>
                 </div>
+
                 <div className={styles.divider} />
+
+                {/* India */}
                 <div className={styles.contactItem}>
-                  <FiPhone className={styles.icon} />
-                  <p className={styles.contactValue}>+1 (415) 630-2109</p>
+                  <FiMapPin className={styles.icon} />
+                  <div className={styles.contactGroup}>
+                    <span className={styles.contactLabel}>India</span>
+                    <a
+                      href="https://maps.google.com/?q=B3-8,+IIT+Madras+Research+Park,+Kanagam+Rd,+Tharamani,+Chennai,+Tamil+Nadu+600113,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.contactValue}
+                    >
+                      B3 -8, IIT Madras Research Park, <br />Kanagam Rd,
+                      Tharamani, Chennai, <br />Tamil Nadu 600113, India
+                    </a>
+                    <div className={styles.phoneRow}>
+                      <FiPhone className={styles.icon} /> 
+                      <a href="tel:+919884292684" className={styles.contactValue}>+91 98842 92684</a>
+                    </div>
+                  </div>
                 </div>
+
                 <div className={styles.divider} />
+
+                {/* Email */}
                 <div className={styles.contactItem}>
                   <FiMail className={styles.icon} />
-                  <p className={styles.contactValue}>contactus@qaoncloud.com</p>
+                       <a href="mailto:contactus@qaoncloud.com" className={styles.contactValue} > contactus@qaoncloud.com </a>
                 </div>
+
               </div>
             </div>
           </aside>
@@ -368,7 +410,7 @@ export default function ContactUsPage() {
                     </div>
                     {servicesDropdownOpen && (
                       <div className={styles.dropdownContent}>
-                        {['Functional Testing','Performance Testing','Security Testing','Automation Testing','Compliance Testing'].map(service => (
+                        {['Functional Testing', 'Performance Testing', 'Security Testing', 'Automation Testing', 'Compliance Testing'].map(service => (
                           <label key={service} className={styles.dropdownItem}>
                             <input type="checkbox" className={styles.checkbox} value={service}
                               checked={biz.services.includes(service)}
@@ -446,7 +488,7 @@ export default function ContactUsPage() {
               <button type="submit" className={styles.submitButton}
                 disabled={!isFormValid || isSubmitting}
                 title={!isFormValid ? 'Please fix all errors before submitting' : ''}>
-                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {isSubmitting ? 'Sending...' : 'Submit'}
               </button>
 
               {(submitStatus === 'success' || submitStatus === 'error') && (

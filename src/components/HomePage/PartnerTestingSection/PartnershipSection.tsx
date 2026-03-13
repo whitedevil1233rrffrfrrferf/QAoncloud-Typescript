@@ -35,7 +35,7 @@ const caseStudies = [
     logo: "/logos/FORATravel.png",
     topColor: "#4C4C4C99",
 tags: ["Automation Testing", "Functional Testing", "Integration Testing","Performance Testing", "API Testing"],
-    title: "Reduction of Production bugs ",
+    title: "Reduction of Production bugs.",
     description: "We developed a comprehensive test plan for FORA, ensuring high-quality, defect-free builds for every release. ",
     subdescription: "Read Full Case Study →",
     url: "https://docsend.com/view/v8jfi9rsm7jmdbs9"

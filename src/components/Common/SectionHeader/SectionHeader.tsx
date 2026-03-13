@@ -1,9 +1,10 @@
+import { ReactNode } from 'react';
 import classes from './SectionHeader.module.css';
 
 interface SectionHeaderProps {
   title: string;
   highlight?: string;
-  description?: string;
+  description?: ReactNode;
   subDescription?: string; // 👈 new optional para
   marginBottom?: number;
 }
