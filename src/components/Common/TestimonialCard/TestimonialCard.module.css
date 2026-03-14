@@ -1,0 +1,149 @@
+.card {
+  position: relative;
+  background: #0C0C0C69;
+  border: 2px solid #141414;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  margin-top: var(--section-header-margin);
+}
+
+/* Radial gradient glow — right side, matching Figma */
+.glow {
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 55%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(14, 165, 233, 0.19) 0%,
+    rgba(14, 165, 233, 0.12) 35%,
+    rgba(14, 165, 233, 0.04) 60%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+/* All real content sits above the glow */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Quote text */
+.quoteText {
+  
+  letter-spacing: 0.01em;
+  margin-top: 10px;
+}
+
+/* Both quotes — same size as body, inline */
+.quoteOpen,
+.quoteClose {
+  font-size: 40px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  line-height: 0;
+  display: inline-block;
+  vertical-align: -0.3em;
+}
+
+.quoteOpen {
+  margin-right: 2px;
+}
+
+.quoteClose {
+  margin-left: 2px;
+}
+
+/* Author row */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatarFallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8a8a8a;
+  line-height: 1.2;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem 1.75rem;
+    gap: 1.25rem;
+  }
+
+  .quoteText {
+    font-size: 0.975rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .quoteOpen {
+    font-size: 1.6rem;
+  }
+
+  .quoteText {
+    font-size: 0.9rem;
+  }
+
+  .authorName {
+    font-size: 0.875rem;
+  }
+
+  .authorRole {
+    font-size: 0.75rem;
+  }
+}

@@ -67,7 +67,7 @@ export default function ClientSlider({ heading }: ClientSliderProps) {
 
   useEffect(() => {
     const update = () => {
-      const mobile = window.innerWidth <= 768;
+      const mobile = window.innerWidth <= 700;
       setIsMobile(mobile);
       if (marqueeRef.current) {
         setCardWidth(marqueeRef.current.offsetWidth);

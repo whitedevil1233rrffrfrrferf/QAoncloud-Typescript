@@ -10,6 +10,7 @@ import PhaseSection from '@/components/How-we-work/PhaseSection/PhaseSection'
 import TwoSystems from '@/components/How-we-work/TwoSystems/TwoSystems'
 import SectionDivider from '@/components/Common/SectionDivider/SectionDivider'
 import type { Metadata } from 'next'
+import { TestimonialCard } from '@/components/Common/TestimonialCard/TestimonialCard'
 
 export const metadata: Metadata = {
   title: 'How We Work | QAonCloud',
@@ -74,6 +75,14 @@ export default function page() {
               },
             ]}
           />
+         <ContentWrapper>
+           <TestimonialCard
+            quote="They understood our product faster than any vendor we've worked with"
+            name="Mark Johnson"
+            role="CTO at XYZ company"
+            avatarSrc="/avatars/mark.jpg"
+          />
+         </ContentWrapper>
           <ContentWrapper>
             <Banner
               title="See how this"

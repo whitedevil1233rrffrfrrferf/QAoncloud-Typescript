@@ -2,73 +2,88 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  margin-right: 1rem;
+  border-radius: 12px;
   position: relative;
-  font-size: 12px; /* Set to 12px instead of var(--text-body) */
-  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-
   transition: all 0.25s ease;
   white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+
+  /* Figma exact specs */
+  padding: 12px 16px;
+  gap: 10px;
 }
+
+/* Noise texture overlay */
 .button::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 100;
+  border-radius: inherit;
+  z-index: 1;
   pointer-events: none;
-  /* Real random dot noise — generated pixel-by-pixel to match Figma speckle pattern */
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 4 -2.4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
   opacity: 45%;
-  background-repeat: repeat; 
-  mix-blend-mode: screen; 
+  mix-blend-mode: screen;
 }
-/* SIZE VARIANTS */
+
+/* ── SIZE VARIANTS ───────────────────────────────────────── */
+
+/* Figma spec: 169×44 — padding drives height, no explicit height */
 .default {
-  width: 12rem;
-  padding: 0rem;
+  width: 169px;
+  padding: 12px 16px;
 }
 
 .small {
-  width: 9rem;
-  padding: 0.2rem;
+  width: auto;
+  min-width: 120px;
+  padding: 10px 14px;
+  
 }
 
+/* Sidebar / inline usage — no fixed width */
 .content {
   width: auto;
+  padding: 12px 16px;
   margin-right: 0;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
 }
 
-/* PRIMARY */
+/* ── COLOR VARIANTS ──────────────────────────────────────── */
+
+/* Primary — solid blue */
 .primary {
   background: #3093E8;
   color: #ffffff;
 }
 
-/* SECONDARY - with dark outline */
+.primary:hover {
+  background: #216BAB;
+}
+
+/* Secondary — dark with border (matches "See How We Work") */
 .secondary {
   background: #050505;
   color: #ffffff;
   border: 1px solid #3A3A3A;
-  box-shadow: 
+  box-shadow:
     0px 8px 10px -6px #1C398E1A,
     0px 20px 25px -5px #1C398E1A;
 }
 
 .secondary:hover {
   background: #0a0a0a;
-  border: 1px solid #4A4A4A;
-  box-shadow: 
+  border-color: #4A4A4A;
+  box-shadow:
     0px 8px 10px -6px #1C398E33,
     0px 20px 25px -5px #1C398E33;
 }
 
+/* heroPrimary — same as primary, kept separate for semantic clarity */
 .heroPrimary {
   background: #3093E8;
   color: #ffffff;
@@ -78,43 +93,55 @@
   background: #216BAB;
 }
 
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .default {
+    width: 152px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 600px) {
   .default {
-    width: 9rem;
-    margin-right: 2rem;
+    width: 140px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
   }
-  
+
   .small {
-    width: 8rem;
-    margin-right: 2rem;
-    padding: 0.45rem 0.5rem;
+    min-width: 100px;
+    padding: 9px 12px;
+    font-size: 0.8125rem;
   }
 
   .content {
-    width: auto;
-    margin-right: 0;
+    padding: 10px 14px;
+    font-size: 0.875rem;
   }
 }
-
 
 @media (max-width: 480px) {
-  .content {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.75rem;
-    border-radius: 6px;
-  }
-
   .default {
-    width: 8rem;
-    font-size: 0.75rem;
-    padding: 0.5rem;
+    width: 130px;
+    padding: 9px 12px;
+    font-size: 0.8125rem;
+    border-radius: 10px;
   }
 
   .small {
-    width: 7rem;
-    font-size: 0.72rem;
-    padding: 0.4rem 0.5rem;
+    padding: 8px 11px;
+    font-size: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .content {
+    padding: 9px 12px;
+    font-size: 0.8125rem;
+    border-radius: 10px;
   }
 }
-
-

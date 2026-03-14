@@ -262,7 +262,7 @@ export default function ContactUsPage() {
         <div className={styles.ellipse2017} />
         <div className={styles.ellipse2018} />
         <div className={styles.logoWrapper}>
-          <Link href="/"><Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority /></Link>
+          <Link href="/"><Image src="/logos/qaoncloud3dlogo.png" alt="QAonCloud" width={220} height={220} priority className={styles.logoImage}/></Link>
         </div>
         <h1 className={styles.headerTitle}>Let’s talk about your QA needs </h1>
         <p className={styles.heroSubtitle}>
@@ -472,7 +472,7 @@ export default function ContactUsPage() {
                   checked={privacyChecked} onChange={e => setPrivacy(e.target.checked)} />
                 <label htmlFor="priv-b" className={styles.privacyLabel}>
                   Your privacy is important to us. By filling this form you agree to our{' '}
-                  <Link href="/Privacy-policy" className={styles.privacyLink}>privacy policy</Link> *
+                  <Link href="/Privacy-policy" className={styles.privacyLink}>privacy policy</Link> <span className={styles.req}>*</span>
                 </label>
               </div>
 

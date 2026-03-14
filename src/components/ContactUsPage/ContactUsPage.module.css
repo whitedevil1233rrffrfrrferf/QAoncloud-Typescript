@@ -31,7 +31,8 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding: 2rem;
+   padding: 1.2rem;
+   padding-bottom: 3rem;
    gap: 40px;
    width: 100%;
    background: linear-gradient(260.94deg, #002A8D -37.26%, #090C0E 100%);
@@ -64,7 +65,11 @@
    justify-content: center;
    z-index: 2;
  }
-
+.logoImage {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
  /* Shadow ellipses under logo — Figma Ellipse 2017 & 2018 */
 .ellipse2017 {
   position: absolute;
@@ -97,14 +102,19 @@
  /* Contact Us title  */
  .headerTitle {
   
-   margin: 0;
-    z-index: 2;
+
+  
+  
+  color: #fff;
+  margin: 0;
+  text-align: center;
+
  }
 
  .heroSubtitle {
   font-family: 'Inter';
-  font-size: 22px;
-  font-weight: 500;
+  font-size: var(--text-h4);
+  
   line-height: 30px;
   letter-spacing: -1px;
   color: #FFFFFF;

@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
           <div className={classes.content}>
             {sections.map((s) => (
               <section key={s.id} id={s.id} className={classes.section}>
-                <h2 className={classes.sectionTitle}>{s.title}</h2>
+                <h3 className={classes.sectionTitle}>{s.title}</h3>
 
                 {s.intro && <p className={classes.sectionText}>{s.intro}</p>}
 

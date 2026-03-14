@@ -14,6 +14,7 @@ type IndustryPageHeaderProps = {
   buttonHref?: string
 }
 
+
 const IndustryPageHeader = ({
   tag,
   title,

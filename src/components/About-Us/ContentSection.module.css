@@ -9,7 +9,7 @@
 .sectionInner {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;

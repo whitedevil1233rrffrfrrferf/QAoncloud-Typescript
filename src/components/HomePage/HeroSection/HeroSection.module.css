@@ -73,9 +73,9 @@
   justify-content: center;
   position: relative;
   width: auto;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
   text-decoration: none;

@@ -3,6 +3,7 @@ import styles from './BlogPage.module.css';
 import { ContentWrapper } from '@/components/Common/ContentWrapper/ContentWrapper';
 import { Banner } from "@/components/Common/Banner/Banner";
 import Image from 'next/image'
+import SectionHeader from '../Common/SectionHeader/SectionHeader';
 
 const BlogPage: React.FC = () => {
   return (
@@ -30,9 +31,8 @@ const BlogPage: React.FC = () => {
 
       {/* KEY RESULTS */}
       <section className={styles.keyResults}>
-        <p className={styles.sectionLabel}>
-          Key <span>Results</span>
-        </p>
+        <SectionHeader title='Key' highlight='Results' />
+        
         <div className={styles.metricsCard}>
           <div className={styles.metric}>
             <span className={styles.metricValue}>+42%</span>
@@ -53,13 +53,13 @@ const BlogPage: React.FC = () => {
       <section className={styles.contentSection}>
         <h2 className={styles.sectionTitle}>The Situation</h2>
         <p className={styles.sectionText}>
-          Indihoof is a community-driven platform designed to help people discover, connect, and participate in local groups and activities. As the platform expanded, the team noticed that while user acquisition was strong, long-term engagement was falling short
+          Indihood is a community-driven platform designed to help people discover, connect, and participate in local groups and activities. As the platform expanded, the team noticed that while user acquisition was strong, long-term engagement was falling short
         </p>
         <p className={styles.sectionText}>
           New users often struggled to understand how to get value from the platform after signing up. Important community features were buried, and the onboarding experience didn't clearly communicate Indihoof's core purpose.
         </p>
         <p className={styles.sectionText}>
-          Indihoof partnered with Qaoncloud to identify the root causes behind these issues and redesign the experience around real user behavior.
+          Indihood partnered with Qaoncloud to identify the root causes behind these issues and redesign the experience around real user behavior.
         </p>
       </section>
 
